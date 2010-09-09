@@ -1,6 +1,7 @@
 #GRAMMAR 1
 #TOPLEFT Coq Tutorial
 #TOPRIGHT 1
+#NUMBERS true
 
 * What is Coq's logical framework called?
 The Calculus of Inductive Constructions.
