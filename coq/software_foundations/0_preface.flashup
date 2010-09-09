@@ -1,6 +1,7 @@
 #GRAMMAR 1
 #TOPLEFT Software Foundations
 #TOPRIGHT 0
+#NUMBERS true
 
 * What does this course assert about logic?
 Logic is to software engineering as calculus is to mechanical/civil engineering.

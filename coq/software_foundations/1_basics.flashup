@@ -1,6 +1,7 @@
 #GRAMMAR 1
 #TOPRIGHT Software Foundations
 #TOPLEFT 1
+#NUMBERS true
 
 * Where does Coq define booleans and numbers?
 In the standard library.
