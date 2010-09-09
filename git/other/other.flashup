@@ -1,0 +1,28 @@
+#GRAMMAR 1
+#TOPLEFT Git tricks
+
+* Create a new branch on remote repo and track locally.
+`git push origin origin:refs/heads/iss20`
+`git checkout --track -b iss20 origin/iss20`
+
+* Delete a remote branch.
+`git push origin :heads/branch_name`
+
+* Delete a remote tag.
+`git push origin :tag_name`
+
+* Revert last commit or two.
+`
+git revert HEAD  #last only
+git revert HEAD^ #last two
+`
+Now commit.
+
+* Revert a single working file to last in repo.
+`git checkout filename`
+
+* Create a new branch with modified files in working copy.
+`git checkout -b newbranchname`
+
+* Unstage files.
+`git reset HEAD path`

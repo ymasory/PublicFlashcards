@@ -1,0 +1,57 @@
+#GRAMMAR 1
+#TOPLEFT Pro Git
+#TOPRIGHT 1
+
+* How do you set your diff tool?
+`git config --global merge.tool [tool]`
+
+* How do you set your editor?
+`git config --global core.editor [editor]`
+
+* How do you set your email address?
+`git config --global user.email [address]`
+
+* How do you set your username?
+`git config --global user.name [username]`
+
+* What are the three locations for storing Git configuration variables?
+* What options do they correspond to?
+In order of precedence:
+- `/etc/gitconfig` corresponding to `git config --system`
+- `~/.gitconfig` corresponding to `git config --global`
+- `.git/config` (in Git directory of repository)
+
+* Describe the basic Git workflow.
+Modify files in working directory.
+Stage files, which adds snapshots to staging area.
+Commit files, which takes snapshots in the staging area and stores them in the Git directory.
+
+* What is the working directory?
+A single checkout of one version of the project, pulled from the compressed database in the Git directory.
+
+* What three operations move files between their three possible locations?
+- Checking out - Git directory to working directory.
+- Staging - working directory to the staging area.
+- Committing - staging area to Git directory.
+
+* Where are the three places a file can be?
+- Working directory
+- Staging area
+- Git directory (repository)
+
+* What's unique about Git's storage system?
+Git does not save deltas. It takes snapshots, making a mini file system.
+
+* Where can you get live help with Git?
+- #git and #github on FreeNode
+
+* How do you get help with a Git command?
+- `git help [verb]`
+- `git [verb] --help`
+- `man git-[verb]`
+
+* How do you look up a specific Git variable?
+`git config [varname]`
+
+* How do you check your Git settings?
+`git config --list`

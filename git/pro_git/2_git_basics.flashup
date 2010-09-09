@@ -1,0 +1,124 @@
+#GRAMMAR 1
+#TOPLEFT Pro Git
+#TOPRIGHT 2
+
+* How can you skip the staging area?
+`git commit -a -m "comment"`
+
+* How can you view your changes as you commit?
+`git commit -v`
+
+* How can you view staged changes from your last commit?
+`git diff --staged`
+
+* How can you view unstaged changes from your last commit?
+`git diff`
+
+* How can you tell Git to ignore certain files?
+List them in `.gitignore`. The syntax accepts glob patterns, leading & trailing slashes, and !.
+
+* "Changed but not updated" files are in which stage?
+Modified
+
+* "Changes to be committed" are in which Git stage?
+Staged
+
+* How do you begin tracking a new file?
+`git add [filename ...]`
+
+* How can you find which branch you're in?
+`git status`
+
+* How can you check for untracked files?
+`git status`
+
+* How do you check if any of your tracked files have been modified?
+`git status`
+
+* How do you get a copy of an existing Git repository?
+`git clone [url]`
+
+* How do you start version-controlling files?
+`git add [filename ...]`
+
+* How do you initialize a repository in an existing directory?
+`git init`
+
+* What is a bare repository?
+A repository with no working directory.
+
+* Which protocol does Git assume if you don't specify?
+ssh.
+
+`git clone ssh://user@server:project.git`
+is the same as
+`git clone user@server:project.git`
+
+* How do you create a bare repository?
+Clone a normal one, then:
+`git clone --bare my_project my_project.git`
+
+* Using ssh, what controls read/write access to the repo?
+The OS's read/write permissions on the `.git` bare repo directory.
+
+* How can you guarantee others will have permission to push to your bare repository.
+Go into the `.git` repo on the server and run:
+`git init --shared`
+
+* How can you give devs access to a repo with ssh if they don't have accounts on the machine?
+Create a single "git" user and add all the devs' keys to `~/.ssh/authorized_keys`.
+
+* Give a script to set up a Git repo on a server.
+`
+cd /opt/git
+mkdir project.git
+cd project.git
+git --bare init
+`
+
+* Give a script to move code to a new repo on a server.
+`
+#on John's computer
+cd myproject
+git init
+git add .
+git commit -m 'initial commit'
+git remote add origin git@gitserver:/opt/git/myproject.git
+git push origin master
+`
+
+* How can you restrict the git user to Git use only?
+Change its shell to `git-shell` in `etc/passwd`.
+`
+git:x:1000:1000::/home/git:/bin/sh
+                          :/usr/bin/git-shell
+`
+
+* How can you provide read-only public access to your otherwise ssh-based repo?
+Create a webserver with the repo as webroot. Then add a post-update hook from the samples. People can then clone over http.
+
+* How can you provide a web interface to your repo?
+Use GitWeb, a CGI script that comes with Git.
+
+* Name a tool for managing large numbers of entries in `authorized_keys`.
+Gitosis.
+
+* Name a tool for providing access controls over branches, tags, etc.?
+Gitolite.
+
+* How can you avoid committing whitespace?
+`git diff --check`
+
+* How do you normalize line endings?
+On Windows clients:
+`git config --global core.autocrlf true`
+Converts LF to CRLF at checkout.
+
+On Unix clients & on server:
+`git config --global core.autocrlf input`
+Converts CRLF to LF on commit.
+
+* How do you insist Git check SHA-1 consistency on every push?
+On server:
+`git config --system receive.fsckObjects true`
+
