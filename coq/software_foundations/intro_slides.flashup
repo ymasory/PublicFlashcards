@@ -12,12 +12,12 @@ Finding ways to describe program behaviors that are both precise and abstract.
 * Why study software foundations?
 - To prove specific properties of a particular program.
 - To develop intuitions for ``informal`` reasoning about programs.
-- To prove general facts about all the programs of a given language (e.g., "Java is secure").
+- To prove general facts about all the programs of a given language (``e.g.``, "Java is secure").
 - To deeply understand language features for the betterment of future languages.
 
 * Name some approaches to studying program meaning.
 - Denotational semantics and domain theory.
-- Program logics (e.g., Hoare logic, dependent type theories).
+- Program logics (``e.g.``, Hoare logic, dependent type theories).
 - Operational semantics.
 - Process calculi.
 - Type systems.
