@@ -1,0 +1,5 @@
+#GRAMMAR 1
+#TOPLEFT Coq
+
+* How can you run an interactive Coq session after loading a file?
+`coqtop -l SomeFile.v`

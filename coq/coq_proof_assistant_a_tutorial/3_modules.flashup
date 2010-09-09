@@ -1,0 +1,32 @@
+#GRAMMAR 1
+#TOPLEFT Coq Tutorial
+#TOPRIGHT 3
+
+* How do you import modules from the standard library?
+Use the `Require` command.
+`Require Import Arith.`
+
+* How does the `Require` command work?
+Looks for a compiled `.vo` file with the same name in the libraries Coq knows about. Paths use the same directory structure as the local operating system.
+
+* How can you let Coq know about new library paths?
+`Add LoadPath`.
+
+* What is an absolute module name?
+A sequence of single identifiers separated by dots.
+E.g., `Arith` has full name `Coq.Arith.Arith`.
+
+* Why is loading compiled files quick?
+The corresponding development is not type-checked again.
+
+* What does the `Load` command do?
+Same as `Require Import`, but takes an uncompiled `.v` file instead of a compiled `.vo` file.
+
+* How can dependencies-of-dependencies be automatically resolved?
+If you want a module M required in a module N to be automatically visible when N is required, you should use Require Export M in your module N.
+
+* How can you find the available facts concerning a predicate?
+- `SearchAbout` command looks up all known facts concerning a given predicate.
+- `Search` displays only lemmas that have the searched predicate as the head position in the conclusion.
+- `SearchPattern` allows searching for theorems with a conclusion matching a given pattern, where `_` can be used in place of an arbitrary term.
+
