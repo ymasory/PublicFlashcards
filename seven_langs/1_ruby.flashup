@@ -1,0 +1,43 @@
+#GRAMMAR 1
+#TOPLEFT Seven Languages in Seven Weeks
+#TOPRIGHT Ruby
+#NUMBERS true
+
+* What's the difference between single and double quoted strings?
+Single quoted strings are interpreted literally.
+
+Double quoted strings allows further processing on the string, like the substitution of variables into `${VARIABLE}`.
+
+* How do you print to the screen?
+`puts some_string`
+
+* How do you get the class of an object?
+* How do you get the methods of an object?
+`obj.class`
+`obj.methods`
+
+* What are the two forms of conditionals?
+Block form:
+`
+if condition
+   #statements
+end
+`
+
+One-line form:
+`statement if condition`
+
+* What are `unless` and `until` used for?
+They are more idiomatic Ruby for "if not" and "while not" constructions.
+
+* Explain Ruby's boolean type coercion.
+Every type can be interpreted as a boolean. `nil` and and the literal `false` evaluate to `false`. Everything else evaluates to `true`.
+
+* What's the difference between `&&`/`||` and `&`/`|`?
+`&&`/`||` short-circuit, as in Java. Also, `&&`/`||` have the alternatives `and`/`or`.
+
+* What makes Ruby dynamically typed?
+Type checking isn't done until run-time, when an operation is actually executed.
+
+* How is Ruby's type checking fundamentally different from Java's?
+Ruby is duck-typed, meaning one type can be used as another so long as it has the needed fields and methods to make an operation work. This is to be contrasted with languages like Java where one type can be used as another only if one is a subclass of the other.
