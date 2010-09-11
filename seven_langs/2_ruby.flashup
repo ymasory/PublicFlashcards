@@ -41,3 +41,38 @@ Type checking isn't done until run-time, when an operation is actually executed.
 
 * How is Ruby's type checking fundamentally different from Java's?
 Ruby is duck-typed, meaning one type can be used as another so long as it has the needed fields and methods to make an operation work. This is to be contrasted with languages like Java where one type can be used as another only if one is a subclass of the other.
+
+* What happens if your function doesn't have a ``return`` statement?
+The last value computed is the result of the function.
+
+* Empty parens are always ...
+... optional. Whether in the definition of a function or a call.
+
+* What is Ruby's primary collection?
+* What is its syntax?
+`Arrays`.
+
+They use square brackets for definition and indexing, two dots for slicing.
+`
+nums = ['one', 'two', 'three']
+nums[0]    #'one'
+nums[-1]   #'three'
+`
+
+* How do you slice an `Array`?
+Use `Range` objects like `0..3`.
+`
+someArray[n1..n2]
+`
+
+* What happens if you go out of bounds with an array?
+Ruby returns `nil`, unlike Java or Python.
+
+* How do you test if an `Array` has a given member?
+`
+el.include?(arr)
+`
+
+There is no equivalent to Python's `in`.
+
+* 
