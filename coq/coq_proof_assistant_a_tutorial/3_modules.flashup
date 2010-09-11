@@ -1,6 +1,7 @@
 #GRAMMAR 1
 #TOPLEFT Coq Tutorial
 #TOPRIGHT 3
+#NUMBERS true
 
 * How do you import modules from the standard library?
 Use the `Require` command.
