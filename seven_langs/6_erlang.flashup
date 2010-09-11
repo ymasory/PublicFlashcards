@@ -1,0 +1,38 @@
+#GRAMMAR 1
+#TOPLEFT Seven Languages in Seven Weeks
+#TOPRIGHT Erlang
+#NUMBERS true
+
+* How is ``Erlang`` pronounced?
+AIR-lang
+
+``air`` rhymes with ``fair``.
+``lang`` rhyms with ``sang``.
+
+* Why is Erlang growing in popularity?
+Concurrency - Erlang eliminates buggy threads, but tries to make processes as leightweight as possible.
+
+Reliability - Erlang embraces a nondefensive "let it crash" attitude with regard to errors andl offers zero-downtime hot-swapping of code.
+
+* What does an actor represent in Erlang?
+* Contrast this with Scala.
+- In Scala in actor represents an object. A thread pool backs the running actors, but actors may have to share the same thread.
+- In Erlang an actor represents a lightweight process. Each actor gets its own process.
+
+* How do you make comments?
+* How do you end a statement?
+Inline comments begin with a percent sign.
+
+Statements end with a period.
+
+* Lists are formed with ... and tuples with ...
+* What's the difference between them?
+... square brackets ... curly brackets.
+
+Tuples are fixed-length.
+
+* How are Erlang variables different from variables in imperative languages?
+Erlang variables can only be assigned once.
+
+* What's the difference between Prolog and Erlang pattern matching?
+
