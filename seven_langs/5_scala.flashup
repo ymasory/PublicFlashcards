@@ -1,0 +1,42 @@
+#GRAMMAR 1
+#TOPLEFT Seven Languages in Seven Weeks
+#TOPRIGHT Scala
+#NUMBERS true
+
+* Unlike in Ruby, Scala ranges don't infer ...
+... direction. The step is always positive 1.
+
+* What unexpected type provides `to`?
+`Char`
+
+* Functional languages often use tuples in place of what?
+Classes. Scala idiomatically uses them to replace data-heavy classes.
+
+* How do you get the intersection between two `Sets`?
+`
+scala> Set(1, 3) & Set(3, 4)
+res11: scala.collection.immutable.Set[Int] = Set(3)
+`
+
+* Give the signature of `List`'s `sortWith` function.
+`
+def sort(lessThan: (A, A) => Boolean): List[A]
+`
+
+* What's the difference between `/:` and `foldLeft`?
+The order of arguments:
+
+`
+(1 /: list) {(product, factor) => product * factor}
+`
+
+`
+list.foldLeft(1)((product, factor) => product * factor)
+`
+
+* How does Scala allow XML searching?
+- With an XPath-like language, replacing `/` and `//` with `\` and `\\`.
+- Attributes can be searched for using an `@` in the search string.
+- `"_"` matches every node.
+
+
