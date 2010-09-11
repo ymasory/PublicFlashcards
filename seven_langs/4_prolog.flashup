@@ -1,0 +1,17 @@
+#GRAMMAR 1
+#TOPLEFT Seven Languages in Seven Weeks
+#TOPRIGHT Prolog
+#NUMBERS true
+
+* Why is Prolog a departure from many common languages?
+Prolog is ``declarative``, not ``imperative``. You describe logic, not a flow of control.
+
+* What are the building blocks of Prolog?
+Facts, rules, and queries.
+
+* What does the Prolog compiler do?
+It compiles facts + rules (together called a ``knowledge base``) to support for efficient querying.
+
+* What are the Prolog capitalization rules?
+If a symbol begins with a lowercase character it's an atom - a fixed value.
+If it begins with an uppercase character it's a variable.
