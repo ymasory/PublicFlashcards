@@ -34,5 +34,4 @@ Tuples are fixed-length.
 * How are Erlang variables different from variables in imperative languages?
 Erlang variables can only be assigned once.
 
-* What's the difference between Prolog and Erlang pattern matching?
 
