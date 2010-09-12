@@ -44,6 +44,7 @@ Ruby is duck-typed, meaning one type can be used as another so long as it has th
 
 * What happens if your function doesn't have a ``return`` statement?
 The last value computed is the result of the function.
+This is also true of other kinds of blocks, not just the bodies of functions.
 
 * Empty parens are always ...
 ... optional. Whether in the definition of a function or a call.
