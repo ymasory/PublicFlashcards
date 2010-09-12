@@ -88,3 +88,13 @@ An idntifier that follows a colon. They are interned, guaranteeing that two uses
 * How can you find an object's unique identifier?
 `obj.object_id`
 
+* What are Ruby's key strengths?
+- Concise, elegant syntax.
+- Flexible polymorphism from duck typing.
+- Consistent object-orientation.
+- Short time to market.
+
+* What are Ruby's key weaknesses?
+- Poor performance.
+- Weak concurrency due to mutable state and the global interpreter lock.
+- Dynamic & duck typing reduces safety and rules out many useful development tools.
