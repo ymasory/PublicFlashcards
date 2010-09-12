@@ -94,6 +94,10 @@ An idntifier that follows a colon. They are interned, guaranteeing that two uses
 - Consistent object-orientation.
 - Short time to market.
 
+* What are two common uses of Ruby?
+- Scripting, especially to glue programs together.
+- Web development with Ruby on Rails.
+
 * What are Ruby's key weaknesses?
 - Poor performance.
 - Weak concurrency due to mutable state and the global interpreter lock.
