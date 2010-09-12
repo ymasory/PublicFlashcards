@@ -75,4 +75,15 @@ el.include?(arr)
 
 There is no equivalent to Python's `in`.
 
-* 
+* What is the syntax of hashes?
+`
+captitals = {'France' => 'Paris', 'USA' => 'Washington D.C.'}
+capitals['France'] #'Paris'
+`
+
+* What is a symbol?
+An idntifier that follows a colon. They are interned, guaranteeing that two uses of the symbol `:symb` actually refer to the same object in memory.
+
+* How can you find an object's unique identifier?
+`obj.object_id`
+
