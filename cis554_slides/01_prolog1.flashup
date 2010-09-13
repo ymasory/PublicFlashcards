@@ -38,6 +38,9 @@ A collection of predicates, in any order.
 * How can you include special characters and spaces in an atom, or begin it with a capital letter?
 Use single quotes, which does ```not``` make a string.
 
+* What are double quotes for?
+They indicate a list of ASCII values.
+
 * How can you include escape characters in a quoted atom?
 Use double quotes or an escaped single quote to use a single quote.
 Other escapes use backslash as in other languages.
@@ -104,8 +107,8 @@ The same order in which they were defined.
 - Predicates with multiple clauses that have "tests" in them.
 - Recursion.
 
-* What's the closest you can get to a function in Prolog?
-A fail loop.
+* How can you get around the lack of functions with no return values?
+Use a fail loop.
 
 `
 my_func(X) :-
@@ -117,6 +120,17 @@ my_func(_)
 `
 
 It's generally bad style to do this.
+
+* How can you get around the lack of functions with return values?
+A parameter (conventionally the final one) of a parameter list can be used for output.
+
+`
+?- assert((first([Head | Tail], X) :- X = Head)).
+true.
+
+?- first([1,2,3], X).
+X = 1.
+`
 
 * How can you work around the lack of assignable state?
 You can store state in the database as facts.
@@ -130,4 +144,62 @@ bump_count :-
 
 It's generally bad style to do this.
 
-* 
+* What is the `=..`?
+The "univ" operator. It converts between structures and lists.
+
+`
+loves(chuck, X) =.. [loves, chuck, X]
+`
+
+* What predicate describes list membership?
+* What predicate describes combining lists?
+`
+?- member(1, [1, 2]).
+true .
+`
+
+`
+?- append([1], [2], [1, 2]).
+true.
+`
+
+* How can you force a predicate to succeed?
+Make the final case a "dummy" with no body that uses anonymous variables for all the parameters.
+
+* What should you do if you don't care if a call succeeds and don't want failure to cause backtracking?
+`
+wrapper :-
+    potentially_failing_call.
+
+wrapper.
+`
+
+Now any call to wrapper will succeed.
+
+* What are `asserta` and `assertz` for?
+They are like `assert`, but `asserta` guarantees the added clause will come before any clauses with the same functor. Likewise `assertz` guarantees the added clause will be the last case in its predicate.
+
+* What does `abolish` do?
+It removes ``all` clauses of the predicate with the given functor and arity.
+
+`
+abolish(somePred, arity).
+`
+
+* What's the catch with arithmetic in Prolog?
+`+`, `-`, `*`, `/`, and `mod` have their normal meanings, but ``only when evaluated``.
+They may not be evaluated when  you want, leading to strange outcomes like:
+`
+?- 2 + 2 = 4.
+false.
+`
+
+* What is the difference between static and dynamic clauses in SWI Prolog?
+Static clauses are the default and cannot be later modified using `assert`/`retract`.
+Marking clauses dynamic (before they are defined) allows you to change the definition during program execution.
+
+`
+:- dynamic somePredArityTwo/2, somePredArityOne/1.
+`
+
+To actually force arithmetic to be performed you can use `is` or comparison operators like `=:=`, `=/=`, `>`, `>=`, `<`, `<=`.
