@@ -10,7 +10,7 @@ Prolog is ``declarative``, not ``imperative``. You describe logic, not a flow of
 Facts, rules, and queries.
 
 * What does the Prolog compiler do?
-It compiles facts + rules (together called a ``knowledge base``) to support for efficient querying.
+It compiles facts + rules (together called a ``knowledge base``) to support efficient querying.
 
 * What are the Prolog capitalization rules?
 If a symbol begins with a lowercase character it's an atom - a fixed value.
@@ -31,7 +31,8 @@ If it begins with an uppercase character it's a variable.
 `no` means "no I can't prove that" or "no I don't know that to be true".
 
 * How can you make a rule with two variables guaranteed to be distinct?
-Use the `\+` predicate, `.e.g,`
+Use the `\+` predicate, ``.e.g,``
+
 `
 somePred(X, Y) :- \+ (X = Y), someOtherPred(X, Y)
 ` 
@@ -47,7 +48,7 @@ somePred(X, Y) :- \+ (X = Y), someOtherPred(X, Y)
 * How is a rule with multiple subgoals satisfied?
 Only one of the clauses must be satisfied.
 
-Every clause must be satisfied.
+Every subgoal must be satisfied.
 
 * How can you get tail-call optimizations in Prolog?
 Make your recursive subgoal the last subgoal in a rule.
@@ -60,7 +61,7 @@ Head = one,
 Tail = [two, three, four].
 `
 
-* What kind or problem is ideal for Prolog?
+* What kind of problem is ideal for Prolog?
 One which has constraints that are easily expressed but difficult to satisfy. Since Prolog figures out the satisfying bindings, Prolog is doing the hard part for you.
 
 * What are some areas where Prolog is still used?
@@ -71,4 +72,4 @@ One which has constraints that are easily expressed but difficult to satisfy. Si
 
 * What are Prolog's weaknesses?
 - It's not a general purpose language.
-- It may not scale due to inefficient DFS approach to unification, and heavy use of recursion.
+- It may not scale due to inefficient DFS approach to unification and heavy use of recursion.
