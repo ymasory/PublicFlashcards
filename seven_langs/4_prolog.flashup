@@ -58,3 +58,13 @@ Make your recursive subgoal the last subgoal in a rule.
 Head = one,
 Tail = [two, three, four].
 `
+
+* What are some areas where Prolog is still used?
+- Games
+- Semantic web
+- AI and NLP
+- Scheduling
+
+* What are Prolog's weaknesses?
+- It's not a general purpose language.
+- It may not scale due to inefficient DFS approach to unification, and heavy use of recursion.
