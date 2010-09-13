@@ -35,7 +35,7 @@ This is similar to the collection of overloaded versions of a function in an imp
 * What is a program?
 A collection of predicates, in any order.
 
-* How can you include special characters in an atom, or begin it with a capital letter?
+* How can you include special characters and spaces in an atom, or begin it with a capital letter?
 Use single quotes, which does ```not``` make a string.
 
 * How can you include escape characters in a quoted atom?
@@ -53,4 +53,38 @@ fail <-- |   | <-- redo
 `exit` ports connect to `call` ports.
 `fail` ports connect to `redo` ports.
 
+* Prolog's logic is ``nonmonotonic``. What does that mean?
+Facts can be added at any time using the `assert` predicate.
+Facts can be removed at any time using the `retract` predicate.
+Such rules are ``dynamic``.
 
+* Why might you need to double the parens of functor?
+To force a rule to be interpreted as a single argument, since rules contain commas.
+
+`
+assert((loves(chuck, X) :- female(X), rich(X))).
+`
+
+* What are the limitations of backtracking.
+- Output can't be undone.
+- `assert` and `retract` can't be undone either.
+
+* How do you write to stdout?
+`write` predicate outputs its single argument to stdout.
+`nl` writes a newline.
+
+* How can you view the available facts and rules?
+* How can you view the available structures for a predicate?
+`listing(predicate)`
+
+`listing`
+
+* What does a single underscore (`_`) do?
+It's an anonymous variable and can represent any term.
+
+* What's the difference between cut (`!`) and `fail`?
+`fail` doesn't force other the entire predicate to fail. Backtracking will still be tried.
+
+Using a cut creates a commit point, preventing backtracking past the commit point and preventing attempts on other clauses..
+
+*
