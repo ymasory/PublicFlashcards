@@ -83,8 +83,9 @@ assert((loves(chuck, X) :- female(X), rich(X))).
 It's an anonymous variable and can represent any term.
 
 * What's the difference between cut (`!`) and `fail`?
-`fail` doesn't force other the entire predicate to fail. Backtracking will still be tried.
+`fail` doesn't force other the entire predicate to fail. Other clauses will be tried.
 
-Using a cut creates a commit point, preventing backtracking past the commit point and preventing attempts on other clauses..
+Using a cut creates a commit point, preventing backtracking past the commit point and preventing attempts on other clauses.
 
-*
+* What happens if you combine cut and fail?
+The predicate as a whole fails.
