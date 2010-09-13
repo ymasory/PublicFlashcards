@@ -38,5 +38,7 @@ somePred(X, Y) :- \+ (X = Y), someOtherPred(X, Y)
 
 * How can you query a knowledge base?
 - Type a fact and see if Prolog can prove it.
-- Type a fact with a variable (conventionally named `What`) to see if Prolog can find bindings that satisfy the fact. Use semicolons (`;`) to ask for more bindings.
+- Type a fact with a variable (conventionally named `What`) to see if Prolog can find bindings that satisfy the fact. Use semicolons (`;`) to ask for another binding, or `a` to get all of them.
 
+* How is `=` different in Prolog compared to other languages?
+`=` is ```not``` assignment, it is ``unification``, the attempt to make both sides logically the same.
