@@ -52,12 +52,16 @@ Every clause must be satisfied.
 * How can you get tail-call optimizations in Prolog?
 Make your recursive subgoal the last subgoal in a rule.
 
+
 * How can you unpack a list?
 `
 ?- [one, two, three, four]= [Head | Tail].
 Head = one,
 Tail = [two, three, four].
 `
+
+* What kind or problem is ideal for Prolog?
+One which has constraints that are easily expressed but difficult to satisfy. Since Prolog figures out the satisfying bindings, Prolog is doing the hard part for you.
 
 * What are some areas where Prolog is still used?
 - Games
