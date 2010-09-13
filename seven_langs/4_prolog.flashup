@@ -35,7 +35,7 @@ Use the `\+` predicate, ``.e.g,``
 
 `
 somePred(X, Y) :- \+ (X = Y), someOtherPred(X, Y)
-` 
+`
 
 * How can you query a knowledge base?
 - Type a fact and see if Prolog can prove it.
