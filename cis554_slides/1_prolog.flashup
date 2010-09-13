@@ -30,7 +30,6 @@ A structure followed by a turnstile and a list of structures separated by commas
 
 * What is a predicate?
 A ```collection``` of clauses with the same ``functor`` (name) and arity.
-This is similar to the collection of overloaded versions of a function in an imperative language.
 
 * What is a program?
 A collection of predicates, in any order.
@@ -58,10 +57,12 @@ fail <-- |   | <-- redo
 
 * Prolog's logic is ``non-monotonic``. What does that mean?
 Facts can be added at any time using the `assert` predicate.
+
 Facts can be removed at any time using the `retract` predicate.
+
 Such rules are ``dynamic``.
 
-* Why might you need to double the parens of functor?
+* Why might you need to double the parens of a structure?
 To force a rule to be interpreted as a single argument, since rules contain commas.
 
 `
@@ -77,13 +78,13 @@ assert((loves(chuck, X) :- female(X), rich(X))).
 `nl` writes a newline.
 
 * How can you view the available facts and rules?
-* How can you view the available structures for a predicate?
+* How can you view the available structures of a predicate?
 `listing(predicate)`
 
 `listing`
 
 * What does a single underscore (`_`) do?
-It's an anonymous variable and can represent any term.
+It's an anonymous variable. It can unify with anything.
 
 * What's the difference between cut (`!`) and `fail`?
 `fail` doesn't force other the entire predicate to fail. Other clauses will be tried.
@@ -95,6 +96,8 @@ The predicate as a whole fails.
 
 * Why might you start a variable with an underscore?
 To tell Prolog you are only going to use it once, but don't wish to use the anonymous variable.
+
+You can still use it again if you really want.
 
 * What is the scope of a variable?
 For onymous variables, the single clause in which it appears.
@@ -144,7 +147,7 @@ bump_count :-
 
 It's generally bad style to do this.
 
-* What is the `=..`?
+* What is the `=..` operator?
 The "univ" operator. It converts between structures and lists.
 
 `
@@ -180,7 +183,7 @@ Now any call to wrapper will succeed.
 They are like `assert`, but `asserta` guarantees the added clause will come before any clauses with the same functor. Likewise `assertz` guarantees the added clause will be the last case in its predicate.
 
 * What does `abolish` do?
-It removes ``all` clauses of the predicate with the given functor and arity.
+It removes ``all`` clauses of the predicate with the given functor and arity.
 
 `
 abolish(somePred, arity).
@@ -188,6 +191,7 @@ abolish(somePred, arity).
 
 * What's the catch with arithmetic in Prolog?
 `+`, `-`, `*`, `/`, and `mod` have their normal meanings, but ``only when evaluated``.
+
 They may not be evaluated when  you want, leading to strange outcomes like:
 `
 ?- 2 + 2 = 4.
@@ -196,7 +200,7 @@ false.
 
 * What is the difference between static and dynamic clauses in SWI Prolog?
 Static clauses are the default and cannot be later modified using `assert`/`retract`.
-Marking clauses dynamic (before they are defined) allows you to change the definition during program execution.
+Marking clauses `dynamic` (before they are defined) allows you to change the definition during program execution.
 
 `
 :- dynamic somePredArityTwo/2, somePredArityOne/1.
