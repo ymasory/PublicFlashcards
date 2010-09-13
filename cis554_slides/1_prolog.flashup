@@ -207,3 +207,6 @@ Marking clauses `dynamic` (before they are defined) allows you to change the def
 `
 
 To actually force arithmetic to be performed you can use `is` or comparison operators like `=:=`, `=/=`, `>`, `>=`, `<`, `<=`.
+
+* What does `var/1` do?
+`var(X)` succeeds only if `X` is instantiated to an atom.
