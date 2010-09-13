@@ -89,3 +89,45 @@ Using a cut creates a commit point, preventing backtracking past the commit poin
 
 * What happens if you combine cut and fail?
 The predicate as a whole fails.
+
+* Why might you start a variable with an underscore?
+To tell Prolog you are only going to use it once, but don't wish to use the anonymous variable.
+
+* What is the scope of a variable?
+For onymous variables, the single clause in which it appears.
+
+* What order are clauses of a predicate tried in?
+The same order in which they were defined.
+
+* What can you use in place of `if`?
+* What can you use in place of loops?
+- Predicates with multiple clauses that have "tests" in them.
+- Recursion.
+
+* What's the closest you can get to a function in Prolog?
+A fail loop.
+
+`
+my_func(X) :-
+    Some(),
+    Imperative(),
+    Calls(),
+    fail.
+my_func(_)
+`
+
+It's generally bad style to do this.
+
+* How can you work around the lack of assignable state?
+You can store state in the database as facts.
+
+`
+bump_count :-
+    retract(count(X)),
+    Y is X + 1,
+    assert(count(Y)).
+`
+
+It's generally bad style to do this.
+
+* 
