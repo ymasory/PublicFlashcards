@@ -50,7 +50,7 @@ fail <-- |   | <-- redo
          -----
 `
 
-Exit ports connect to call ports.
-Fail ports connect to redo ports.
+`exit` ports connect to `call` ports.
+`fail` ports connect to `redo` ports.
 
 
