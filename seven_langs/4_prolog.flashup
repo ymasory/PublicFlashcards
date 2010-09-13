@@ -15,3 +15,28 @@ It compiles facts + rules (together called a ``knowledge base``) to support for 
 * What are the Prolog capitalization rules?
 If a symbol begins with a lowercase character it's an atom - a fixed value.
 If it begins with an uppercase character it's a variable.
+
+* How do you load a Prolog file?
+`
+['relative/path/file.pl']
+`
+``or``
+`
+['/absolute/path/to/file.pl']
+`
+
+* What do the Prolog replies `yes` and `no` mean?
+`yes` means "yes I can prove that" or "yes I know that to be true".
+
+`no` means "no I can't prove that" or "no I don't know that to be true".
+
+* How can you make a rule with two variables guaranteed to be distinct?
+Use the `\+` predicate, `.e.g,`
+`
+somePred(X, Y) :- \+ (X = Y), someOtherPred(X, Y)
+` 
+
+* How can you query a knowledge base?
+- Type a fact and see if Prolog can prove it.
+- Type a fact with a variable (conventionally named `What`) to see if Prolog can find bindings that satisfy the fact. Use semicolons (`;`) to ask for more bindings.
+
