@@ -34,3 +34,23 @@ This is similar to the collection of overloaded versions of a function in an imp
 
 * What is a program?
 A collection of predicates, in any order.
+
+* How can you include special characters in an atom, or begin it with a capital letter?
+Use single quotes, which does ```not``` make a string.
+
+* How can you include escape characters in a quoted atom?
+Use double quotes or an escaped single quote to use a single quote.
+Other escapes use backslash as in other languages.
+
+* What are the four ports of a structure?
+`
+         -----
+call --> |   | --> exit
+fail <-- |   | <-- redo
+         -----
+`
+
+Exit ports connect to call ports.
+Fail ports connect to redo ports.
+
+
