@@ -1,0 +1,36 @@
+#GRAMMAR 1
+#TOPLEFT CIS 554
+#TOPRIGHT Prolog
+#NUMBERS true
+
+* What is backwards reasoning?
+* Why does Prolog use it?
+Backwards reasoning is from (potential) conclusions to facts instead of from facts to conclusions.
+Prolog uses it because the space of possible conclusions grows too quickly in the number of premises.
+
+* How can you load a Prolog database for interactive use?
+You can use the `consult` and `reconsult` predicates, or use bracket notation.
+Bracket notation allows re-consultation of several files at once:
+
+`
+['file1.pl', file2.pl']
+`
+
+* What is the closed world assumption?
+A Prolog database knows everything it needs to know.
+
+* What is a structure?
+A name followed by zero or more arguments. Parens are omitted if there are no arguments.
+
+* What is a base clause?
+A structure terminated by a period. It represents a simple fact.
+
+* What is a nonbase clause?
+A structure followed by a turnstile and a list of structures separated by commas. It represents a rule.
+
+* What is a predicate?
+A ```collection``` of clauses with the same ``functor`` (name) and arity.
+This is similar to the collection of overloaded versions of a function in an imperative language.
+
+* What is a program?
+A collection of predicates, in any order.
