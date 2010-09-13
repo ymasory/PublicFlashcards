@@ -42,3 +42,19 @@ somePred(X, Y) :- \+ (X = Y), someOtherPred(X, Y)
 
 * How is `=` different in Prolog compared to other languages?
 `=` is ```not``` assignment, it is ``unification``, the attempt to make both sides logically the same.
+
+* How is a rule with multiple clauses satisfied?
+* How is a rule with multiple subgoals satisfied?
+Only one of the clauses must be satisfied.
+
+Every clause must be satisfied.
+
+* How can you get tail-call optimizations in Prolog?
+Make your recursive subgoal the last subgoal in a rule.
+
+* How can you unpack a list?
+`
+?- [one, two, three, four]= [Head | Tail].
+Head = one,
+Tail = [two, three, four].
+`
