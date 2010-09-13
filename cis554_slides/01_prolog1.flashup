@@ -53,7 +53,7 @@ fail <-- |   | <-- redo
 `exit` ports connect to `call` ports.
 `fail` ports connect to `redo` ports.
 
-* Prolog's logic is ``nonmonotonic``. What does that mean?
+* Prolog's logic is ``non-monotonic``. What does that mean?
 Facts can be added at any time using the `assert` predicate.
 Facts can be removed at any time using the `retract` predicate.
 Such rules are ``dynamic``.
