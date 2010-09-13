@@ -144,7 +144,7 @@ bump_count :-
 
 It's generally bad style to do this.
 
-* What is the `=..`?
+* What is the `=..` operator?
 The "univ" operator. It converts between structures and lists.
 
 `
