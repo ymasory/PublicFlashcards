@@ -23,3 +23,14 @@ compare 3 2
 
 * What's a composite data type?
 A type constructed from other types, like lists and tuples.
+
+* What is a type variable in Haskell?
+A variable that ranges over types instead of values.
+
+* What are the capitalization rules for variables in Haskell?
+Type variables must start with a lowercase letter, and type names with an upeercase letter.
+
+* Describe "unit" and 1-tuples in Haskell.
+Both the type name and it's sole value are written `()`.
+
+There are no 1-tuples.
