@@ -20,3 +20,6 @@ The function name, a space, and then the arguments separated by spaces too.
 `
 compare 3 2
 `
+
+* What's a composite data type?
+A type constructed from other types, like lists and tuples.
