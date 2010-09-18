@@ -10,3 +10,13 @@
 
 * Why is `Float` discouraged?
 Haskell compilers writers focus their effort on making `Double` efficient.
+
+* What's a type signature?
+The combination of `::` and the type after it.
+
+* What is Haskell's syntax for function calls?
+The function name, a space, and then the arguments separated by spaces too.
+
+`
+compare 3 2
+`
