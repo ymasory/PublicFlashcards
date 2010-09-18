@@ -67,3 +67,16 @@ Tyep type of the function's result will begin with `IO`:
 ghci> :type readFile
 readFile :: FilePath -> IO String
 `
+
+* How is Haskell's `if` different from the one in C-like languages?
+- `if` expressions result in a value.
+- The parens around the condition are inferred.
+- There's a `then` keyword to indicate the first branch.
+
+* How is indentation significant in Haskell?
+It indicates that a line ``continues`` an indentation instead of starting a new one.
+
+* What is `null`?
+A function that indicates whether a list is empty.
+
+
