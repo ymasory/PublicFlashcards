@@ -24,13 +24,71 @@ The abbreviation `:m` also works.
 Use parens to get desired association:
 
 `
-ghci>(+) 3 5
+ghci> (+) 3 5
 8
-ghci>(^) 3 5
+ghci> (^) 3 5
 243
 `
 
 * What's Haskell's quirk with negative numbers?
 You nearly always need to surround the negative number with parens to get the desired association.
 
+* Describe Booleans in Haskell.
+- The Boolean literals are `True` and `False`. Their type is `Bool`.
+- Numbers and other types are not coerced into Boolean interpretations.
 
+* Describe negation in Haskell.
+- Haskell uses `/=` for "not equal", instead of `!=`.
+- Haskell uses `not` for "not", instead of `!`.
+
+
+* How can you get information about a command in `ghci`?
+`:info funcname`
+
+* How can you create a temporary variable in `ghci`?
+Use `let`.
+
+`
+let meaningOfLife = 42
+`
+
+* How do you raise a power?
+`^` for integer exponents.
+
+`**` for floating point exponents.
+
+* Describe lists in Haskell.
+They are homogeneous and use the common bracket notation. Final commas are not allowed.
+
+* What is enumeration notation?
+`
+ghci> [1..5]
+[1,2,3,4,5]
+ghci> ['a'..'j']
+"abcdefghij"
+`
+
+* How do you print to `stdout`?
+`putStr` and `putStrln`.
+
+* What is a string, really?
+A list of characters.
+
+`
+ghci> let lst = ['h', 'i']
+ghci> lst
+"hi"
+ghci> "" == []
+True
+ghci>
+`
+
+* How do you concatenate and build strings?
+Using list operations.
+
+`
+ghci> 'a':"bc"
+"abc"
+ghci> "foo" ++ "bar"
+"foobar"
+`
