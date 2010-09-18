@@ -8,4 +8,14 @@
 - `ghci`, an interactive interpreter and debugger.
 - `runghc`, a program for running Haskell programs as scripts without compilation.
 
-*
+* What is `ghci`'s default prompt?
+* How can you change it?
+`ghci` starts with `Prelude>`, being the standard pre-loaded library, and grows longer with each new loaded module or file.
+
+The prompt can be changed with `:set prompt NEWPROMPT`.
+
+* How do you add/remove modules in `ghci`?
+Add: `:module + NewModule`
+Remove: `module - NewModule`
+
+
