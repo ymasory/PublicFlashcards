@@ -1,0 +1,11 @@
+#GRAMMAR 1
+#TOPLEFT Real World Haskell
+#TOPRIGHT 1
+#NUMBERS true
+
+* What are the components of the Glasgow Haskell Compiler system?
+- `ghc`, an optimized compiler for generating native code.
+- `ghci`, an interactive interpreter and debugger.
+- `runghc`, a program for running Haskell programs as scripts without compilation.
+
+*
