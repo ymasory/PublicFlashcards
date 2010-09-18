@@ -8,6 +8,10 @@
 - `ghci`, an interactive interpreter and debugger.
 - `runghc`, a program for running Haskell programs as scripts without compilation.
 
+
+* How can you view the available `ghci` commands?
+`:?`
+
 * What is `ghci`'s default prompt?
 * How can you change it?
 `ghci` starts with `Prelude>`, being the standard pre-loaded library, and grows longer with each new loaded module or file.
@@ -72,7 +76,7 @@ ghci> ['a'..'j']
 `putStr` and `putStrln`.
 
 * What is a string, really?
-A list of characters.
+A list of characters. `[Char]` and `String` are synonyms.
 
 `
 ghci> let lst = ['h', 'i']
@@ -92,3 +96,31 @@ ghci> 'a':"bc"
 ghci> "foo" ++ "bar"
 "foobar"
 `
+
+* How can you get `ghci` to print the types of the expressions it evaluates?
+* How do you tell it to stop?
+`:set +t`
+
+`:unset +t`
+
+* What is `it`?
+A special variable where `ghci` stores the last expression it returned.
+
+* How are Haskell integers different from those in C-like languages?
+The size of an `Integer` is bounded only by the computer's memory.
+
+* How can you construct rational numbers?
+Use the `%` operator.
+
+`
+ghci> 11 % 29
+11%29
+it :: Ratio Integer
+`
+
+* How can you find the type of an expression?
+`:type expr`
+
+* What is Haskell's comment syntax?
+Lines beginning with `--` are comments.
+
