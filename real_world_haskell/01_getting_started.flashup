@@ -18,4 +18,19 @@ The prompt can be changed with `:set prompt NEWPROMPT`.
 Add: `:module + NewModule`
 Remove: `module - NewModule`
 
+The abbreviation `:m` also works.
+
+* How can arithmetic operators be used in prefix form?
+Use parens to get desired association:
+
+`
+ghci>(+) 3 5
+8
+ghci>(^) 3 5
+243
+`
+
+* What's Haskell's quirk with negative numbers?
+You nearly always need to surround the negative number with parens to get the desired association.
+
 
