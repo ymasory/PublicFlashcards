@@ -1,0 +1,12 @@
+#GRAMMAR 1
+#TOPLEFT Real World Haskell
+#TOPRIGHT 2
+#NUMBERS true
+
+* What's the difference between `Int` and `Integer`?
+`Int` is fixed width, its exact size depending on the hardware. It silently overflows.
+
+`Integer` is arbitrary sized.
+
+* Why is `Float` discouraged?
+Haskell compilers writers focus their effort on making `Double` efficient.

@@ -110,9 +110,6 @@ ghci> "foo" ++ "bar"
 * What is `it`?
 A special variable where `ghci` stores the last expression it returned.
 
-* How are Haskell integers different from those in C-like languages?
-The size of an `Integer` is bounded only by the computer's memory.
-
 * How can you construct rational numbers?
 Use the `%` operator.
 
