@@ -73,7 +73,7 @@ ghci> ['a'..'j']
 `
 
 * How do you print to `stdout`?
-`putStr` and `putStrln`.
+`putStr` and `putStrLn`.
 
 * What is a string, really?
 A list of characters. `[Char]` and `String` are synonyms.
