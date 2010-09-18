@@ -34,3 +34,36 @@ Type variables must start with a lowercase letter, and type names with an upeerc
 Both the type name and it's sole value are written `()`.
 
 There are no 1-tuples.
+
+* Describe `take` and `drop`.
+Given a number `n` and a list, `take` returns the first `n` elements of the list, while `drop` returns all ``but`` the first `n` elements of the list.
+
+* How do  you access the elments of a pair?
+`fst` and `snd`
+
+* Describes function association.
+It is the tightest association, and runs left to right.
+
+`
+a b c d
+`
+
+is equivalent to
+
+`
+(((a b) c) d)
+`
+
+* How do you split a string into a list of strings?
+`
+ghci> lines "the quick\nbrown fox\njumps"
+["the quick","brown fox","jumps"]
+`
+
+* How can you tell if a function has side effects?
+Tyep type of the function's result will begin with `IO`:
+
+`
+ghci> :type readFile
+readFile :: FilePath -> IO String
+`
