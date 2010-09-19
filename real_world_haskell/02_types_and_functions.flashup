@@ -83,3 +83,6 @@ A function that indicates whether a list is empty.
 - Delayed evaluation: evaluating an expression only when the result is required by a calling function.
 - Short-circuit evluation: evluating an expression only to the extent it is required by the calling function.
 - Applicative-order evaluation: evaluating an expression at most once.
+
+* What's the difference between `putStrLn` and `print`?
+`putStrLn` only takes `String` arguments, `print` takes anything instance of `Show`.
