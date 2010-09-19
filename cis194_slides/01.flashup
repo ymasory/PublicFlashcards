@@ -7,10 +7,10 @@
 Use `:load` (`:l`) or `:reload` (`:r`).
 
 * What is the key restriction of `ghci`?
-It can only evaluate expressions not declaratoins.
+It can only evaluate expressions not declarations.
 
 * How can you use a function in infix style?
-Surround it with backticks.
+Surround it with back ticks.
 
 * How can you convert an integral type into a floating type?
 * And vice-versa?
