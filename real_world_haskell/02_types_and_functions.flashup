@@ -86,3 +86,41 @@ A function that indicates whether a list is empty.
 
 * What's the difference between `putStrLn` and `print`?
 `putStrLn` only takes `String` arguments, `print` takes anything instance of `Show`.
+
+* Compare how short-circuiting `||` is accomplished in Haskell and in Scala.
+In Scala short-circuiting is a result of by-name parameters, a way of achieving the standard Haskell non-strict evaluation. By-name parameters do not adhere to applicative-order evaluation. Haskell doesn't do anything special, expressions always short-circuit.
+
+* Make a list of all natural numbers.
+`[1..]`
+
+* What is the type signature of `last`?
+* How is it read?
+`
+last :: [a] -> a
+` 
+
+"takes a list, all of whose elements have some type `a`, and returns a value of the same type `a`"
+
+* What is a polymorphic function?
+* What kind of polymorphism does it reflect?
+One that has type variables in its signature, indicating that some of its arguments can be of any type.
+
+This is an example of parametric polymorphism.
+
+* What kind of polymorphism is provided by subclass mechanisms?
+* Does Haskell have it?
+Subtype polymorphism. Haskell isn't object-oriented so it doesn't offer this polymorphism.
+
+* What kind of polymorphism is provided by implicit conversion?
+* Does Haskell have it?
+Coercion polymorphism. Haskell avoids it in even the simplest of cases. ``E.g.``, integers are not converted to floating point numbers.
+
+* What is the signature of `take`?
+`
+ghci> :t take
+take :: Int -> [a] -> [a]
+`
+
+`
+Int -> ([a] -> [a])
+`
