@@ -28,7 +28,7 @@ A type constructed from other types, like lists and tuples.
 A variable that ranges over types instead of values.
 
 * What are the capitalization rules for variables in Haskell?
-Type variables must start with a lowercase letter, and type names with an upeercase letter.
+Type variables must start with a lowercase letter, and type names with an uppercase letter.
 
 * Describe "unit" and 1-tuples in Haskell.
 Both the type name and it's sole value are written `()`.
@@ -38,7 +38,7 @@ There are no 1-tuples.
 * Describe `take` and `drop`.
 Given a number `n` and a list, `take` returns the first `n` elements of the list, while `drop` returns all ``but`` the first `n` elements of the list.
 
-* How do  you access the elments of a pair?
+* How do  you access the elements of a pair?
 `fst` and `snd`
 
 * Describes function association.
@@ -61,7 +61,7 @@ ghci> lines "the quick\nbrown fox\njumps"
 `
 
 * How can you tell if a function has side effects?
-Tyep type of the function's result will begin with `IO`:
+Type type of the function's result will begin with `IO`:
 
 `
 ghci> :type readFile
@@ -81,7 +81,7 @@ A function that indicates whether a list is empty.
 
 * What does lazy evaluation entail?
 - Delayed evaluation: evaluating an expression only when the result is required by a calling function.
-- Short-circuit evluation: evluating an expression only to the extent it is required by the calling function.
+- Short-circuit evaluation: evaluating an expression only to the extent it is required by the calling function.
 - Applicative-order evaluation: evaluating an expression at most once.
 
 * What's the difference between `putStrLn` and `print`?
