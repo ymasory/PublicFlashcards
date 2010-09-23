@@ -1,0 +1,9 @@
+#GRAMMAR 1
+#TOPLEFT Programming Erlang
+#TOPRIGHT 2
+#NUMBERS true
+
+* How do you exit the `erl` shell?
+Ctrl+G, q, Enter
+
+*
