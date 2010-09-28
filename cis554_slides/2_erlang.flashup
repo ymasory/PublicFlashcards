@@ -3,4 +3,36 @@
 #TOPRIGHT Erlang
 #NUMBERS true
 
+* How can you compile and load a module into the `erl` shell?
+`
+c(module.erl).
+`
+
+Now that module's functions can be accessed with:
+`
+module:func
+`
+
+* What doe Erlang programs begin with?
+`
+-module(filename).
+`
+
+For a program defined in filename.erl.
+
+* How can you use methods in other modules without module qualification?
+`
+-import(filename, [func1/arity1, ..., funcN/arityN]).
+`
+
+* How can you make your module's functions available to other modules?
+`
+-export(filename, [func1/arity1, ..., funcN/arityN]).
+`
+
+or
+
+`
+-compile(export_all).
+`
 
