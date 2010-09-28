@@ -18,7 +18,7 @@ module:func
 -module(filename).
 `
 
-For a program defined in filename.erl.
+... for a program defined in filename.erl.
 
 * How can you use methods in other modules without module qualification?
 `
