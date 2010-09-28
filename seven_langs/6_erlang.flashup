@@ -34,4 +34,18 @@ Tuples are fixed-length.
 * How are Erlang variables different from variables in imperative languages?
 Erlang variables can only be assigned once.
 
+* How are mappings usually expressed in Erlang?
+Using tuples.
+
+`
+> Capital = {capital, {paris, france}}
+> {capital, {What, france}} = Capital.
+> What.
+paris
+`
+
+* Why do "map" tuples often begin with an initial atom to identify the relationship?
+To allow pattern matching to collect all the mappings of a given type.
+
+
 
