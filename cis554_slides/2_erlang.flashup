@@ -36,3 +36,16 @@ or
 -compile(export_all).
 `
 
+* What are the Erlang case rules?
+Similar to Prolog, and Haskell, functions and atoms begin with a lower case, variables begin with a capital letter or an underscore.
+
+* What is an atom?
+* What are its lexical rules?
+An atom is a word that stands for itself.
+It begins with a lowercase letter or is enclosed in single quotes.
+
+* What are Erlang's primitive data types?
+Integers, floats, strings, atoms, lists, tuples, binaries.
+
+* How are lists, tuples, and binaries written?
+Lists are enclosed in square brackets, tuples in curly brackets, and binaries in double angle brackets.
