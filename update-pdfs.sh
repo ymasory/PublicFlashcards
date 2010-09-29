@@ -3,6 +3,8 @@
 #fail on error
 set -e
 
+cd `dirname $0`
+
 echo GIT PULL
 git pull
 echo
@@ -25,4 +27,6 @@ done
 
 echo
 echo GIT PUSH ORIGIN MASTER
+git add .
+git commit -am "PDF UPDATE SCRIPT"
 git push origin master
