@@ -1,6 +1,11 @@
 #!/bin/bash
 
+#fail on error
+set -e
+
+echo GIT PULL
 git pull
+echo
 
 for DIR in *; do
     if [ -f $DIR ]
@@ -17,3 +22,7 @@ for DIR in *; do
     mv *.pdf bin;
     cd ..;
 done
+
+echo
+echo GIT PUSH ORIGIN MASTER
+git push origin master
