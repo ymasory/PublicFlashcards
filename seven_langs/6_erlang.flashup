@@ -50,5 +50,5 @@ To allow pattern matching to collect all the mappings of a given type.
 * What is `=` in Erlang?
 Pattern matching, ```not``` assignment.
 
-* 
+
 
