@@ -26,6 +26,8 @@ for DIR in *; do
 done
 
 echo
+echo GIT STATUS
+git status
 echo GIT PUSH ORIGIN MASTER
 git add .
 git commit -am "PDF UPDATE SCRIPT"
