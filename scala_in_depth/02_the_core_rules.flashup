@@ -14,5 +14,3 @@ Put both the class and its companion inside some wrapper object.
 
 * What sorts of things are inexpressible in the REPL?
 Certain aspects of coding with packages and visibility modifiers.
-
-* 
