@@ -4,4 +4,15 @@
 #NUMBERS true
 
 * What is Experiment Driven Development?
-Getting the hang of APIs to be used using an interactive session with the interpreter, prior to beginning to code.
+* Why is it most useful in statically typed languages?
+Getting the hang of APIs or exploring module integration using an interactive session with the interpreter. This should come prior to writing tests and code.
+
+Writing tests may be premature in a statically typed languages until you have experimented with the type signatures you will use.
+
+* How can one create a companion object in the REPL?
+Put both the class and its companion inside some wrapper object.
+
+* What sorts of things are inexpressible in the REPL?
+Certain aspects of coding with packages and visibility modifiers.
+
+* 
