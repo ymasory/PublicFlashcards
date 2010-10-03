@@ -20,3 +20,6 @@ Certain aspects of coding with packages and visibility modifiers.
 
 * What's a good strategy for interacting with Java code that may return `null`?
 Pass the possibly `null` reference to the `Option` factory method. It will return `None` or `Some` as appropriate, which can be pattern matched against.
+
+* What strategy can be used to minimize unnecessary pattern matching on `Option`?
+Treating `Option` as a collection, using methods like `foreach`, `map`, and `filter`.
