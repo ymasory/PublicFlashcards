@@ -14,3 +14,9 @@ Put both the class and its companion inside some wrapper object.
 
 * What sorts of things are inexpressible in the REPL?
 Certain aspects of coding with packages and visibility modifiers.
+
+* What's a shorthand for `AnyRef.hashCode`?
+`AnyRef.##`
+
+* What's a good strategy for interacting with Java code that may return `null`?
+Pass the possibly `null` reference to the `Option` factory method. It will return `None` or `Some` as appropriate, which can be pattern matched against.
