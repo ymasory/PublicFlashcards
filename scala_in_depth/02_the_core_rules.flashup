@@ -2,3 +2,6 @@
 #TOPRIGHT 2
 #TOPLEFT Scala in Depth
 #NUMBERS true
+
+* What is Experiment Driven Development?
+Getting the hang of APIs to be used using an interactive session with the interpreter, prior to beginning to code.
