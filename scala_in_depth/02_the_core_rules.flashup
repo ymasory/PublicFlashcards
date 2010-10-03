@@ -22,4 +22,7 @@ Certain aspects of coding with packages and visibility modifiers.
 Pass the possibly `null` reference to the `Option` factory method. It will return `None` or `Some` as appropriate, which can be pattern matched against.
 
 * What strategy can be used to minimize unnecessary pattern matching on `Option`?
-Treating `Option` as a collection, using methods like `foreach`, `map`, and `filter`.
+Treating `Option` as a collection, using `for` expressions and methods like `foreach`, `map`, and `filter`.
+
+* What is the `scala.Equals` trait for?
+Enforcing the existence of the `canEquals` method correct implementations of `equals` in polymorphic classes require.
