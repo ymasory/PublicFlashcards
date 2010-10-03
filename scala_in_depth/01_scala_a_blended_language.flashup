@@ -1,0 +1,10 @@
+#GRAMMAR 1
+#TOPRIGHT 1
+#TOPLEFT Scala in Depth
+#NUMBERS true
+
+* Name four optimizations HotSpot can perform.
+- Method inlining: moving the code directly to where the call occurs.
+- On-stack replacement: deciding whether to put on object on the stack or the heap.
+- Escape analysis: determining if references are ever accessed outside a given scope, in order to minimize the need for locking.
+- Dynamic de-optimization: reverting optimizations that are shown to be disadvantageous at run-time.
