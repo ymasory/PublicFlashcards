@@ -160,3 +160,20 @@ Line = io:get_line(Prompt).
 io:format(FormatString, ListOfData).
 `
 
+* How do you write to a file?
+`
+{ok, Stream} = file:open(FileName, write),
+io:format(S, FormatString, ListOfData),
+file:close(S).
+`
+
+* What are the reserved sequences in format strings?
+`~s` a string
+`~w` a value in its standard syntax (e.g., strings as lists of integers)
+`~p` a value, pretty printed (e.g., strings with quotes around them)
+`~n` or `\n` newline
+
+* What is the comment syntax?
+`%` causes the rest of the line to be discarded.
+
+
