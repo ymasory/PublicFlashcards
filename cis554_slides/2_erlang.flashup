@@ -218,3 +218,52 @@ result in
 
 * What does `partition` do?
 It creates a tuple of two lists. The first list holds the elements of the input list for which the predicate held, and the second holds the elements for which the predicate failed.
+
+* How can  you run code in a new process?
+`
+Pid = spawn(Function)
+`
+
+* How can you generate a "return address" to send with your message?
+`self()` results in the Pid of the executing process.
+
+* Give the syntax of `receive`.
+`
+receive
+    Pattern1 [when Guard1] -> Expression_sequence1;
+    ...
+    PatternN [when GuardN] -> Expression_sequenceN
+after Timeout ->
+    TimeoutExpressionSequence    
+end
+`
+
+* How is Erlang's `loop()` different from Scala's?
+`loop` in Scala is a control structure in the actors library that does the looping for you.
+In Erlang `loop` is just the name of a function you're calling so you must make the recursive call at the end of each `receive` case.
+
+* What's an idiomatic way to set up an Erlang remote procedure call server?
+Provide a function that takes as an argument the Pid of the instance of the module to send the message to.
+Send the message there, wait for a response, and then reply.
+
+Ultimately a user may start several processes, but after that point will interact with the blocking rpc function.
+
+* Describe Pid registration.
+Registering a Pid makes it globally available.
+
+`register(AnAtom, Pid)` gives `Pid` a name
+`unregister(AnAtom)`
+`
+registered() -> [AnAtom :: atom()]
+`
+returns a list of all registered processes
+`
+whereis(AnAtom) -> Pid | undefined
+`
+gets Pid of a registered process, or undefined if no such process
+
+* Why isn't `try`/`catch` much used in Erlang?
+Crashed processes are normally handled through linking, not in `catch` sequences.
+
+* What is a common strategy for making functions tail recursive?
+Create a helper function with an additional argument - an accumulator.
