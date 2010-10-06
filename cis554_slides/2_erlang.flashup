@@ -146,6 +146,7 @@ Generators are of the form `El <- List`.
 * Create a range of integers.
 `
 lists:seq(From, To)
+lists:seq(From, To, Step)
 `
 
 Note: `To` is inclusive, unlike in Scala/Python/etc
@@ -193,4 +194,27 @@ E.g.,
 get_red() -> filter(fun is_red/1, fruit()).
 `
 
-*
+* What are strings, really?
+Lists of ASCII integer values.
+
+* What do `lists:all` and `lists:any` do?
+The same as Scala's `forall` and `exists`.
+
+* How is Erlang's `zip` more restrictive than other languages'?
+The two lists must be of the same length.
+
+* Append two lists.
+`lists:append([1, 2], [3, 4])`
+or
+`[1, 2] ++ [3, 4]`
+result in
+
+`[1, 2, 3, 4]`
+
+* What do `takewhile` and `dropwhile` do?
+`takewhile` scans through a list until the predicate fails for the first time, at which point it discards the failed element and everything after.
+
+`dropwhile` scans through the list, discarding everything until the predicate holds for the first time.
+
+* What does `partition` do?
+It creates a tuple of two lists. The first list holds the elements of the input list for which the predicate held, and the second holds the elements for which the predicate failed.
