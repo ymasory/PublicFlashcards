@@ -72,9 +72,9 @@ Pattern matching, not assignment. "Assignment" is just a simple case of pattern 
 * What is the syntax of `case` expressions?
 `
 case Expression of
-    Pattern1 when Guard1 -> Expression_sequence1;
+    Pattern1 [when Guard1] -> Expression_sequence1;
     ...
-    PatternN when GuardN -> Expression_sequenceN
+    PatternN [when GuardN] -> Expression_sequenceN
 `
 
 * What is an expression sequence?
