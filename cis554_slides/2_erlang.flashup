@@ -262,6 +262,28 @@ whereis(AnAtom) -> Pid | undefined
 `
 gets Pid of a registered process, or undefined if no such process
 
+* What's the difference between `spawn` and `spawn_link`?
+`spawn` creates a processes independent from the current one.
+`spawn_link` creates a new process linked to the current one, such that if the new process exits non-normally, so will the current one.
+
+* How can you introduce/remove links between two running processes?
+`link(Pid)` and `unlink(Pid)`
+
+* How can you terminate the current process?
+* How can you send exit signals ``without actually exiting``?
+`exit(Reason)` exits and sends signals to linked processes.
+
+`exit(Pid, Reason` sends the exit signal to the given process, but doesn't terminate the current process.
+
+* How can you link to a process while reserving the right to handle the partner process's exit however you like?
+`
+process_flag(trap_exit, true)
+spawn_link(Function)
+`
+
+Now exit signals are converted to regular `{'EXIT', From, Reason}` messages.
+However, if the reason is `kill`, exit will still be forced.
+
 * Why isn't `try`/`catch` much used in Erlang?
 Crashed processes are normally handled through linking, not in `catch` sequences.
 
