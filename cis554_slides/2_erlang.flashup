@@ -75,6 +75,7 @@ case Expression of
     Pattern1 [when Guard1] -> Expression_sequence1;
     ...
     PatternN [when GuardN] -> Expression_sequenceN
+end
 `
 
 * What is an expression sequence?
