@@ -134,8 +134,29 @@ They are often used as parameters to other functions.
 `
 
 The expression typically makes use of variables defined by a generator.
+Guards are simply boolean expressions.
+Generators are of the form `El <- List`.
 
 * Give a generator that doubles the members of a list.
 `[X * 2 || X <- [1, 2, 3, 4]]`
 
+* Which list functions do not need to be imported or qualified?
+`hd` (head), `tl` (tail), `length`
+
+* Create a range of integers.
+`
+lists:seq(From, To)
+`
+
+Note: `To` is inclusive, unlike in Scala/Python/etc
+
+* Get a line from stdin.
+* Put a line to stdout.
+`
+Line = io:get_line(Prompt).
+`
+
+`
+io:format(FormatString, ListOfData).
+`
 
