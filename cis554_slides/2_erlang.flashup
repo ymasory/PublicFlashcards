@@ -127,3 +127,15 @@ end
 `
 
 They are often used as parameters to other functions.
+
+* Give the syntax of list comprehensions.
+`
+[Expression || Generator, GuardOrGenerator, ..., GuardOrGenerator]
+`
+
+The expression typically makes use of variables defined by a generator.
+
+* Give a generator that doubles the members of a list.
+`[X * 2 || X <- [1, 2, 3, 4]]`
+
+
