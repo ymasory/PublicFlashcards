@@ -176,4 +176,21 @@ file:close(S).
 * What is the comment syntax?
 `%` causes the rest of the line to be discarded.
 
+* `filter` and `map` take which arguments?
+First the function to apply to the members of the list, and then the list.
 
+* How can you get truncating division?
+`
+0> 2 rem 3.
+2
+`
+
+* How can you use previously defined functions as parameters to other functions?
+Create an anonymous function in-line using the function's full name, ``funcName/arity``.
+E.g.,
+
+`
+get_red() -> filter(fun is_red/1, fruit()).
+`
+
+*
