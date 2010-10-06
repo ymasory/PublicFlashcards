@@ -288,4 +288,4 @@ However, if the reason is `kill`, exit will still be forced.
 Crashed processes are normally handled through linking, not in `catch` sequences.
 
 * What is a common strategy for making functions tail recursive?
-Create a helper function with an additional argument - an accumulator.
+Create a helper function with an additional argument that will serve as an accumulator.
