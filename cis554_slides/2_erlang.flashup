@@ -49,3 +49,81 @@ Integers, floats, strings, atoms, lists, tuples, binaries.
 
 * How are lists, tuples, and binaries written?
 Lists are enclosed in square brackets, tuples in curly brackets, and binaries in double angle brackets.
+
+* What's odd about Erlang's Boolean operators?
+They don't short-circuit by default. For short-circuiting you have `andalso` and `orelse`.
+
+* How are "greater or equal to" and "less than or equal to" expressed?
+`>=` and `=<`.
+```not``` `<=`.
+
+* What are the equality operators?
+* How are they used?
+`==` equal to
+`/=` not equal to
+`=:=` exactly equal to
+`=/=` not exactly equal to
+
+The non-exact versions will coerce its into floats. Otherwise use exact versions to give better hints to the compiler.
+
+* What is `=` in Erlang?
+Pattern matching, not assignment. "Assignment" is just a simple case of pattern matching.
+
+* What is the syntax of `case` expressions?
+`
+case Expression of
+    Pattern1 when Guard1 -> Expression_sequence1;
+    ...
+    PatternN when GuardN -> Expression_sequenceN
+`
+
+* What is an expression sequence?
+* What is its value?
+A sequence of expressions separated by commas.
+
+The value of the last expression evaluated.
+
+* Give the syntax of `if` expressions.
+`
+if
+    Guard1 -> Expression_sequence1;
+    ...
+    Guard2 -> Expression_sequence2
+end
+`
+
+* What happens if no guard in an `if` expression is true?
+* How can this be avoided.
+An error will be returned.
+
+One can use the `true` atom as the final guard, although it is usually better to use something more explicit than `true` when possible.
+
+* What is the huge restriction on guards?
+To enforce no-side-effects, they cannot be user-defined.
+
+You can use type tests, many operators, and a number of built-in functions.
+
+* How do you access the length of a list?
+* Of a tuple?
+`length(List)`
+
+`size(Tuple)`
+
+* Give the syntax of named functions.
+`
+name(Patterns1) -> Expression_sequence1;
+...
+name(PatternsN) -> Expression_sequenceN.
+`
+
+* Give the syntax of anonymous functions.
+* What are they often used for?
+`
+fun(Patterns1) -> Body1;
+    (Patterns2) -> Body2;
+    ...
+    (PatternsN) -> BodyN
+end
+`
+
+They are often used as parameters to other functions.
