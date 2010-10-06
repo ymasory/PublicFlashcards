@@ -13,7 +13,7 @@ Now that module's functions can be accessed with:
 module:func
 `
 
-* What doe Erlang programs begin with?
+* What do Erlang programs begin with?
 `
 -module(filename).
 `
@@ -164,8 +164,8 @@ io:format(FormatString, ListOfData).
 * How do you write to a file?
 `
 {ok, Stream} = file:open(FileName, write),
-io:format(S, FormatString, ListOfData),
-file:close(S).
+io:format(Stream, FormatString, ListOfData),
+file:close(Stream).
 `
 
 * What are the reserved sequences in format strings?
