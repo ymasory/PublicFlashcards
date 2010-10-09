@@ -2,3 +2,49 @@
 #TOPLEFT Seven Languages in Seven Weeks
 #TOPRIGHT Clojure
 #NUMBERS true
+
+* What is the relationship between Common Lisp, Scheme, and Clojure?
+Scheme and Clojure are in the lisp-1 family, which use the same namespace for functions and variables.
+Common Lisp is in the lisp-2 family, which uses separate namespaces.
+
+* What's the easiest way to create a Clojure project?
+With the leiningen build automation tool.
+
+`
+lein new MyProj
+`
+
+* What is Clojure's function syntax?
+`
+(funcname arg1 arg2 ...)
+`
+
+* What is odd about Clojure operators?
+- It uses the normal function prefix notation.
+- `/` results in a `Ratio`.
+
+* How do you do truncating division?
+Using `mod`.
+
+* What is the advantage of doing math in prefix notation?
+- It's easier to support higher-arity versions of the function.
+- There's no ambiguity and no need for consideration of operator precedence.
+
+* How can you concatenate strings?
+Using the equivalent of Java's `toString`.
+
+`
+(str obj1 obj2 ... objn)
+`
+
+* Create a string without quotes.
+Use `\`s:
+
+`
+user=> (str \h \i)
+"hi"
+`
+
+Back slashes actually create characters, which are not strings in Clojure.
+
+* 
