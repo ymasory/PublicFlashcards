@@ -164,5 +164,24 @@ Or, put a `#` before the list containing the body of the function with `%` being
 (apply func list)
 `
 
+* How does Clojure work around the JVM's lack of tail recursion optimization?
+Using `let`/`recur`.
 
+The `let function takes a vector whose odd number elements are variables and even number elements are initial variables to those arguments. Its second argument is the body of the function which can use `recur` to go back to `loop`.
 
+* Translate Scala's `forall`.
+* Translate Scala's `exists`.
+* Translate Java's null check.
+`
+(every? func list)
+`
+
+`
+(some func list)
+`
+
+`
+(nil? list)
+`
+
+* 
