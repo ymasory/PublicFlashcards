@@ -53,3 +53,35 @@ Pattern matching, ```not``` assignment.
 * What is a key difference between tuples and lists when it comes to pattern matching?
 Lists can pattern match against lists of different lengths (using cons). Tuples never can.
 
+* How do you prepend to a list?
+* How do you pattern match on a list?
+Using the same syntax:
+
+`
+1> A = [1,2].
+[1,2]
+2> B = [0 | A].
+[0,1,2]
+3> [First | Rest] = B.
+[0,1,2]
+4> First.
+0
+5> Rest.
+[1,2]
+`
+
+* What are Erlang binaries?
+A collection-like Erlang feature for specifying the numger of bits each variable gets.
+
+`
+Bytes = <<A:2, B:6, C:4, D:4>>
+`
+Means `A` gets 2 bits, `B` gets 6 bits, etc.
+(Those variables are already bound).
+
+To extract, use the same syntax:
+`
+<<ABits:2, BBits:6, CBits:4, DBits:4>> = Bytes
+`
+
+*
