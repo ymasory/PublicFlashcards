@@ -61,6 +61,59 @@ Everything except `nil` and `false`.
 `0` and `""`.
 
 * What conventionally separates lists and vectors?
+* What separates them in terms of implementation?
 Lists are for code, while vectors are used to store data.
 
+Vectors support fast random access.
 
+* How are non-function lists constructed?
+With the `list` function or by quoting:
+
+`
+'("my" "favorite" "list")
+`
+
+Or with the `cons` function.
+
+* How do you get the head/tail of a list?
+* The last element?
+`first`, `rest`, `last`
+
+* Access an arbitrary index in an list.
+* Combine two lists.
+`
+user=> (nth ["a", "b", "c"] 2)
+"c"
+`
+
+Use `concat`.
+
+* What is the syntax of vectors, sets, and maps?
+Vectors use `[]`, sets use `#{}`, maps use `{}`.
+
+* How do you assign to a variable?
+* Are re-assignments allowed?
+`
+(def VarName expr)
+`
+
+Yes, reassignments are allowed.
+
+* How can you access the size of collections?
+Use `count`.
+
+* Show that vectors and sets are really functions.
+`
+user=> (["a" "b" "c"] 1)     
+"b"
+user=> (#{"a" "b" "c"} "a")
+"a"
+`
+
+* What syntactic convenience does Clojure allow for maps?
+Commas as whitespace, to prevent mixing up keys/values, or putting an odd number of elements.
+
+* What are the two kinds of symbols in Clojure?
+Keywords (beginning with `:`) stand for themselves, like atoms in other languages. Symbols refer to something else.
+
+* 
