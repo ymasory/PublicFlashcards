@@ -14,7 +14,7 @@ With the leiningen build automation tool.
 lein new MyProj
 `
 
-* What is Clojure's function syntax?
+* What is Clojure's function invocation syntax?
 `
 (funcname arg1 arg2 ...)
 `
@@ -116,4 +116,53 @@ Commas as whitespace, to prevent mixing up keys/values, or putting an odd number
 * What are the two kinds of symbols in Clojure?
 Keywords (beginning with `:`) stand for themselves, like atoms in other languages. Symbols refer to something else.
 
-* 
+* Retrieve a value from a map.
+`
+(:key map)
+`
+
+or
+
+`
+(map :key)
+`
+
+Both the map and the keyword are functions.
+
+* Add to a map.
+`merge` and `merge-with` combine maps.
+
+`assoc map newElement` adds to a map.
+
+* What is Clojure's function definition syntax?
+`
+(defn funcName [params] body)
+`
+
+* Create and retrieve documentation.
+Add a docstring after the function name and before the parameter vector. To retrieve use:
+`
+(doc funcName)
+`
+
+* Where can destructuring be used?
+* How is it different from pattern matching?
+It can be used in an argument list or in a `let` statement.
+
+Unlike pattern matching, destructuring does not require you match the entire data structure being destructured.
+
+* Why are higher-order functions baked right into Clojure?
+Because functions are really just lists.
+
+* How can you create anonymous functions?
+Use `fn` instead of `defn` and don't put a name.
+
+Or, put a `#` before the list containing the body of the function with `%` being bound to each argument.
+
+* How can you apply a function that is the result of an expression?
+`
+(apply func list)
+`
+
+
+
