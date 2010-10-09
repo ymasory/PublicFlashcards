@@ -98,6 +98,12 @@ They are tail recursive. The last thing any `receive` case should do is call `lo
 
 * What's the difference between sending and receiving synchronously?
 * How is each conventionally done?
-Receiving synchronously involves `receive` clauses that reply to the sender. By convention the Pid of the sender should be the first element of a message tuple.
+Receiving synchronously involves `receive` clauses that reply to the sender. By convention the PID of the sender should be the first element of a message tuple.
 
-Send synchronously involves blocking the requester until the reply is ready. By convention the actor module will have a function that takes as its first argument the Pid of the instance to send the message to, and the request as the second argument. This function now behaves like a normal, non-blocking function, even though its actually executes in a different process by sending an asynchronous message to the provided Pid.
+Send synchronously involves blocking the requester until the reply is ready. By convention the actor module will have a function that takes as its first argument the PID of the instance to send the message to, and the request as the second argument. This function now behaves like a normal, non-blocking function, even though its actually executes in a different process by sending an asynchronous message to the provided PID.
+
+* How can you check if a process is alive?
+`
+erlang:is_process_alive(Pid).
+`
+
