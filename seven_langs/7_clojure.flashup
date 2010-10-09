@@ -56,7 +56,11 @@ Back slashes actually create characters, which are not strings in Clojure.
 Using an `if` function.
 Its first argument is a Boolean expression, the second argument is the code to run if the Boolean expression is `true`. The third argument is optional and is the `else` code.
 
-* What evaluates to `true` for the purpose of `if` expressions?
+* What evaluates to "true" for the purpose of `if` expressions?
+Everything except `nil` and `false`.
 `0` and `""`.
 
-* 
+* What conventionally separates lists and vectors?
+Lists are for code, while vectors are used to store data.
+
+
