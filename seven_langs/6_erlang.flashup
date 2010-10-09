@@ -84,4 +84,11 @@ To extract, use the same syntax:
 <<ABits:2, BBits:6, CBits:4, DBits:4>> = Bytes
 `
 
-*
+* What's the conceptual difference between `case` and `if` expressions?
+In `case` expressions control flows by pattern matching. In `if` expressions it flows by evaluating Boolean guards.
+
+* What function iterates over a list?
+* What's its downside?
+`lists:foreach(fun(El) -> ... end, List)
+
+It results ok `ok`, not a useful value.
