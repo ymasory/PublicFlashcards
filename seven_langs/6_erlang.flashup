@@ -7,12 +7,12 @@
 AIR-lang
 
 ``air`` rhymes with ``fair``.
-``lang`` rhyms with ``sang``.
+``lang`` rhymes with ``sang``.
 
 * Why is Erlang growing in popularity?
-Concurrency - Erlang eliminates buggy threads, but tries to make processes as leightweight as possible.
+Concurrency - Erlang eliminates buggy threads, but tries to make processes as lightweight as possible.
 
-Reliability - Erlang embraces a nondefensive "let it crash" attitude with regard to errors andl offers zero-downtime hot-swapping of code.
+Reliability - Erlang embraces a non-defensive "let it crash" attitude with regard to errors andl offers zero-downtime hot-swapping of code.
 
 * What does an actor represent in Erlang?
 * Contrast this with Scala.
@@ -71,7 +71,7 @@ Using the same syntax:
 `
 
 * What are Erlang binaries?
-A collection-like Erlang feature for specifying the numger of bits each variable gets.
+A collection-like Erlang feature for specifying the number of bits each variable gets.
 
 `
 Bytes = <<A:2, B:6, C:4, D:4>>
@@ -91,4 +91,13 @@ In `case` expressions control flows by pattern matching. In `if` expressions it 
 * What's its downside?
 `lists:foreach(fun(El) -> ... end, List)
 
-It results ok `ok`, not a useful value.
+It results in `ok`, not a useful value.
+
+* Why don't `loop()` functions blow up the stack?
+They are tail recursive. The last thing any `receive` case should do is call `loop()` afresh. Erlang supports tail-call optimization.
+
+* What's the difference between sending and receiving synchronously?
+* How is each conventionally done?
+Receiving synchronously involves `receive` clauses that reply to the sender. By convention the Pid of the sender should be the first element of a message tuple.
+
+Send synchronously involves blocking the requester until the reply is ready. By convention the actor module will have a function that takes as its first argument the Pid of the instance to send the message to, and the request as the second argument. This function now behaves like a normal, non-blocking function, even though its actually executes in a different process by sending an asynchronous message to the provided Pid.
