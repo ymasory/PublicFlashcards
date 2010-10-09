@@ -47,4 +47,16 @@ user=> (str \h \i)
 
 Back slashes actually create characters, which are not strings in Clojure.
 
+* Show the Java class of an expression.
+`
+(class expr)
+`
+
+* How are conditionals expressed?
+Using an `if` function.
+Its first argument is a Boolean expression, the second argument is the code to run if the Boolean expression is `true`. The third argument is optional and is the `else` code.
+
+* What evaluates to `true` for the purpose of `if` expressions?
+`0` and `""`.
+
 * 
