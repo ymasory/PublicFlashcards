@@ -107,3 +107,9 @@ Send synchronously involves blocking the requester until the reply is ready. By 
 erlang:is_process_alive(Pid).
 `
 
+* How can you create a monitoring process that restarts dead processes?
+Create an actor such that:
+1) The first thing its `loop` function does is trap exit.
+2) Write a `receive` case for creating a process, and registering it with a meaningful atom name.
+3) Write a `receive` case for exits which sends a signal to the other case.
+
