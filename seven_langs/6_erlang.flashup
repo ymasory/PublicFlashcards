@@ -50,5 +50,6 @@ To allow pattern matching to collect all the mappings of a given type.
 * What is `=` in Erlang?
 Pattern matching, ```not``` assignment.
 
-
+* What is a key difference between tuples and lists when it comes to pattern matching?
+Lists can pattern match against lists of different lengths (using cons). Tuples never can.
 
