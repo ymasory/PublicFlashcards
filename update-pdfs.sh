@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# #fail on error
-# set -e
+#fail on error
+set -e
 
 cd `dirname $0`
 
