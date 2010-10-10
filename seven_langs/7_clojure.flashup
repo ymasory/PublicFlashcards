@@ -175,13 +175,17 @@ The `let function takes a vector whose odd number elements are variables and eve
 `
 (every? func list)
 `
-
 `
 (some func list)
 `
+`not-every` and `not-any` are the opposite.
 
 `
 (nil? list)
 `
+* How are list comprehensions done?
+`
+(for [el1 in list1 ... el2 in list2] body)
+` 
 
 * 
