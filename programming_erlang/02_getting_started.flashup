@@ -40,5 +40,10 @@ Global constants defined in a header using `#define`.
 * Why aren't atoms garbage collected?
 They have global scope, unlike variables.
 
-* 
+* How is an unsuccessful pattern match different in Erlang and Prolog?
+In Erlang it's an error, while Prolog would backtrack.
 
+* What is `_`?
+An anonymous variable.
+
+* 
