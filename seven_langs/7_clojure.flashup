@@ -188,4 +188,23 @@ The `let function takes a vector whose odd number elements are variables and eve
 (for [el1 in list1 ... el2 in list2] body)
 ` 
 
-* 
+* What is idiomatic Clojure for Java's `isX` functions?
+* What is idiomatic Clojure's capitalization system for functions.
+`x?`
+
+`word1-word2` type function names.
+
+* Scala's `foldLeft` goes by what in other languages?
+- Erlang - `foldl`
+- Ruby - `inject`
+- Clojure - `reduce`
+- Haskell - `foldl`
+
+* How do you create ranges?
+`
+user=> (range -5 5 2)
+(-5 -3 -1 1 3)
+`
+
+
+
