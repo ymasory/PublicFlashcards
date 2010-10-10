@@ -41,5 +41,8 @@ git reset HEAD path
 
 * Revert the entire branch to a previous commit.
 `
-git co <hash> . --
+git co <hash> .
 `
+
+* What does `--` do?
+Forces a commit interpretation over a file path.
