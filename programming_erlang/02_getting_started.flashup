@@ -46,4 +46,20 @@ In Erlang it's an error, while Prolog would backtrack.
 * What is `_`?
 An anonymous variable.
 
-* 
+* What makes Erlang's `|` syntax more powerful than standard cons?
+You can prepend/match multiple elements at once without creating a wrapper list.
+
+`
+A = [1, 2 | [3, 4]]
+`
+
+`
+[B, C, D, | T] = A.
+`
+
+* Name an easy way to get the ascii value of a character known at program-write time.
+`$X` where `X` is some character.
+
+This is ```not``` a "conversion", just syntactic sugar for an integer.
+
+
