@@ -1,3 +1,28 @@
 * Open a file.
-C-x C-f (find-file)
+C-x C-f (`find-file`)
 
+* What should you do if you enter a typo in a `find-file` path?
+C-x C-v (`find-alternate-file`) pulls up the current path for you to correct.
+
+* How can you enter the completions window, so you can select a path?
+PgUp
+
+* Insert another file into the current position.
+C-x i
+
+* What is the default directory in Emacs?
+The directory of the current file.
+
+* How can you write the current buffer to ``another`` file?
+* When is this handy?
+C-x C-w (`write-file`)
+
+When you want to edit a file you don't have write access to.
+
+* How can you find the full name and documentation of a keystroke?
+* How can you find the documentation of a command name?
+`describe-key`
+
+`describe-function`
+
+* 
