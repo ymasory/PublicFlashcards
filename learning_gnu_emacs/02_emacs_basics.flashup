@@ -1,3 +1,38 @@
+* What are the two kinds of modes?
+Major mode, of which Emacs can only be in one at a time, and minor modes Emacs can use simultaneously. Some modes can be major or minor.
+
+* What is the cursor called in the Emacs world?
+The point.
+
+* What's the gray bar below the buffer display called?
+* What's in it?
+It's called the mode line.
+
+It contains:
+1) The encoding.
+2) `**` if the buffer is modified.
+3) The name of the buffer.
+4) A description of what part of the buffer is displayed (`All`/`Top`/`Bot`/some percent).
+5) The line number.
+6) The current minor and major modes.
+
+* What is the white bar below the mode line?
+It's called the minibuffer. It's where Emacs writes feedback for you to see.
+
+* What should you've made a mistake in the minibuffer?
+Keep hitting C-g until it says `Quit`.
+
+* The most common commands are bound to what?
+C-...
+M-...
+C-x ...
+
+* Commands provided by a mode are usually bound to what?
+* How can you give the full name of a command?
+C-c ...
+
+M-x ``full-name``
+
 * Open a file.
 C-x C-f (`find-file`)
 
@@ -25,4 +60,20 @@ When you want to edit a file you don't have write access to.
 
 `describe-function`
 
-* 
+* Which buffer contains the documentation you view?
+`*Help*`
+
+* How can you go from a window split into two buffers back to a single a buffer?
+C-x 1 for the buffer the point is in.
+C-x 0 for the other buffer.
+
+* Save the current file to a buffer.
+C-x C-s (`save-buffer`)
+
+* Exit Emacs.
+C-x C-c (`save-buffers-kill-emacs`)
+
+* Find which version of Emacs you're using.
+`version`
+
+
