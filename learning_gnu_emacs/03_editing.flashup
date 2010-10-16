@@ -1,0 +1,23 @@
+#GRAMMAR 1
+#TOPLEFT Learning GNU Emacs
+#TOPRIGHT 3
+#NUMBERS true
+
+* How can you undo previous actions?
+C-_ or C-x u (`undo`)
+
+* What are the common single character movements?
+C-f (`foward-char`)
+C-f (`bacward-char`)
+C-n (`next-line`)
+C-p (`previous-line`)
+
+* What are the common single word movements?
+M-b (`backward-word`)
+M-f (`foward-word`)
+
+* What are the common line movements?
+C-a (`move-beginning-of-line`)
+C-e (`move-end-of-line`)
+
+

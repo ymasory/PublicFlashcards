@@ -1,3 +1,8 @@
+#GRAMMAR 1
+#TOPLEFT Learning GNU Emacs
+#TOPRIGHT 2
+#NUMBERS true
+
 * What are the two kinds of modes?
 Major mode, of which Emacs can only be in one at a time, and minor modes Emacs can use simultaneously. Some modes can be major or minor.
 
