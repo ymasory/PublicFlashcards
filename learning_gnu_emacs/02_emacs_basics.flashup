@@ -24,7 +24,7 @@ It contains:
 * What is the white bar below the mode line?
 It's called the minibuffer. It's where the user gives input to Emacs, or Emacs gives notifications to the user.
 
-* What should you've made a mistake in the minibuffer?
+* What should you do if you've made a mistake in the minibuffer?
 Keep hitting C-g until it says `Quit`.
 
 * The most common commands are bound to what?
