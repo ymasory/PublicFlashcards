@@ -20,4 +20,15 @@ M-f (`foward-word`)
 C-a (`move-beginning-of-line`)
 C-e (`move-end-of-line`)
 
+* What are the common sentence movements?
+* How is sentence defined?
+M-e (`forward-sentence`)
+M-a (`backward-sentence`)
+
+Sentences end with two spaces.
+
+* What are the common paragraph movements?
+M-} (`forward-paragraph`)
+M-{ (`backward-paragraph`)
+
 
