@@ -48,4 +48,7 @@ R
 
 Z
 
+* How can emacs edit files while they are compressed?
+`auto-compress-mode`
+
 
