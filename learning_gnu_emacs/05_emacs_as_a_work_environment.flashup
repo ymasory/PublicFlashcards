@@ -40,15 +40,16 @@ C-x C-f and select a directory
 'D' deletes immediately.
 
 * How do you copy files in Dired?
-C, or NC for some N for multiple files.
+'C', or 'NC' for some N for multiple files.
 
 * How do you rename a file in Dired?
 * Compress/uncompress?
-R
+'R'
 
-Z
+'Z'
 
 * How can emacs edit files while they are compressed?
 `auto-compress-mode`
 
-
+* How can you diff files in Dired?
+Set the mark on one, move the point to the other, then type '='.
