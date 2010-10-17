@@ -21,3 +21,15 @@ Results go in current buffer.
 Preface them with C-c.
 
 
+
+
+
+
+
+
+* Get into directory/file editing mode.
+C-x d (`dired`)
+
+`emacs dir_name`
+
+C-x C-f and select a directory
