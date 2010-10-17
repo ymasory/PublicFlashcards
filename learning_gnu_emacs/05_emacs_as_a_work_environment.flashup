@@ -38,3 +38,14 @@ C-x C-f and select a directory
 'd' to mark from deletion, 'u' to undelete, 'x' to carry out deletion.
 '#' marks all auto-save files for deletion, '~' all backup files.
 'D' deletes immediately.
+
+* How do you copy files in Dired?
+C, or NC for some N for multiple files.
+
+* How do you rename a file in Dired?
+* Compress/uncompress?
+R
+
+Z
+
+
