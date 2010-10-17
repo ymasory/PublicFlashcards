@@ -3,5 +3,18 @@
 #TOPRIGHT 5
 #NUMBERS true
 
+* Give several techniques for running a single commad.
+* WHere do the results go?
+M-! (`shell-command`)
+Results go in *Shell Command Output*.
+
+M-| (`shell-command-on-region`)
+Results go in minibuffer.
+
+C-u M-!
+Results go in current buffer.
+
 * How can you open a shell in emacs?
 `shell`, or better yet, `ansi-term`.
+
+*
