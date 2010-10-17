@@ -17,4 +17,7 @@ Results go in current buffer.
 * How can you open a shell in emacs?
 `shell`, or better yet, `ansi-term`.
 
-*
+* How can you use your normal terminal hotkeys in shell mode?
+Preface them with C-c.
+
+
