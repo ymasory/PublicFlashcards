@@ -33,3 +33,8 @@ C-x d (`dired`)
 `emacs dir_name`
 
 C-x C-f and select a directory
+
+* How do you delete files in Dired?
+'d' to mark from deletion, 'u' to undelete, 'x' to carry out deletion.
+'#' marks all auto-save files for deletion, '~' all backup files.
+'D' deletes immediately.
