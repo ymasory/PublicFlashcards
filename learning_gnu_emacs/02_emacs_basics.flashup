@@ -48,10 +48,10 @@ C-x C-v (`find-alternate-file`) pulls up the current path for you to correct.
 PgUp
 
 * Insert another file into the current position.
-C-x i
+C-x i (`insert-file`)
 
 * What is the default directory in Emacs?
-The directory of the current file.
+The directory of the file the current buffer is associated with.
 
 * How can you write the current buffer to ``another`` file?
 * When is this handy?
@@ -68,11 +68,11 @@ When you want to edit a file you don't have write access to.
 * Which buffer contains the documentation you view?
 `*Help*`
 
-* How can you go from a window split into two buffers back to a single a buffer?
+* How can you go from a window split into two buffers back to a single buffer?
 C-x 1 for the buffer the point is in.
 C-x 0 for the other buffer.
 
-* Save the current file to a buffer.
+* Save the current buffer to a file.
 C-x C-s (`save-buffer`)
 
 * Exit Emacs.
