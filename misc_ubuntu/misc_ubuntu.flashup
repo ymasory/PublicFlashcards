@@ -1,0 +1,7 @@
+* How do you build/install a package from source?
+`
+sudo apt-get build-dep package_name
+apt-get source package_name
+dpkg-buildpackage -rfakeroot -b
+dpkg -i ../package_name-*.deb
+`
