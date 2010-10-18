@@ -5,3 +5,8 @@ apt-get source package_name
 dpkg-buildpackage -rfakeroot -b
 dpkg -i ../package_name-*.deb
 `
+
+* Check battery state on the command line.
+`acpi -V`
+
+(Not installed by default.)
