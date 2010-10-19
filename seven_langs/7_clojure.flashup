@@ -23,7 +23,7 @@ lein new MyProj
 - It uses the normal function prefix notation.
 - `/` results in a `Ratio`.
 
-* How do you do truncating division?
+* How do you calculate remainders?
 Using `mod`.
 
 * What is the advantage of doing math in prefix notation?
