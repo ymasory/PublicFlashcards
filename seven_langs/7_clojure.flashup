@@ -158,7 +158,7 @@ Unlike pattern matching, destructuring does not require you match the entire dat
 `
 
 The expressions are evaluated in the lexical context of the bindings, sequentially applied.
-The even elements in `bindings` are bound to the odd symbols.
+The even numbered elements in `bindings` are bound to the odd symbols.
 Unlike in a `def`, those bindings are not active outside the `let`.
 
 * Why are higher-order functions baked right into Clojure?
@@ -181,7 +181,7 @@ The `loop` function takes a vector whose odd number elements are variables and e
 
 * Translate Scala's `forall`.
 * Translate Scala's `exists`.
-* Translate Java's null check.
+* Translate Java's `null` check.
 `
 (every? func list)
 `
