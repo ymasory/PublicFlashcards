@@ -58,7 +58,8 @@ Its first argument is a Boolean expression, the second argument is the code to r
 
 * What evaluates to "true" for the purpose of `if` expressions?
 Everything except `nil` and `false`.
-`0` and `""`.
+
+`0` and `""` ```do``` evaluate to "true" in conditionals.
 
 * What conventionally separates lists and vectors?
 * What separates them in terms of implementation?
