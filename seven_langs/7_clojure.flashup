@@ -195,7 +195,7 @@ The `loop` function takes a vector whose odd number elements are variables and e
 `
 * How are list comprehensions done?
 `
-(for [el1 in list1 ... el2 in list2] body)
+(for [el1 list1 ... el2 list2] body)
 `
 
 * What is idiomatic Clojure for Java's `isX` functions?
