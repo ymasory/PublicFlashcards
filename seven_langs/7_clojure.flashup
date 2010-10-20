@@ -224,3 +224,14 @@ user=> (range -5 5 2)
 `
 (repeat (cycle ["one" "more" "time"]))
 `
+
+`
+(iterate inc 3)
+`
+
+* Infinite sequences are typically combined with what?
+Calls to `take` or `drop`, to extract sub-sequences.
+
+* What is Clojure's alternative to building things "inside out"?
+Using the left-to-right operator `->>`. It applies each function to the result of the ``previos`` one.
+
