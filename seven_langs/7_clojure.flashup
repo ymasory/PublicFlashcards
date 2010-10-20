@@ -152,6 +152,15 @@ It can be used in an argument list or in a `let` statement.
 
 Unlike pattern matching, destructuring does not require you match the entire data structure being destructured.
 
+* What does `let` do?
+`
+(let [bindings* ] exprs*)
+`
+
+The expressions are evaluated in the lexical context of the bindings, sequentially applied.
+The even elements in `bindings` are bound to the odd symbols.
+Unlike in a `def`, those bindings are not active outside the `let`.
+
 * Why are higher-order functions baked right into Clojure?
 Because functions are really just lists.
 
@@ -162,7 +171,7 @@ Or, put a `#` before the list containing the body of the function with `%` being
 
 * How can you apply a function that is the result of an expression?
 `
-(apply func list)
+(apply func arglist)
 `
 
 * How does Clojure work around the JVM's lack of tail recursion optimization?
