@@ -31,3 +31,31 @@ The else clause is required, to ensure an interesting result for the whole `if` 
 
 `:set +t` makes it permanent for that session.
 
+* What are the two types of a function?
+The optional type declaration and the function declaration.
+
+* Create a module `MyMath` with the function `my_max`.
+`
+module MyMath where
+    my_max :: Integer -> Integer -> Integer
+    my_max x y = if x > y then x else y
+`
+
+* How can you control flow of control to a function?
+- Multiple function definitions.
+- Guards.
+
+* Give the syntax of guards.
+* What is often used as the last guard?
+Delay the equals sign, splitting up the argument lists.
+
+`
+func args
+    | boolean1 = ...
+    | boolean2 = ...
+`
+
+`otherwise` is an alias for true, often used as the last guard.
+
+* Give the syntax of tuples and lists.
+Tuples use round parens, lists use brackets.
