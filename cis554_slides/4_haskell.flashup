@@ -2,3 +2,33 @@
 #TOPLEFT CIS 554
 #TOPRIGHT Haskell
 #NUMBERS true
+
+* Concatenate strings.
+`
+str1 ++ str2
+`
+
+* What are strings, really?
+Lists of characters.
+
+* How is negation done?
+`/=` and unary `not`
+
+* Give the conditional syntax.
+* What is unusual about Haskell conditionals?
+`
+if bool then expr1 else expr2
+`
+
+The else clause is required, to ensure an interesting result for the whole `if` expression.
+
+* Like in Java, Boolean types are ...
+... strict.
+
+* Find the type of an expression
+* Make `ghci` print all types.
+`:t expr` shows a value's type in `ghci`.
+
+`:set +t` makes it permanent for that session.
+
+* 
