@@ -31,4 +31,3 @@ The else clause is required, to ensure an interesting result for the whole `if` 
 
 `:set +t` makes it permanent for that session.
 
-* 
