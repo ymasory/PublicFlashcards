@@ -3,6 +3,11 @@
 #fail on error
 set -e
 
+if [ `hostname` -eq types]
+then
+    exit
+fi
+
 cd `dirname $0`
 
 echo GIT PULL
