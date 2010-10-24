@@ -15,4 +15,60 @@ Type names begin with an uppercase letter.
 `
 (nesting is allowed)
 
+* Describe Haskell's Boolean types?
+`True` and `False` are of type `Bool`.
+
+The type is strict, only admitting those two literals.
+
+* What are the Boolean operators?
+* Equality/Inequality?
+`&&`, `||`, `not`
+
+'==` and `/=`
+
+* Haskell's math operators have types that are ...
+... strict, since there's no coercion. They have integer and floating point versions.
+
+* Convert `Float` to `Int`.
+`truncate`
+
+* Convert a `Char` to an `Int` and back.
+`
+ord :: Char -> Int
+chr :: Int -> Char
+`
+
+* What is a string, really?
+A list of `Chars`, that is, `[Char]`.
+
+* Get string representations of objects.
+`
+show whatever
+`
+
+* Make a prefix operator infix.
+* Make an infix operator prefix.
+Surrounding an identifier with back ticks makes it infix.
+
+Surrounding an operator with parens makes it prefix.
+
+* Index a list.
+* Test for membership.
+`
+ghci> ['a', 'b', 'c'] !! 0
+'a'
+`
+
+`elem`, `notElem`
+
+* Remove duplicates in a list.
+* Concatenate two lists.
+`nub`
+
+`concat`
+
+* Access the elements of a 2-tuple.
+`fst`, `snd`
+
+
 
