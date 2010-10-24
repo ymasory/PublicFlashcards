@@ -1,0 +1,18 @@
+#GRAMMAR 1
+#TOPLEFT CIS 554
+#TOPRIGHT Haskell
+#NUMBERS true
+
+* What are Haskell's case rules?
+Variables begin with a lowercase letter.
+Type names begin with an uppercase letter.
+
+* Give the comment syntax.
+`--` comment out the rest of the line.
+
+`
+{- multiline comment -}
+`
+(nesting is allowed)
+
+
