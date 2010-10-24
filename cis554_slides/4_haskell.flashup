@@ -97,3 +97,17 @@ let declarations in expressions
 `
 
 The expression can have multiple new variables in it.
+
+* How are `case` expressions introduced?
+`
+case expr1 of
+  expr2 -> ...
+  expr3 -> ...
+`
+
+* How are function guards introduced?
+`
+func params =
+  | boolean1 -> ...
+  | boolean2 -> ...
+`
