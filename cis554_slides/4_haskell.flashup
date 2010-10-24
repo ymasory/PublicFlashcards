@@ -70,5 +70,30 @@ ghci> ['a', 'b', 'c'] !! 0
 * Access the elements of a 2-tuple.
 `fst`, `snd`
 
+* What is the range syntax?
+`[a..b]` is a list of all the values from `a` to `b`, inclusive.
 
+`[a..]` is an infinite list from `a` up.
 
+* What is the syntax of list comprehensions?
+`
+[expr | generatorOrGuard1, ... ,generatorOrGuardN]
+`
+
+Guards are just expressions that result in `Bool`. No `if` is used.
+
+* How are lambdas written?
+`
+\params -> result
+`
+
+* How are new variables introduced?
+`
+expression where declarations
+`
+
+`
+let declarations in expressions
+`
+
+The expression can have multiple new variables in it.
