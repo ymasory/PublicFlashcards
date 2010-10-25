@@ -18,6 +18,12 @@ Sequences are the abstraction above lists, vectors, maps, sets, etc.
 
 They share the methods `first`, `rest`, and `cons`.
 
+* What's the problem with `if`?
+* What's the alternative?
+The nesting of many `if`s is difficult to read.
+
+The special form `cond` allows as many arguments as needed for ``if ... then ... elseif ... then ... elseif ... ``
+
 * Sequences are roughly equivalent to what in Java?
 `Iterators`
 
