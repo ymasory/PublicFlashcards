@@ -111,3 +111,13 @@ func params =
   | boolean1 -> ...
   | boolean2 -> ...
 `
+
+* What is a lazy data structure?
+* What's an easy way to make them in Clojure?
+A data structure whose parts don't exist until they are accessed.
+
+`iterate` takes a function `f` and a starting value `n` and produces a lazy infinite series:
+`
+(n, f(n), f(f(n)), f(f(f(n))), ...)
+`
+
