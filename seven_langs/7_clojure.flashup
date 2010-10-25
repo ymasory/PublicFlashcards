@@ -111,8 +111,9 @@ user=> (#{"a" "b" "c"} "a")
 "a"
 `
 
-* What syntactic convenience does Clojure allow for maps?
-Commas as whitespace, to prevent mixing up keys/values, or putting an odd number of elements.
+* What syntactic convenience does Clojure allow for for organizing members of lists, maps, etc?
+Commas as whitespace.
+With maps helps prevent mixing up keys/values, or putting an odd number of elements.
 
 * What are the two kinds of symbols in Clojure?
 Keywords (beginning with `:`) stand for themselves, like atoms in other languages. Symbols refer to something else.
