@@ -131,6 +131,16 @@ It comes before a vararg, which is available as a list in the body.
 
 Evaluates the expressions in order and returns the value of the last.
 
+* Describe list comprehension syntax.
+`
+(for seq-exprs body-expr)
+`
+
+Takes a vector of one or more binding-form/collection-expr pairs, each followed by zero or more modifiers, and yields a lazy sequence of evaluations of expr.
+
+Supported modifiers are: `:let [binding-form expr ...]`, `:while test`, `:when test`.
+
+
 * How do you partially apply functions?
 Use `partial`, followed by a function and fewer than the normal number of arguments.
 
