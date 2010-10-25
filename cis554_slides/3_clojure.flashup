@@ -84,3 +84,27 @@ They differ in their handling of signs. If the first and second arguments have d
 * Get back recent repl values.
 `*1`, `*2`, `*3` are the first, second, and third most recent values.
 `*e` is the most recent exception.
+
+* What is the comment syntax?
+`;` comments out the rest of the line.
+
+* In place of classes, Clojure has ...
+* What is their syntax?
+... structs
+
+Define with:
+`
+(defstruct name :field1 :field2 ...)
+`
+
+Instantiate with:
+`
+(struct name val1 val2 ...)
+`
+
+Access fields with:
+`
+(:fieldName structName)
+`
+
+
