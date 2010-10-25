@@ -23,6 +23,7 @@ They share the methods `first`, `rest`, and `cons`.
 The nesting of many `if`s is difficult to read.
 
 The special form `cond` allows as many arguments as needed for ``if ... then ... elseif ... then ... elseif ... ``
+`cond` provides `:else` to catch everything as the final branch.
 
 * Sequences are roughly equivalent to what in Java?
 `Iterators`
@@ -62,4 +63,24 @@ They differ in their handling of signs. If the first and second arguments have d
 
 `=` compares arguments in a type-independent manner. For example, vectors can be equal to lists according to `=`.
 
+* Unlike other Lisps, the order of functions ...
+... matters. Forward-references are not allowed.
 
+* Test object identity.
+`identical`
+
+* Test for collection type.
+`coll?`, `seq?`, `vector?`, `list?`, `map?`, `set?`
+
+* Test a collection for membership.
+* For non-reptition.
+`contains?`, `distinct?`
+
+* In Clojure the standard streams have ...
+... special reassignable names.
+
+`*in*`, `*out*`, `*err*`
+
+* Get back recent repl values.
+`*1`, `*2`, `*3` are the first, second, and third most recent values.
+`*e` is the most recent exception.
