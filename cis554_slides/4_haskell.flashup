@@ -121,3 +121,14 @@ A data structure whose parts don't exist until they are accessed.
 (n, f(n), f(f(n)), f(f(f(n))), ...)
 `
 
+* What does the `&` mean in a function signature?
+It comes before a vararg, which is available as a list in the body.
+
+* Describe `do`.
+`
+(do exprs*)
+`
+
+Evaluates the expressions in order and returns the value of the last.
+
+
