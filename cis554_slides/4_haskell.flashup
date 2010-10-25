@@ -131,4 +131,14 @@ It comes before a vararg, which is available as a list in the body.
 
 Evaluates the expressions in order and returns the value of the last.
 
+* How do you partially apply functions?
+Use `partial`, followed by a function and fewer than the normal number of arguments.
+
+`
+user=> (def equals5 (partial = 5))
+#'user/equals5
+user=> (equals5 5)
+true
+`
+
 
