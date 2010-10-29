@@ -175,3 +175,37 @@ It supports `nth`.
 
 * Name Clojure's special forms for Java interop.
 `.`, `new`, `set!`
+
+* Find the fully qualified name of a symbol.
+* Keep in mind ...
+`
+(resolve symbol)
+`
+
+... typically the symbol must be quoted to prevent evaluation into whatever it refers to.
+
+* How do you switch to a new namespce?
+* Create a new namespace?
+`
+(in-ns name)
+`
+switches to the namespace `name`, creating it if necessary.
+
+* What do all namespaces automatically include?
+* What does the `user` namespace bring in?
+They include the package `java.lang`.
+
+`user` also brings in `clojure.core`. Otherwise you would run:
+`
+(clojure.core/use 'clojure.core)
+`
+
+* Avoid using the fully qualified names of Java classes.
+`
+(import '(package Class+))
+`
+
+* Avoid using the fully qualified names of Clojure vars.
+`
+
+`
