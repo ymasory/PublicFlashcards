@@ -123,3 +123,19 @@ The doc-string and attrs are added to the var metadata.
 
 * What is the vararg syntax?
 Just as in the documentation syntax, us a `&` before the final parameter.
+
+* Give non-obvious reasons for using anonymous functions.
+
+2-8- To capture surrounding data in a function created at run-time (i.e., a closure) without giving many different functions the same name.
+- To avoid a top-level binding for a function used exclusively inside another one.
+
+* What is the abbreviation for anonymous functions?
+* How is it implemented?
+`
+(# body)
+`
+where the arguments are given the names `%1`, `%2`, etc. `%` is the same as `%1`.
+
+It's a reader macro.
+
+
