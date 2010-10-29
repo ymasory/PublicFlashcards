@@ -138,4 +138,40 @@ where the arguments are given the names `%1`, `%2`, etc. `%` is the same as `%1`
 
 It's a reader macro.
 
+* What is a root binding?
+The initial value of a var it was given in a `def`/`defn` statement.
 
+* How can a `var` be accessed directly, s opposed to its value?
+With the reader macro:
+`
+#'symbol
+`
+
+for `(var symbol)`.
+
+* What can vars do other than store values?
+- Store metadata.
+* Be rebound differently for each thread.
+* Be aliased for unqualified use in other namespaces.
+
+* Which bindings are lexically scoped?
+- parameters
+- `(let [bindings*] exprs*)`
+
+* Where can destructuring be used?
+* What are the two kinds?
+Destructuring can be used in fn parameter lists, `let`, and macros that expand to either of those.
+
+Vectors can be put in the binding to capture sequential collections, or maps for associative collections.
+
+* How can you get a reference to the ```entire``` collection being destructured?
+Use `:as name` in the destructuring. It will bind to the entire collection, not just the part being matched.
+
+* What makes a collection sequential?
+It supports `nth`.
+
+* Name Clojure's special forms ```not``` for Java interop.
+`def`, `if`, `do`, `let`, `quote`, `var`, `fn`, `loop`, `recur`, `throw`, `try`, `monitor-enter`, `monitor-exit`.
+
+* Name Clojure's special forms for Java interop.
+`.`, `new`, `set!`
