@@ -27,9 +27,12 @@ They consist of letters, numbers, `+`, `-`, `*`, `/`, `?`.
 
 `.` and `_` are also possible, but have special meaning with respect to namespaces.
 
-* How are string literals different from Java?
+* How are string literals different from Java's?
 - They can be multiline.
 - They are displayed to the screen with escaped newlines.
+
+* How are strings different from Java's?
+They are sequences of characters, so higher-order sequence functions work on them.
 
 * Describe `str`.
 It creates a string, much like `toString`, but is n-ary and ignores `nil`.
@@ -37,6 +40,86 @@ It creates a string, much like `toString`, but is n-ary and ignores `nil`.
 * How are escape characters created?
 `\backspace`, `\formfeed`, `\newline`, `\return`, `\space`, `\tab`
 
+* How can a string be created from a sequence of characters?
+`
+(apply str [\a \b \c])
+`
+
+`apply` is making an n-ary call to `str` given a sequence argument.
+
+* How can you test for strict booleans?
+Use `true?` and `false?`.
+
+* Give two ways to query a map.
+- `(map key)`
+- `(keyword-key map)`
+
+Note the second form works only if the key is a keyword.
+
+* What are structs used for?
+To document the fact that multiple maps are similar, i.e., they share common keys.
+
+* What special symbols are used in the documentation?
+`&` indicates the following param is of variable arity and available as a seq.
+`*` indicates the previous param is of variable arity.
+`+` indicates the previous param is of variable, non-zero arity.
+`?` indicates the previous param is optional.
+
+* Define a struct.
+* Instantiate a struct.
+`
+(defstruct name & keys)
+`
+
+`
+(struct name & vals)
+`
 
 
+* What is the basis of a struct?
+The keys listed in the struct's definition.
 
+* How can one create a struct that lacks keys from the basis or has additional keys?
+`
+(struct-map name & inits)
+`
+
+Any missing keys will be given the value `nil` in the resulting struct.
+
+* How are structs different from maps?
+The difference is mostly stylistic, although structs do store their values in indexed slots.
+
+* What's the difference between a reader macro and a form?
+Reader macros are applied prior to the text being broken into forms.
+
+* What's the most common reader macro?
+The comment, `;`.
+
+* Why are programs barred from defining additional reader macros?
+To prevent code becoming unreadable to others, and to prevent Clojure from fragmenting into non-interoperable dialects.
+
+* How can you test for the type of a form?
+Use the built in predicates `keyword?`, `symbol?`, etc.
+
+* What is the signature of `defn` with a single param list?
+`
+(defn name doc-string? attr-map? [params*] body)
+`
+
+* What is the signature of `defn` with multiple param lists?
+`
+(defn name doc-string? attr-map?
+ ([params*] body)+ )
+`
+
+* What is `defn`, really?
+A macro for:
+
+`
+(def name (fn [params*] exprs*))
+`
+
+The doc-string and attrs are added to the var metadata.
+
+* What is the vararg syntax?
+Just as in the documentation syntax, us a `&` before the final parameter.
