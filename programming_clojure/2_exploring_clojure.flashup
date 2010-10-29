@@ -1,0 +1,42 @@
+#GRAMMAR 1
+#TOPLEFT Programming Clojure
+#TOPRIGHT 2
+#NUMBERS true
+
+* Define ``homoiconicity``.
+Wikipedia: a property of some programming languages, in which the primary representation of programs is also a data structure in a primitive type of the language itself.
+
+"code-as-data"
+
+* Describe the Clojure build process.
+The reader converts the program text into forms which are then converted into Clojure data structures, which are then compiled.
+
+* What are the most common forms?
+Boolean, number, string, character, keyword, symbol, nil, vector, list, map.
+
+* How are Clojure numbers different from Java's?
+- Integers are automatically promoted to arbitrary-size `BigIntegers` as needed.
+- `BigIntegers` and `BigDecimals` have a literal form, a number ending with `M`.
+
+* What can symbols refer to?
+Functions with standard identifiers, operators, Java classes, Clojure namespaces, Java packages, data structures, refs
+
+* What are the rules for symbol names?
+They may not begin with a number.
+They consist of letters, numbers, `+`, `-`, `*`, `/`, `?`.
+
+`.` and `_` are also possible, but have special meaning with respect to namespaces.
+
+* How are string literals different from Java?
+- They can be multiline.
+- They are displayed to the screen with escaped newlines.
+
+* Describe `str`.
+It creates a string, much like `toString`, but is n-ary and ignores `nil`.
+
+* How are escape characters created?
+`\backspace`, `\formfeed`, `\newline`, `\return`, `\space`, `\tab`
+
+
+
+
