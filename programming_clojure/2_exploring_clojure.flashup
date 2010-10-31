@@ -126,7 +126,7 @@ Just as in the documentation syntax, us a `&` before the final parameter.
 
 * Give non-obvious reasons for using anonymous functions.
 
-2-8- To capture surrounding data in a function created at run-time (i.e., a closure) without giving many different functions the same name.
+- To capture surrounding data in a function created at run-time (i.e., a closure) without giving many different functions the same name.
 - To avoid a top-level binding for a function used exclusively inside another one.
 
 * What is the abbreviation for anonymous functions?
@@ -151,8 +151,8 @@ for `(var symbol)`.
 
 * What can vars do other than store values?
 - Store metadata.
-* Be rebound differently for each thread.
-* Be aliased for unqualified use in other namespaces.
+- Be rebound differently for each thread.
+- Be aliased for unqualified use in other namespaces.
 
 * Which bindings are lexically scoped?
 - parameters
