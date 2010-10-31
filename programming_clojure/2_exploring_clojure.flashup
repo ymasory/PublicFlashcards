@@ -207,5 +207,21 @@ They include the package `java.lang`.
 
 * Avoid using the fully qualified names of Clojure vars.
 `
+(use 'clojure.contrib.whatever)
+(use '[lojure.contrib.whatever :only (func)])
+`
+
+* What namespace are you currently in?
+It's available as `*ns*`.
+
+* Where are imports from Clojure and Java typically done?
+In the namespace declaration.
 
 `
+(ns name & references)
+`
+
+Each reference an be a `:use` or an `:import`.
+
+* What is the purpose of `do`?
+It allows you to use multiple expressions where only one is allowed. The last expression is the the result of the whole expression. Previous expressions are executed for side-effects.
