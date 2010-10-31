@@ -1,0 +1,31 @@
+#GRAMMAR 1
+#TOPLEFT Programming Clojure
+#TOPRIGHT 4
+#NUMBERS true
+
+* What is a seq?
+Anything that can be viewed as a list, regardless of its actual implementation.
+
+* What makes a collection seq-able?
+Supporting `first`, `rest`, `cons`, as described in `clojure.lang.ISeq`.
+
+* How can you get an actual seq from a seq-able?
+* How do you move through a seq?
+`
+(seq coll)
+`
+
+`
+(next aseq) ;; aka (seq (rest aseq))
+`
+
+* The result of all functions on collections is?
+A seq.
+
+* Where are custom seqs defined for most seq-ables?
+Inan inner class of the collection. This leads to mangled names like:
+`
+clojure.lang.SomeCollection$Seq
+`
+
+
