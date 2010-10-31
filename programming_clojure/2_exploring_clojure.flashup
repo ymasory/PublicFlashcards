@@ -208,7 +208,7 @@ They include the package `java.lang`.
 * Avoid using the fully qualified names of Clojure vars.
 `
 (use 'clojure.contrib.whatever)
-(use '[lojure.contrib.whatever :only (func)])
+(use '[clojure.contrib.whatever :only (func)])
 `
 
 * What namespace are you currently in?
@@ -227,7 +227,7 @@ Each reference an be a `:use` or an `:import`.
 It allows you to use multiple expressions where only one is allowed. The last expression is the the result of the whole expression. Previous expressions are executed for side-effects.
 
 * Describe `loop`.
-It's just the same as `let`, excpet it introduces a recursion point which `recur` can return to.
+It's just the same as `let`, except it introduces a recursion point which `recur` can return to.
 
 `
 (loop [bindings *] exprs*)
