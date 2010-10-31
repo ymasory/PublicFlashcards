@@ -97,4 +97,32 @@ user=> (apply str (interpose ", " ["a" "b" "c"]))
 (sort-by keyfn comp? coll) ; keyfn is for *getting* the keys
 `
 
+* Give the signature for seq comprehensions.
+* How are they implemented?
+`
+(for [binding-form coll-expr filter-expr? ...] expr)
+`
+There can be may binding-form/coll-expr pairs in a row.
+
+Seq comprehensions are a macro.
+
+* Which filter expressions are availabe for seq comprehensions?
+- `:when expr` which is much like a standard filter/guard.
+
+- `:while expr` which stops the comprehension as soon as the predicate fails.
+
+* Force the evaluation of a lazy sequence.
+`
+(doall coll) ; stores result of traversal and returns
+(dorun coll) ; doesn't store, returns nil
+`
+
+* What can be treated as a seq, Clojure collections aside?
+- Java collections, arrays, and strings
+- Regexps
+- File hierarchies
+- File I/O
+- XML trees
+- Database results
+
 
