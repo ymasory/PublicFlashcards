@@ -1,0 +1,24 @@
+#GRAMMAR 1
+#TOPLEFT Scala in Depth
+#TOPRIGHT 3
+#NUMBERS true
+
+* Where can named parameters be used?
+All parameters can be used in a named way, whether or not default parameters are used.
+
+* What are the three ways of giving arguments to parameters?
+Argument placement, named parameters, mixed mode.
+
+* What happens to default parameters when inheritence is used?
+The parameter names are determined by the static type.
+However, the values are determined by the dynamic type.
+
+Hence in the case where an overriden function uses the same names as the `super` function, but in a different order, the result will be confusing for objects with a different static and dynamic types.
+
+* What is the negative consequence of named parameters?
+* What feature will will 2.8.1 probably include to mitigate this problem?
+Parameter names are exposed and part of the public API.
+
+Scala 2.8.1 will probably include a way to deprecate old parameter names and introduce new ones.
+
+
