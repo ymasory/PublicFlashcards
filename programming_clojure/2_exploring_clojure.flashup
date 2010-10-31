@@ -225,3 +225,49 @@ Each reference an be a `:use` or an `:import`.
 
 * What is the purpose of `do`?
 It allows you to use multiple expressions where only one is allowed. The last expression is the the result of the whole expression. Previous expressions are executed for side-effects.
+
+* Describe `loop`.
+It's just the same as `let`, excpet it introduces a recursion point which `recur` can return to.
+
+`
+(loop [bindings *] exprs*)
+(recur exprs*)
+`
+
+* Where you can you add metadata?
+* How do you do it?
+Metadata can be added to collections and symbols.
+
+`
+(with-meta object metadata)
+`
+
+* What is Clojure's semantic equality test?
+* Reference equality?
+`=` is like Java's `equals`
+`identical?` is like Java's ==
+
+* How is metadata usually accessed?
+With the `^` macro.
+
+`^x` is like `(meta x)`
+
+* Add keys to a map.
+`
+(assoc map k v & more-kvs)
+`
+
+* Add `:tag` documentation metadata to a `defn`.
+`
+(defn #^{:tag BigInt} name [#^{:tag BigInt} i] body)
+
+(defn #^BigInt name [#^BigInt i] body)
+
+(defn name
+  ([i] body)
+  {:tag BigInt})
+`
+
+* What is the difference between `with-meta` and the `#^` macro?
+The reader macro adds metadata directly to a var or parameter.
+`with-meta` adds it to the value.
