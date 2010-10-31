@@ -170,6 +170,10 @@ Use `:as name` in the destructuring. It will bind to the entire collection, not 
 * What makes a collection sequential?
 It supports `nth`.
 
+`
+(coll index not-found?)
+`
+
 * Name Clojure's special forms ```not``` for Java interop.
 `def`, `if`, `do`, `let`, `quote`, `var`, `fn`, `loop`, `recur`, `throw`, `try`, `monitor-enter`, `monitor-exit`.
 

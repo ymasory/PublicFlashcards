@@ -23,7 +23,7 @@ Supporting `first`, `rest`, `cons`, as described in `clojure.lang.ISeq`.
 A seq.
 
 * Where are custom seqs defined for most seq-ables?
-Inan inner class of the collection. This leads to mangled names like:
+In an inner class of the collection. This leads to mangled names like:
 `
 clojure.lang.SomeCollection$Seq
 `
@@ -72,13 +72,13 @@ user=> (apply str (interpose ", " ["a" "b" "c"]))
 `
 (take-while pred coll)
 (drop-while pred coll)
-(split-at inex coll)
+(split-at index coll)
 (split-with pred coll)
 `
 
 * How can you create a new predicate that reverses the truth conditions of an existing one?
 `
-(complment
+(complement
 `
 
 * What are the common sequence predicates?
@@ -106,7 +106,7 @@ There can be may binding-form/coll-expr pairs in a row.
 
 Seq comprehensions are a macro.
 
-* Which filter expressions are availabe for seq comprehensions?
+* Which filter expressions are available for seq comprehensions?
 - `:when expr` which is much like a standard filter/guard.
 
 - `:while expr` which stops the comprehension as soon as the predicate fails.
@@ -121,8 +121,84 @@ Seq comprehensions are a macro.
 - Java collections, arrays, and strings
 - Regexps
 - File hierarchies
-- File I/O
+- Streams
 - XML trees
 - Database results
 
+* What structure-specific functions do lists support?
+`
+(peek coll)
+(peek coll)
+`
 
+`peek` returns the first element, `pop` is like `rest` but throws an exception on an empty sequence.
+
+* What structure-specific functions to vectors support?
+`peek ` which returns the last element, and `pop` which returns the "init" of a vector.
+
+`
+(get vector index)
+(vector index)
+(subvec vector start end?)
+`
+
+* What's the difference between `take`/`drop` and `subvec`?
+`take`/`drop` work on any sequences, but `subvec` is much faster for vectors.
+
+* What structure-specific functions do maps support for querying contents?
+`
+(keys map)
+(vals map)
+(get map key not-found?)
+(a-map element) ; test for membership
+(a-keyword map) ; test for membership
+`
+
+* What's the trouble with looking up a key in a map?
+* How can you avoid this problem?
+You can't know if a result of `nil` indicates they key was not in the map or if it was present, mapped to `nil`.
+
+You can get around the problem with:
+`
+(contains? map key)
+(get map key not-found?)
+`
+
+* What structure-specific functions do maps support for creating new maps?
+`
+(assoc map key val & more-kvs)
+(dissoc map key & more-keys)
+(select-keys map key-seq)
+(merge map1 map2) ; map2 wins if both keys exist
+(merge-with merge-fn & maps)
+`
+* Unlike other structure-specific functions, set's must be ...
+... imported to use unqualified.
+
+`
+(use 'clojure.set)
+`
+
+* Which set-theoretic operations do sets support?
+`unions`, `intersection`, `difference`.
+
+* What can database results be viewed as seq-able.
+There are two important correspondences between relational algebra, databases, and the clojure type system.
+
+relation = table = set-like
+tuple = row = map-like
+
+So in clojure you might have a set of maps (i.e., a relation).
+
+* Which database-like functions does Clojure support?
+Straight sets:
+`
+(select pred set)
+`
+
+Relations (sets of maps):
+`
+(rename relation rename-map)
+(project relation keys)
+(join rel1 rel2 keymap?)
+`
