@@ -28,4 +28,73 @@ Inan inner class of the collection. This leads to mangled names like:
 clojure.lang.SomeCollection$Seq
 `
 
+* How can maps be viewed as seqs?
+The key/value pairs are the elements.
+
+* How can you get a reliable order of traversal for maps and sets?
+Use sorted sets and sorted maps.
+`
+(sorted-set & elements)
+`
+
+`
+(sorted-map & elements)
+`
+
+* Describe `conj` and `into`.
+They are like `cons` and `concat`, but they add the elements in the position most efficient for the underlying representation.
+
+`
+(conj coll element & elements)
+(into to-coll from-coll)
+`
+
+* All Clojure sequences are ... and most are ...
+... immutable ... lazy.
+
+* What's an easy way to insert commas between words?
+`
+(interpose separator coll)
+
+user=> (apply str (interpose ", " ["a" "b" "c"]))
+"a, b, c"
+`
+
+`clojure.contrib.str-util`'s `str-join` wraps the common `apply str` pattern.
+
+* What's the difference between `set`/`vec` and `hash-set`/`vector`?
+`vec` and `set` take a single collection argument, `hash-set` and `vector` take variable elements.
+
+* What are the common sequence factor methods that take a variable number of elements as arguments?
+`list`, `vector`, `hash-set`, `hash-map`.
+
+* What are the common sequence filtering functions?
+`
+(take-while pred coll)
+(drop-while pred coll)
+(split-at inex coll)
+(split-with pred coll)
+`
+
+* How can you create a new predicate that reverses the truth conditions of an existing one?
+`
+(complment
+`
+
+* What are the common sequence predicates?
+`
+(every? pred coll)
+(some pred coll)
+(not-every? pred coll)
+(not-any? pred coll)
+`
+
+* What are the common sequence transforming functions?
+`
+(map f coll)
+(reduce f val? coll)
+(sort comp? coll)
+(sort-by keyfn comp? coll) ; keyfn is for *getting* the keys
+`
+
 
