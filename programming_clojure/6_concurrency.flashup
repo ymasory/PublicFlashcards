@@ -2,3 +2,51 @@
 #TOPLEFT Programming Clojure
 #TOPRIGHT 6
 #NUMBERS true
+
+* What are Clojure's four tools for concurrency?
+refs, atoms, agents, vars
+
+* What is a ref?
+It's a mutable reference to an immutable object. They are for coordinating synchronous changes to shared state using software transactional memory.
+
+* What are agents?
+They are actors, used to send asynchronous changes to shared state?
+
+* Reference or dereference objects.
+* "Re-assign" the reference.
+Create reference:
+`
+(ref initial-state)
+`
+
+Two ways to dereference:
+`
+(deref reference)
+@reference
+`
+
+Point the reference somewhere else:
+`
+(ref-set reference new-value)
+`
+
+* How do you execute a transaction?
+`
+(dosync & exprs)
+`
+
+* What properties to transactions guarantee?
+* What property is not guaranteed?
+- Atomicity. They are "all or nothing" and cannot be executed only partially.
+- Consistency. Validation conditions can be specified causing the entire transaction to fail should any one of them not hold.
+- Isolation. Transactions are never visible in a "partially complete" state.
+
+The final part of ACID, durability, is not provided, since software transactions are in-memory only.
+
+* What does it mean for two transactions to be coordinated?
+* How can this be achieved?
+Transactions are coordinated if they happen simultaneously from others' perspective.
+
+Coordination is achieved by putting multiple transactions in the same `dosync`.
+
+* 
