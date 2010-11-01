@@ -49,4 +49,31 @@ Transactions are coordinated if they happen simultaneously from others' perspect
 
 Coordination is achieved by putting multiple transactions in the same `dosync`.
 
-* 
+* What's the best way to update a ref in a single step?
+`
+(alter ref update-fn & args)
+`
+
+This is preferable to using a `ref-set` with derefing.
+
+It still needs to be wrapped in a `dosync` as normal.
+
+* Why might one use `conj` instead of `cons` when working with a list?
+The argument order might work better. `cons` takes the item as the first argument, `conj` takes the item as the second argument.
+
+* What is the signature of a suitable update function for `alter`?
+`
+(func-name obj-to-update & args)
+`
+
+* What is the fundamental approach of STM's Multiversion Concurrency Control approach?
+* Why does it get expensive?
+When the transaction is running it uses its own private copy of any references needed. If any of these references are altered by other transactions while the first one is running, it will have to retry the whole thing from scratch until it succeeds.
+
+This is potentially costly becuase the altering that other transactions do while the first transaction is running may not actually interfere with the first transaction's business.
+
+* How can one improve upon the performance of `alter`?
+By using `commute`, which has the same signature.
+However, this is only accpetable if the transactions are commutative.
+
+
