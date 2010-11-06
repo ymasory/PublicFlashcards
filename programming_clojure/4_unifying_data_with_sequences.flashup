@@ -19,8 +19,8 @@ Supporting `first`, `rest`, `cons`, as described in `clojure.lang.ISeq`.
 (next aseq) ;; aka (seq (rest aseq))
 `
 
-* The result of all functions on collections is?
-A seq.
+* Functions on collections result in ...
+... seqs.
 
 * Where are custom seqs defined for most seq-ables?
 In an inner class of the collection. This leads to mangled names like:
@@ -65,7 +65,7 @@ user=> (apply str (interpose ", " ["a" "b" "c"]))
 * What's the difference between `set`/`vec` and `hash-set`/`vector`?
 `vec` and `set` take a single collection argument, `hash-set` and `vector` take variable elements.
 
-* What are the common sequence factor methods that take a variable number of elements as arguments?
+* What are the common sequence factory methods that take a variable number of elements as arguments?
 `list`, `vector`, `hash-set`, `hash-map`.
 
 * What are the common sequence filtering functions?
@@ -78,7 +78,7 @@ user=> (apply str (interpose ", " ["a" "b" "c"]))
 
 * How can you create a new predicate that reverses the truth conditions of an existing one?
 `
-(complement
+(complement pred)
 `
 
 * What are the common sequence predicates?
@@ -125,7 +125,7 @@ Seq comprehensions are a macro.
 - XML trees
 - Database results
 
-* What structure-specific functions do lists support?
+* Which structure-specific functions do lists support?
 `
 (peek coll)
 (peek coll)
@@ -133,8 +133,8 @@ Seq comprehensions are a macro.
 
 `peek` returns the first element, `pop` is like `rest` but throws an exception on an empty sequence.
 
-* What structure-specific functions to vectors support?
-`peek ` which returns the last element, and `pop` which returns the "init" of a vector.
+* Which structure-specific functions do vectors support?
+`peek` which returns the last element, and `pop` which returns the "init" of a vector.
 
 `
 (get vector index)
@@ -143,9 +143,9 @@ Seq comprehensions are a macro.
 `
 
 * What's the difference between `take`/`drop` and `subvec`?
-`take`/`drop` work on any sequences, but `subvec` is much faster for vectors.
+`take`/`drop` work on any sequence, but `subvec` is much faster for vectors.
 
-* What structure-specific functions do maps support for querying contents?
+* Which structure-specific functions do maps support for querying contents?
 `
 (keys map)
 (vals map)
@@ -172,8 +172,8 @@ You can get around the problem with:
 (merge map1 map2) ; map2 wins if both keys exist
 (merge-with merge-fn & maps)
 `
-* Unlike other structure-specific functions, set's must be ...
-... imported to use unqualified.
+* Unlike other structure-specific functions, those for sets must be ...
+... imported to be used unqualified.
 
 `
 (use 'clojure.set)
@@ -182,7 +182,7 @@ You can get around the problem with:
 * Which set-theoretic operations do sets support?
 `unions`, `intersection`, `difference`.
 
-* What can database results be viewed as seq-able.
+* How can database results be viewed as seq-able.
 There are two important correspondences between relational algebra, databases, and the clojure type system.
 
 relation = table = set-like
