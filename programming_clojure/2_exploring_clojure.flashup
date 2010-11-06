@@ -19,7 +19,7 @@ Boolean, number, string, character, keyword, symbol, nil, vector, list, map.
 - `BigIntegers` and `BigDecimals` have a literal form, a number ending with `M`.
 
 * What can symbols refer to?
-Functions with standard identifiers, operators, Java classes, Clojure namespaces, Java packages, data structures, refs
+Functions with standard identifiers, operators, Java classes, Clojure namespaces, Java packages, data structures, refs.
 
 * What are the rules for symbol names?
 They may not begin with a number.
@@ -122,7 +122,7 @@ A macro for:
 The doc-string and attrs are added to the var metadata.
 
 * What is the vararg syntax?
-Just as in the documentation syntax, us a `&` before the final parameter.
+Just as in the documentation syntax, use a `&` before the final parameter.
 
 * Give non-obvious reasons for using anonymous functions.
 
@@ -141,7 +141,7 @@ It's a reader macro.
 * What is a root binding?
 The initial value of a var it was given in a `def`/`defn` statement.
 
-* How can a `var` be accessed directly, s opposed to its value?
+* How can a `var` be accessed directly, as opposed to its value?
 With the reader macro:
 `
 #'symbol
@@ -160,7 +160,7 @@ for `(var symbol)`.
 
 * Where can destructuring be used?
 * What are the two kinds?
-Destructuring can be used in fn parameter lists, `let`, and macros that expand to either of those.
+Destructuring can be used in `fn` parameter lists, `let`, and macros that expand to either of those.
 
 Vectors can be put in the binding to capture sequential collections, or maps for associative collections.
 
@@ -225,7 +225,7 @@ In the namespace declaration.
 (ns name & references)
 `
 
-Each reference an be a `:use` or an `:import`.
+Each reference can be a `:use` or an `:import`.
 
 * What is the purpose of `do`?
 It allows you to use multiple expressions where only one is allowed. The last expression is the the result of the whole expression. Previous expressions are executed for side-effects.
