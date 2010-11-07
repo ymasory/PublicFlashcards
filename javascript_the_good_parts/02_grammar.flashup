@@ -25,4 +25,34 @@ As in Python, single or double quote delimiters can be used.
 
 16-bit fixed Unicode is used.
 
+* Concatenate two strings.
+Use `+`.
 
+* What does the `<script>` tag do?
+* How do they relate to one another?
+The browser executes the compilation unit referred to in the tag right away.
+
+They share a global namespace.
+
+* Give the conditional syntax.
+`
+if (boolean-expr) then {
+  ...
+}
+else {
+  ...
+}
+`
+
+It results in a value.
+
+* Conditionals accept what kind of values as "false"?
+`false`, `null`, `undefined`, empty string, `0`, `NaN`
+
+* Give the `do-while` syntax.
+`
+do {
+  ...
+}
+while (boolean-expr);
+`
