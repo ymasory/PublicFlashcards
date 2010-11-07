@@ -13,5 +13,16 @@ As in Java, in-line `//` and multiline `/* ... */`.
 Unfortunately, the multiline delimiters can appear in string literals, making commenting out arbitrary blocks of codes unreliable.
 
 * What's strange about JavaScript's numerical types?
-There are no integers, only 64-bit floating types.
+There are no integers, or floating point of any size other than 64-bits.
+There are no characters either.
+
+* Create an exponential literal.
+`xey` is the same as `x * pow(10, e)`.
+
+* Descript the string syntax.
+* How are they encoded?
+As in Python, single or double quote delimiters can be used.
+
+16-bit fixed Unicode is used.
+
 
