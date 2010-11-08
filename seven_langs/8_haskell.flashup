@@ -42,7 +42,7 @@ module MyMath where
 `
 
 * How can you control flow of control to a function?
-- Multiple function definitions.
+- Multiple function definitions using pattern-matching parameters.
 - Guards.
 
 * Give the syntax of guards.
