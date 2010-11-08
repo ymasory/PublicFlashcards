@@ -151,4 +151,5 @@ user=> (equals5 5)
 true
 `
 
-
+* Access the elements of a tuple.
+`fst` and `snd`
