@@ -30,4 +30,7 @@ Accessing a non-existent key results in `undefined`.
 
 Accessing a key of `undefined` results in a `TypeError`.
 
+* How do you update/augment objects?
+Through assignment on the keys.
+
 
