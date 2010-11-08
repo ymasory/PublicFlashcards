@@ -3,4 +3,31 @@
 #TOPRIGHT 3
 #NUMBERS true
 
+* What is a JavaScript object?
+* What isn't it?
+A map from strings to any value except `undefined`.
+
+It's not derived from a class.
+
+* Give the object literal syntax.
+`
+{
+  key1 : val1,
+  ...
+}
+`
+
+Keys are automatically strings so they don't require quotes unless they are reserved words.
+
+* How are the values in objects accessed?
+`
+obj["quoted-key"]
+obj.key
+`
+
+* What are the consequences of bad object keys?
+Accessing a non-existent key results in `undefined`.
+
+Accessing a key of `undefined` results in a `TypeError`.
+
 
