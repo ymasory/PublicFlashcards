@@ -25,7 +25,10 @@ As in Python, single or double quote delimiters can be used.
 
 16-bit fixed Unicode is used.
 
+* Access the length of a string.
 * Concatenate two strings.
+'string'.length
+
 Use `+`.
 
 * What does the `<script>` tag do?
@@ -34,9 +37,18 @@ The browser executes the compilation unit referred to in the tag right away.
 
 They share a global namespace.
 
+* What does `var` do?
+It indicates variables private to a function.
+
+* Which statements can be labeled?
+`switch`, `while`, `for`, `do`
+
+* What's different about JavaScript's blocks?
+They don't define a new scope.
+
 * Give the conditional syntax.
 `
-if (boolean-expr) then {
+if (expr) then {
   ...
 }
 else {
@@ -54,5 +66,23 @@ It results in a value.
 do {
   ...
 }
-while (boolean-expr);
+while (expr);
 `
+
+* Give the `switch` syntax.
+* What's the classic `switch` mistake?
+Same as Java.
+
+`
+switch (expr) {
+  case expr: ...
+  default: ...       
+}
+`
+
+It falls through.
+
+* Give the `while`/`do-while` syntax.
+Identical to Java.
+
+
