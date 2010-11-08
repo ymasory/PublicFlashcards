@@ -59,3 +59,44 @@ func args
 
 * Give the syntax of tuples and lists.
 Tuples use round parens, lists use brackets.
+
+* Compose functions
+You can do it explicitly with parens and parameters, or with the dot notation:
+`
+composedFunc arg = secondToApply (firstToApply arg)
+composedFunc = secondToApply . firstToApply
+`
+
+* Access the length of a collection.
+`
+length coll
+`
+
+* Give the list range syntax.
+`
+[start ..]             --infinite list
+[start .. end]         --default increment of 1
+[start, second .. end] --uses second to show increment
+`
+
+* Give the list comprehension sytax.
+`
+[expr | genOrFilter1, ..., genOrFilterN]
+`
+
+Filters are boolean expressions.
+Generator form:
+`
+bindingForm <- collection
+`
+
+* Give the anonymous function syntax.
+`
+\param1 ... paramN -> body
+`
+
+* How can you bind variables with maximally limited scope?
+You can append an indented `where` clause.
+
+* How do you partially apply a function?
+Just don't give a function all its arguments. No special syntax is required.
