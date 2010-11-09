@@ -1,0 +1,9 @@
+#GRAMMAR 1
+#TOPLEFT JavaScript: The Good Parts
+#TOPRIGHT 4
+#NUMBERS true
+
+* Function objects are linked to ...
+... `Function.prototype`
+
+* 
