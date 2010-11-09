@@ -4,6 +4,37 @@
 #NUMBERS true
 
 * Function objects are linked to ...
-... `Function.prototype`
+... `Function.prototype` which in turn is linked to `Object.prototype`.
 
-* 
+* What is the default value of variables?
+`undefined`
+
+* What's unusual about JavaScript's function invocation?
+If the number of arguments doesn't match the number of parameters, arguments are dropped or supplied as `undefined` as needed.
+
+* What is a refinement?
+The umbrella term for member access that includes dot and subscripts.
+
+* Write to the web page.
+document.writeln("hello, world");
+
+* In JavaScript's terminology, what is a method?
+* A public method?
+A method is a function that is a member of an object. It is public if it uses `this` to access its containing object's state.
+
+* How can code be invoked?
+- Method - expression uses refinement
+- Function - direct call without refinement
+- Constructor - 
+- Apply
+
+* What's the huge problem with `this`?
+* What's the consequence?
+In function invocation `this` refers to the global object, ```not``` any containing object.
+
+Inner functions of methods designed as helpers lack reference to the method's containing object.
+
+* How can one work around the useless mapping of `this` in function invocations?
+By explicitly storing the value of `this` in a variable before the function is invoked inside a method.
+
+
