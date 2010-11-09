@@ -100,3 +100,27 @@ You can append an indented `where` clause.
 
 * How do you partially apply a function?
 Just don't give a function all its arguments. No special syntax is required.
+
+* What's the simplest way to create a new type?
+`
+data NewType = Val1 | Val2 | ... | ValN
+`
+
+* What are some simple type alias forms?
+`
+type NewType = OldType
+type NewType = (Type1, ..., TypeN)
+type NewType = [SomeType]
+`
+
+* How can you make your custom type printable?
+Add `deriving (Show)` to the end of the constructor.
+k
+
+* How are variables interpreted in a function's type declaration?
+They are interpreted as type variables.
+
+* What is a class in Haskell?
+A collection of function signatures that any instance of the class (a ```type``` not an object) must support.
+
+
