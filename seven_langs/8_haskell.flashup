@@ -123,4 +123,18 @@ They are interpreted as type variables.
 * What is a class in Haskell?
 A collection of function signatures that any instance of the class (a ```type``` not an object) must support.
 
+* How can you temporary variables for use in a function?
+`
+let var1 = expr1
+    ...
+    var2 = expr2
+in result-expr
+`
+
+* Fundamentall, monads are ...
+* Some common uses are ...
+... a way of composing functions.
+
+... sequential execution, control structures, managing i/o, the `Maybe` monad.
+
 
