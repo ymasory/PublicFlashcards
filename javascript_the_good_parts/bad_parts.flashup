@@ -1,0 +1,16 @@
+#GRAMMAR 1
+#TOPLEFT JavaScript: The Good Parts
+#TOPRIGHT Bad Parts
+#NUMBERS true
+
+* Why should you prefer `===`/`!==` over `==`/`!=`.
+`==`/`!=` will engage in non-intuitive non-transitive coercion.
+
+* What does `void` do?
+It's a pointless operator that returns `undefined` regardless of its operand.
+
+* Why should `with` be avoided?
+It's behavior cannot be predicted from reading the programming text.
+
+* Why should `eval` and similar string-evaluating functions be avoided?
+They are slow and reduce the effectiveness of static analysis tools.
