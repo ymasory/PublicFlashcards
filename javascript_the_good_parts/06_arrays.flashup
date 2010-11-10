@@ -3,3 +3,33 @@
 #TOPRIGHT 6
 #NUMBERS true
 
+* What's the difference between arrays and objects with number keys?
+Arrays have the `length` property and inherit from `Arrays.prototype` instead of `Objects.prototype`.
+
+* What does the `length` property of an array really represent?
+The current size, not the final size. Assignment to higher indexes then `length - 1` will succeed and increase the `length` property.
+
+* How are subscripts on arrays different than in Java?
+Any object can go in the subscript. The result of calling its `toString` operation will determine the property name retrieved. This applied to all objects not just arrays.
+
+* What's a quick way to delete lots of properties of an array?
+Reduce it's `length` property.
+
+* Append to an array.
+- Use `push`.
+- Assign to index `arr.length`.
+
+* Delete from an array without leaving a whole.
+Use `splice(deleteIndex, deletionLength)` which modifies the array rather than returning a new one.
+
+* What are the limiatations of `for-in` on arrays?
+* What's the solution?
+- Order of iteration is not guaranteed.
+- Unexpected properties may be present due to prototype linkage.
+
+Use `for` instead with an index variable.
+
+* Why it difficult to distinguish between arrays and objects?
+`typeof myArr` returns `'object'`
+
+
