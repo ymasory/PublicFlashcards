@@ -4,12 +4,13 @@
 #NUMBERS true
 
 * Concatenate strings.
+* What else can this be used for?
 `
 str1 ++ str2
 `
 
-* What are strings, really?
-Lists of characters.
+Any two lists can be concatenated this way.
+Strings are just lists of characters.
 
 * How is negation done?
 `/=` and unary `not`
@@ -131,7 +132,7 @@ let var1 = expr1
 in result-expr
 `
 
-* Fundamentall, monads are ...
+* Fundamentally, monads are ...
 * Some common uses are ...
 ... a way of composing functions.
 
