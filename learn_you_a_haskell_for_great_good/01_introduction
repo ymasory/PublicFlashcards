@@ -1,0 +1,12 @@
+#GRAMMAR 1
+#TOPLEFT Learn You a Hasekll
+#TOPRIGHT 1
+
+* Load and reload files in interactive mode.
+Start interactive mode with `ghci`.
+To load:
+`
+:l myfile.hs
+`
+
+To realod you can run the `:l` line again, or use the shortcut `:r` which will reload all loaded scripts.
