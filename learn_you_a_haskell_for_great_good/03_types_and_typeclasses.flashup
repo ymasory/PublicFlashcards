@@ -27,8 +27,8 @@ The type class for types that can be tested for equality.
 
 `IO` and functions are not members.
 
-* Haskell's equivalent of Java's `Comparable` is ...
-... `Ord`.
+* Describe Haskell's equivalent of Java's `Comparable`.
+The typeclass `Ord` defines a function `compare` which returns an `Ordering`, meaning either `GT`, `EQ`, or `LT`.
 
 * What is the `Show` typeclass?
 Its members can be presented as strings using the `show` function.
@@ -64,3 +64,30 @@ ghci> :t fromIntegral
 fromIntegral :: (Integral a, Num b) => a -> b
 `
 
+* How can repeated computations be avoided in a series of guards?
+With a `where` clause following the guards, containing variable assignments, one per line, aligned.
+
+* What additional kind of assignment can be made with `where`/`let`, pattern matching aside?
+Named functions can be created, using the normal syntax.
+
+* Where are helper functions typically defined, when scope-limiting is desired?
+In a `where` clause. Sometimes this gets nested into one helper helping another, and so on.
+
+* Other than order, what's the difference between `let/in` and `where`?
+- `let` is an expression, while `where` is just a syntactic construct.
+- `where` doesn't have such a tight scope, so its bindings are active across multiple guards.
+
+* How can multiple `let` bindings be put on one line?
+By separating the assignments with semicolons.
+
+* In addition to guards and generators, what can go in list comprehensions?
+`let` expressions, being far more powerful than Scala's midstream definitions.
+
+* Pattern matching on function parameters is just syntactic sugar for ...
+* What is the full syntax?
+... case expressions.
+
+`case expr of pat1 -> res1
+              ...
+              patN -> resN
+`

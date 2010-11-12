@@ -1,0 +1,36 @@
+#GRAMMAR 1
+#TOPLEFT Learn You a Haskell
+#TOPRIGHT 4
+#NUMBERS true
+
+* Beware that the cons patter won't match ...
+... the empty list.
+
+* Crash to program with a message.
+`
+error "message"
+`
+
+* Prove that the comma in list literals is just syntactic sugar for a cons chain.
+In pattern matching you can use comma or cons.
+
+* Give a name to the expression being matched by a pattern.
+As in Scala:
+`
+name @ pattern
+`
+
+* How are guards added to the parameter patterns?
+* Watch out! ...
+`
+pattern
+    | condition1 = value1
+    ...
+    | conditionN = valueN
+`
+
+... there's no `=` before the first guard.
+
+* The last guard is often ...
+... `otherwise`, being defined as `True`.
+
