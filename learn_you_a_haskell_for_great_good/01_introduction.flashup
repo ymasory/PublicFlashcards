@@ -1,6 +1,7 @@
 #GRAMMAR 1
 #TOPLEFT Learn You a Hasekll
 #TOPRIGHT 1
+#NUMBERS true
 
 * Load and reload files in interactive mode.
 Start interactive mode with `ghci`.
