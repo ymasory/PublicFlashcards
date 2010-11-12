@@ -75,3 +75,7 @@ Using partial application in a function whose result is the argument to another 
 fn x = ceiling (negate (tan (cos (max 50 x))))
 fn = ceiling . negate . tan . cos . max 50
 `
+
+* What is a common overuse of lambdas?
+Using a lambda instead of a partially applied function when passing a function to a higher-order method.
+If the only purpose of the lambda is to introduce a parameter to a function, you probably could have left it off and used partial application instead.

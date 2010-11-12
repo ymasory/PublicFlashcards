@@ -1,0 +1,24 @@
+#GRAMMAR 1
+#TOPLEFT Learn You a Haskell
+#TOPRIGHT 8
+#NUMBERS true
+
+* What is the basic syntax of the `data` keyword?
+`
+data TypeName = ValueConstructorA FieldA1 ... FieldAN | ValueConstructorB ...
+`
+
+* What are value constructors, really?
+* What aren't they?
+Functions that ultimately return a value of a data type. So the "fields" of a value constructor are really parameters.
+
+They are ```not``` types.
+
+* Literals can be thought of as what?
+Value constructors with no parameters.
+
+* How can you make your typeclass inherit another one?
+Add `deriving (OtherClass)` to the end of the `data` declaration.
+
+* When there's only one value constructor for a type, it's common to do what?
+Use the same name for the data type and the value constructor.
