@@ -1,0 +1,20 @@
+#GRAMMAR 1
+#TOPLEFT Learn You a Haskell
+#TOPRIGHT 7
+#NUMBERS true
+
+* What is a Haskell module?
+* What is a Haskell program?
+A module is a collection of related functions, types, and typeclasses.
+
+A program is a collection of modules where the main module loads up the other modules and then uses their functions.
+
+* Which module is imported by default?
+`Prelude`
+
+* Give two shortcuts for importing modules in `ghci`.
+`
+:m + Module1 Module2 ... ModuleN
+`
+
+Or, load a script that does imports of its own. They too will be available.
