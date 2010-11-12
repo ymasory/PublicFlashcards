@@ -1,5 +1,5 @@
 #GRAMMAR 1
-#TOPLEFT Learn You a Hasekll
+#TOPLEFT Learn You a Haskell
 #TOPRIGHT 1
 #NUMBERS true
 
@@ -21,7 +21,7 @@ A ``definition``, or a ``name``.
 * What is `null`?
 A method for checking if a list is empty.
 
-It should be prefered over:
+It should be preferred over:
 `
 list == []
 `
@@ -46,7 +46,7 @@ The step must be given explicitly:
 Results are unintuitive, e.g., exceeding the "upper bound".
 
 * Name three ways to create infinite lists.
-- Ranges with no uper limit.
+- Ranges with no upper limit.
 - `cycle list`
 - `repeat el`
 
@@ -61,7 +61,7 @@ replicate num el
 * What is `()`?
 Both the type and sole value of the empty tuple.
 
-* What are haskell's capitalization rules?
+* What are Haskell's capitalization rules?
 Types start with an uppercase character, variables with a lowercase letter.
 
 * What is the key benefit of type variables over generics?
@@ -74,10 +74,10 @@ Type variables stay maximally general (polymorphic), being restricted only by th
 ... its name consists of only special characters and is infix by default.
 
 * What does `=>` do in a type signature?
-It indicates a class constraint. The left hand side indicates class membership of the type variables used on the right hand side.
+It indicates a class constraint. The left hand side indicates class membership/s (comma separated) of the type variables used on the right hand side.
 
 * What is `Eq`?
-* What are some promiment non-`Eq`s?
+* What are some prominent non-`Eq`s?
 The type class for types that can be tested for equality.
 
 `IO` and functions are not members.
@@ -94,7 +94,7 @@ The `Read` typeclass defines `read` which does just that.
 
 However, in order to know what type is desired, the result of `read` must be used in an expression.
 
-* What is a type annotatoin?
+* What is a type annotation?
 Haskell's term for a manifest type. It's not an annotation on a type in the sense of Scala's `@specialized`.
 Haskell type annotations use the `::` followed by the type.
 
@@ -111,3 +111,11 @@ ghci> :t 0
 ghci> :t maxBound
 maxBound :: (Bounded a) => a
 `
+
+* Make integral and floating point types play nice together.
+* What is that function's signature?
+`
+ghci> :t fromIntegral
+fromIntegral :: (Integral a, Num b) => a -> b
+`
+
