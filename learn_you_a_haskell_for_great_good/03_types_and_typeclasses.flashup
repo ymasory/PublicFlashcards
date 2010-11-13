@@ -7,7 +7,7 @@
 Both the type and sole value of the empty tuple.
 
 * What are Haskell's capitalization rules?
-Types start with an uppercase character, variables with a lowercase letter.
+Types start with an uppercase character, everything else with a lowercase letter.
 
 * What is the key benefit of type variables over generics?
 Type variables stay maximally general (polymorphic), being restricted only by the ways the type is used. Generics force you to anticipate the maximum generality yourself when declaring the generic type's bounds.
@@ -87,7 +87,8 @@ By separating the assignments with semicolons.
 * What is the full syntax?
 ... case expressions.
 
-`case expr of pat1 -> res1
+`
+case expr of pat1 -> res1
               ...
               patN -> resN
 `

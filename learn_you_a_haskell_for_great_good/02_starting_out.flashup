@@ -46,7 +46,7 @@ The step must be given explicitly:
 Results are unintuitive, e.g., exceeding the "upper bound".
 
 * Name three ways to create infinite lists.
-- Ranges with no upper limit.
+- Ranges with no upper bound, or with no lower bound.
 - `cycle list`
 - `repeat el`
 
