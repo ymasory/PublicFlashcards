@@ -30,7 +30,7 @@ import Module hiding (func1, func2, ...)
 `
 
 * Mitigate name-collisions between needed functions from different modules.
-* How can this be made more conveninet?
+* How can this be made more convenient?
 You can import one on a qualified basis so only the fully qualified name of one (or both) of the functions is available.
 `
 import qualified Module
@@ -67,7 +67,7 @@ A value that is yet to be evaluated.
 
 * Describe `group`.
 * Name a common use.
-It takes a list ond groups adjacent elements into sublists if they are equal.
+It takes a list and groups adjacent elements into sublists if they are equal.
 
 If you sort before grouping you can find out how many times each element appears in the list.
 

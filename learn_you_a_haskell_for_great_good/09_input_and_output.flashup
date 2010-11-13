@@ -23,7 +23,7 @@ line <- getLine
 You don't have to use `in` ... just like with list comprehensions.
 
 * Name two ways to run a program without loading it as a script into `ghci`.
-Run without compilng:
+Run without compiling:
 `
 $ runhaskell file.hs
 `
