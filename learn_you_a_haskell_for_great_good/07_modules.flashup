@@ -92,6 +92,44 @@ Functions whose names end with "by" test with a provided equality function inste
 * What utility function helps in constructing comparison functions for "by" functions?
 `on`, used infix between `(==)` and the function that gets the value you want to use for comparison.
 
+* How are maps from `Data.Map` created?
+* How are they represented internally?
+Using `fromList` on a list of 2-tuples where the first element is an `Ord`.
+
+They are represented using trees.
+
+* Look up a value in a map.
+* Check if a key is in the map.
+* Add/remove from a map.
+`lookup` returns a `Maybe`
+
+`member`
+
+`insert`/`delete`
+
+* How are the sets of `Data.Set` represented?
+* Create one.
+As trees, so they're ordered.
+
+Use `fromList`.
+
+* Create a set/map from a single value.
+Use `singleton`.
+
+* Check a set's size.
+* Test a set for membership.
+* Add/remove from a set.
+`size`, `null`, `empty`
+
+`member`
+
+`insert`, `delete`
+
+* Compare strategies for eliminating duplicates from a list.
+`nub` is simplest, requires only `Eq`, but is potentially slow.
+
+Converting to a set with `fromList` and then back with `toList` may be faster but requires `Ord`.
+
 * Define your own module.
 `
 module MyModule
