@@ -151,4 +151,45 @@ class ClassName typevar1 ... typevarn where
 
 Function declarations are simply type signatures like `ghci` would put out in response to `:t`.
 
+* Manually create an instance of `Eq`.
+`
+instance Eq TrafficLight where
+    Red == Red = True
+    Green == Green = True
+    Yellow == Yellow = True
+    _ == _ = False
+`
+
+* How can a typeclass implement all its functions yet require that instances implement some of them?
+The typeclass might implement functions in terms of one another, requiring a minimal complete definition to define one to bootstrap the others.
+
+* What is ``subclassing`` in Haskell?
+* Given an example.
+Adding a class constraint to a `class` declaration.
+
+`
+class (Eq a) => Num a where
+    ...      
+`
+
+* How can you find information about names that aren't expressions?
+`:info Name` in `ghci`.
+
+* What's the `Functor` typeclass?
+* Give a partial implementation.
+It's for things that can be mapped over, like lists.
+
+`
+class Functor f where
+    fmap :: (a -> b) -> f a -> f b
+`
+
+* What is a ``kind``?
+* How can the be found using `ghci`?
+More or less, the type of a type.
+
+`
+:k Type
+`
+
 
