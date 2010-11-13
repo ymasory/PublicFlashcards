@@ -1,4 +1,4 @@
-#GRAMMAR 1
+l#GRAMMAR 1
 #TOPLEFT Learn You a Haskell
 #TOPRIGHT 8
 #NUMBERS true
@@ -22,3 +22,99 @@ Add `deriving (OtherClass)` to the end of the `data` declaration.
 
 * When there's only one value constructor for a type, it's common to do what?
 Use the same name for the data type and the value constructor.
+
+* How do you export types from a module?
+`
+module MyModule
+( DataConstructor1(..)
+, ...
+, DataConstructorN
+) where ...
+`
+
+The `..` indicates all value constructors of the type constructor should be exported.
+Otherwise you can comma separate the ones you want to export, or leave off the parens altogether to not export any value constructors.
+
+* What happens if you don't export any value constructors?
+* Give an example of a standard library type like this.
+Instances of the type can be created only through auxiliary functions.
+
+`Data.Map` can be constructed only through auxiliary functions like `fromList`.
+
+* What is record syntax?
+* Give its syntax.
+A way of creating value constructors with automatic meaningfully named accessors.
+
+`
+data Person = Person { firstName :: String
+                     , lastName :: String
+                     , age :: Int
+                     , height :: Float
+                     , phoneNumber :: String
+                     , flavor :: String
+                     } deriving (Show)
+`
+
+* What use-site convenience does record syntax provide?
+Named parameters. Users can invoke the value constructor using curlies and comma-separated named values.
+
+* Define `Maybe`.
+Like Scala's `Option`:
+
+`
+data Maybe a = Nothing | Just a
+`
+
+* When should you use type parameters?
+* When should you not?
+Use them when your type is a container of some kind.
+Otherwise don't, since your functions on the type will make strong assumptions about the types filled in.
+
+* Why is there a strong convention against putting typeclass constraints in data declarations?
+Constraints should follow from functions that assume the constraint.
+If you put the constraint on the data declaration you will have to put the constraint on ```all``` functions, even when the constraint is irrelevant to that particular function.
+
+* What's the catch when deriving `Eq`?
+All the field types must also be of the `Eq` typeclass.
+
+* What is the default interpretation of deriving `Ord`?
+Ordering the value constructors least to greatest, in the order defined.
+
+* What is a value constructor with no parameters called?
+nullary
+
+* What syntactic convenience to `Enums` have?
+They can be used in list ranges.
+
+* Describe type synonyms?
+Haskell's term for Scala's type aliases.
+The syntax is the same as Scala's:
+`
+type Name = Type
+`
+
+* What abilities do type synonyms have over Scala's type aliases?
+Haskell's can be parameterized:
+`
+type AssocList k v = [(k,v)]
+`
+
+Haskell's can be "partially applied" using either of these notations:
+`
+type AssocListInt = AssocList Int
+type AssocListInt v = AssocList Int v 
+`
+
+* What is a concrete type?
+A type that is fully applied, with no unbound type parameters.
+
+* Describe `Either`.
+* What is it used for.
+Approximately:
+`
+data Either a b = Left a | Right b deriving (Eq, Ord, Read, Show)
+`
+Errors use `Left`, successful result uses `Right`.
+
+Its used for functions that can fail in multiple ways. `Maybe`'s `Nothing` would not inform as to which way it failed.
+
