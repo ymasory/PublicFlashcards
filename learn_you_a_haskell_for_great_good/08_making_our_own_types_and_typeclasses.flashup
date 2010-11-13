@@ -118,3 +118,37 @@ Errors use `Left`, successful result uses `Right`.
 
 Its used for functions that can fail in multiple ways. `Maybe`'s `Nothing` would not inform as to which way it failed.
 
+* Demonstarte recursive types by defining `List` with standards syntax.
+* Do the same with record syntax.
+`
+data List a = Empty | Cons a (List a) deriving (Show, Read, Eq, Ord)
+
+data List a = Empty | Cons { listHead :: a, listTail :: List a} deriving (Show, Read, Eq, Ord)
+`
+
+* What is a fixity declaration?
+* Give its syntax.
+It indicates which way an operator associates and how tightly.
+
+`
+fixity num op
+`
+Where `fixity` is one of `infix`, `infixr`, `infixl`, and `num` is the tightness of binding, and `op` is the operator in question.
+Larger numbers indicate tighter bindings.
+
+* Give the `data` definition of a tree.
+`
+data Tree a = EmtpyTree | Node a (Tree a) (Tree a) deriving (Show, Read, Eq)
+`
+
+* Give the basic typeclass syntax.
+`
+class ClassName typevar1 ... typevarn where
+    funcDefOrDeclaration1
+    ...
+    funcDefOrDeclarationN
+`
+
+Function declarations are simply type signatures like `ghci` would put out in response to `:t`.
+
+
