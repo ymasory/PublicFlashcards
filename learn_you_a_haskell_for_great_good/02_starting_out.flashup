@@ -34,7 +34,7 @@ list == []
 elem el list
 `
 
-It's usually called infix.
+However, it's usually called in infix form.
 
 * How can you make a list range in decreasing order?
 The step must be given explicitly:
