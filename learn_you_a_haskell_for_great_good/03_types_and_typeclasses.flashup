@@ -7,7 +7,7 @@
 Both the type and sole value of the empty tuple.
 
 * What are Haskell's capitalization rules?
-Types start with an uppercase character, variables with a lowercase letter.
+Types start with an uppercase character, everything else with a lowercase letter.
 
 * What is the key benefit of type variables over generics?
 Type variables stay maximally general (polymorphic), being restricted only by the ways the type is used. Generics force you to anticipate the maximum generality yourself when declaring the generic type's bounds.
@@ -37,10 +37,12 @@ Its members can be presented as strings using the `show` function.
 * What's the catch?
 The `Read` typeclass defines `read` which does just that.
 
-However, in order to know what type is desired, the result of `read` must be used in an expression.
+However, in order to know what type is desired, the result of `read` must be used in an expression or given a type annotation.
 
 * What is a type annotation?
+* Give its syntax.
 Haskell's term for a manifest type. It's not an annotation on a type in the sense of Scala's `@specialized`.
+
 Haskell type annotations use the `::` followed by the type.
 
 * Members of `Enum` can do what?
@@ -87,7 +89,8 @@ By separating the assignments with semicolons.
 * What is the full syntax?
 ... case expressions.
 
-`case expr of pat1 -> res1
+`
+case expr of pat1 -> res1
               ...
               patN -> resN
 `

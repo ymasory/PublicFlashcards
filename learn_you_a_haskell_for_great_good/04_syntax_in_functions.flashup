@@ -3,10 +3,10 @@
 #TOPRIGHT 4
 #NUMBERS true
 
-* Beware that the cons patter won't match ...
+* Beware that the cons pattern won't match ...
 ... the empty list.
 
-* Crash to program with a message.
+* Crash the program with a message.
 `
 error "message"
 `

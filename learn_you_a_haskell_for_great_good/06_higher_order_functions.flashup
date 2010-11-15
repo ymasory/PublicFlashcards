@@ -25,7 +25,7 @@ Use `subtract` instead of `-`.
 * What should you do if you're unsure of the type of a function you're writing?
 See what Haskell infers using `:t`.
 
-* Create a new function that reverses the order of the input function's first to parameters.
+* Create a new function that reverses the order of the input function's first two parameters.
 `
 ghci> :t flip
 flip :: (a -> b -> c) -> b -> a -> c
@@ -66,7 +66,7 @@ f . g = \x -> f (g x)
 ... cannot be determined from the name of a function alone.
 
 * How can composition be used with functions of several parameters?
-The functions must be partially applied until each function just takes one function.g
+The functions must be partially applied until each function just takes one function.
 
 * What's a common use of composition?
 Using partial application in a function whose result is the argument to another function.

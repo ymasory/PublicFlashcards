@@ -18,3 +18,125 @@ A program is a collection of modules where the main module loads up the other mo
 `
 
 Or, load a script that does imports of its own. They too will be available.
+
+* Selectively import functions from a module.
+* Exclude functions from a module import.
+`
+import Module (func1, func2, ...)
+`
+
+`
+import Module hiding (func1, func2, ...)
+`
+
+* Mitigate name-collisions between needed functions from different modules.
+* How can this be made more convenient?
+You can import one on a qualified basis so only the fully qualified name of one (or both) of the functions is available.
+`
+import qualified Module
+`
+
+To make this more convenient the module can be renamed to something shorter.
+`
+import qualified Module as M
+`
+
+* What is Hoogle?
+`http://haskell.org/hoogle`
+A Haskell-specific search engine that lets you search by name, module name, or even type signature.
+
+* Describe `foldl'` and `foldl1'`.
+They are strict versions of their lazy counterparts. They avoid stack overflow errors that result from folding on large lists.
+
+* What is a thunk?
+A value that is yet to be evaluated.
+
+* Flatten two lists.
+* Remove duplicates.
+* Which two functions work on lists of booleans?
+`concat`
+
+`nub`
+
+`and` and `or`
+
+* Describe `span` and `break`.
+`span` is like `takeWhile` but returns a pair of lists, the second of which is the list of elements that would have been dropped by `takeWhile`.
+
+`break` negates `takeWhile`'s predicate.
+
+* Describe `group`.
+* Name a common use.
+It takes a list and groups adjacent elements into sublists if they are equal.
+
+If you sort before grouping you can find out how many times each element appears in the list.
+
+* What functions are provided for testing sublists?
+`isPrefixOf`, `isSuffixOf`, `isInfixOf`
+
+* Describe `partition`.
+It separates a list into a pair of two lists, those satisfying a predicate and those failing it.
+
+* Split and join strings based on newline characters.
+* Do the same for words.
+`lines`, `unlines`
+
+`words`, `unwords`
+
+* What are the `Data.List` "generic" functions?
+* What about the "by" functions?
+Functions whose names start with "generic" that correct the historical error of using `Int` instead of `Num` as the type of a parameter.
+
+Functions whose names end with "by" test with a provided equality function instead of using `==`.
+
+* What utility function helps in constructing comparison functions for "by" functions?
+`on`, used infix between `(==)` and the function that gets the value you want to use for comparison.
+
+* How are maps from `Data.Map` created?
+* How are they represented internally?
+Using `fromList` on a list of 2-tuples where the first element is an `Ord`.
+
+They are represented using trees.
+
+* Look up a value in a map.
+* Check if a key is in the map.
+* Add/remove from a map.
+`lookup` returns a `Maybe`
+
+`member`
+
+`insert`/`delete`
+
+* How are the sets of `Data.Set` represented?
+* Create one.
+As trees, so they're ordered.
+
+Use `fromList`.
+
+* Create a set/map from a single value.
+Use `singleton`.
+
+* Check a set's size.
+* Test a set for membership.
+* Add/remove from a set.
+`size`, `null`, `empty`
+
+`member`
+
+`insert`, `delete`
+
+* Compare strategies for eliminating duplicates from a list.
+`nub` is simplest, requires only `Eq`, but is potentially slow.
+
+Converting to a set with `fromList` and then back with `toList` may be faster but requires `Ord`.
+
+* Define your own module.
+`
+module MyModule
+( funcToExport1
+, funcToExport2
+...
+) where
+
+...
+`
