@@ -113,7 +113,7 @@ func params =
 `
 
 * What is a lazy data structure?
-* What's an easy way to make them in Clojure?
+* What's an easy way to make them in Haskell?
 A data structure whose parts don't exist until they are accessed.
 
 `iterate` takes a function `f` and a starting value `n` and produces a lazy infinite series:
@@ -241,3 +241,28 @@ sequence :: (Monad m) => [m a] -> m [a]
 `
 
 This will work only if all statements in the `do` return the same type.
+
+* Read the contents of a file.
+`
+import System.IO
+
+handle <- openFile "myFile.txt" ReadMode
+contents <- hGetContents handle
+hClose handle
+`
+
+* Give the signature of `openFile`.
+* How can the file automatically be closed for you?
+`
+ghci> :t openFile
+openFile :: FilePath -> IOMode -> IO Handle
+ghci> :t withFile
+withFile :: FilePath -> IOMode -> (Handle -> IO r) -> IO r
+`
+
+* Give shortcuts for quickly reading/writing files.
+`
+readFile :: FilePath -> IO String
+writeFile :: FilePath -> String -> IO ()
+appendFile :: FilePath -> String -> IO ()
+`
