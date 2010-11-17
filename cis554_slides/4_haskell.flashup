@@ -112,45 +112,6 @@ func params =
   | boolean2 -> ...
 `
 
-* What is a lazy data structure?
-* What's an easy way to make them in Haskell?
-A data structure whose parts don't exist until they are accessed.
-
-`iterate` takes a function `f` and a starting value `n` and produces a lazy infinite series:
-`
-(n, f(n), f(f(n)), f(f(f(n))), ...)
-`
-
-* What does the `&` mean in a function signature?
-It comes before a vararg, which is available as a list in the body.
-
-* Describe `do`.
-`
-(do exprs*)
-`
-
-Evaluates the expressions in order and returns the value of the last.
-
-* Describe list comprehension syntax.
-`
-(for seq-exprs body-expr)
-`
-
-Takes a vector of one or more binding-form/collection-expr pairs, each followed by zero or more modifiers, and yields a lazy sequence of evaluations of expr.
-
-Supported modifiers are: `:let [binding-form expr ...]`, `:while test`, `:when test`.
-
-
-* How do you partially apply functions?
-Use `partial`, followed by a function and fewer than the normal number of arguments.
-
-`
-user=> (def equals5 (partial = 5))
-#'user/equals5
-user=> (equals5 5)
-true
-`
-
 * Access the elements of a tuple.
 `fst` and `snd`
 
