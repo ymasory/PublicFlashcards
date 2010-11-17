@@ -214,3 +214,30 @@ forever a = a >> forever a
 return :: (Monad m) => a -> m a
 `
 
+* What rules do monads obey?
+`
+return x >>= f  =  f x
+`
+
+`
+m >>= return    =  m
+`
+
+`>>=` is associative
+
+* What problem does `when` solve?
+* Define it.
+It's often encessary to check a condition in an I/O function and in one case `return IO`.
+
+`
+when :: (Monad m) => Bool -> m () -> m ()
+`
+It does the `return ()` for you in the event the condition fails.
+
+* In some cases `do` can be replaces with ...
+... `sequence`.
+`
+sequence :: (Monad m) => [m a] -> m [a]
+`
+
+This will work only if all statements in the `do` return the same type.
