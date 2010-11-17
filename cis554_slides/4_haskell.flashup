@@ -153,3 +153,64 @@ true
 
 * Access the elements of a tuple.
 `fst` and `snd`
+
+* What determines indentation in common expressions?
+* What can be used instead.
+The first nonblank character following `where`, `let`, or `of` determines the starting column.
+
+Curlies can be used instead, but indentation alone is generally preferred.
+
+* Each case of a function must have ...
+... exactly the same signature. There is no overloading.
+
+* What does `+` do in a pattern?
+Allows you to create variables with an offset from what is matched:
+
+`
+subtractFive (n + 5) = n
+`
+
+* Define the ``bind`` operator.
+`
+(>>=) :: (Monad m) => m a -> (a -> m b) -> m b
+`
+
+It passes the "state of the world" resulting from one function to the next function.
+
+* Define the ``then`` operator.
+* What does it provide over ``bind``?
+`
+(>>) :: (Monad m) => m a -> m b -> m b
+`
+
+It is convenient to have another function that doesn't demand a function as its second argument.
+
+* Define `return`.
+`
+return :: (Monad m) => a -> m a
+`
+
+It creates a monad container for arbitrary values.
+
+* Do notation is really syntactic sugar for what?
+One `>>=`/`>>` after another. It also allows the `let` form.
+
+* Give an infinite loop that allows I/O.
+`
+import Control.Monad
+
+forever :: (Monad m) => m a -> m b
+forever a = a >> forever a
+`
+
+* A monad consists of what?
+- A type constructor `M`.
+- A bind operation
+`
+(>>=) :: (Monad m) => m a -> (a -> m b) -> m b
+`
+- A return operation
+`
+return :: (Monad m) => a -> m a
+`
+
