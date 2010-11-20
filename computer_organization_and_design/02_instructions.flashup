@@ -19,7 +19,7 @@ The stored-program concept, in which a both programs and data can be stored in m
 * What are the four underlying principles of hardware design?
 1. Simplicity favors regularity.
 2. Smaller is faster.
-3. 
+3. Make the common case fast.
 
 * What is a word?
 The natural unit of data used by a particular computer design. It is usually the size of addressability of the system, meaning the largest address is two raised to the power of the word size minus one.
@@ -47,5 +47,12 @@ The process of moving program variables that have no space in registers into mem
 - Memory takes longer to access.
 - Registers can be accessed and operated on in one instruction. Memory loads require instructions that do no computation on the loaded values.
 - Memory takes more energy.
+
+
+* What is an intermediate operand?
+A constant value, as opposed to a reference to a register.
+
+* Base register + offset addressing in instructions are useful in working with ...
+... arrays.
 
 
