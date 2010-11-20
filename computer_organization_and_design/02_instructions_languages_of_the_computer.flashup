@@ -1,0 +1,51 @@
+#GRAMMAR 1
+#TOPLEFT Computer Organization and Design
+#TOPRIGHT 2
+#NUMBERS true
+
+* What are the goals of instruction set architecture (ISA) design?
+- Easy construction hardware and compilers.
+- Maximizing performance.
+- Minimizing cost.
+- Minimizing power.
+
+* ISAs are essential to supporting which model of computation?
+The stored-program concept, in which a both programs and data can be stored in memory as numbers.
+
+* What is the format of an ARM instruction?
+- There is exactly one operation.
+- It has exactly three operands.
+
+* What are the four underlying principles of hardware design?
+1. Simplicity favors regularity.
+2. Smaller is faster.
+3. 
+
+* What is a word?
+The natural unit of data used by a particular computer design. It is usually the size of addressability of the system, meaning the largest address is two raised to the power of the word size minus one.
+
+* Why not have a larger number of registers?
+- The farther the signal must travel to reach a register, the slower a cycle may become.
+- Addressing large numbers is constrained by the size of the instruction.
+- Energy conservation.
+
+* How do computers get around the small number of registers?
+With data transfer instructions - instructions that move data from memory to the registers (``loads``) and back (``stores``).
+
+* How is ARM addressing different from other architectures?
+ARM uses byte-addressing. Hence its ``alignment restriction`` requires that addresses must be in multiples of the word size.
+Some other architectures uses word-addressing, in which case addresses are simply nonnegative integers.
+
+* Describe endianness in terms of addressability.
+Big-endian systems use the leftmost byte as the word's address.
+Little-endian systems like ARM use the rightmost byte.
+
+* What is spilling?
+The process of moving program variables that have no space in registers into memory. Compilers will attempt to spill variables that are least likely to be needed again in the near future.
+
+* Why is it more desirable for a program variable to be in a register than in memory?
+- Memory takes longer to access.
+- Registers can be accessed and operated on in one instruction. Memory loads require instructions that do no computation on the loaded values.
+- Memory takes more energy.
+
+
