@@ -55,4 +55,20 @@ A constant value, as opposed to a reference to a register.
 * Base register + offset addressing in instructions are useful in working with ...
 ... arrays.
 
+* What are the limitation sof the simple sign and magnitude represenation?
+- The side of the sign bit feels arbitrary.
+- The sign of the result of an operation may need to be added in a second step since it cannot be anticipated in advance.
+- Zero is represented twice, once "positive" and once "negative".
+
+* Why is hexadecimal popular?
+Since it, like binary, is a power of 2, it is easy to convert to and from binary.
+
+* What is the consequence of having multiple instruction formats?
+* How can this be mitigated?
+Hardware design is made more complicated.
+
+This can be partially mitigated by keeping some properties common to all the formats.
+
+
+
 
