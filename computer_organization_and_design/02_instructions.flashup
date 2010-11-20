@@ -69,6 +69,24 @@ Hardware design is made more complicated.
 
 This can be partially mitigated by keeping some properties common to all the formats.
 
+* What is a common use of bit-wise and bit-shifting operations?
+* What functionalities in C are similar?
+Accessing and implanting bits into words.
 
+C (and others) have bit-wise and bit-shifting operators, but C also has bit fields which allow packing data into parts of a word in an enforced manner.
+
+* What is a bit mask?
+A bit pattern used with logical `AND` to hide some of the bits in the target.
+
+* How is bit shifting unique in ARM?
+It has no dedicated instruction. Instead, shifts can be specified directly inside a data processing instruction.
+
+* What is a basic block?
+* How are they used?
+A portion of code within a program with one entry point and one exit point.
+One entry point means jump targets are only found at the beginning.
+One exit point means that only the last instruction can jump.
+
+Since they have convenient formal properties, compilers break the program into basic blocks.
 
 
