@@ -89,4 +89,31 @@ One exit point means that only the last instruction can jump.
 
 Since they have convenient formal properties, compilers break the program into basic blocks.
 
+* How do compare instructions communicate their results to conditional branches?
+The result of the comparison is stored in condition flags that the branch checks.
+
+Many other instructions can compare/alter the condition flags.
+
+* What is the advantage of treating signed integers as unsigned in two's complement?
+`x < y` returns true of `x` is less than `y` ``or`` of x is negative.
+
+This allows array bounds to be checked with one comparison and one branch based on that comparison.
+
+* What is the program counter?
+A special register that stores the location of the current instruction.
+
+* What strategies does ARM use to increase the jump distance?
+- PC-relative addressing which leaves a 24-bit field to specify the distance from the PC.
+- Interpreting the PC offsets as words instead of bytes.
+
+* What is unusual in ARM's conditional instructions?
+Not just branches can check conditions. Many operations like ADD and SUB can execute conditionally, removing the need for branches with conditional execution.
+
+* Name four common addressing modes.
+- Immediate addressing - constant operand
+- Register addressing - operand names the register which contains the value
+- Scaled register addressing - same as above, but the register's value is shifted before being used
+- PC-relative addressing - a constant operand is added to the program counter
+
+
 
