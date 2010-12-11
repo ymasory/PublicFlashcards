@@ -1,0 +1,43 @@
+#GRAMMAR 1
+#TOPLEFT Programming Language Pragmatics
+#TOPRIGHT 12
+
+* What is pre-emptive scheduling?
+Scheduling that allows context switches before a thread blocks, to prevent CPU "hogging".
+
+* What is a dispatch loop?
+An alternative to parallelism that subdivides tasks, saves their state, and returns to the top of the dispatch loop at every delay-inducing operation.
+
+* What are the three levels of parallelism granularity?
+* How can they be further categorized?
+- Instruction-level
+- Vector-level
+- Thread-level
+
+The first two are part of the implementation of a program, the third affects the program's high-level structure.
+
+* What are some motivations of concurrency?
+- Capturing the logical structure of a problem.
+- Exploiting extra processors for speed.
+- Coping with separate physical devices.
+
+* What is a race condition?
+A section of code that multiple threads approach ("race to"), such that the behavior of the program depends on which gets there first.
+
+* What is the purpose of synchronization?
+To make a critical section appear atomic.
+
+* What is the memory coherence problem? Who does it affect?
+The difficulty in keeping copies of a memory location consistent with one another.
+This problem affects shared-memory machines.
+
+* What are the two broad categories of single-site (non-distributed) parallel computers?
+- Multiprocessor (shared-memory) systems.
+- Message-based systems.
+
+* Define ``task``.
+A well-defined unit of work that must be performed by some thread. In that sense a collection of threads share a "bag of tasks" to work on.
+
+* Contrast heavyweight and lightweight threads.
+Lightweight threads have a shared memory space.
+

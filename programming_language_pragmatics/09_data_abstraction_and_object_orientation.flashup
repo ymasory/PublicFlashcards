@@ -1,0 +1,6 @@
+#GRAMMAR 1
+#TOPLEFT Programming Language Pragmatics
+#TOPRIGHT 09
+
+* Define ```type system```.
+A tractable syntactic method for preserving the absence of certain program behaviors by classifying phrases according to the kinds of values they compute (B. Pierce).
