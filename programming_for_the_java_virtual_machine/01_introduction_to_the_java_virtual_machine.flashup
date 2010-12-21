@@ -7,3 +7,19 @@
 - The ISA ("bytecodes")
 - The class file format
 - The algorithm used for verifying class files
+
+* What is the term "class file format" misleading?
+JVM bytecode does not to be stored in a file. It can come from other sources, like a networked host or a database.
+
+* What are the JVM's four data spaces?
+- Class area (code + constants)
+- Java stack
+- Heap
+- Native method stacks
+
+* What goes into a class?
+- Superclass
+- Interfaces
+- Fields
+- Methods
+- Constants
