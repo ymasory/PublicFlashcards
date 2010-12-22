@@ -1,0 +1,8 @@
+#GRAMMAR 1
+#TOPLEFT Programming for the JVM
+#TOPRIGHT 2
+#NUMBERS true
+
+* Initialization in a declaration is allowed by the JVM only if ...
+... the field is static and the initialization is to `int`, `float`, `long`, `double`, or `String`.
+
