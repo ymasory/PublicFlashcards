@@ -1,0 +1,10 @@
+#GRAMMAR 1
+#TOPLEFT Programming for the JVM
+#TOPRIGHT 3
+#NUMBERS true
+
+* What's the difference between an argument and an operand?
+An argument is given after the instruction mnemonic, i.e. present in the program text.
+Operands are values at the top of the stack, known only at run-time.
+
+
