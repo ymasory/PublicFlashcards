@@ -35,7 +35,7 @@ Fully qualified, using `/` instead of `.` to separate package names.
 * What happens to extra properties that are not in the spec?
 The JVM is ``required`` to ignore them.
 
-* What keywords does the JVM allow on field, method, and classes?
+* What keywords does the JVM allow on field, method, class, and interface declarations?
 Those that Java does, in any order.
 
 * What flexibility overloading flexibility does the JVM have that Java prohibits?
