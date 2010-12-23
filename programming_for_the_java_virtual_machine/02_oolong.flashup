@@ -6,3 +6,40 @@
 * Initialization in a declaration is allowed by the JVM only if ...
 ... the field is static and the initialization is to `int`, `float`, `long`, `double`, or `String`.
 
+* What is a method descriptor?
+* What is its syntax?
+A type signature for a method.
+
+`
+(type1...typen)typereturn
+`
+
+No spaces.
+
+* Give the JVM notation for types.
+B - byte 
+Z - boolean
+C - char
+D - double
+F - float
+I - int
+J - long
+S - short
+V - void
+[t - array of t
+Lclassname; - reference to classname
+
+* How are names written on the JVM?
+Fully qualified, using `/` instead of `.` to separate package names.
+
+* What happens to extra properties that are not in the spec?
+The JVM is ``required`` to ignore them.
+
+* What keywords does the JVM allow on field, method, and classes?
+Those that Java does, in any order.
+
+* What flexibility overloading flexibility does the JVM have that Java prohibits?
+Two methods that differ only in the return type. This is usable from assembly (since the full descriptor is used in a method call) but not from Java (where only the method's name is used).
+
+
+
