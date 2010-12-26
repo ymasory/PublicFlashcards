@@ -24,3 +24,9 @@ The definitions actually describe trees. Parens are simply a way of resolving am
 * Why are inference rules actually ``rule schemas``?
 They may reference metavariables. Hence each may be instantiated to any of an infinite set of ``concrete rules`` containing phrases in place of metavariables.
 
+* What are the three primary approaches to formalizing a language's semantics?
+- Operational semantics.
+- Denotational semantics.
+- Axiomatic semantics.
+
+
