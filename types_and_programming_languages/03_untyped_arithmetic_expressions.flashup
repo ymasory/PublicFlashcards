@@ -36,7 +36,15 @@ An approach to formalizing semantics that specifies the behavior of a programmin
 Proofs of the correctness of the implementation of the language.
 
 * Define ``denotational semantics``.
-An approach to formalizing emantics that takes meanings of terms to be mathematical objects.
+An approach to formalizing semantics that takes meanings of terms to be mathematical objects.
 
 * Giving a language denotational semantics involves what?
 Finding a collection of ``semantic domains`` and then defining an ``interpretation function`` mapping terms into elements of these domains.
+
+* What is ``domain theory``?
+The search for appropriate semantic domains for modeling various language features.
+
+* Define ``axiomatic semantics``.
+An approach to formalizing semantics that takes laws themselves as the definition of the language. The meaning of a term is just what can be proved about it.
+
+
