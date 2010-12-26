@@ -47,4 +47,8 @@ The search for appropriate semantic domains for modeling various language featur
 * Define ``axiomatic semantics``.
 An approach to formalizing semantics that takes laws themselves as the definition of the language. The meaning of a term is just what can be proved about it.
 
+* What are the most difficult cases for denotational and axiomatic semantics.
+- Denotational semantics: nondeterminism and concurrency
+- Axiomatic semantics: procedures
 
+* 
