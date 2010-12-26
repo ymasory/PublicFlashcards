@@ -29,4 +29,14 @@ They may reference metavariables. Hence each may be instantiated to any of an in
 - Denotational semantics.
 - Axiomatic semantics.
 
+* Define ``operation semantics``.
+An approach to formalizing semantics that specifies the behavior of a programming language by defining a simple abstract machine to it. The abstract machine uses the terms of the language itself (or higher level structures) as states and defines a transition function between states. The meaning of a term is the final state reached when starting with that term as the initial state.
 
+* In the framework of operational semantics, proofs on the behavior of a program amount to what?
+Proofs of the correctness of the implementation of the language.
+
+* Define ``denotational semantics``.
+An approach to formalizing emantics that takes meanings of terms to be mathematical objects.
+
+* Giving a language denotational semantics involves what?
+Finding a collection of ``semantic domains`` and then defining an ``interpretation function`` mapping terms into elements of these domains.
