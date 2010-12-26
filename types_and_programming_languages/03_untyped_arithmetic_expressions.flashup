@@ -1,0 +1,26 @@
+#GRAMMAR 1
+#TOPLEFT Types and Programming Languages
+#TOPRIGHT 3
+#NUMBERS true
+
+* What is a ``metavariable``?
+A variable that ranges over the ``metalanguage`` (the notation of a description), not the ``object language`` (the language being defined).
+
+* What is a ``metatheory``?
+"The collection of true statements that we can make about some particular logical system (or programming language)--and, by extension, the study of such statements."
+
+* Why can the definitions of language's syntax get away with not mentioning parentheses?
+The definitions actually describe trees. Parens are simply a way of resolving ambiguities when a term is represented a string.
+
+* Name four ways to define the syntax of a language.
+- Using a grammar, in BNF form for example.
+- By defining terms inductively.
+- Using inference rules.
+- By defining a procedure for generating all possible phrases.
+
+* Inference rules with no premises are called ...
+... ``axioms``.
+
+* Why are inference rules actually ``rule schemas``?
+They may reference metavariables. Hence each may be instantiated to any of an infinite set of ``concrete rules`` containing phrases in place of metavariables.
+
