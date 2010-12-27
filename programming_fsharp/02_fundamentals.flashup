@@ -1,0 +1,20 @@
+#GRAMMAR 1
+#TOPLEFT Programming F#
+#TOPRIGHT 2
+#NUMBERS true
+
+* Unlike Java, F#'s primitive types ...
+- Have signed and unsigned versions.
+- Include a fixed precision point type.
+
+* How can you use an integer as the base of an exponent?
+You must use `pown` instead of `**`, or convert to a floating-point type.
+
+* What are the conversion functions for primitive types?
+They have the same names as the types being converted to.
+
+* For arbitrary precision integers F# features what?
+Language support. Literals ending with `I` are `System.Numerics.BigIntegers`.
+
+* What are the bitwise operators?
+`&&&`, `|||, `^^^`, `<<<`, `>>>`
