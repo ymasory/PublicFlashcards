@@ -1,0 +1,42 @@
+#GRAMMAR 1
+#TOPLEFT Programming F#
+#TOPRIGHT 1
+#NUMBERS true
+
+* What is the comments syntax?
+`
+(* multiline comment *)
+
+//inline comment
+
+`
+
+* How are blocks and similar structures represented in F#?
+Using inentation, not braces. Whitespace is significant.
+
+* What character is allowed in identifiers that Scala and Java do not permit?
+Apostraphe (').
+
+* How can you force identifier interpretation for a token?
+Surround with ```double``` back ticks.
+
+* How are bindings created?
+With the `let` keyword, for either values or functions.
+
+* Give the multiple assignment syntax.
+`
+let ident1, ident2 = val1, val2
+`
+
+* How are documentation comments created?
+In Visual Studio, by beginning a comment (or each line thereof) with `///`.
+
+* On the REPL commands are terminated with what?
+`;;`
+
+* How can you send code from a project to `fsi` in visual studio?
+Select the program text and hit Alt + Enter.
+
+* What is odd about the order of source files in Visual Studio?
+It matters. The programmer is repsonsible for selecting the correct order of compilation, only using definitions present in earlier files.
+
