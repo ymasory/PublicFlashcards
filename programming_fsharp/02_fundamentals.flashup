@@ -43,3 +43,59 @@ The suffice `B` after the close quote of a string literal.
 * How is equality written?
 * Inequality?
 `=` and `<>`.
+
+* What is the syntax of function definitions?
+`
+let funcname arg1 arg2 ... argN = body
+`
+
+* The result of a function is ...
+The value of the last expression in a given path. There is no `return` keyword.
+
+* How are function types written?
+As in Haskell:
+`
+type1 -> type2 -> ... -> typeN
+`
+
+* Unlike in Haskell, functions using operators like `+` will default to ...
+... `int` parameters instead of type parameters.
+
+* How are type annotations written?
+As usual, `name : type`.
+
+* How are type parameters written?
+With a leading `'`, e.g., `'a`, `'b`.
+
+* Unlike in Scala, shadowing is allowed where?
+In the same block. E.g., two consecutive lines can `let` the same identifier.
+
+* What is the syntax of conditionals?
+`
+if   cond1 then res1
+elif cond2 then res2
+...
+else res
+`
+
+* Unlike in Scala, each branch of a conditional must have what?
+The same type. Upcasting will not be done.
+
+* How are tuples written?
+* How are their types written?
+Comma separated values surrounded by round parens.
+
+`
+type1 * type2 * ... * typeN
+`
+
+* Access the elements of a tuple.
+- Use `fst` and `snd`.
+- Unpack with `let`
+`
+let a, b, c = (1, 2, 3)
+`
+
+* What is the list literal syntax?
+Semi-colon separated values surrounded by square brackets.
+
