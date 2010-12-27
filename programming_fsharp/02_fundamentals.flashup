@@ -13,8 +13,33 @@ You must use `pown` instead of `**`, or convert to a floating-point type.
 * What are the conversion functions for primitive types?
 They have the same names as the types being converted to.
 
+* Why are conversion functions more widely used in F#?
+There is no type coercion.
+
 * For arbitrary precision integers F# features what?
 Language support. Literals ending with `I` are `System.Numerics.BigIntegers`.
 
 * What are the bitwise operators?
 `&&&`, `|||, `^^^`, `<<<`, `>>>`
+
+* Index a string.
+`
+"abcd".[0]
+`
+
+* How are multi-line strings written?
+- One can end each line with a backslash while still in a string. Leading whitespace will be removed from the next line.
+- With verbatim strings, but leading whitespace will not be removed.
+
+* What is the verbatim string syntax?
+An `@` before the string begins.
+
+* What shortcut is provided for converting a string literals to arrays of bytes?
+The suffice `B` after the close quote of a string literal.
+
+* How is negation written?
+`not` for unary negation.
+
+* How is equality written?
+* Inequality?
+`=` and `<>`.
