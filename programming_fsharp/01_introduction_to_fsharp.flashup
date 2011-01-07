@@ -12,10 +12,10 @@
 `
 
 * How are blocks and similar structures represented in F#?
-Using inentation, not braces. Whitespace is significant.
+Using indentation, not braces. Whitespace is significant.
 
 * What character is allowed in identifiers that Scala and Java do not permit?
-Apostraphe (').
+Apostrophe (').
 
 * How can you force identifier interpretation for a token?
 Surround with ```double``` back ticks.
@@ -38,5 +38,5 @@ In Visual Studio, by beginning a comment (or each line thereof) with `///`.
 Select the program text and hit Alt + Enter.
 
 * What is odd about the order of source files in Visual Studio?
-It matters. The programmer is repsonsible for selecting the correct order of compilation, only using definitions present in earlier files.
+It matters. The programmer is responsible for selecting the correct order of compilation, only using definitions present in earlier files.
 
