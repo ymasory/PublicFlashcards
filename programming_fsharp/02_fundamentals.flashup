@@ -99,3 +99,8 @@ let a, b, c = (1, 2, 3)
 * What is the list literal syntax?
 Semi-colon separated values surrounded by square brackets.
 
+* What is the syntax of list comprehensions?
+Basically arbitrary code within square brackets. Elements are selected using the `yield` keyword.
+
+* How are list comprehensions evaluated?
+Eagerly, in memory.
