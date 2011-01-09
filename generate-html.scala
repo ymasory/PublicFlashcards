@@ -14,8 +14,8 @@ val pwd = new File(System.getProperty("user.dir"))
 val subdirs = pwd.listFiles filter (_.isDirectory)
 
 val out = new PrintWriter("table.html")
-out println "<table id=\"allflashcards\">"
-out println """
+println("<table id=\"allflashcards\">")
+println("""
 <tr> 
 <th><b>Deck</b></th> 
 <th><b>3"x5"</b></th> 
@@ -23,12 +23,12 @@ out println """
 <th><b>3"x5" Backs</b></th> 
 <th><b>Source</b></th> 
 </tr>
-""".trim
+""".trim)
 
 val metaPred = {(file: File) => new File(file, MetaFilename).exists}
 val (metas, nots) = subdirs partition metaPred
-println("no meta file found for: ")
-nots foreach println
+System.err println "no meta file found for: "
+nots foreach System.err.println
 
 for {dir <- metas
      deck <- dir.listFiles
@@ -39,17 +39,17 @@ for {dir <- metas
   val url = if (lines.length > 1) lines(1) else None
   val basename = name.split("\\.").head
 
-  out println "<tr>"
-  out println ("<td class=\"flashcardfile\">" + title + "</td>")
+  println("<tr>")
+  println("<td class=\"flashcardfile\">" + title + "</td>")
   def printLink(in: String) {
-    out println ("<td><a href=\"" + UrlPrefix + dir.getName + Sep + in + "\">link</a></td>")
+    println("<td><a href=\"" + UrlPrefix + dir.getName + Sep + in + "\">link</a></td>")
   }
   printLink(PdfDir + Sep + basename + "." + PdfExt)
   printLink(PdfDir + Sep + basename + FrontsSuffix + "." + PdfExt)
   printLink(PdfDir + Sep + basename + BacksSuffix + "." + PdfExt)
   printLink(basename + "." + FlashupExt)
-  out println "</tr>"
+  println("</tr>")
 }
 
-out println "</table>"
+println("</table>")
 out close()
