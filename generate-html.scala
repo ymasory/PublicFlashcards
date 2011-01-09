@@ -14,7 +14,7 @@ val pwd = new File(System.getProperty("user.dir"))
 val subdirs = pwd.listFiles filter (_.isDirectory)
 
 val out = new PrintWriter("table.html")
-out println "<table>"
+out println "<table id=\"allflashcards\">"
 out println """
 <tr> 
 <th><b>Deck</b></th> 
@@ -40,7 +40,7 @@ for {dir <- metas
   val basename = name.split("\\.").head
 
   out println "<tr>"
-  out println ("<td>" + title + "</td>")
+  out println ("<td class=\"flashcardfile\">" + title + "</td>")
   def printLink(in: String) {
     out println ("<td><a href=\"" + UrlPrefix + dir.getName + Sep + in + "\">link</a></td>")
   }
