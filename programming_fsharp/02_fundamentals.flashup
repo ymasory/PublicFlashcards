@@ -104,3 +104,81 @@ Basically arbitrary code within square brackets. Elements are selected using the
 
 * How are list comprehensions evaluated?
 Eagerly, in memory.
+
+* Loop over a range.
+`
+for var = start-expr to end-expr do
+    //body
+`
+
+`to` is inclusive, as in Scala.
+
+* Loop over a collection.
+`
+for pattern in expr do
+    //body
+`
+
+* What shortcut `for` syntax is provided for list comprehensions.
+`
+for pattern in expr -> expr
+`
+
+* In the F# API, what's the difference between `fold` and `reduce`?
+`reduce` uses the first element of the list as the initial accumulator value, `fold` takes the initial accumulator value explicitly.
+
+* Run a block of code on each element of a list.
+`List.iter` is like Scala's `foreach`.
+
+* What is used in place of `null`?
+As in Scala, `Option` can have values `Some('a)` or `None`.
+
+* Why is `printfn` more useful than using `System.Console's` print methods?
+The arguments to the formatting string are type checked, contributing to type inference.
+
+* What are the `printfn` format specifiers?
+`%d, %i` - integer
+`%s` - string
+`%f` - floating-point number
+`%c` - character
+`%b` - boolean
+`%O` - object
+`%A` - anything
+
+* If no module is specified, you are actually using what?
+* How can it be accessed.
+you are using the `anonymous module` which can nonetheless be accessed using the filename with the first letter capitalized.
+For example, `MyFile.someValue`.
+
+* Create a module explicitly.
+`
+module MyModule
+
+//whatever
+`
+
+* Create a nested module.
+Equal sign and indentation are mandatory:
+
+`
+module Outer
+
+module Inner =
+    //whatever
+`
+
+* How are namespaces different from modules?
+- they can contain declarations but not values.
+- they cannot be nested
+
+* What are the ideal use-cases for modules and namespaces?
+Namespaces: large object-oriented programs
+Modules: rapid prototyping
+
+* How does an F# program execute?
+Straight down the ``last`` code file.
+
+* Create an explicit entry point.
+Add the `[<EntryPoint>]` attribute to a method.
+It must be in the last function in the last file of the program.
+It must take a `string array` and return an integer.
