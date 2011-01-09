@@ -4,7 +4,11 @@ import scala.io._
 val MetaFilename = ".flashcardset"
 val UrlPrefix = "http://github.com/ymasory/PublicFlashcards/raw/master/"
 val FlashupExt = "flashup"
+val PdfDir = "bin"
+val PdfExt = "pdf"
 val Sep = "/"
+val FrontsSuffix = "-fronts"
+val BacksSuffix= "-backs"
 
 val pwd = new File(System.getProperty("user.dir"))
 val subdirs = pwd.listFiles filter (_.isDirectory)
@@ -13,13 +17,13 @@ val out = new PrintWriter("table.html")
 out println "<table>"
 out println """
 <tr> 
-  <th><b>Deck</b></th> 
-  <th><b>3"x5"</b></th> 
-  <th><b>3"x5" Fronts</b></th> 
-  <th><b>3"x5" Backs</b></th> 
-  <th><b>Source</b></th> 
+<th><b>Deck</b></th> 
+<th><b>3"x5"</b></th> 
+<th><b>3"x5" Fronts</b></th> 
+<th><b>3"x5" Backs</b></th> 
+<th><b>Source</b></th> 
 </tr>
-"""
+""".trim
 
 val metaPred = {(file: File) => new File(file, MetaFilename).exists}
 val (metas, nots) = subdirs partition metaPred
@@ -37,10 +41,13 @@ for {dir <- metas
 
   out println "<tr>"
   out println ("<td>" + title + "</td>")
-  out println ("<td>link</td>")
-  out println ("<td>link</td>")
-  out println ("<td>link</td>")
-  out println ("<td><a href=\"" + UrlPrefix + dir.getName + Sep + basename + "." + FlashupExt + "\">link</a></td>")
+  def printLink(in: String) {
+    out println ("<td><a href=\"" + UrlPrefix + dir.getName + Sep + in + "\">link</a></td>")
+  }
+  printLink(PdfDir + Sep + basename + "." + PdfExt)
+  printLink(PdfDir + Sep + basename + FrontsSuffix + "." + PdfExt)
+  printLink(PdfDir + Sep + basename + BacksSuffix + "." + PdfExt)
+  printLink(basename + "." + FlashupExt)
   out println "</tr>"
 }
 
