@@ -119,7 +119,7 @@ for pattern in expr do
     //body
 `
 
-* What shortcut `for` syntax is provided for list comprehensions.
+* What shortcut `for` syntax is provided for list comprehensions?
 `
 for pattern in expr -> expr
 `
