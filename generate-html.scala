@@ -11,7 +11,7 @@ val FrontsSuffix = "-fronts"
 val BacksSuffix= "-backs"
 
 val pwd = new File(System.getProperty("user.dir"))
-val subdirs = pwd.listFiles filter (_.isDirectory)
+val subdirs = pwd.listFiles filter (file => file.isDirectory && file.isHidden == false)
 
 val out = new PrintWriter("table.html")
 println("<table id=\"allflashcards\">")
@@ -27,8 +27,11 @@ println("""
 
 val metaPred = {(file: File) => new File(file, MetaFilename).exists}
 val (metas, nots) = subdirs partition metaPred
-System.err println "no meta file found for: "
-nots foreach System.err.println
+if (nots.isEmpty == false) {
+  System.err println "no meta file found for: "
+  nots foreach System.err.println
+  exit(1)
+}
 
 for {dir <- metas
      deck <- dir.listFiles
