@@ -146,7 +146,7 @@ The arguments to the formatting string are type checked, contributing to type in
 `%A` - anything
 
 * If no module is specified, you are actually using what?
-* How can it be accessed.
+* How can it be accessed?
 you are using the `anonymous module` which can nonetheless be accessed using the filename with the first letter capitalized.
 For example, `MyFile.someValue`.
 
