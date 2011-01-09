@@ -39,11 +39,15 @@ for {dir <- metas
      if name.endsWith("." + FlashupExt)} {
   val lines = Source.fromFile(new File(dir, MetaFilename)).getLines.toList
   val title = lines(0)
-  val url = if (lines.length > 1) lines(1) else None
+  val url = if (lines.length > 1) Some(lines(1)) else None
   val basename = name.split("\\.").head
 
   println("<tr>")
-  println("<td class=\"flashcardfile\">" + title + "</td>")
+  val href = url match {
+    case Some(str) => " href=\"" + str + "\""
+    case None => ""
+  }
+  println("<td class=\"flashcardfile" + href + "\">" + title + "</td>")
   def printLink(in: String) {
     println("<td><a href=\"" + UrlPrefix + dir.getName + Sep + in + "\">link</a></td>")
   }
