@@ -1,0 +1,78 @@
+#GRAMMAR 1
+#TOPLEFT Introduction to Objective Caml
+#TOPRIGHT 2
+#NUMBERS true
+
+* What is a ``toploop``?
+An interactive evaluator for a language.
+
+* How large is an `int`?
+One bit less than the size of a machine word.
+
+* How can integer arithmetic be done on `floats`?
+- Using the `float` operators, `+.`, `*.`, etc.
+- Using the `float_of_int` conversion.
+
+* Convert a `char` to an `int`.
+* And back.
+`Char.code`
+
+`Char.chr`
+
+* Concatenate two strings.
+`
+str1 ^ str2
+`
+
+* Unlike in most high-level languages, OCaml strings are ...
+* Demonstrate this.
+... mutable.
+
+`
+# let seuss = "cat";;
+val seuss : string = "cat"
+# seuss.[0] <- 'h';;
+- : unit = ()
+# seuss;;
+- : string = "hat"
+`
+
+* Describe the Boolean type.
+* How is it negated?
+Type `bool` has values `true` and `false`.
+
+Negation is performed with unary `not`.
+
+* Give the equality operators.
+* Give the identity operators.
+Equality:
+`
+x = y
+x <> y
+`
+
+Identity:
+`
+x == y
+x != y
+`
+
+* Describe the boolean operators.
+`&&`, `||`
+
+* Give the conditional syntax.
+`
+if cond then expr1 else expr2
+`
+
+* What common value does OCaml lack?
+`null`
+
+* Unlike in Scala, both the `if` and `else` branches of a conditional must have ...
+The same type.
+
+* What are the INRIA tools called?
+- `ocaml` is the toploop
+- `ocamlc` is the bytecode compiler
+- `ocamlopt` is the machine code compiler
+- `ocamldebug` is the debugger
