@@ -1,9 +1,8 @@
-#GRAMMAR true
+#GRAMMAR 1
 #TOPLEFT Introduction to Objective Caml
 #TOPRIGHT 1
 #NUMBERS true
 
 * "Threading state" is a technique for doing what?
 Eliminating global variables used in a function by passing their values as parameters to the function.
-
 
