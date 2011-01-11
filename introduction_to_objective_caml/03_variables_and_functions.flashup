@@ -54,3 +54,7 @@ Simly leave off arguments, at the end of the parameter list. The result will be 
 let name param1 ... paramN = expr
 `
 
+* Variables in functions are bound to what?
+Values in their definition environment, not the environment of the function call.
+
+
