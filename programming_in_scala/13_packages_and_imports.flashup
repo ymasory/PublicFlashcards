@@ -1,0 +1,70 @@
+#GRAMMAR 1
+#TOPLEFT Programming in Scala
+#TOPRIGHT 13
+
+* Achieve Java's package-private.
+`private[X]` where X is the directly enclosing package.
+
+* What happens if `java.lang` and scala have a name colliding member?
+The Scala member hides the Java one.
+
+* What's the problem with the protected members of singletons?
+They make no sense because singletons have no subclasses.
+
+* Describe object-private.
+`private[this]` 
+
+It's only accessible by this instance of a class, not others.
+
+* What are the major differences between Scala and Java packages?
+- Scala's are hierarchical like Java's, but they also properly nest.
+- Java's package statement in Scala is just syntactic sugar for
+`
+package X {
+  //compilation unit
+}
+`
+
+* What's the difference between Scala and Java private?
+Scala is more consistent, denying visibility to containing instances of nested classes.
+
+* What's the difference between Scala and Java protected modifier?
+Scala gives only subclass access, not package members too.
+
+* Describe coupling.
+It is the reliance of various parts of the program on one another.
+
+* Describe explicit Scala private.
+`private[X]` where X is the containing class.
+
+* Achieve Java private.
+`private[X]` where X is the outermost class.
+
+* Import selectors syntax.
+In curly braces, allows
+- Simple name.
+- Renaming clause `x => y`.
+- Hiding clause `x => _`.
+- catch-all _, all members not in previous clauses, must be last.
+
+You can leave off the curlies if only importing 4 or one of 1.
+
+* How do you make a Scala import of non-singleton object members?
+* When is it useful?
+`import fruit._`, where fruit is the param to a method.
+
+It's useful when you use objects as modules.
+
+* Name three ways to specify package name.
+- From the normal root of the hierarchy.
+- From __root__ package to force absolute lookup when inner scope masks.
+- Relative to current package.
+
+* Give the import selectors syntax.
+In curly braces. allows:
+1) Simple name.
+2) Renaming clause `x => y`
+3) Hiding clause `x => _`
+4) Catch-all `_`, all members not in previous clauses, must be last.
+
+You can leave off curlies if you're only importing #4 or one of #1.

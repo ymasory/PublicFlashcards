@@ -1,0 +1,89 @@
+#GRAMMAR 1
+#TOPLEFT Programming in Scala
+#TOPRIGHT 3
+
+* Explain `List.drop` and `List.dropRight`
+`List.drop(Int)`
+
+`List.drop(Int)` returns a list without the first n elements.
+`List.dropRight(Int)` returns a list without the last n elements.
+
+* How do you print every line of a file?
+`
+val source = Source.fromFile(filename)
+for(line <- source.getLines)
+  println(line)
+`
+
+* Explain how to append instead of prepend to a list.
+Use `ListBuffer` then call `toList`.
+
+* Explain `List.map`
+`List.map(func)`
+
+Creates a list composed of the original elements run through a filter.
+
+* Explain `List.::`
+Pronounced "cons", prepends an element to the list.
+
+* Explain `List.exists`
+`List.exists(func)`
+
+Determines whether an element of the list satisfies the `func` predicate.
+
+* Make a list using only cons.
+`1::2::3::Nil`
+
+* `myObj(i) = j` is the same as what?
+`my.Obj.update(i,j)`
+
+* Explain `List.foreach`
+`List.foreach(func)`
+
+Executes `func` on every element of the list.
+
+* What is a tuple?
+It's like an immutable list, but can contain objects of multiple types.
+
+* How are `List.last` and `List.tail` different?
+`List.last` returns a list without the first element.
+
+`List.tail` returns only the last element.
+
+* Describe operator association.
+Operators are methods of the ``left`` operand unless they end with `:`, in which case they are methods of the ``right`` operand.
+
+* Explain `List.:::`
+Concatenates two `Lists` into a new list.
+
+* How are `Arrays` different from `Lists`?
+`Arrays` are immutable and covariant. `Lists` are mutable and nonvariant.
+
+* Explain `List.mkString`
+
+`List.mkString(str)`
+`List.mkString()` uses no separation.
+
+Makes a `String` with elements of a `List` separated by the argument to `mkString`.
+
+* What is the first element of `myTuple`?
+`myTuple._1`
+
+```Not``` `myTuple._0`
+
+* Explain `List.forall`
+`List.forall(func)`
+
+Returns whether all elements of the `List` satisfy the `func` predicate.
+
+* `List.filter`
+`List.filter(func)`
+
+Returns a `List` of all elements satisfying the `func` predicate.
+
+* What is `myObj(i)` the same as?
+`myObj.apply(i)`
+
+* Explain `List.head` and `List.init`
+`List.head` returns the first element.
+`List.init` returns a `List` without the first element.

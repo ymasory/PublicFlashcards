@@ -1,0 +1,6 @@
+#GRAMMAR 1
+#TOPLEFT Programming in Scala
+#TOPRIGHT 22
+
+* If a subclass's `equals()` method is stricter, it need not...
+... also override `hashCode()`, the contract is still valid.

@@ -1,0 +1,61 @@
+#GRAMMAR 1
+#TOPLEFT Programming in Scala
+#TOPRIGHT 6
+
+* What is a mixed identifier?
+It's an alphanumeric identifier followed by underscore followed by an operator identifier.
+
+* Where can you invoke superclass constructors?
+They can only be invoked by the primary constructor in the extends statement.
+
+* What do class parameters correspond to in Java?
+They correspond to the primary constructor, along with all code not in a method or field.
+
+* Name four advantages of immutable objects.
+- They are easier to reason about, since they don't change.
+- They can be passed around freely without defensive copies.
+- They are inherently thread safe.
+- They have safe hash table keys.
+
+* What are Scala constants used for?
+* What is their case convention?
+They are used for a subset of `val`s. Constants would generally not change even between program executions.
+
+Case convention is not caps, just CamelCase.
+
+* What are operator identifiers?
+* How are they implemented?
+They are one or more operator characters.
+
+They are internally mangled by Scala as `$char` for each character.
+
+e.g., `+`, `<?>`, `:->`
+
+* Describe an alphanumeric identifier.
+It starts with a letter or underscore, followed by further letters, digits, or underscores. `$` counts as a letter but should not be used to avoid colliding with the compiler.
+
+* How is method overloading resolved?
+By finding the method with the best static type match to arguments.
+
+If there is no unique best-matching version, will return "ambiguous reference" error.
+
+* What are magic numbers?
+They are literal values with no explanation which, in the worst case, appear multiple times.
+
+* Enforce preconditions.
+`Predef.require(Boolean)`
+
+This throws `IllegalArgumentException`.
+
+* What is a literal identifier?
+* What does it do?
+It is enclosed by back ticks. 
+
+It forces identifier interpretation even over keyword or other restrictions.
+
+
+* Name four kinds of identifiers.
+- Alphanumeric identifier.
+- Operator identifier.
+- Mixed identifier.
+- Literal identifier.

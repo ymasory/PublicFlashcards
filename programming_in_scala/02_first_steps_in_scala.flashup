@@ -1,0 +1,36 @@
+#GRAMMAR 1
+#TOPLEFT Programming in Scala
+#TOPRIGHT 2
+
+* What parts of a defined function's prototype can be inferred?
+The result type but not parameters.
+
+* Write a max function literal.
+`
+(x:Int, y:Int) => if (x > y) x else y
+`
+
+* What are command line arguments in a script available as?
+They are available as val args of type `Array[String]`.
+
+* When can you leave off curly braces around a method?
+They can be left off if the method is only one statement.
+
+* When can you leave curlies off of `if`, `else`, and `while` statements?
+They can be left off if the body is one statement.
+
+* When can you leave the parameter list off of a function literal?
+* What is it shorthand for?
+- If a function is expected and the function takes only one argument.
+- A partially applied function.
+
+* What does Scala call a return type in Java?
+Return types are called result types.
+
+* How would you print each member of an array?
+`
+args.foreach(arg => println(arg))
+
+args.foreach(println)
+`
+Since it's one statement with one arg the shorthand is possible.
