@@ -86,4 +86,21 @@ By enclosing them in parens.
 * The prefix definition of `*` conflicts with what?
 The comment syntax. Use spaces around the `*`.
 
+* What are labeled parameters?
+* What is its syntax?
+Labeled parameters are a way to give formal parameters names so arguments can be provided to them in any order.
+
+For each parameter instead of just giving it a name use `~label:name`. Then in a function call `~label:arg` can be used.
+
+* What is the shorthand syntax for labeled parameters?
+`~label` where `label` serves as both the name and label for the parameter.
+
+* Give the syntax of optional parameters.
+`
+?(label = expr)
+`
+
+`expr` provides the default value in case no argument is provided for the parameter in the call.
+
+
 
