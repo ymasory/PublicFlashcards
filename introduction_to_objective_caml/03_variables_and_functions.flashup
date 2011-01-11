@@ -105,6 +105,9 @@ For each parameter instead of just giving it a name use `~label:name`. Then in a
 
 `expr` provides the default value in case no argument is provided for the parameter in the call. To provide the argument the label must be used.
 
+* Why should each optional parameter by followed by an mandatory one?
+If an optional parameter comes last and no argument is provided, it could be to use the default argument or to partially apply the function.
+
 * Oddly, two labeled parameters can share what?
 The same label. In the call, argument order will determine the binding of arguments to parameters.
 
@@ -117,4 +120,8 @@ The same label. In the call, argument order will determine the binding of argume
 `
 ?(someLabel = initialVal)
 `
+
+* Why in higher-order function definitions should type annotations be given to parameters that are functions?
+Otherwise at call site the compiler will prefer to assume the invoked function has a labeled argument not an optional argument, regardless of which was intended.
+
 
