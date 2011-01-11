@@ -16,6 +16,34 @@ let funcname (p1 : pt1) ... (pn : ptn) : rest = ...
 
 The parens are essential.
 
+* What is the ``value restriction``?
+The requirement that only immutable values can be truly polymorphic.
+
+That means the expression is fully evaluated (including the binding of type variables) and cannot be modified through assignment.
+
+* What is the type of an expression that is a composition of truly polymorphic parts?
+If the type variables are not bound in the expression they become unknown types, written `'_a`. They represent a ``single`` still-unknown type. Hence the resulting expression is not truly polymorphic.
+
+* Unless otherwise stated ``values`` are ...
+immutable values.
+
+* What is the purpose of the value restriction?
+To preserve correct typing in a language that allows side-effects.
+
+* Why can't function application result in a polymorphic type?
+There is no mechanism for controlling purity of the function being applied.
+
+* How can one circumvent the value restriction?
+Use ``eta expansion``, the creation of an anonymous function that wraps the desired expression.
+
+`
+fun p -> someExpression p
+`
+
+* Why doesn't OCaml provide overloading?
+- It complicates type inference. Some method will be needed for identifying the correct function in an expression that can uses overloaded functions ambiguously. That method may be uncomputable.
+- Programmer confusion.
+
 * How are tuples written?
 * And their types?
 Comma-separated values, not necessarily surrounded by parens.
