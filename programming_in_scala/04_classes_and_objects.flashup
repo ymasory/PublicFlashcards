@@ -11,14 +11,14 @@
 or
 
 `
-(x +
-y)
+x +
+y
 `
 
 * Explain the rules of semicolon inference.
 The end of the line is treaded as a semicolon unless
-- the line ends with a word that it's a legal end of a statement, like a period or infix operator.
-- the next line starts with a word that can't start a statement.
+- the line ends with a token that isn't a legal end of a statement, like a period or infix operator.
+- the next line starts with a token that can't start a statement.
 - the line ends while in `(...)` or `[...]`.
 
 * Where do Java static methods go in Scala?

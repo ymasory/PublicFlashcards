@@ -57,7 +57,9 @@ Operators are methods of the ``left`` operand unless they end with `:`, in which
 Concatenates two `Lists` into a new list.
 
 * How are `Arrays` different from `Lists`?
-`Arrays` are immutable and covariant. `Lists` are mutable and nonvariant.
+`Arrays` are immutable and invariant. `Lists` are mutable and covariant.
+
+Also, arrays aren't really Scala collections as they don't inherit `Traversable`.
 
 * Explain `List.mkString`
 
@@ -86,4 +88,4 @@ Returns a `List` of all elements satisfying the `func` predicate.
 
 * Explain `List.head` and `List.init`
 `List.head` returns the first element.
-`List.init` returns a `List` without the first element.
+`List.init` returns a `List` without the last element.
