@@ -16,4 +16,10 @@ let funcname (p1 : pt1) ... (pn : ptn) : rest = ...
 
 The parens are essential.
 
+* How are tuples written?
+* And their types?
+Comma-separated values, not necessarily surrounded by parens.
 
+The types are written `*`-separated.
+
+* 
