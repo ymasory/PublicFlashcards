@@ -5,7 +5,6 @@
 
 * How does OCaml support parametric polymorphism?
 Expressions can have types that include type variables, standing for an arbitrary type.
-Such types are called ``parameterized``.
 
 * How are type variables written?
 Lowercase identifiers starting with a lowercase letter prefixed by an apostrophe.
@@ -42,4 +41,35 @@ val b : int = 2
 
 * How is the ``cons`` operator used?
 Both to prepend to a list and to pattern match the head of a list.
+
+* How are parameterized types written?
+With the type parameter preceding the main type.
+
+`
+string list
+'a list (* polymorphic *)
+`
+
+* What is an association list?
+* How is it queried?
+A list of pairs, used as a simple associative map.
+
+`
+List.assoc 'a -> ('a * 'b)
+`
+looks for the associated element or raises `Not_found`.
+
+* What is ``tail recursion``?
+* Why is it desirable?
+A function is tail recursive if all recursive calls are returned by the function without any additional computation.
+
+Tail recursive functions are preferred over general recursive functions as they can be optimized by the compiler to avoid consuming additional stack space. (They are rewritten as loops).
+
+* List accumulator values in recursive functions are best built ...
+... in reverse, to benefit from constant-time cons.
+
+The final result will be reversed with `List.rev`.
+
+
+
 
