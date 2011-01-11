@@ -1,0 +1,7 @@
+#GRAMMAR 1
+#TOPLEFT Introduction to Objective Caml
+#TOPRIGHT 6
+#NUMBERS true
+
+* What are some other terms for ``union``?
+``Disjoint union``, ``tagged union``, ``variant records``, ``algebraic data types``.
