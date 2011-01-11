@@ -38,4 +38,11 @@ start .. end -> expr
 
 The pattern is matched if the value is in the range.
 
+* Do the equivalent of throwing an `IllegalArgumentException`.
+`
+raise (Invalid_argument "message")
+`
 
+* Where is pattern matching used other than in `match` expressions?
+- In `let` bindings.
+- In `fun` expressions.
