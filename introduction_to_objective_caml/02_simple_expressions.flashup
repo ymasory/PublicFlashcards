@@ -11,7 +11,7 @@ One bit less than the size of a machine word.
 
 * How can integer arithmetic be done on `floats`?
 - Using the `float` operators, `+.`, `*.`, etc.
-- Using the `float_of_int` conversion.
+- Using the `int_of_float` conversion.
 
 * Convert a `char` to an `int`.
 * And back.
