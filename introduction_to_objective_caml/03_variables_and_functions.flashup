@@ -64,7 +64,7 @@ Values in their definition environment, not the environment of the function call
 `
 let rec name1 paramlist1 =
     expr1
-and name2 paramlist2
+and name2 paramlist2 =
     expr2
 `
 
