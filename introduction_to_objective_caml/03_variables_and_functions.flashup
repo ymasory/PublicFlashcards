@@ -114,7 +114,7 @@ The same label. In the call, argument order will determine the binding of argume
 * What is the type of a labeled `int`?
 * What is the type of an `int` with a default value?
 `
-?someLabel:int
+someLabel:int
 `
 
 `
