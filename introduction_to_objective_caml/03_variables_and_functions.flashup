@@ -47,7 +47,7 @@ X -> (Y -> Z)
 `
 
 * How are functions partially applied?
-Simly leave off arguments, at the end of the parameter list. The result will be a new function.
+Simply leave off arguments, at the end of the parameter list. The result will be a new function.
 
 * What syntactic sugar is provided for declaring named functions?
 `
@@ -56,5 +56,34 @@ let name param1 ... paramN = expr
 
 * Variables in functions are bound to what?
 Values in their definition environment, not the environment of the function call.
+
+* Recursive functions require ...
+... the `rec` keyword after `let`.
+
+* How are mutually recursive functions written?
+`
+let rec name1 paramlist1 =
+    expr1
+and name2 paramlist2
+    expr2
+`
+
+* Name two kins of names.
+Operator names and identifiers.
+
+* What are the rules of non-operator names?
+Regular identifiers are made of letters, digits, apostraphes and underscores. They must start with a letter or an underscore. An underscore by itself is not a legal name.
+
+* What are the rules of operator names?
+They are made up of only operator symbols.
+
+* What is the syntactic difference between operators and regular identifiers?
+Operators default to infix usage.
+
+* How can operators be used in the prefix position?
+By enclosing them in parens.
+
+* The prefix definition of `*` conflicts with what?
+The comment syntax. Use spaces around the `*`.
 
 
