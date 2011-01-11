@@ -105,7 +105,7 @@ For each parameter instead of just giving it a name use `~label:name`. Then in a
 
 `expr` provides the default value in case no argument is provided for the parameter in the call. To provide the argument the label must be used.
 
-* Why should each optional parameter by followed by an mandatory one?
+* Why should each optional parameter be followed by a mandatory one?
 If an optional parameter comes last and no argument is provided, it could be to use the default argument or to partially apply the function.
 
 * Oddly, two labeled parameters can share what?
