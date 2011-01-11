@@ -92,6 +92,9 @@ Labeled parameters are a way to give formal parameters names so arguments can be
 
 For each parameter instead of just giving it a name use `~label:name`. Then in a function call `~label:arg` can be used.
 
+* Arguments to functions with labeled parameters can be provided either ...
+... positionally or with labels.
+
 * What is the shorthand syntax for labeled parameters?
 `~label` where `label` serves as both the name and label for the parameter.
 
@@ -100,7 +103,18 @@ For each parameter instead of just giving it a name use `~label:name`. Then in a
 ?(label = expr)
 `
 
-`expr` provides the default value in case no argument is provided for the parameter in the call.
+`expr` provides the default value in case no argument is provided for the parameter in the call. To provide the argument the label must be used.
 
+* Oddly, two labeled parameters can share what?
+The same label. In the call, argument order will determine the binding of arguments to parameters.
 
+* What is the type of a labeled `int`?
+* What is the type of an `int` with a default value?
+`
+?someLabel:int
+`
+
+`
+?(someLabel = initialVal)
+`
 
