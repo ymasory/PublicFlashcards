@@ -118,7 +118,7 @@ someLabel:int
 `
 
 `
-?(someLabel = initialVal)
+?someLabel:int
 `
 
 * Why in higher-order function definitions should type annotations be given to parameters that are functions?
