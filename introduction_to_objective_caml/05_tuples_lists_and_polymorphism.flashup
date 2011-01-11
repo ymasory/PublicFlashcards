@@ -1,0 +1,19 @@
+#GRAMMAR 1
+#TOPLEFT Introduction to Objective Caml
+#TOPRIGHT 5
+#NUMBERS true
+
+* How does OCaml support parametric polymorphism?
+Expressions can have types that include type variables, standing for an arbitrary type.
+
+* How are type variables written?
+Lowercase identifiers starting with a lowercase letter prefixed by an apostrophe.
+
+* Add type annotations to a function declaration.
+`
+let funcname (p1 : pt1) ... (pn : ptn) : rest = ...
+`
+
+The parens are essential.
+
+
