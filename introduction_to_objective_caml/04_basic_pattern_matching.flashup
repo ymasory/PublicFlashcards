@@ -6,9 +6,9 @@
 * What is the syntax of `match` expression?
 `
 match expr with
- | pat1 -> expr1
+ | pat1 [when cond1] -> expr1
  ...
- | patN -> exprN
+ | patN [when condN] -> exprN
 `
 
 The initial `|` is not required.
