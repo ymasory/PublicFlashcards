@@ -1,0 +1,49 @@
+#GRAMMAR 1
+#TOPLEFT Introduction to Objective Caml
+#TOPRIGHT 9
+#NUMBERS true
+
+* Define a new exception.
+`
+exception Name of type
+`
+
+* What is the type of an exception?
+* What is the type of `raise`?
+`
+exn
+`
+
+`
+exn -> 'a
+`
+
+* Give the `try` syntax.
+It's exactly the same as `match`.
+
+* Lookup functions that cannot find their element raise ...
+... `Not_found`.
+
+* Functions can reject bad arguments with ...
+... `Invalid_argument`.
+
+* What is `Failure`?
+* How is it different from `Invalid_argument`.
+* Which is typically handled?
+An exception for bad arguments less severe than `Invalid_argument` or not the result of programming errors.
+
+It takes an error string, typically the name of the function doing the raising.
+
+It is only typical to handle `Failure`.
+
+* If no pattern is matched, what happens?
+A `Match_failure` is raised.
+
+* Describe assertions.
+`
+assert(cond)
+`
+
+Raises an `Assert_failure` if the condition fails.
+
+
