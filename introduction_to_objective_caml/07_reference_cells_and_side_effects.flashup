@@ -36,10 +36,18 @@ while expr1 do
 done
 `
 
-* What's the "deeper" problems with functional purity?
+* What are the "deeper" problems with functional purity?
 - It can be difficult to construct cyclic data structures.
 The structure can be created using only values that already exist, so it itself can't be one of them.
 
 - There may be no purely functional algorithm with equivalent performance to the best imperative algorithms for solving some problems.
 
+
+* Function application and ref cells are not ...
+... values, i.e., immutable values.
+
+* Create a type alias.
+`
+type newName = existing type
+`
 
