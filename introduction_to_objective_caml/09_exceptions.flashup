@@ -46,4 +46,16 @@ assert(cond)
 
 Raises an `Assert_failure` if the condition fails.
 
+* Name the errors resulting from lack of memory or stack space.
+- `Out_of_memory`
+- `Stack_overflow`
+
+* Name some non-typical uses of exceptions.
+- Reduce memory usage.
+- As a break statement.
+- To create ``finally`` semantics.
+
+* How can exceptions reduce memory usage?
+Needless reconstruction of the input can be avoided on unsuccessful runs of functions that cons pattern match each element of a list.
+
 
