@@ -3,5 +3,45 @@
 #TOPRIGHT 6
 #NUMBERS true
 
-* What are some other terms for ``union``?
-``Disjoint union``, ``tagged union``, ``variant records``, ``algebraic data types``.
+* What are some other terms for ``disjoint union``?
+``Tagged union``, ``variant records``, ``algebraic data types``.
+
+* What kinds of unions does OCaml support?
+``exact unions`` which do not admit new members after initial definition, and ``open unions``, which do.
+
+* Give the syntax for exact unions.
+`
+type name =
+  | name1 [of type1]
+  ...
+  | nameN [of typeN]
+`
+
+The identifiers are the ``constructor`` names and must begin with a capital letter.
+The optional `of` type is its value.
+
+* How are instances of a disjoint union created?
+With the syntax of function application give the constructor name followed by an instance of its value type, if applicable.
+
+
+
+
+* The value of a union instance can be accessed through ...
+... pattern matching.
+
+* Give the effective definition of `list`.
+* Why isn't this the actual definition.
+`
+type 'a list =
+    []
+  | :: of 'a * 'a list
+`
+
+`[]` is not a valid name and requires language support.
+
+* Give the definition of `option`.
+`
+type 'a option =
+    None
+  | Some of 'a 
+`
