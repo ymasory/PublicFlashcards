@@ -38,7 +38,7 @@ It means the expression is an instance of a union type that contains the member 
 ... pattern matching.
 
 * Give the effective definition of `list`.
-* Why isn't this the actual definition.
+* Why isn't this the actual definition?
 `
 type 'a list =
     []
