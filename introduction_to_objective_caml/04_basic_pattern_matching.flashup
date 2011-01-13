@@ -46,4 +46,4 @@ raise (Invalid_argument "message")
 * Where is pattern matching used other than in `match` expressions?
 - In `let` bindings.
 - In `fun` expressions.
-- In `function` expressions.
+- In `function` constructions.
