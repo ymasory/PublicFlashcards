@@ -15,7 +15,7 @@ The initial `|` is not required.
 
 * What shortcut is provided for functions whose body is a pattern match on its sole parameter?
 `
-let funcname param = function
+let funcname = function
  | pat1 [when cond1] -> expr1
  ...
  | patN [when condN] -> exprN
