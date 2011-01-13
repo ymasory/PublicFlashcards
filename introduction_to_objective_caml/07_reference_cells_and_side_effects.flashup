@@ -4,7 +4,7 @@
 #NUMBERS true
 
 * What are the three primary functions for working with ref cells?
-* Give their type signatures?
+* Give their type signatures.
 `ref` for creating a ref cell. `:=` for re-assigning. `!` for extracting the value.
 
 `
