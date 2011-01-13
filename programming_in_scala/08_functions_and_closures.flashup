@@ -7,9 +7,9 @@ They are compiled into a class that is instantiated at runtime as a function val
 
 * How is `nums.foreach(println)` implemented?
 It's implemented through the partially-applied function:
-`nums.foreach(println_)`
+`nums.foreach(println _)`
 
-The concise form only works where functions are expected and there is only one argument.
+The concise form only works where a compatible function is expected.
 
 * Describe repeated parameter syntax.
 Put `*` after the type of the repeated parameter:
@@ -18,7 +18,7 @@ Put `*` after the type of the repeated parameter:
 
 Available as an `Array` of the parameter type.
 
-* What is the difference between closures and function literals?
+* What makes a function literal a ``closure``?
 Function literals are ``closed`` terms, since they have no free variables.
 
 Closures are ``open`` terms (refer to variables defined elsewhere), and close the function by capturing the binding of the free variables.
@@ -45,9 +45,9 @@ They show only one call of the recursive function, unless you use
 to scala shell or to `scalac`.
 
 * Which instance of a local variable of a method, repeatedly called, will a closure capture?
-It will capture the one currently active. The closure keeps the variable alive after the method returns, automatically moving it from the stack to the heap.
+It will capture the one currently active. The closure keeps the variable alive after the method returns, automatically moving it from the stack to the heap, if necessary.
 
-* Why the trailing `_`?
+* Why the trailing underscore?
 It avoids situations where the programmer forgets to provide the right parameters, giving the unexpected result of a ``function value`` instead of the application of a function.
 
 Hence `_` can be left off ```only``` when a function is expected.
@@ -58,7 +58,7 @@ Use a partially-applied function.
 `
 def sum(a:Int, b:Int, c:Int) = a*b*c
 
-val a = sum_
+val a = sum _
 a(1,2,3)
 `
 

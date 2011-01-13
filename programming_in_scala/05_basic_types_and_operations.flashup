@@ -36,7 +36,7 @@ println("""| Some really long
            | string""".stripMargin)
 `
 
-* What is the order or operand evaluation?
+* What is the order of operand evaluation?
 It's always left-to-right, regardless of associativity.
 
 * What is short-circuiting accomplished with?
@@ -46,14 +46,14 @@ By-name parameters.
 Method precedence is done by the first letter of the method name. Assignment operators are done by the last letter (ending in =).
 
 `
-* / %
-+ -
-:
-= !
-< >
-&
-^
-|
-(all letters)
-(all assignment operators)
+ * / %
+ + -
+ :
+ = !
+ < >
+ &
+ ^
+ |
+ (all letters)
+ (all assignment operators)
 `

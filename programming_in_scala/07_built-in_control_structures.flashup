@@ -31,7 +31,7 @@ Use curly braces around generators and filters to avoid semicolons. Otherwise co
 ...without `catch`. Even in Java!
 
 * What is the value of `try`/`catch`/`finally`?
-The value is the value of `try`, unless `case` or `finally` overrule with `return`.
+The value is the value of `try`, unless `catch` or `finally` overrule with `return`.
 
 If `throw` is uncaught, no value is given at all (type `Nothing`).
 

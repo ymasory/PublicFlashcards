@@ -15,7 +15,7 @@ They correspond to the primary constructor, along with all code not in a method 
 - They are easier to reason about, since they don't change.
 - They can be passed around freely without defensive copies.
 - They are inherently thread safe.
-- They have safe hash table keys.
+- They are safe hash table keys.
 
 * What are Scala constants used for?
 * What is their case convention?
