@@ -4,7 +4,7 @@
 #NUMBERS true
 
 * What are some other terms for ``disjoint union``?
-``Tagged union``, ``variant records``, ``algebraic data types``.
+``Tagged unions``, ``variant records``, ``algebraic data types``.
 
 * What kinds of unions does OCaml support?
 ``exact unions`` which do not admit new members after initial definition, and ``open unions``, which do.
