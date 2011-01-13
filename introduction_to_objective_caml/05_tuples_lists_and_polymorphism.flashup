@@ -64,7 +64,7 @@ val b : int = 2
 - Use pattern matching.
 - For a 2-tuple use `fst` and `snd`.
 
-* How are tuples written?
+* How are lists written?
 `;`-separated values surrounded by square brackets.
 
 * How is the ``cons`` operator used?
