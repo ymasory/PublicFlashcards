@@ -28,7 +28,7 @@ It's exactly the same as `match`.
 ... `Invalid_argument`.
 
 * What is `Failure`?
-* How is it different from `Invalid_argument`.
+* How is it different from `Invalid_argument`?
 * Which is typically handled?
 An exception for bad arguments less severe than `Invalid_argument` or not the result of programming errors.
 
