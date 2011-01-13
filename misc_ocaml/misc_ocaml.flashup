@@ -1,0 +1,8 @@
+#GRAMMAR 1
+#TOPLEFT Miscellaneous OCaml
+#NUMBERS false
+
+* Give the `fun` syntax of a null-ary function.
+`
+fun () -> expr
+`
