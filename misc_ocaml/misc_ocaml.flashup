@@ -6,3 +6,12 @@
 `
 fun () -> expr
 `
+
+* Find the type of a function in the toplevel.
+`
+(* prefix functions *)
+funcname;;
+
+(* infix functions *)
+(funcname);;
+`
