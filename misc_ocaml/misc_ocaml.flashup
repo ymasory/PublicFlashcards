@@ -15,3 +15,5 @@ funcname;;
 (* infix functions *)
 (funcname);;
 `
+ * How is `'a` read?
+``tick a`` or ``tick alpha``
