@@ -1,0 +1,18 @@
+#GRAMMAR 1
+#TOPLEFT Modern Compiler Implementation in ML
+#TOPRIGHT 1
+#NUMBERS true
+
+* What are the interfaces between levels of a compiler?
+Data structures and abstract data types.
+
+* What are ``intermediate representations``?
+* How are they specified?
+A data structure, typically a tree, of the program being compiled.
+
+With grammars.
+
+* What is a ``straight-line program``?
+A program without loops and conditionals.
+
+
