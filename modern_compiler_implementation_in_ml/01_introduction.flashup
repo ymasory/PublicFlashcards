@@ -15,4 +15,10 @@ With grammars.
 * What is a ``straight-line program``?
 A program without loops and conditionals.
 
+* Grammars can be represented how in ML?
+Using the `datatype` declaration. One declaration per type. One constructor in the declaration per rule.
+
+* Why should structure abbreviations be preferred over `open` statements?
+They increase modularity. You do not need to look outside the file to determine where a symbol comes from.
+
 
