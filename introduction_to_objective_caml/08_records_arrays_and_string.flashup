@@ -19,7 +19,7 @@ type name =
 let name =
    { name1 = val1;
      ...
-     nameN = valN;
+     nameN = valN
    }
 `
 
