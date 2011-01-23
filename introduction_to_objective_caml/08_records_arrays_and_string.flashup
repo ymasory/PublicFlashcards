@@ -43,7 +43,7 @@ The fields must be taken from `someRecord`.
 In the declaration prefix one or more of the field names with the `mutable` keyword.
 
 `
-mutableRecord.field <- newVal
+record.mutableField <- newVal
 `
 
 * Oddly, the namespace of field labels is ...
