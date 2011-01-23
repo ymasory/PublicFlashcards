@@ -31,12 +31,12 @@ let { name1 = var1; name2 = var2 } = expr
 `
 Not all fields must be matched.
 
-* Functionally "update" a tuple.
+* Functionally "update" a record.
 `
-let name = { someTuple with field1 = val1; ... }
+let name = { someRecord with field1 = val1; ... }
 `
 
-The fields must be taken from `someTuple`.
+The fields must be taken from `someRecord`.
 
 * How can mutable records be created?
 * And updated?
