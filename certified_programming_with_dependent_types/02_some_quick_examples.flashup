@@ -1,0 +1,15 @@
+#GRAMMAR 1
+#TOPLEFT Certified Programming with Dependent Types
+#TOPRIGHT 2
+#NUMBERS true
+
+* What are Coq's formal foundations?
+Gallina, being an extension of the Calculus of Inductive Constructions (CIC), being an extension of the Calculus of Constructions (CoC).
+
+* The strong normalization property guarantees what?
+Every CIC program and proof term terminates.
+
+* The relative consistency property guarantees what?
+CIC is ``relatively consistent`` with ZF so CIC claims are as believable as ZF ones.
+
+
