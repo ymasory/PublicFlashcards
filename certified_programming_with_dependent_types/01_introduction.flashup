@@ -1,0 +1,18 @@
+#GRAMMAR 1
+#TOPLEFT Certified Programming with Dependent Types
+#TOPRIGHT 1
+#NUMBERS true
+
+* What makes a programming language ``higher-order``?
+It has first-class functions.
+
+* What is a dependent type?
+* Why are they desirable?
+A type that depends on a value, i.e. the type can reference a program.
+
+Any correctness property can be captured in a type, greatly simplifying proofs.
+
+* What is the ``de Bruijn criterion``?
+The correctness of the entire system depends only on the correctness of the kernel. The size of the kernel allows manual verification, and complex proofs can be expressed just in terms of the kernel.
+
+
