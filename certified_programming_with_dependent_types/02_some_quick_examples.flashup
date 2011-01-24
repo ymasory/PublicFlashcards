@@ -4,7 +4,7 @@
 #NUMBERS true
 
 * What are Coq's formal foundations?
-Gallina, being an extension of the Calculus of Inductive Constructions (CIC), being an extension of the Calculus of Constructions (CoC).
+Gallina, being an extension of the Calculus of Inductive Constructions (CIC), being an extension of the Calculus of Constructions (CoC), being an extension of the typed lambda calculus.
 
 * The strong normalization property guarantees what?
 Every CIC program and proof term terminates.
