@@ -1,0 +1,9 @@
+#GRAMMAR 1
+#TOPLEFT Coq'Art
+#TOPRIGHT 1
+#NUMBERS true
+
+* What's the difference between declarations and typing rules?
+Declarations may give the type of an identifier, but typing rules establish how expressions of various types are composed.
+
+

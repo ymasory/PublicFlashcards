@@ -1,0 +1,3 @@
+p.2
+"For instance, the functional that maps"
+"For instance, the function that maps"
