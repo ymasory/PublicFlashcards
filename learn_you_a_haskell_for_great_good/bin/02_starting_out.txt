@@ -1,0 +1,13 @@
+What has the highest association precedence?<br>	Function application.<br>
+What does ' mean in Haskell?<br>	Nothing in particular. It's a legal identifier character often used at the end of an identifier to indicate a strictly evaluated function or a slightly modified function.<br>
+What is a function with no parameters called?<br>	A <em>definition</em>, or a <em>name</em>.<br>
+Give the cons syntax.<br>	<tt>el : list</tt><br>
+How do you index a list?<br>	<tt>list !! index</tt><br>
+What is <tt>null</tt>?<br>	A method for checking if a list is empty.<br><br>It should be preferred over:<br><pre>list == []<br></pre>
+Unlike in Scala, lists of an ordinal type can be ...<br>	... compared with ordering operators like <tt><</tt> and <tt>></tt>.<br>
+Check for membership in a list.<br>	<pre>elem el list<br></pre><br>However, it's usually called in infix form.<br>
+How can you make a list range in decreasing order?<br>	The step must be given explicitly:<br><pre>[20, 19..1]<br></pre>
+Why should floating point numbers generally not be used in ranges?<br>	Results are unintuitive, e.g., exceeding the "upper bound".<br>
+Name three ways to create infinite lists.<br>	- Ranges with no upper bound, or with no lower bound.<br>- <tt>cycle list</tt><br>- <tt>repeat el</tt><br>
+What's the finite version of <tt>repeat</tt>?<br>	<pre>replicate num el<br></pre>
+<tt>fst</tt> and <tt>snd</tt> only work on ...<br>	... 2-tuples.<br>

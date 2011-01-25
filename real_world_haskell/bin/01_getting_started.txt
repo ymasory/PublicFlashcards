@@ -1,0 +1,21 @@
+What are the components of the Glasgow Haskell Compiler system?<br>	- <tt>ghc</tt>, an optimized compiler for generating native code.<br>- <tt>ghci</tt>, an interactive interpreter and debugger.<br>- <tt>runghc</tt>, a program for running Haskell programs as scripts without compilation.<br>
+How can you view the available <tt>ghci</tt> commands?<br>	<tt>:?</tt><br>
+What is <tt>ghci</tt>'s default prompt?<br>How can you change it?<br>	<tt>ghci</tt> starts with <tt>Prelude></tt>, being the standard pre-loaded library, and grows longer with each new loaded module or file.<br><br>The prompt can be changed with:<br><br><pre>:set prompt NEWPROMPT<br></pre>
+How do you add/remove modules in <tt>ghci</tt>?<br>	Add: <tt>:module + NewModule</tt><br>Remove: <tt>module - NewModule</tt><br><br>The abbreviation <tt>:m</tt> also works.<br>
+How can arithmetic operators be used in prefix form?<br>	Use parens to get desired association:<br><br><pre>ghci> (+) 3 5<br>8<br>ghci> (^) 3 5<br>243<br></pre>
+What's Haskell's quirk with negative numbers?<br>	You nearly always need to surround the negative number with parens to get the desired association.<br>
+Describe Booleans in Haskell.<br>	- The Boolean literals are <tt>True</tt> and <tt>False</tt>. Their type is <tt>Bool</tt>.<br>- Numbers and other types are not coerced into Boolean interpretations.<br>
+Describe negation in Haskell.<br>	- Haskell uses <tt>/=</tt> for "not equal", instead of <tt>!=</tt>.<br>- Haskell uses <tt>not</tt> for "not", instead of <tt>!</tt>.<br>
+How can you get information about a command in <tt>ghci</tt>?<br>	<tt>:info funcname</tt><br>
+How can you create a temporary variable in <tt>ghci</tt>?<br>	Use <tt>let</tt>.<br><br><pre>let meaningOfLife = 42<br></pre>
+How do you raise a power?<br>	<tt>^</tt> for integer exponents.<br><br><tt>**</tt> for floating point exponents.<br>
+Describe lists in Haskell.<br>	They are homogeneous and use the common bracket notation. Final commas are not allowed.<br>
+What is enumeration notation?<br>	<pre>ghci> [1..5]<br>[1,2,3,4,5]<br>ghci> ['a'..'j']<br>"abcdefghij"<br></pre>
+How do you print to <tt>stdout</tt>?<br>	<tt>putStr</tt> and <tt>putStrLn</tt>.<br>
+What is a string, really?<br>	A list of characters. <tt>[Char]</tt> and <tt>String</tt> are synonyms.<br><br><pre>ghci> let lst = ['h', 'i']<br>ghci> lst<br>"hi"<br>ghci> "" == []<br>True<br>ghci><br></pre>
+How do you concatenate and build strings?<br>	Using list operations.<br><br><pre>ghci> 'a':"bc"<br>"abc"<br>ghci> "foo" ++ "bar"<br>"foobar"<br></pre>
+How can you get <tt>ghci</tt> to print the types of the expressions it evaluates?<br>How do you tell it to stop?<br>	<tt>:set +t</tt><br><br><tt>:unset +t</tt><br>
+What is <tt>it</tt>?<br>	A special variable where <tt>ghci</tt> stores the last expression it returned.<br>
+How can you construct rational numbers?<br>	Use the <tt>%</tt> operator.<br><br><pre>ghci> 11 % 29<br>11%29<br>it :: Ratio Integer<br></pre>
+How can you find the type of an expression?<br>	<pre>:type expr<br>:t expr<br></pre>
+What is Haskell's comment syntax?<br>	Lines beginning with <tt>--</tt> are comments.<br>

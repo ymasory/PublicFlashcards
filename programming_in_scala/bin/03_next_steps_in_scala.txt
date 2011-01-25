@@ -1,0 +1,20 @@
+Explain <tt>List.drop</tt> and <tt>List.dropRight</tt><br>	<tt>List.drop(Int)</tt><br><br><tt>List.drop(Int)</tt> returns a list without the first n elements.<br><tt>List.dropRight(Int)</tt> returns a list without the last n elements.<br>
+How do you print every line of a file?<br>	<pre>val source = Source.fromFile(filename)<br>for(line <- source.getLines)<br>  println(line)<br></pre>
+Explain how to append instead of prepend to a list.<br>	Use <tt>ListBuffer</tt> then call <tt>toList</tt>.<br>
+Explain <tt>List.map</tt><br>	<tt>List.map(func)</tt><br><br>Creates a list composed of the original elements run through a filter.<br>
+Explain <tt>List.::</tt><br>	Pronounced "cons", prepends an element to the list.<br>
+Explain <tt>List.exists</tt><br>	<tt>List.exists(func)</tt><br><br>Determines whether an element of the list satisfies the <tt>func</tt> predicate.<br>
+Make a list using only cons.<br>	<tt>1::2::3::Nil</tt><br>
+<tt>myObj(i) = j</tt> is the same as what?<br>	<tt>my.Obj.update(i,j)</tt><br>
+Explain <tt>List.foreach</tt><br>	<tt>List.foreach(func)</tt><br><br>Executes <tt>func</tt> on every element of the list.<br>
+What is a tuple?<br>	It's like an immutable list, but can contain objects of multiple types.<br>
+How are <tt>List.last</tt> and <tt>List.tail</tt> different?<br>	<tt>List.last</tt> returns a list without the first element.<br><br><tt>List.tail</tt> returns only the last element.<br>
+Describe operator association.<br>	Operators are methods of the <em>left</em> operand unless they end with <tt>:</tt>, in which case they are methods of the <em>right</em> operand.<br>
+Explain <tt>List.:::</tt><br>	Concatenates two <tt>Lists</tt> into a new list.<br>
+How are <tt>Arrays</tt> different from <tt>Lists</tt>?<br>	<tt>Arrays</tt> are immutable and invariant. <tt>Lists</tt> are mutable and covariant.<br><br>Also, arrays aren't really Scala collections as they don't inherit <tt>Traversable</tt>.<br>
+Explain <tt>List.mkString</tt><br>	<tt>List.mkString(str)</tt><br><tt>List.mkString()</tt> uses no separation.<br><br>Makes a <tt>String</tt> with elements of a <tt>List</tt> separated by the argument to <tt>mkString</tt>.<br>
+What is the first element of <tt>myTuple</tt>?<br>	<tt>myTuple._1</tt><br><br><strong>Not</strong> <tt>myTuple._0</tt><br>
+Explain <tt>List.forall</tt><br>	<tt>List.forall(func)</tt><br><br>Returns whether all elements of the <tt>List</tt> satisfy the <tt>func</tt> predicate.<br>
+<tt>List.filter</tt><br>	<tt>List.filter(func)</tt><br><br>Returns a <tt>List</tt> of all elements satisfying the <tt>func</tt> predicate.<br>
+What is <tt>myObj(i)</tt> the same as?<br>	<tt>myObj.apply(i)</tt><br>
+Explain <tt>List.head</tt> and <tt>List.init</tt><br>	<tt>List.head</tt> returns the first element.<br><tt>List.init</tt> returns a <tt>List</tt> without the last element.<br>

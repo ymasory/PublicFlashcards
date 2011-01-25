@@ -1,0 +1,1 @@
+How can you run an interactive Coq session after loading a file?<br>	<tt>coqtop -l SomeFile.v</tt><br>

@@ -1,0 +1,10 @@
+What is the orientation of grouping within a precedence level?<br>	It reads left-to-right, or right-to-left if ending in <tt>:</tt>.<br>
+What does operator notation require?<br>How is multi-arg calling done?<br>	It requires a receiving object, e.g.<br><tt>Console println 10</tt><br><strong>not</strong> <tt>println 10</tt><br><br>Multi-arg calling is done with parens:<br><tt>s indexOf ('0',5)</tt><br>
+What are the available prefix operators?<br>	+, -, !, ~<br><br>You can prepend unary_ to any of the four.<br>
+Describe Symbol literals.<br>	- <tt>'cymbal</tt> is expanded to <tt>Symbol("cymbal")</tt>.<br>- They must be alphanumeric.<br>- Values are interned. Symbol literal twice will refer to the exact same symbol object.<br>
+What does unary + do on numeric types?<br>	Absolutely nothing.<br>
+What are postfix operators?<br>	They are just methods that take no arguments when called without a dot or parens.<br>
+Correct the spacing of multiline triple-quoted strings.<br>	<pre>println("""| Some really long<br>           | string""".stripMargin)<br></pre>
+What is the order of operand evaluation?<br>	It's always left-to-right, regardless of associativity.<br>
+What is short-circuiting accomplished with?<br>	By-name parameters.<br>
+Give the  method precedence table.<br>	Method precedence is done by the first letter of the method name. Assignment operators are done by the last letter (ending in =).<br><br><pre> * / %<br> + -<br> :<br> = !<br> < ><br> &<br> ^<br> |<br> (all letters)<br> (all assignment operators)<br></pre>

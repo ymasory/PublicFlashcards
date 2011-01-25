@@ -1,0 +1,18 @@
+What is the type of <tt>putStr</tt>?<br>Of <tt>getLine</tt>?<br>	<pre>putStr :: IO ()<br>getLine :: IO String<br></pre>
+What convenience is provided for performing several IO actions in sequence?<br>	<tt>do</tt> blocks, which have the type of the final expression.<br>
+Retrieve a line from stdin.<br>	<pre>line <- getLine<br></pre>
+What is special about <tt>let</tt> in <tt>do</tt> blocks?<br>This is similar to ...<br>	You don't have to use <tt>in</tt> ... just like with list comprehensions.<br>
+Name two ways to run a program without loading it as a script into <tt>ghci</tt>.<br>	Run without compiling:<br><pre>$ runhaskell file.hs<br></pre><br>Compile:<br><pre>$ ghc --make file.hs<br>$ ./file<br></pre>
+What does <tt>return</tt> do in Haskell?<br>It's sort of the opposite of ...<br>	It wraps a pure value into an IO action to get a value of the expected type in an IO context.<br><br>... <tt><-</tt><br>
+What does <tt>ghci</tt> use to show values on the screen?<br>	<pre>print = putStrLn . show<br></pre>
+Give the type signature of <tt>when</tt>.<br>What is it useful for?<br>	<pre>when :: (Monad m) => Bool -> m () -> m ()<br></pre><br>It's useful for encapsulating the <em>if something then do some I/O action else return ()</em> pattern.<br>
+Use <tt>when</tt> to write a function that parrots input characters until a space is hit.<br>	<pre>import Control.Monad<br>main = do<br>    c <- getChar<br>    when (c /= ' ') $ do<br>        putChar c<br>        main<br></pre>
+What is the type of <tt>sequence</tt>?<br>What's it useful for?<br>	<pre>sequence :: (Monad m) => [m a] -> m [a]<br></pre><br>In a <tt>do</tt> block at gives a more concise way or writing several consecutive <tt><-</tt> extractions from an IO-returning function.<br>
+Use <tt>sequence</tt> to write an expression that prints the numbers 1 to 100.<br>Do the same using <tt>mapM</tt>/<tt>mapM_</tt><br>	<pre>sequence $ map print [1..100]<br></pre><br><pre>mapM_ print [1..100]<br></pre>
+<tt>ghci</tt> prints the result of an IO action unless ...<br>	... that result is <tt>()</tt>.<br>
+What are the types of <tt>mapM</tt>, <tt>mapM_</tt>, and <tt>forM</tt>?<br>What are they useful for?<br>	They are utility functions for the common task of mapping a function that returns an IO action over a list and then sequencing it.<br><br><tt>mapM</tt> stores the result while <tt>mapM_</tt> discards it.<br><tt>forM</tt> is like <tt>mapM</tt> but reverses the order of the parameters.<br><br><pre>mapM :: (Monad m) => (a -> m b) -> [a] -> m [b]<br>mapM_ :: (Monad m) => (a -> m b) -> [a] -> m ()<br>forM :: (Monad m) => [a] -> (a -> m b) -> m [b]<br></pre>
+Where are many IO-related control functions located?<br>	<pre>Control.Monad<br></pre>
+What is the type of <tt>forever</tt>?<br>What's it useful for?<br>	<pre>forever :: (Monad m) => m a -> m b<br></pre><br>It takes an IO action and repeats that action indefinitely.<br>
+What's the wrong way to think about <tt>putStrLn</tt>?<br>What's the right way?<br>	Don't think of a function like putStrLn as a function that takes a string and prints it to the screen. Think of it as a function that takes a string and returns an I/O action. That I/O action will, when performed, print beautiful poetry to your terminal.<br><br>The actions are performed only when the fall into the <tt>main</tt> function or are the result of a <tt>ghci</tt> line.<br>
+How are random numbers generated in Haskell?<br>	In the <tt>System.Random</tt> module we have:<br><pre>random :: (RandomGen g, Random a) => g -> (a, g)<br></pre>
+Where can exceptions be thrown or caught?<br>	Pure or impure code and throw exceptions, but they can only be caught in the IO part of your code.<br>

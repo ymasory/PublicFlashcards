@@ -1,0 +1,30 @@
+How can you skip the staging area?<br>	<tt>git commit -a -m "comment"</tt><br>
+How can you view your changes as you commit?<br>	<tt>git commit -v</tt><br>
+How can you view staged changes from your last commit?<br>	<tt>git diff --staged</tt><br>
+How can you view unstaged changes from your last commit?<br>	<tt>git diff</tt><br>
+How can you tell Git to ignore certain files?<br>	List them in <tt>.gitignore</tt>. The syntax accepts glob patterns, leading & trailing slashes, and !.<br>
+"Changed but not updated" files are in which stage?<br>	Modified<br>
+"Changes to be committed" are in which Git stage?<br>	Staged<br>
+How do you begin tracking a new file?<br>	<tt>git add [filename ...]</tt><br>
+How can you find which branch you're in?<br>	<tt>git status</tt><br>
+How can you check for untracked files?<br>	<tt>git status</tt><br>
+How do you check if any of your tracked files have been modified?<br>	<tt>git status</tt><br>
+How do you get a copy of an existing Git repository?<br>	<tt>git clone [url]</tt><br>
+How do you start version-controlling files?<br>	<tt>git add [filename ...]</tt><br>
+How do you initialize a repository in an existing directory?<br>	<tt>git init</tt><br>
+What is a bare repository?<br>	A repository with no working directory.<br>
+Which protocol does Git assume if you don't specify?<br>	ssh.<br><br><tt>git clone ssh://user@server:project.git</tt><br>is the same as<br><tt>git clone user@server:project.git</tt><br>
+How do you create a bare repository?<br>	Clone a normal one, then:<br><tt>git clone --bare my_project my_project.git</tt><br>
+Using ssh, what controls read/write access to the repo?<br>	The OS's read/write permissions on the <tt>.git</tt> bare repo directory.<br>
+How can you guarantee others will have permission to push to your bare repository.<br>	Go into the <tt>.git</tt> repo on the server and run:<br><tt>git init --shared</tt><br>
+How can you give devs access to a repo with ssh if they don't have accounts on the machine?<br>	Create a single "git" user and add all the devs' keys to <tt>~/.ssh/authorized_keys</tt>.<br>
+Give a script to set up a Git repo on a server.<br>	<pre>cd /opt/git<br>mkdir project.git<br>cd project.git<br>git --bare init<br></pre>
+Give a script to move code to a new repo on a server.<br>	<pre>#on John's computer<br>cd myproject<br>git init<br>git add .<br>git commit -m 'initial commit'<br>git remote add origin git@gitserver:/opt/git/myproject.git<br>git push origin master<br></pre>
+How can you restrict the git user to Git use only?<br>	Change its shell to <tt>git-shell</tt> in <tt>etc/passwd</tt>.<br><pre>git:x:1000:1000::/home/git:/bin/sh<br>                          :/usr/bin/git-shell<br></pre>
+How can you provide read-only public access to your otherwise ssh-based repo?<br>	Create a webserver with the repo as webroot. Then add a post-update hook from the samples. People can then clone over http.<br>
+How can you provide a web interface to your repo?<br>	Use GitWeb, a CGI script that comes with Git.<br>
+Name a tool for managing large numbers of entries in <tt>authorized_keys</tt>.<br>	Gitosis.<br>
+Name a tool for providing access controls over branches, tags, etc.?<br>	Gitolite.<br>
+How can you avoid committing whitespace?<br>	<tt>git diff --check</tt><br>
+How do you normalize line endings?<br>	On Windows clients:<br><tt>git config --global core.autocrlf true</tt><br>Converts LF to CRLF at checkout.<br><br>On Unix clients & on server:<br><tt>git config --global core.autocrlf input</tt><br>Converts CRLF to LF on commit.<br>
+How do you insist Git check SHA-1 consistency on every push?<br>	On server:<br><tt>git config --system receive.fsckObjects true</tt><br>

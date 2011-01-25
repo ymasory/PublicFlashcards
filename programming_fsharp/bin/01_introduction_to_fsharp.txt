@@ -1,0 +1,10 @@
+What is the comments syntax?<br>	<pre>(* multiline comment *)<br>//inline comment<br></pre>
+How are blocks and similar structures represented in F#?<br>	Using indentation, not braces. Whitespace is significant.<br>
+What character is allowed in identifiers that Scala and Java do not permit?<br>	Apostrophe (').<br>
+How can you force identifier interpretation for a token?<br>	Surround with <strong>double</strong> back ticks.<br>
+How are bindings created?<br>	With the <tt>let</tt> keyword, for either values or functions.<br>
+Give the multiple assignment syntax.<br>	<pre>let ident1, ident2 = val1, val2<br></pre>
+How are documentation comments created?<br>	In Visual Studio, by beginning a comment (or each line thereof) with <tt>///</tt>.<br>
+On the REPL commands are terminated with what?<br>	<tt>;;</tt><br>
+How can you send code from a project to <tt>fsi</tt> in visual studio?<br>	Select the program text and hit Alt + Enter.<br>
+What is odd about the order of source files in Visual Studio?<br>	It matters. The programmer is responsible for selecting the correct order of compilation, only using definitions present in earlier files.<br>

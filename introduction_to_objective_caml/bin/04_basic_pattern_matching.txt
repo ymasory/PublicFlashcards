@@ -1,0 +1,7 @@
+What is the syntax of <tt>match</tt> expression?<br>	<pre>match expr with<br> | pat1 [when cond1] -> expr1<br> ...<br> | patN [when condN] -> exprN<br></pre><br>The initial <tt>|</tt> is not required.<br>
+What shortcut is provided for functions whose body is a pattern match on its sole parameter?<br>	<pre>let funcname = function<br> | pat1 [when cond1] -> expr1<br> ...<br> | patN [when condN] -> exprN<br></pre>
+How can two patterns be composed?<br>	With <tt>|</tt>, being boolean <em>or</em>.<br>
+Give the value matching a pattern a name.<br>	Use <tt>as</tt>.<br><br><pre>pat as name -> expr<br></pre>
+Give the syntax of a pattern range.<br>	<pre>start .. end -> expr<br></pre><br>The pattern is matched if the value is in the range.<br>
+Do the equivalent of throwing an <tt>IllegalArgumentException</tt>.<br>	<pre>raise (Invalid_argument "message")<br></pre>
+Where is pattern matching used other than in <tt>match</tt> expressions?<br>	- In <tt>let</tt> bindings.<br>- In <tt>fun</tt> expressions.<br>- In <tt>function</tt> constructions.<br>

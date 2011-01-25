@@ -1,0 +1,14 @@
+Where does Coq define booleans and numbers?<br>	In the standard library.<br>
+What's a "type" in Coq?<br>	A set of data values.<br>
+Define the boolean type<br>	<pre>Inductive bool : Type :=<br>  | true : bool<br>  | false : bool.<br></pre>
+Define a boolean negation function.<br>	<pre>Definition negb (b : bool) : bool :=<br>  match b with<br>  | true => false<br>  | false => true<br>  end.<br></pre>
+Define a function for boolean conjunction.<br>	<pre>Definition andb (b1 : bool) (b2 : bool) : bool :=<br>  match b1 with<br>  | true => b2<br>  | false => false<br>  end.<br></pre>
+Coq can infer which parts of a function prototype?<br>	Argument and result types.<br>
+Make a named assertion that ~<tt>true</tt> is <tt>false</tt>, then prove it.<br>	<pre>Example test_negation:<br>  (negb true) = false.<br>Proof. simpl. reflexivity. Qed.<br></pre>
+Name three ways to check that a function works<br>	- Use <tt>Eval</tt> on a test case and observe the result.<br>- Use <tt>Example</tt> to record expected result, then as Coq to verify.<br>- "extract" function <tt>Definition</tt> to OCaml, Scheme, or Haskell.<br>
+Apply negation to the boolean <tt>true</tt>.<br>	<tt>Eval simpl in (negb true).</tt><br>
+How do you delimit Coq fragments in comments for the benefit of <tt>coqdoc</tt>?<br>	Surround the fragments with square brackets.<br>
+Define and explain the purpose of the <tt>admit</tt> value.<br>	<tt>Definition admit {T : Type} : T. Admitted.</tt><br><br>It fills in the hole in an incomplete Definitions.<br>
+How do you fill in a hole in a <tt>Definition</tt>? In an <tt>Example</tt>?<br>	<tt>admit</tt> fills in holes in <tt>Definitions</tt>.<br><tt>Admitted</tt> fills in holes in <tt>Examples</tt>.<br>
+How does Coq write the type of a boolean conjunction function?<br>	<tt>bool->bool->bool</tt><br>
+What does the <tt>Check</tt> command do?<br>	It causes Coq to print the type of an expression.<br>

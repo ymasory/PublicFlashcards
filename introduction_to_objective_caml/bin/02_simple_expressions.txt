@@ -1,0 +1,13 @@
+What is a <em>toploop</em>?<br>	An interactive evaluator for a language.<br>
+How large is an <tt>int</tt>?<br>	One bit less than the size of a machine word.<br>
+How can integer arithmetic be done on <tt>floats</tt>?<br>	- Using the <tt>float</tt> operators, <tt>+.</tt>, <tt>*.</tt>, etc.<br>- Using the <tt>int_of_float</tt> conversion.<br>
+Convert a <tt>char</tt> to an <tt>int</tt>.<br>And back.<br>	<tt>Char.code</tt><br><br><tt>Char.chr</tt><br>
+Concatenate two strings.<br>	<pre>str1 ^ str2<br></pre>
+Unlike in most high-level languages, OCaml strings are ...<br>Demonstrate this.<br>	... mutable.<br><br><pre># let seuss = "cat";;<br>val seuss : string = "cat"<br># seuss.[0] <- 'h';;<br>- : unit = ()<br># seuss;;<br>- : string = "hat"<br></pre>
+Describe the Boolean type.<br>How is it negated?<br>	Type <tt>bool</tt> has values <tt>true</tt> and <tt>false</tt>.<br><br>Negation is performed with unary <tt>not</tt>.<br>
+Give the equality operators.<br>Give the identity operators.<br>	Equality:<br><pre>x = y<br>x <> y<br></pre><br>Identity:<br><pre>x == y<br>x != y<br></pre>
+Describe the boolean operators.<br>	<tt>&&</tt>, <tt>||</tt><br>
+Give the conditional syntax.<br>	<pre>if cond then expr1 else expr2<br></pre>
+What common value does OCaml lack?<br>	<tt>null</tt><br>
+Unlike in Scala, both the <tt>if</tt> and <tt>else</tt> branches of a conditional must have ...<br>	The same type.<br>
+What are the INRIA tools called?<br>	- <tt>ocaml</tt> is the toploop<br>- <tt>ocamlc</tt> is the bytecode compiler<br>- <tt>ocamlopt</tt> is the machine code compiler<br>- <tt>ocamldebug</tt> is the debugger<br>

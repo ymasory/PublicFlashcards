@@ -1,0 +1,7 @@
+What are the three primary functions for working with ref cells?<br>Give their type signatures.<br>	<tt>ref</tt> for creating a ref cell. <tt>:=</tt> for re-assigning. <tt>!</tt> for extracting the value.<br><br><pre>val ref  : 'a -> 'a ref<br>val (:=) : 'a ref -> 'a -> unit<br>val (!)  : 'a ref -> 'a<br></pre>
+How can sequentially evaluated expressions be composed into one expression?<br>	Using a semicolon after every expression.<br>
+Give the syntax of <tt>for</tt>.<br>	<pre>for ident := expr1 to expr2 do<br>  expr3<br>done<br></pre><br><pre>for ident := expr1 downto expr2 do<br>  expr3<br>done<br></pre>
+Give the <tt>while</tt> syntax.<br>	<pre>while expr1 do<br>  expr2<br>done<br></pre>
+What are the "deeper" problems with functional purity?<br>	- It can be difficult to construct cyclic data structures.<br>The structure can be created using only values that already exist, so it itself can't be one of them.<br><br>- There may be no purely functional algorithm with equivalent performance to the best imperative algorithms for solving some problems.<br>
+Function application and ref cells are not ...<br>	... values, i.e., immutable values.<br>
+Create a type alias.<br>	<pre>type newName = existing type<br></pre>

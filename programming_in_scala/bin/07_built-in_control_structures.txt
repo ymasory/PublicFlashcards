@@ -1,0 +1,19 @@
+Referential transparency is to methods as ___ is to variables.<br>	Equational reasoning.<br><br>The point is to use no side effects/mutate state in methods or in the initialization blocks of <tt>val</tt>s.<br><br>The <tt>val</tt> and its initialization block can thus be swapped without worry.<br>
+Unlike Java, what does try/catch/finally ...<br>	... results in a value.<br>
+Name the built-in control structures.<br>	<tt>if</tt>, <tt>while</tt>, <tt>for</tt>, <tt>try</tt>, <tt>match</tt>, function calls<br>
+What are the results of:<br>`def f(): Int = try {return 1} finally{return 2}<br>def g(): Int = try {1} finally {2}`<br>	<tt>f</tt> results in 2<br><tt>g</tt> results in 1<br>
+Why doesn't Scala have <tt>break</tt>/<tt>continue</tt>?<br>	For one reason, their meaning would be unclear in a function literal.<br>
+Give an alternate <tt>for</tt> expression syntax.<br>	Use curly braces around generators and filters to avoid semicolons. Otherwise consecutive filters must be separated with a semicolon.<br>
+<tt>finally</tt> can be used...<br>	...without <tt>catch</tt>. Even in Java!<br>
+What is the value of <tt>try</tt>/<tt>catch</tt>/<tt>finally</tt>?<br>	The value is the value of <tt>try</tt>, unless <tt>catch</tt> or <tt>finally</tt> overrule with <tt>return</tt>.<br><br>If <tt>throw</tt> is uncaught, no value is given at all (type <tt>Nothing</tt>).<br>
+Give two strategies for living without <tt>break</tt>/<tt>continue</tt>.<br>	- Use <tt>goOn</tt> type <tt>Booleans</tt>.<br>- Use recursion.<br>
+Exception handling is...<br>	Optional.<br>
+Write a <tt>do-while</tt> loop.<br>	<pre>do {<br>  //whatever<br>} while (condition)<br></pre>
+Give an example of matching on a <tt>String</tt>.<br>	<pre>someConstant match {<br>  case "salt" => "pepper"<br>  case "chips" => "salsa"<br>  case _ => "huh"<br>}<br></pre>
+What is the result of assignment?<br>	<tt>() : Unit</tt><br>
+What do <tt>to()</tt> and <tt>until()</tt> result in?<br>	Range values.<br>
+What do <tt>for</tt> expressions result in?<br>	They result in a new collection made up of yielded values.<br>
+What do <tt>throw</tt> expressions result in?<br>	They result in a value of type <tt>Nothing</tt>, but of course there are no instances of <tt>Nothing</tt>.<br>
+Why do scripts appear to allow re-declarations?<br>	Conceptually, each statement is in a nested scope.<br>
+Give the <tt>try</tt>/<tt>catch</tt> syntax.<br>	<pre>try {<br>  //code<br>} catch{<br>case ex: FileNotFoundException => //handle<br>case ex: IOException => //handle<br>}<br></pre>
+What is the difference between Java and Scala scoping rules?<br>	Scala always allows shadowing.<br>

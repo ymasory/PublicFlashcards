@@ -1,0 +1,2 @@
+Give the <tt>fun</tt> syntax of a null-ary function.<br>	<pre>fun () -> expr<br></pre>
+Find the type of a function in the toplevel.<br>	<pre>(* prefix functions *)<br>funcname;;<br>(* infix functions *)<br>(funcname);;<br></pre> * How is <tt>'a</tt> read?<br><em>tick a</em> or <em>tick alpha</em><br>

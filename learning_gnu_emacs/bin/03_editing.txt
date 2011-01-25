@@ -1,0 +1,6 @@
+How can you undo previous actions?<br>	C-_ or C-x u (<tt>undo</tt>)<br>
+What are the common single character movements?<br>	C-f (<tt>foward-char</tt>)<br>C-f (<tt>bacward-char</tt>)<br>C-n (<tt>next-line</tt>)<br>C-p (<tt>previous-line</tt>)<br>
+What are the common single word movements?<br>	M-b (<tt>backward-word</tt>)<br>M-f (<tt>foward-word</tt>)<br>
+What are the common line movements?<br>	C-a (<tt>move-beginning-of-line</tt>)<br>C-e (<tt>move-end-of-line</tt>)<br>
+What are the common sentence movements?<br>How is sentence defined?<br>	M-e (<tt>forward-sentence</tt>)<br>M-a (<tt>backward-sentence</tt>)<br><br>Sentences end with two spaces.<br>
+What are the common paragraph movements?<br>	M-} (<tt>forward-paragraph</tt>)<br>M-{ (<tt>backward-paragraph</tt>)<br>

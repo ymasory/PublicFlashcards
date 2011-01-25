@@ -1,0 +1,4 @@
+Where can named parameters be used?<br>	All parameters can be used in a named way, whether or not default parameters are used.<br>
+What are the three ways of giving arguments to parameters?<br>	Argument placement, named parameters, mixed mode.<br>
+What happens to default parameters when inheritence is used?<br>	The parameter names are determined by the static type.<br>However, the values are determined by the dynamic type.<br><br>Hence in the case where an overriden function uses the same names as the <tt>super</tt> function, but in a different order, the result will be confusing for objects with a different static and dynamic types.<br>
+What is the negative consequence of named parameters?<br>What feature will will 2.8.1 probably include to mitigate this problem?<br>	Parameter names are exposed and part of the public API.<br><br>Scala 2.8.1 will probably include a way to deprecate old parameter names and introduce new ones.<br>

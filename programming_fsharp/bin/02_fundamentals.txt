@@ -1,0 +1,41 @@
+Unlike Java, F#'s primitive types ...<br>	- Have signed and unsigned versions.<br>- Include a fixed precision point type.<br>
+How can you use an integer as the base of an exponent?<br>	You must use <tt>pown</tt> instead of <tt>**</tt>, or convert to a floating-point type.<br>
+What are the conversion functions for primitive types?<br>	They have the same names as the types being converted to.<br>
+Why are conversion functions more widely used in F#?<br>	There is no type coercion.<br>
+For arbitrary precision integers F# features what?<br>	Language support. Literals ending with <tt>I</tt> are <tt>System.Numerics.BigIntegers</tt>.<br>
+What are the bitwise operators?<br>	`&&&`, `|||, `^^^`, `<<<`, `>>>`<br>
+Index a string.<br>	<pre>"abcd".[0]<br></pre>
+How are multi-line strings written?<br>	- One can end each line with a backslash while still in a string. Leading whitespace will be removed from the next line.<br>- With verbatim strings, but leading whitespace will not be removed.<br>
+What is the verbatim string syntax?<br>	An <tt>@</tt> before the string begins.<br>
+What shortcut is provided for converting a string literals to arrays of bytes?<br>	The suffice <tt>B</tt> after the close quote of a string literal.<br>
+How is negation written?<br>	<tt>not</tt> for unary negation.<br>
+How is equality written?<br>Inequality?<br>	<tt>=</tt> and <tt><></tt>.<br>
+What is the syntax of function definitions?<br>	<pre>let funcname arg1 arg2 ... argN = body<br></pre>
+The result of a function is ...<br>	The value of the last expression in a given path. There is no <tt>return</tt> keyword.<br>
+How are function types written?<br>	As in Haskell:<br><pre>type1 -> type2 -> ... -> typeN<br></pre>
+Unlike in Haskell, functions using operators like <tt>+</tt> will default to ...<br>	... <tt>int</tt> parameters instead of type parameters.<br>
+How are type annotations written?<br>	As usual, <tt>name : type</tt>.<br>
+How are type parameters written?<br>	With a leading <tt>'</tt>, e.g., <tt>'a</tt>, <tt>'b</tt>.<br>
+Unlike in Scala, shadowing is allowed where?<br>	In the same block. E.g., two consecutive lines can <tt>let</tt> the same identifier.<br>
+What is the syntax of conditionals?<br>	<pre>if   cond1 then res1<br>elif cond2 then res2<br>...<br>else res<br></pre>
+Unlike in Scala, each branch of a conditional must have what?<br>	The same type. Upcasting will not be done.<br>
+How are tuples written?<br>How are their types written?<br>	Comma separated values surrounded by round parens.<br><br><pre>type1 * type2 * ... * typeN<br></pre>
+Access the elements of a tuple.<br>	- Use <tt>fst</tt> and <tt>snd</tt>.<br>- Unpack with <tt>let</tt><br><pre>let a, b, c = (1, 2, 3)<br></pre>
+What is the list literal syntax?<br>	Semi-colon separated values surrounded by square brackets.<br>
+What is the syntax of list comprehensions?<br>	Basically arbitrary code within square brackets. Elements are selected using the <tt>yield</tt> keyword.<br>
+How are list comprehensions evaluated?<br>	Eagerly, in memory.<br>
+Loop over a range.<br>	<pre>for var = start-expr to end-expr do<br>    //body<br></pre><br><tt>to</tt> is inclusive, as in Scala.<br>
+Loop over a collection.<br>	<pre>for pattern in expr do<br>    //body<br></pre>
+What shortcut <tt>for</tt> syntax is provided for list comprehensions?<br>	<pre>for pattern in expr -> expr<br></pre>
+In the F# API, what's the difference between <tt>fold</tt> and <tt>reduce</tt>?<br>	<tt>reduce</tt> uses the first element of the list as the initial accumulator value, <tt>fold</tt> takes the initial accumulator value explicitly.<br>
+Run a block of code on each element of a list.<br>	<tt>List.iter</tt> is like Scala's <tt>foreach</tt>.<br>
+What is used in place of <tt>null</tt>?<br>	As in Scala, <tt>Option</tt> can have values <tt>Some('a)</tt> or <tt>None</tt>.<br>
+Why is <tt>printfn</tt> more useful than using <tt>System.Console's</tt> print methods?<br>	The arguments to the formatting string are type checked, contributing to type inference.<br>
+What are the <tt>printfn</tt> format specifiers?<br>	<tt>%d, %i</tt> - integer<br><tt>%s</tt> - string<br><tt>%f</tt> - floating-point number<br><tt>%c</tt> - character<br><tt>%b</tt> - boolean<br><tt>%O</tt> - object<br><tt>%A</tt> - anything<br>
+If no module is specified, you are actually using what?<br>How can it be accessed?<br>	you are using the <tt>anonymous module</tt> which can nonetheless be accessed using the filename with the first letter capitalized.<br>For example, <tt>MyFile.someValue</tt>.<br>
+Create a module explicitly.<br>	<pre>module MyModule<br>//whatever<br></pre>
+Create a nested module.<br>	Equal sign and indentation are mandatory:<br><br><pre>module Outer<br>module Inner =<br>    //whatever<br></pre>
+How are namespaces different from modules?<br>	- they can contain declarations but not values.<br>- they cannot be nested<br>
+What are the ideal use-cases for modules and namespaces?<br>	Namespaces: large object-oriented programs<br>Modules: rapid prototyping<br>
+How does an F# program execute?<br>	Straight down the <em>last</em> code file.<br>
+Create an explicit entry point.<br>	Add the <tt>[<EntryPoint>]</tt> attribute to a method.<br>It must be in the last function in the last file of the program.<br>It must take a <tt>string array</tt> and return an integer.<br>

@@ -1,0 +1,48 @@
+What is the general non-object-oriented sense of the word "object"?<br>	Anything that might have a name.<br>
+What are the available binding times?<br>	- Language design<br>- Language implementation<br>- Program-write<br>- Compile<br>- Link<br>- Load<br>- Run<br>
+Name three storage allocation mechanisms.<br>	- Static allocation<br>- Stack-based allocation<br>- Heap allocation<br>
+What is a static object?<br>	An object given an absolute address that is retained throughout program execution.<br>
+Name the two kinds of constants.<br>How can they be allocated?<br>	- Manifest (AKA compile-time) constants. They can always be allocated statically.<br>- Elaboration-time. They can refer to run-time values, but cannot be changed once made. When local to recursive subroutines they cannot be statically allocated.<br>
+Name two examples of static objects in C<br>	- Global variables in C<br>- <tt>static</tt> local variables in C<br>
+Static allocation of local variables is impossible in languages with ...<br>	Recursion<br>
+Good compilers will try to keep arguments, return values, and temporaries where?<br>	In registers.<br>
+What is a dynamic link?<br>	A subroutine's reference to the stack frame of the caller.<br>
+Each subroutine has its own ...<br>What does it hold?<br>	... frame (activation record) on the stack, holding arguments, return values, local variables, temporaries, and bookkeeping information.<br>
+Who maintains the stack?<br>	The calling sequence of the caller, and the prologue and epilogue of the callee.<br>
+What is a calling sequence?<br>	The code executed by the caller immediately before and after a call.<br>
+What are the prologue and epilogue?<br>	Code executed at the beginning and at the end of a subroutine.<br>
+What is the frame pointer?<br>What is it useful for?<br>	A register that points to a known location within the frame of the current subroutine.<br><br>Code accessing a local variable or argument can do so by predetermined offsets to the frame pointer.<br>
+What is displacement addressing?<br>	Hardware support for addressing relative to an offset (like the frame pointer's) inside a normal <tt>load</tt> or <tt>store</tt> instruction.<br>
+What is the heap?<br>It should not be confused with ...<br>	The region of storage in which sub-blocks can be allocated and de-allocated at any time.<br><br>Not to be confused with the tree data structure.<br>
+What are the major concerns in heap design?<br>	Speed and space. Space can be divided into internal fragmentation and external fragmentation.<br>
+What is internal fragmentation?<br>	The assignment of blocks larger than required for a given object. The unused space is lost.<br>
+What is external fragmentation?<br>	The result of allocated blocks being scattered throughout the heap. There may be lots of free space, but no one piece of it may be large enough to satisfy a future request.<br>
+What is a free list?<br>	A linked list of heap blocks not currently in use.<br>
+How does a free list work?<br>	Initially the free list is one block for the whole heap. To satisfy a request some block is given to an object, and some or all of the unused space is returned to the list. When the object is de-allocated neighbor coalescing will be tried.<br>
+Name and describe two methods for selecting a heap block for a given object.<br>	- First fit: give object the first block large enough to store it<br>- Best fit: search list to find the smallest block large enough to store object<br>
+Compare the best fit and first fit algorithms.<br>	- Best fit is slower, always searching entire list. It's better at preserving large blocks for large requests but results in many tiny "left-over" blocks.<br>- Neither is inherently better at reducing external fragmentation. It depends on the distribution of requests.<br>
+What is the cost of allocation for memory management algorithms with one free list?<br>	Linear, whether using best of first fit.<br>
+How can memory-allocation be reduced to constant time?<br>How can such techniques be further subdivided?<br>	By maintaining separate free lists ("pools") for blocks of different sizes.<br><br>This separation can be done statically or dynamically.<br>
+What are two common mechanisms for dynamic pool adjustment?<br>	- Buddy system<br>- Fibonacci heap<br>
+What is the buddy system?<br>	A method of dynamic management of multiple free lists.<br>Standard block sizes are powers of 2. If a block of 2^k is needed but not available, a 2^{k+1} block is split in half, one going to the kth free list.<br>If a split block is de-allocated it coalesces with its buddy, if free.<br>
+How does the Fibonacci heap work?<br>It results in ...<br>	Similarly to the buddy system, but using Fibonacci numbers instead of powers of two for standard block sizes.<br><br>... lower internal fragmentation because the Fibonacci sequence grows more slowly than 2^k.<br>
+An adversary can always devise a series of memory requests that ...<br>	... cannot be satisfied even though the total space required is less than the size of the heap.<br>
+Describe adversarial memory request strategies for static and dynamic allocation schemes.<br>	- Static: exceed the maximum number of requests of a given size that can be satisfied.<br>- Dynamic: allocate a large number of small objects then de-allocate every other one in order of address, leaving a checkerboard of alternating small free and small allocated blocks.<br>
+How can external fragmentation be eliminated?<br>	By "compacting" the heap, which involves moving already-allocated blocks and updating all outstanding references to them.<br>
+What are the two main types of manual memory allocation errors?<br>	- Dangling references, i.e. de-allocating too soon. Allows access to memory that has already been de-allocated from the intended object.<br>- Memory leaks, i.e. de-allocating too late. Not de-allocating an object at the end of its lifetime wastes memory.<br>
+What is the scope of a binding?<br>	The textual region in which the binding is active.<br>
+What is lexical scoping?<br>It is also known as ...<br>	A naming system in which it is possible to tell which names refer to which objects at which points in the program based purely on textual rules.<br><br>AKA static scoping.<br>
+Why is <em>lexical scope</em> a better term than <em>static scope</em>?<br>	Scope rules based on nesting can be enforced at run-time instead of compile-time, if desired, e.g., Lisp's passing of unevaluated subroutine declaration text.<br>
+Define dynamic scoping.<br>	A naming system in which bindings depend on flow of execution at run time.<br>
+What is meant by "scope" when no particular binding is in mind?<br>	A program region of maximal size in which no bindings change, or at least none are destroyed.<br>
+What is the referencing environment?<br>	The set of active bindings.<br>
+What is the closest nested scope rule?<br>	A name introduced in a declaration is known in the scope in which it is declared, and in each internally nested scope unless hidden by another declaration of the same name in on or more nested scopes.<br>
+What is a hole in a scope?<br>	A nested scope in which a binding declared in an outer scope cannot be accessed by its normal name because that same name is being used by a different object in the inner-more scope.<br>
+Name two methods languages offer for accessing hidden bindings.<br>	- qualifiers<br>- scope resolution operators<br>
+How can subroutines refer to local objects? To nonlocal ones?<br>	A subroutine can refer to its own objects via displacement addressing on the frame pointer.<br><br>It can refer to objects of outermore scopes by traversing the static link chain.<br>
+What is a subtlety of static scoping?<br>	Is the scope of a variable the entire block in which it's found, or just the portion after its declaration?<br><br>This is a problem when inner scopes hide variables of outer ones.<br><tt>const N = 10</tt><br><tt>def foo:</tt><br><tt>    M = N // outer N or semantic error?</tt><br><tt>    N = 20</tt><br>
+When is declare-before-use problematic?<br>How does C/C++ solve the conundrum?<br>	When using recursive types or recursive subroutines.<br><br>C/C++ distinguish between declaration and definition, allowing scope to be established by declaration prior to recursive use.<br>
+What are forward references?<br>What is the consequence of allowing them?<br>	Forward references are uses of an object before their declaration. (E.g., Java allows this for class members).<br><br>They greatly increase the complexity and memory requirements of a compiler and prevent the compiler from being one-pass.<br>
+What are the benefits of information hiding?<br>	- Reduce cognitive load by hiding details.<br>- Reduce opportunities for name conflicts.<br>- Safeguard integrity of data abstractions by preventing outside access.<br>- Compartmentalize run-time errors.<br>
+What do the two uses of the C keyword <tt>static</tt> have in common?<br>	They support a degree of information hiding. One for subroutines and the other for the compilation unit.<br>
+What are modules?<br>	Collection of objects encapsulated in such a way that (1) objects inside are visible to one another, but (2) objects on inside are not visible to outside unless explicitly exported, and (3) (in many languages) objects on outside are not visible to objects on inside unless imported.<br>

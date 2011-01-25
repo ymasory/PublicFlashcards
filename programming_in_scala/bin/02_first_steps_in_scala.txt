@@ -1,0 +1,8 @@
+What parts of a defined function's prototype can be inferred?<br>	The result type but not parameters.<br>
+Write a max function literal.<br>	<pre>(x:Int, y:Int) => if (x > y) x else y<br></pre>
+What are command line arguments in a script available as?<br>	They are available as val args of type <tt>Array[String]</tt>.<br>
+When can you leave off curly braces around a method?<br>	They can be left off if the method is only one statement.<br>
+When can you leave curlies off of <tt>if</tt>, <tt>else</tt>, and <tt>while</tt> statements?<br>	They can be left off if the body is one statement.<br>
+When can you leave the parameter list off of a function literal?<br>What is it shorthand for?<br>	- If a function is expected and the function takes only one argument.<br>- A partially applied function.<br>
+What does Scala call a return type in Java?<br>	Return types are called result types.<br>
+How would you print each member of an array?<br>	<pre>args.foreach(arg => println(arg))<br>args.foreach(println)<br></pre>Since it's one statement with one arg the shorthand is possible.<br>

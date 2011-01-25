@@ -1,0 +1,10 @@
+What is pre-emptive scheduling?<br>	Scheduling that allows context switches before a thread blocks, to prevent CPU "hogging".<br>
+What is a dispatch loop?<br>	An alternative to parallelism that subdivides tasks, saves their state, and returns to the top of the dispatch loop at every delay-inducing operation.<br>
+What are the three levels of parallelism granularity?<br>How can they be further categorized?<br>	- Instruction-level<br>- Vector-level<br>- Thread-level<br><br>The first two are part of the implementation of a program, the third affects the program's high-level structure.<br>
+What are some motivations of concurrency?<br>	- Capturing the logical structure of a problem.<br>- Exploiting extra processors for speed.<br>- Coping with separate physical devices.<br>
+What is a race condition?<br>	A section of code that multiple threads approach ("race to"), such that the behavior of the program depends on which gets there first.<br>
+What is the purpose of synchronization?<br>	To make a critical section appear atomic.<br>
+What is the memory coherence problem? Who does it affect?<br>	The difficulty in keeping copies of a memory location consistent with one another.<br>This problem affects shared-memory machines.<br>
+What are the two broad categories of single-site (non-distributed) parallel computers?<br>	- Multiprocessor (shared-memory) systems.<br>- Message-based systems.<br>
+Define <em>task</em>.<br>	A well-defined unit of work that must be performed by some thread. In that sense a collection of threads share a "bag of tasks" to work on.<br>
+Contrast heavyweight and lightweight threads.<br>	Lightweight threads have a shared memory space.<br>

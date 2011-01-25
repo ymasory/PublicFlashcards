@@ -1,0 +1,39 @@
+What is the relationship between Common Lisp, Scheme, and Clojure?<br>	Scheme and Clojure are in the lisp-1 family, which use the same namespace for functions and variables.<br>Common Lisp is in the lisp-2 family, which uses separate namespaces.<br>
+What's the easiest way to create a Clojure project?<br>	With the leiningen build automation tool.<br><br><pre>lein new MyProj<br></pre>
+What is Clojure's function invocation syntax?<br>	<pre>(funcname arg1 arg2 ...)<br></pre>
+What is odd about Clojure operators?<br>	- It uses the normal function prefix notation.<br>- <tt>/</tt> results in a <tt>Ratio</tt>.<br>
+How do you calculate remainders?<br>	Using <tt>mod</tt>.<br>
+What is the advantage of doing math in prefix notation?<br>	- It's easier to support higher-arity versions of the function.<br>- There's no ambiguity and no need for consideration of operator precedence.<br>
+How can you concatenate strings?<br>	Using the equivalent of Java's <tt>toString</tt>.<br><br><pre>(str obj1 obj2 ... objn)<br></pre>
+Create a string without quotes.<br>	Use <tt>\</tt>s:<br><br><pre>user=> (str \h \i)<br>"hi"<br></pre><br>Back slashes actually create characters, which are not strings in Clojure.<br>
+Show the Java class of an expression.<br>	<pre>(class expr)<br></pre>
+How are conditionals expressed?<br>	Using an <tt>if</tt> function.<br>Its first argument is a Boolean expression, the second argument is the code to run if the Boolean expression is <tt>true</tt>. The third argument is optional and is the <tt>else</tt> code.<br>
+What evaluates to "true" for the purpose of <tt>if</tt> expressions?<br>	Everything except <tt>nil</tt> and <tt>false</tt>.<br><br><tt>0</tt> and <tt>""</tt> <strong>do</strong> evaluate to "true" in conditionals.<br>
+What conventionally separates lists and vectors?<br>What separates them in terms of implementation?<br>	Lists are for code, while vectors are used to store data.<br><br>Vectors support fast random access.<br>
+How are non-function lists constructed?<br>	With the <tt>list</tt> function or by quoting:<br><br><pre>'("my" "favorite" "list")<br></pre><br>Or with the <tt>cons</tt> function.<br>
+How do you get the head/tail of a list?<br>The last element?<br>	<tt>first</tt>, <tt>rest</tt>, <tt>last</tt><br>
+Access an arbitrary index in an list.<br>Combine two lists.<br>	<pre>user=> (nth ["a", "b", "c"] 2)<br>"c"<br></pre><br>Use <tt>concat</tt>.<br>
+What is the syntax of vectors, sets, and maps?<br>	Vectors use <tt>[]</tt>, sets use <tt>#{}</tt>, maps use <tt>{}</tt>.<br>
+How do you assign to a variable?<br>Are re-assignments allowed?<br>	<pre>(def VarName expr)<br></pre><br>Yes, reassignments are allowed.<br>
+How can you access the size of collections?<br>	Use <tt>count</tt>.<br>
+Show that vectors and sets are really functions.<br>	<pre>user=> (["a" "b" "c"] 1)<br>"b"<br>user=> (#{"a" "b" "c"} "a")<br>"a"<br></pre>
+What syntactic convenience does Clojure allow for for organizing members of lists, maps, etc?<br>	Commas as whitespace.<br>With maps helps prevent mixing up keys/values, or putting an odd number of elements.<br>
+What are the two kinds of symbols in Clojure?<br>	Keywords (beginning with <tt>:</tt>) stand for themselves, like atoms in other languages. Symbols refer to something else.<br>
+Retrieve a value from a map.<br>	<pre>(:key map)<br></pre><br>or<br><br><pre>(map :key)<br></pre><br>Both the map and the keyword are functions.<br>
+Add to a map.<br>	<tt>merge</tt> and <tt>merge-with</tt> combine maps.<br><br><tt>assoc map newElement</tt> adds to a map.<br>
+What is Clojure's function definition syntax?<br>	<pre>(defn funcName [params] body)<br></pre>
+Create and retrieve documentation.<br>	Add a docstring after the function name and before the parameter vector. To retrieve use:<br><pre>(doc funcName)<br></pre>
+Where can destructuring be used?<br>How is it different from pattern matching?<br>	It can be used in an argument list or in a <tt>let</tt> statement.<br><br>Unlike pattern matching, destructuring does not require you match the entire data structure being destructured.<br>
+What does <tt>let</tt> do?<br>	<pre>(let [bindings* ] exprs*)<br></pre><br>The expressions are evaluated in the lexical context of the bindings, sequentially applied.<br>The even numbered elements in <tt>bindings</tt> are bound to the odd symbols.<br>Unlike in a <tt>def</tt>, those bindings are not active outside the <tt>let</tt>.<br>
+Why are higher-order functions baked right into Clojure?<br>	Because functions are really just lists.<br>
+How can you create anonymous functions?<br>	Use <tt>fn</tt> instead of <tt>defn</tt> and don't put a name.<br><br>Or, put a <tt>#</tt> before the list containing the body of the function with <tt>%</tt> being bound to each argument.<br>
+How can you apply a function that is the result of an expression?<br>	<pre>(apply func arglist)<br></pre>
+How does Clojure work around the JVM's lack of tail recursion optimization?<br>	Using <tt>loop</tt>/<tt>recur</tt>.<br><br>The <tt>loop</tt> function takes a vector whose odd number elements are variables and even number elements are initial variables to those arguments. Its second argument is the body of the function which can use <tt>recur</tt> to go back to <tt>loop</tt>.<br>
+Translate Scala's <tt>forall</tt>.<br>Translate Scala's <tt>exists</tt>.<br>Translate Java's <tt>null</tt> check.<br>	<pre>(every? func list)<br></pre><pre>(some func list)<br></pre><tt>not-every</tt> and <tt>not-any</tt> are the opposite.<br><br><pre>(nil? list)<br></pre>
+How are list comprehensions done?<br>	<pre>(for [el1 list1 ... el2 list2 :when filter1] body)<br></pre>
+What is idiomatic Clojure for Java's <tt>isX</tt> functions?<br>What is idiomatic Clojure's capitalization system for functions.<br>	<tt>x?</tt><br><br><tt>word1-word2</tt> type function names.<br>
+Scala's <tt>foldLeft</tt> goes by what in other languages?<br>	- Erlang - <tt>foldl</tt><br>- Ruby - <tt>inject</tt><br>- Clojure - <tt>reduce</tt><br>- Haskell - <tt>foldl</tt><br>
+How do you create ranges?<br>	<pre>user=> (range -5 5 2)<br>(-5 -3 -1 1 3)<br></pre>
+Create an infinite sequence.<br>	<pre>(repeat "to infinity and beyond!")<br></pre><br><pre>(repeat (cycle ["one" "more" "time"]))<br></pre><br><pre>(iterate inc 3)<br></pre>
+Infinite sequences are typically combined with what?<br>	Calls to <tt>take</tt> or <tt>drop</tt>, to extract sub-sequences.<br>
+What is Clojure's alternative to building things "inside out"?<br>	Using the left-to-right operator <tt>->></tt>. It applies each function to the result of the <em>previos</em> one.<br>

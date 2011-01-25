@@ -1,0 +1,26 @@
+What are Clojure's basic numerical types?<br>	Integers, floating point numbers, ratios, and characters.<br>
+What are "keywords" in Clojure terminology?<br>	Atoms, as in Prolog or Erlang, not reserved words.<br>
+Anonymous functions are also called ...<br>	... lambdas.<br>
+What is Clojure's fundamental collection type?<br>What methods define it?<br>	Sequences are the abstraction above lists, vectors, maps, sets, etc.<br><br>They share the methods <tt>first</tt>, <tt>rest</tt>, and <tt>cons</tt>.<br>
+What's the problem with <tt>if</tt>?<br>What's the alternative?<br>	The nesting of many <tt>if</tt>s is difficult to read.<br><br>The special form <tt>cond</tt> allows as many arguments as needed for <em>if ... then ... elseif ... then ... elseif ... </em><br><tt>cond</tt> provides <tt>:else</tt> to catch everything as the final branch.<br>
+Sequences are roughly equivalent to what in Java?<br>	<tt>Iterators</tt><br>
+What do predicates return in idiomatic Clojure?<br>	Instead of returning the atoms <tt>false</tt>/<tt>true</tt>, they take advantage of the fact that anything other than <tt>false</tt>/<tt>nil</tt> is "true" and return a more meaningful value.<br>
+How can you create a list without invoking it as a function?<br>	By quoting:<br><pre>'(a b c)<br></pre><br><pre>(quote (a b c))<br></pre>
+How are special forms different from functions?<br>What's the catch?<br>	Special forms get arguments unevaluated, controlling if/when to evaluate them.<br><br>However, special forms are <em>not</em> first-class values.<br>
+Give two methods of division.<br>	<tt>/</tt> which returns a <tt>Ratio</tt>.<br><br><tt>quot</tt> performs truncating integer division.<br>
+What's the difference between <tt>rem</tt> and <tt>mod</tt>?<br>	They differ in their handling of signs. If the first and second arguments have different signs, the result of <tt>mod</tt> will have the same sign as the second argument, while the result of <tt>rem</tt> will have the same sign as the first argument.<br>
+Describe negation.<br>	<tt>not</tt> and <tt>not=</tt> are provided.<br>
+What's the difference between <tt>=</tt> and <tt>==</tt>?<br>	<tt>==</tt> only compares arguments that can be case to <tt>java.lang.Number</tt>.<br><br><tt>=</tt> compares arguments in a type-independent manner. For example, vectors can be equal to lists according to <tt>=</tt>.<br>
+Unlike other Lisps, the order of functions ...<br>	... matters. Forward-references are not allowed.<br>
+Test object identity.<br>	<tt>identical</tt><br>
+Test for collection type.<br>	<tt>coll?</tt>, <tt>seq?</tt>, <tt>vector?</tt>, <tt>list?</tt>, <tt>map?</tt>, <tt>set?</tt><br>
+Test a collection for membership.<br>For non-reptition.<br>	<tt>contains?</tt>, <tt>distinct?</tt><br>
+In Clojure the standard streams have ...<br>	... special reassignable names.<br><br><tt>*in*</tt>, <tt>*out*</tt>, <tt>*err*</tt><br>
+Get back recent repl values.<br>	<tt>*1</tt>, <tt>*2</tt>, <tt>*3</tt> are the first, second, and third most recent values.<br><tt>*e</tt> is the most recent exception.<br>
+What is the comment syntax?<br>	<tt>;</tt> comments out the rest of the line.<br>
+In place of classes, Clojure has ...<br>What is their syntax?<br>	... structs<br><br>Define with:<br><pre>(defstruct name :field1 :field2 ...)<br></pre><br>Instantiate with:<br><pre>(struct name val1 val2 ...)<br></pre><br>Access fields with:<br><pre>(:fieldName structName)<br></pre>
+What is a lazy data structure?<br>What's an easy way to make them in Haskell?<br>	A data structure whose parts don't exist until they are accessed.<br><br><tt>iterate</tt> takes a function <tt>f</tt> and a starting value <tt>n</tt> and produces a lazy infinite series:<br><pre>(n, f(n), f(f(n)), f(f(f(n))), ...)<br></pre>
+What does the <tt>&</tt> mean in a function signature?<br>	It comes before a vararg, which is available as a list in the body.<br>
+Describe <tt>do</tt>.<br>	<pre>(do exprs*)<br></pre><br>Evaluates the expressions in order and returns the value of the last.<br>
+Describe list comprehension syntax.<br>	<pre>(for seq-exprs body-expr)<br></pre><br>Takes a vector of one or more binding-form/collection-expr pairs, each followed by zero or more modifiers, and yields a lazy sequence of evaluations of expr.<br><br>Supported modifiers are: <tt>:let [binding-form expr ...]</tt>, <tt>:while test</tt>, <tt>:when test</tt>.<br>
+How do you partially apply functions?<br>	Use <tt>partial</tt>, followed by a function and fewer than the normal number of arguments.<br><br><pre>user=> (def equals5 (partial = 5))<br>#'user/equals5<br>user=> (equals5 5)<br>true<br></pre>

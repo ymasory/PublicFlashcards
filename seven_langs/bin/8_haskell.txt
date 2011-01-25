@@ -1,0 +1,24 @@
+Concatenate strings.<br>What else can this be used for?<br>	<pre>str1 ++ str2<br></pre><br>Any two lists can be concatenated this way.<br>Strings are just lists of characters.<br>
+How is negation done?<br>	<tt>/=</tt> and unary <tt>not</tt><br>
+Give the conditional syntax.<br>What is unusual about Haskell conditionals?<br>	<pre>if bool then expr1 else expr2<br></pre><br>The else clause is required, to ensure an interesting result for the whole <tt>if</tt> expression.<br>
+Like in Java, Boolean types are ...<br>	... strict.<br>
+Find the type of an expression<br>Make <tt>ghci</tt> print all types.<br>	<tt>:t expr</tt> shows a value's type in <tt>ghci</tt>.<br><br><tt>:set +t</tt> makes it permanent for that session.<br>
+What are the two types of a function?<br>	The optional type declaration and the function declaration.<br>
+Create a module <tt>MyMath</tt> with the function <tt>my_max</tt>.<br>	<pre>module MyMath where<br>    my_max :: Integer -> Integer -> Integer<br>    my_max x y = if x > y then x else y<br></pre>
+How can you control flow of control to a function?<br>	- Multiple function definitions using pattern-matching parameters.<br>- Guards.<br>
+Give the syntax of guards.<br>What is often used as the last guard?<br>	Delay the equals sign, splitting up the argument lists.<br><br><pre>func args<br>    | boolean1 = ...<br>    | boolean2 = ...<br></pre><br><tt>otherwise</tt> is an alias for true, often used as the last guard.<br>
+Give the syntax of tuples and lists.<br>	Tuples use round parens, lists use brackets.<br>
+Compose functions<br>	You can do it explicitly with parens and parameters, or with the dot notation:<br><pre>composedFunc arg = secondToApply (firstToApply arg)<br>composedFunc = secondToApply . firstToApply<br></pre>
+Access the length of a collection.<br>	<pre>length coll<br></pre>
+Give the list range syntax.<br>	<pre>[start ..]             --infinite list<br>[start .. end]         --default increment of 1<br>[start, second .. end] --uses second to show increment<br></pre>
+Give the list comprehension sytax.<br>	<pre>[expr | genOrFilter1, ..., genOrFilterN]<br></pre><br>Filters are boolean expressions.<br>Generator form:<br><pre>bindingForm <- collection<br></pre>
+Give the anonymous function syntax.<br>	<pre>\param1 ... paramN -> body<br></pre>
+How can you bind variables with maximally limited scope?<br>	You can append an indented <tt>where</tt> clause.<br>
+How do you partially apply a function?<br>	Just don't give a function all its arguments. No special syntax is required.<br>
+What's the simplest way to create a new type?<br>	<pre>data NewType = Val1 | Val2 | ... | ValN<br></pre>
+What are some simple type alias forms?<br>	<pre>type NewType = OldType<br>type NewType = (Type1, ..., TypeN)<br>type NewType = [SomeType]<br></pre>
+How can you make your custom type printable?<br>	Add <tt>deriving (Show)</tt> to the end of the constructor.<br>k<br>
+How are variables interpreted in a function's type declaration?<br>	They are interpreted as type variables.<br>
+What is a class in Haskell?<br>	A collection of function signatures that any instance of the class (a <strong>type</strong> not an object) must support.<br>
+How can you temporary variables for use in a function?<br>	<pre>let var1 = expr1<br>    ...<br>    var2 = expr2<br>in result-expr<br></pre>
+Fundamentally, monads are ...<br>Some common uses are ...<br>	... a way of composing functions.<br><br>... sequential execution, control structures, managing i/o, the <tt>Maybe</tt> monad.<br>

@@ -1,0 +1,12 @@
+What is a mixed identifier?<br>	It's an alphanumeric identifier followed by underscore followed by an operator identifier.<br>
+Where can you invoke superclass constructors?<br>	They can only be invoked by the primary constructor in the extends statement.<br>
+What do class parameters correspond to in Java?<br>	They correspond to the primary constructor, along with all code not in a method or field.<br>
+Name four advantages of immutable objects.<br>	- They are easier to reason about, since they don't change.<br>- They can be passed around freely without defensive copies.<br>- They are inherently thread safe.<br>- They are safe hash table keys.<br>
+What are Scala constants used for?<br>What is their case convention?<br>	They are used for a subset of <tt>val</tt>s. Constants would generally not change even between program executions.<br><br>Case convention is not caps, just CamelCase.<br>
+What are operator identifiers?<br>How are they implemented?<br>	They are one or more operator characters.<br><br>They are internally mangled by Scala as <tt>$char</tt> for each character.<br><br>e.g., <tt>+</tt>, <tt><?></tt>, <tt>:-></tt><br>
+Describe an alphanumeric identifier.<br>	It starts with a letter or underscore, followed by further letters, digits, or underscores. <tt>$</tt> counts as a letter but should not be used to avoid colliding with the compiler.<br>
+How is method overloading resolved?<br>	By finding the method with the best static type match to arguments.<br><br>If there is no unique best-matching version, will return "ambiguous reference" error.<br>
+What are magic numbers?<br>	They are literal values with no explanation which, in the worst case, appear multiple times.<br>
+Enforce preconditions.<br>	<tt>Predef.require(Boolean)</tt><br><br>This throws <tt>IllegalArgumentException</tt>.<br>
+What is a literal identifier?<br>What does it do?<br>	It is enclosed by back ticks.<br><br>It forces identifier interpretation even over keyword or other restrictions.<br>
+Name four kinds of identifiers.<br>	- Alphanumeric identifier.<br>- Operator identifier.<br>- Mixed identifier.<br>- Literal identifier.<br>

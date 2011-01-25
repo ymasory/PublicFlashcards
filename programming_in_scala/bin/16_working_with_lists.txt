@@ -1,0 +1,2 @@
+How are <tt>Lists</tt> implemented?<br>	As linked lists.<br>
+What is the consequence of <tt>Lists</tt> being covariant?<br>	For types S,T if S is a subtype of T, then<br><tt>List[S]</tt> is a subtype of <tt>List[T]</tt>.<br>

@@ -1,0 +1,10 @@
+What is a record?<br>	An aggregate data type that consists of labels mapped to arbitrary values.<br>
+Give the syntax of records definition.<br>	<pre>type name =<br>    { name1 : type1;<br>      ...<br>      nameN : typeN<br>    }<br></pre>
+Instantiate a record.<br>	<pre>let name =<br>   { name1 = val1;<br>     ...<br>     nameN = valN<br>   }<br></pre>
+How can the members of a record be accessed?<br>	- With projection: <tt>record.label</tt><br>- With pattern matching<br><pre>let { name1 = var1; name2 = var2 } = expr<br></pre>Not all fields must be matched.<br>
+Functionally "update" a record.<br>	<pre>let name = { someRecord with field1 = val1; ... }<br></pre><br>The fields must be taken from <tt>someRecord</tt>.<br>
+How can mutable records be created?<br>And updated?<br>	In the declaration prefix one or more of the field names with the <tt>mutable</tt> keyword.<br><br><pre>record.mutableField <- newVal<br></pre>
+Oddly, the namespace of field labels is ...<br>	... shared between all toplevel records.<br><br>Values of records with fields of the same name overwrite values of fields in previous records.<br>
+What is the syntax of arrays?<br>	The same as lists, except for the pipe next to the brackets:<br><br><pre>[| val1 ; ... ; valN |]<br></pre>
+Access the elements of an array.<br>Update an array element.<br>	- Use pattern matching.<br>- Access directly with <tt>arr.(index)</tt>.<br><br><pre>arr.(index) <- newVal<br></pre>
+How can arrays be created?<br>	- Using the literal syntax.<br>- Using <tt>Array.create len initVal</tt><br>
