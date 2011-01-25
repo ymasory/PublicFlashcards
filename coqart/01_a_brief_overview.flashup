@@ -20,3 +20,9 @@ The ``strong normalization`` property is too strong. Any system that can describ
 
 * In Coq types are ... hence they have ...
 ... terms ... a type.
+
+* What is the comments syntax?
+As in OCaml:
+`
+(* comment *)
+`
