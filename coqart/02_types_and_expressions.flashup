@@ -18,7 +18,7 @@ It's a well-formed expression.
 * Coq commands all end with what?
 A period.
 
-* In Coq scopes are explicitly ...
+* In Coq interpretation scopes are explicitly ...
 ... opened and closed, with the most recently opened scopes taking precedence.
 
 * Open a scope.
@@ -45,7 +45,7 @@ A name associated with a scope used to explicitly provide the interpretation sco
 (term)%key
 `
 
-* Get everything Coq knows about a scope.
+* Get everything Coq knows about an interpretation scope.
 `
 Print Scope scope
 `
@@ -74,5 +74,35 @@ There is however the possibility of defining such a conversion using implicit co
 * What are the two forms of simple types?
 - ``Atomic types``, represented by single identifiers.
 - ``Arrow types``, of the form `Type1 -> Type2`.
+
+* In the context of Coq, "scope" can mean ...
+... either interpretation scope (a collection of notations) or a scope in the usual sense (the textual area where a binding is active).
+
+* Give the syntax of a declaration.
+* Give the syntax of a definition.
+`
+(ident : SomeType)
+
+(ident := term : someType)
+`
+
+* Contrast ``global`` and ``local`` scopes.
+Global scopes are active for the remainder of development.
+Local scopes are active only in the current ``section``.
+
+* Contrast ``environment`` and ``context``.
+The environment contains global bindings while the context contains the local ones.
+
+* How can you return to the initial bindings?
+* This is a special case of what?
+`
+Reset Initial
+`
+It brings you to an empty context and the initial environment.
+
+`
+Reset identifier
+`
+Brings you back to the state just after the given identifier was introduced.
 
 

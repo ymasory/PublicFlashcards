@@ -1,3 +1,11 @@
 p.2
 "For instance, the functional that maps"
 "For instance, the function that maps"
+
+p.19
+"done after the identifier id included"
+Does that mean after the identifier was introduced?
+
+p. 20
+"such that the ... holds"
+The what? Proposition? Statement?
