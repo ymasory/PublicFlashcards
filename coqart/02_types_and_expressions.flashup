@@ -58,5 +58,8 @@ Determining if a term is well-formed and what its type is.
 Check term.
 `
 
-* Where can Arabic numerals be used in place O/S unary notation?
-In `nat_scope`.
+* Where can decimal notation be used for natural numbers?
+In `nat_scope`, whose delimiting key is `nat`.
+
+* Where can decimal notation be used for all integers?
+In `Z_scope` whose delimiting key is `Z`.
