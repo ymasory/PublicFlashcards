@@ -63,3 +63,16 @@ In `nat_scope`, whose delimiting key is `nat`.
 
 * Where can decimal notation be used for all integers?
 In `Z_scope` whose delimiting key is `Z`.
+It is provided in `ZArith`.
+
+* Why can't a `nat` be used as a `Z`.
+* How might this be simulated?
+Coq has no type coercion.
+
+There is however the possibility of defining such a conversion using implicit coercions.
+
+* What are the two forms of simple types?
+- ``Atomic types``, represented by single identifiers.
+- ``Arrow types``, of the form `Type1 -> Type2`.
+
+
