@@ -1,26 +1,26 @@
-How are variables created?<br>	<pre>let name = expr<br></pre>
-Create a variable with limited, lexical scope.<br>	<pre>let name = expr1 in expr2<br></pre><br>The <tt>name</tt> binding is only active in <tt>expr2</tt>.<br>
-Apparent re-assignments are actually what?<br>	Instances of shadowing, creating a hole in the previous binding's scope.<br>
-What is the anonymous function syntax?<br>	<pre>fun param1 ... paramN -> expr<br></pre>
-How can parens be avoided, in general?<br>	By using the <tt>begin</tt> and <tt>end</tt> keywords.<br>
-What is the syntax of function application?<br>	As in Haskell, give the function name followed by the arguments, space delimited.<br><br><pre>funcname arg1 ... argN<br></pre>
-How are types written?<br>Which way do they associate?<br>	As in Haskell:<br><pre>param1Type -> ... -> paramNType -> resultType<br></pre><br>They associate right, so the following two are equivalent:<br><pre>X -> Y -> Z<br>X -> (Y -> Z)<br></pre>
-How are functions partially applied?<br>	Simply leave off arguments, at the end of the parameter list. The result will be a new function.<br>
-What syntactic sugar is provided for declaring named functions?<br>	<pre>let name param1 ... paramN = expr<br></pre>
-Variables in functions are bound to what?<br>	Values in their definition environment, not the environment of the function call.<br>
-Recursive functions require ...<br>	... the <tt>rec</tt> keyword after <tt>let</tt>.<br>
-How are mutually recursive functions written?<br>	<pre>let rec name1 paramlist1 =<br>    expr1<br>and name2 paramlist2 =<br>    expr2<br></pre>
-Name two kinds of names.<br>	Operator names and identifiers.<br>
-What are the rules of non-operator names?<br>	Regular identifiers are made of letters, digits, apostraphes and underscores. They must start with a letter or an underscore. An underscore by itself is not a legal name.<br>
-What are the rules of operator names?<br>	They are made up of only operator symbols.<br>
-What is the syntactic difference between operators and regular identifiers?<br>	Operators default to infix usage.<br>
-How can operators be used in the prefix position?<br>	By enclosing them in parens.<br>
-The prefix definition of <tt>*</tt> conflicts with what?<br>	The comment syntax. Use spaces around the <tt>*</tt>.<br>
-What are labeled parameters?<br>What is its syntax?<br>	Labeled parameters are a way to give formal parameters names so arguments can be provided to them in any order.<br><br>For each parameter instead of just giving it a name use <tt>~label:name</tt>. Then in a function call <tt>~label:arg</tt> can be used.<br>
-Arguments to functions with labeled parameters can be provided either ...<br>	... positionally or with labels.<br>
-What is the shorthand syntax for labeled parameters?<br>	<tt>~label</tt> where <tt>label</tt> serves as both the name and label for the parameter.<br>
-Give the syntax of optional parameters.<br>	<pre>?(label = expr)<br></pre><br><tt>expr</tt> provides the default value in case no argument is provided for the parameter in the call. To provide the argument the label must be used.<br>
-Why should each optional parameter be followed by a mandatory one?<br>	If an optional parameter comes last and no argument is provided, it could be to use the default argument or to partially apply the function.<br>
-Oddly, two labeled parameters can share what?<br>	The same label. In the call, argument order will determine the binding of arguments to parameters.<br>
-What is the type of a labeled <tt>int</tt>?<br>What is the type of an <tt>int</tt> with a default value?<br>	<pre>someLabel:int<br></pre><br><pre>?someLabel:int<br></pre>
-Why in higher-order function definitions should type annotations be given to parameters that are functions?<br>	Otherwise at call site the compiler will prefer to assume the invoked function has a labeled argument not an optional argument, regardless of which was intended.<br>
+How are variables created?	<pre>let name = expr</pre>
+Create a variable with limited, lexical scope.	<pre>let name = expr1 in expr2</pre><br><br>The <tt>name</tt> binding is only active in <tt>expr2</tt>.
+Apparent re-assignments are actually what?	Instances of shadowing, creating a hole in the previous binding's scope.
+What is the anonymous function syntax?	<pre>fun param1 ... paramN -> expr</pre>
+How can parens be avoided, in general?	By using the <tt>begin</tt> and <tt>end</tt> keywords.
+What is the syntax of function application?	As in Haskell, give the function name followed by the arguments, space delimited.<br><br><pre>funcname arg1 ... argN</pre>
+How are types written?<br><br>Which way do they associate?	As in Haskell:<br><pre>param1Type -> ... -> paramNType -> resultType</pre><br><br>They associate right, so the following two are equivalent:<br><pre>X -> Y -> ZX -> (Y -> Z)</pre>
+How are functions partially applied?	Simply leave off arguments, at the end of the parameter list. The result will be a new function.
+What syntactic sugar is provided for declaring named functions?	<pre>let name param1 ... paramN = expr</pre>
+Variables in functions are bound to what?	Values in their definition environment, not the environment of the function call.
+Recursive functions require ...	... the <tt>rec</tt> keyword after <tt>let</tt>.
+How are mutually recursive functions written?	<pre>let rec name1 paramlist1 =    expr1and name2 paramlist2 =    expr2</pre>
+Name two kinds of names.	Operator names and identifiers.
+What are the rules of non-operator names?	Regular identifiers are made of letters, digits, apostraphes and underscores. They must start with a letter or an underscore. An underscore by itself is not a legal name.
+What are the rules of operator names?	They are made up of only operator symbols.
+What is the syntactic difference between operators and regular identifiers?	Operators default to infix usage.
+How can operators be used in the prefix position?	By enclosing them in parens.
+The prefix definition of <tt>*</tt> conflicts with what?	The comment syntax. Use spaces around the <tt>*</tt>.
+What are labeled parameters?<br><br>What is its syntax?	Labeled parameters are a way to give formal parameters names so arguments can be provided to them in any order.<br><br>For each parameter instead of just giving it a name use <tt>~label:name</tt>. Then in a function call <tt>~label:arg</tt> can be used.
+Arguments to functions with labeled parameters can be provided either ...	... positionally or with labels.
+What is the shorthand syntax for labeled parameters?	<tt>~label</tt> where <tt>label</tt> serves as both the name and label for the parameter.
+Give the syntax of optional parameters.	<pre>?(label = expr)</pre><br><br><tt>expr</tt> provides the default value in case no argument is provided for the parameter in the call. To provide the argument the label must be used.
+Why should each optional parameter be followed by a mandatory one?	If an optional parameter comes last and no argument is provided, it could be to use the default argument or to partially apply the function.
+Oddly, two labeled parameters can share what?	The same label. In the call, argument order will determine the binding of arguments to parameters.
+What is the type of a labeled <tt>int</tt>?<br><br>What is the type of an <tt>int</tt> with a default value?	<pre>someLabel:int</pre><br><br><pre>?someLabel:int</pre>
+Why in higher-order function definitions should type annotations be given to parameters that are functions?	Otherwise at call site the compiler will prefer to assume the invoked function has a labeled argument not an optional argument, regardless of which was intended.

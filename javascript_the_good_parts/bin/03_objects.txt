@@ -1,11 +1,11 @@
-What is a JavaScript object?<br>What isn't it?<br>	A map from strings to any value except <tt>undefined</tt>.<br><br>It's not derived from a class.<br>
-Give the object literal syntax.<br>	<pre>{<br>  key1 : val1,<br>  ...<br>}<br></pre><br>Keys are automatically strings so they don't require quotes unless they are reserved words.<br>
-How are the values in objects accessed?<br>	<pre>obj["quoted-key"]<br>obj.key<br></pre>
-What are the consequences of bad object keys?<br>	Accessing a non-existent key results in <tt>undefined</tt>.<br><br>Accessing a key of <tt>undefined</tt> results in a <tt>TypeError</tt>.<br>
-How do you update/augment objects?<br>	Through assignment on the keys.<br>
-Object literals are linked to what?<br>	<pre>Object.prototype<br></pre>
-How does this book suggest creating new objects?<br>	Using a special function.<br><br><pre>if (typeof Object.create !== 'function') {<br>    Object.create = function (o) {<br>        var F = function () {};<br>        F.prototype = o;<br>        return new F();<br>    }<br>}<br></pre>
-How is the prototype chain affected by update/access of members?<br>	- For updates only the object's descendants get the new member, not the ancestors.<br>- For deletion only the object is affected.<br>
-What are two common problems with object access?<br>How are these problems solved?<br>	- Functions are accessed, even when only data is desired. A conditional with <tt>typeof</tt> reflection can be used to filter undesired members.<br>- The entire prototype chain is accessed. <tt>hasOwnProperty</tt> can be used to discriminate inherited members.<br>
-Describe object deletion.<br>	Use <tt>delete</tt> on a member. It does not affect ancestors.<br>
-How can you reduce the risks inherent in global state?<br>	Use a single global object variable for all the program's state.<br>
+What is a JavaScript object?<br><br>What isn't it?	A map from strings to any value except <tt>undefined</tt>.<br><br>It's not derived from a class.
+Give the object literal syntax.	<pre>{  key1 : val1,  ...}</pre><br><br>Keys are automatically strings so they don't require quotes unless they are reserved words.
+How are the values in objects accessed?	<pre>obj["quoted-key"]obj.key</pre>
+What are the consequences of bad object keys?	Accessing a non-existent key results in <tt>undefined</tt>.<br><br>Accessing a key of <tt>undefined</tt> results in a <tt>TypeError</tt>.
+How do you update/augment objects?	Through assignment on the keys.
+Object literals are linked to what?	<pre>Object.prototype</pre>
+How does this book suggest creating new objects?	Using a special function.<br><br><pre>if (typeof Object.create !== 'function') {    Object.create = function (o) {        var F = function () {};        F.prototype = o;        return new F();    }}</pre>
+How is the prototype chain affected by update/access of members?	- For updates only the object's descendants get the new member, not the ancestors.<br>- For deletion only the object is affected.
+What are two common problems with object access?<br><br>How are these problems solved?	- Functions are accessed, even when only data is desired. A conditional with <tt>typeof</tt> reflection can be used to filter undesired members.<br>- The entire prototype chain is accessed. <tt>hasOwnProperty</tt> can be used to discriminate inherited members.
+Describe object deletion.	Use <tt>delete</tt> on a member. It does not affect ancestors.
+How can you reduce the risks inherent in global state?	Use a single global object variable for all the program's state.

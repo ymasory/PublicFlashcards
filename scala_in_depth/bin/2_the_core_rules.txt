@@ -1,8 +1,8 @@
-What is Experiment Driven Development?<br>Why is it most useful in statically typed languages?<br>	Getting the hang of APIs or exploring module integration using an interactive session with the interpreter. This should come prior to writing tests and code.<br><br>Writing tests may be premature in a statically typed languages until you have experimented with the type signatures you will use.<br>
-How can one create a companion object in the REPL?<br>	Put both the class and its companion inside some wrapper object.<br>
-What sorts of things are inexpressible in the REPL?<br>	Certain aspects of coding with packages and visibility modifiers.<br>
-What's a shorthand for <tt>AnyRef.hashCode</tt>?<br>	<tt>AnyRef.##</tt><br>
-What's a good strategy for interacting with Java code that may return <tt>null</tt>?<br>	Pass the possibly <tt>null</tt> reference to the <tt>Option</tt> factory method. It will return <tt>None</tt> or <tt>Some</tt> as appropriate, which can be pattern matched against.<br>
-What strategy can be used to minimize unnecessary pattern matching on <tt>Option</tt>?<br>	Treating <tt>Option</tt> as a collection, using <tt>for</tt> expressions and methods like <tt>foreach</tt>, <tt>map</tt>, and <tt>filter</tt>.<br>
-What is the result of <tt>for</tt>/<tt>yield</tt> expressions over one or more <tt>Options</tt>?<br>	Another <tt>Option</tt> of the same type.<br>
-What is the <tt>scala.Equals</tt> trait for?<br>	Enforcing the existence of the <tt>canEquals</tt> method correct implementations of <tt>equals</tt> in polymorphic classes require.<br>
+What is Experiment Driven Development?<br><br>Why is it most useful in statically typed languages?	Getting the hang of APIs or exploring module integration using an interactive session with the interpreter. This should come prior to writing tests and code.<br><br>Writing tests may be premature in a statically typed languages until you have experimented with the type signatures you will use.
+How can one create a companion object in the REPL?	Put both the class and its companion inside some wrapper object.
+What sorts of things are inexpressible in the REPL?	Certain aspects of coding with packages and visibility modifiers.
+What's a shorthand for <tt>AnyRef.hashCode</tt>?	<tt>AnyRef.##</tt>
+What's a good strategy for interacting with Java code that may return <tt>null</tt>?	Pass the possibly <tt>null</tt> reference to the <tt>Option</tt> factory method. It will return <tt>None</tt> or <tt>Some</tt> as appropriate, which can be pattern matched against.
+What strategy can be used to minimize unnecessary pattern matching on <tt>Option</tt>?	Treating <tt>Option</tt> as a collection, using <tt>for</tt> expressions and methods like <tt>foreach</tt>, <tt>map</tt>, and <tt>filter</tt>.
+What is the result of <tt>for</tt>/<tt>yield</tt> expressions over one or more <tt>Options</tt>?	Another <tt>Option</tt> of the same type.
+What is the <tt>scala.Equals</tt> trait for?	Enforcing the existence of the <tt>canEquals</tt> method correct implementations of <tt>equals</tt> in polymorphic classes require.

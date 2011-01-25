@@ -1,18 +1,18 @@
-Import a module.<br>	<pre>Require Import ModuleName<br></pre>
-What is a <em>term</em>?<br>What are its subdivisions?<br>	It's a well-formed expression.<br><br><em>Expressions</em> are terms that can be thought of as programs.<br><em>Types</em> are terms that determine if a type is well-formed and obeys accompanying constraints.<br>
-Coq commands all end with what?<br>	A period.<br>
-In Coq interpretation scopes are explicitly ...<br>	... opened and closed, with the most recently opened scopes taking precedence.<br>
-Open a scope.<br>Close a scope.<br>	<pre>Open Scope scope.<br>Close Scope scope.<br></pre>
-Determine which interpretations are available for a notation.<br>	<pre>Locate "something or other".<br></pre><br>Use underscores for identifiers in the string.<br>The bottom interpretation takes precedence.<br>
-What is a delimiting key?<br>Give its syntax.<br>	A name associated with a scope used to explicitly provide the interpretation scope for a term.<br><br><pre>(term)%key<br></pre>
-Get everything Coq knows about an interpretation scope.<br>	<pre>Print Scope scope<br></pre>
-What is the <tt>Check</tt> command used for?<br>Give its syntax.<br>	Determining if a term is well-formed and what its type is.<br><br><pre>Check term.<br></pre>
-Where can decimal notation be used for natural numbers?<br>	In <tt>nat_scope</tt>, whose delimiting key is <tt>nat</tt>.<br>
-Where can decimal notation be used for all integers?<br>	In <tt>Z_scope</tt> whose delimiting key is <tt>Z</tt>.<br>It is provided in <tt>ZArith</tt>.<br>
-Why can't a <tt>nat</tt> be used as a <tt>Z</tt>.<br>How might this be simulated?<br>	Coq has no type coercion.<br><br>There is however the possibility of defining such a conversion using implicit coercions.<br>
-What are the two forms of simple types?<br>	- <em>Atomic types</em>, represented by single identifiers.<br>- <em>Arrow types</em>, of the form <tt>Type1 -> Type2</tt>.<br>
-In the context of Coq, "scope" can mean ...<br>	... either interpretation scope (a collection of notations) or a scope in the usual sense (the textual area where a binding is active).<br>
-Give the syntax of a declaration.<br>Give the syntax of a definition.<br>	<pre>(ident : SomeType)<br>(ident := term : someType)<br></pre>
-Contrast <em>global</em> and <em>local</em> scopes.<br>	Global scopes are active for the remainder of development.<br>Local scopes are active only in the current <em>section</em>.<br>
-Contrast <em>environment</em> and <em>context</em>.<br>	The environment contains global bindings while the context contains the local ones.<br>
-How can you return to the initial bindings?<br>This is a special case of what?<br>	<pre>Reset Initial<br></pre>It brings you to an empty context and the initial environment.<br><br><pre>Reset identifier<br></pre>Brings you back to the state just after the given identifier was introduced.<br>
+Import a module.	<pre>Require Import ModuleName</pre>
+What is a <em>term</em>?<br><br>What are its subdivisions?	It's a well-formed expression.<br><br><em>Expressions</em> are terms that can be thought of as programs.<br><em>Types</em> are terms that determine if a type is well-formed and obeys accompanying constraints.
+Coq commands all end with what?	A period.
+In Coq interpretation scopes are explicitly ...	... opened and closed, with the most recently opened scopes taking precedence.
+Open a scope.<br><br>Close a scope.	<pre>Open Scope scope.Close Scope scope.</pre>
+Determine which interpretations are available for a notation.	<pre>Locate "something or other".</pre><br><br>Use underscores for identifiers in the string.<br>The bottom interpretation takes precedence.
+What is a delimiting key?<br><br>Give its syntax.	A name associated with a scope used to explicitly provide the interpretation scope for a term.<br><br><pre>(term)%key</pre>
+Get everything Coq knows about an interpretation scope.	<pre>Print Scope scope</pre>
+What is the <tt>Check</tt> command used for?<br><br>Give its syntax.	Determining if a term is well-formed and what its type is.<br><br><pre>Check term.</pre>
+Where can decimal notation be used for natural numbers?	In <tt>nat_scope</tt>, whose delimiting key is <tt>nat</tt>.
+Where can decimal notation be used for all integers?	In <tt>Z_scope</tt> whose delimiting key is <tt>Z</tt>.<br>It is provided in <tt>ZArith</tt>.
+Why can't a <tt>nat</tt> be used as a <tt>Z</tt>.<br><br>How might this be simulated?	Coq has no type coercion.<br><br>There is however the possibility of defining such a conversion using implicit coercions.
+What are the two forms of simple types?	- <em>Atomic types</em>, represented by single identifiers.<br>- <em>Arrow types</em>, of the form <tt>Type1 -> Type2</tt>.
+In the context of Coq, "scope" can mean ...	... either interpretation scope (a collection of notations) or a scope in the usual sense (the textual area where a binding is active).
+Give the syntax of a declaration.<br><br>Give the syntax of a definition.	<pre>(ident : SomeType)(ident := term : someType)</pre>
+Contrast <em>global</em> and <em>local</em> scopes.	Global scopes are active for the remainder of development.<br>Local scopes are active only in the current <em>section</em>.
+Contrast <em>environment</em> and <em>context</em>.	The environment contains global bindings while the context contains the local ones.
+How can you return to the initial bindings?<br><br>This is a special case of what?	<pre>Reset Initial</pre><br>It brings you to an empty context and the initial environment.<br><br><pre>Reset identifier</pre><br>Brings you back to the state just after the given identifier was introduced.

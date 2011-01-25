@@ -1,1 +1,1 @@
-Define <strong>type system</strong>.<br>	A tractable syntactic method for preserving the absence of certain program behaviors by classifying phrases according to the kinds of values they compute (B. Pierce).<br>
+Define <strong>type system</strong>.	A tractable syntactic method for preserving the absence of certain program behaviors by classifying phrases according to the kinds of values they compute (B. Pierce).

@@ -1,2 +1,2 @@
-What does this course assert about logic?<br>	Logic is to software engineering as calculus is to mechanical/civil engineering.<br><br>Logic, in particular inductively defined sets and relations and inductive proofs about them are ubiquitous in all of computer science.<br>
-Coq can be seen as a combination of two things:<br>	- A simple, expressive, and slightly idiosyncratic programming language.<br>- A set of tools for stating logical assertions and marshalling evidence for their support.<br>
+What does this course assert about logic?	Logic is to software engineering as calculus is to mechanical/civil engineering.<br><br>Logic, in particular inductively defined sets and relations and inductive proofs about them are ubiquitous in all of computer science.
+Coq can be seen as a combination of two things:	- A simple, expressive, and slightly idiosyncratic programming language.<br>- A set of tools for stating logical assertions and marshalling evidence for their support.

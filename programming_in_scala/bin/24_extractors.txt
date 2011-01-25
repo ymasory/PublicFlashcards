@@ -1,14 +1,14 @@
-Where can you leave the parens off a tuple?<br>	When passing a tuple to a function that takes a single argument.<br>
-Give the two forms of the type of function that takes two Ints and returns and String.<br>	<tt>(Int,Int) => String</tt><br>or<br><tt>Function2[Int,Int, String]</tt><br>
-What are the advantages of case classes over extractors for pattern matching?<br>	- They're easier to set up and define.<br>- They're faster because the compiler can't optimize extractors, since their unapply and unapplySeq can do anything.<br>- If inheriting a sealed class, the compiler can check for pattern match exhaustiveness.<br>
-What does representation independence allow?<br>	Patterns to match objects of different types.<br>
-How do case classes break representation independence?<br>	If a match of a selector s succeeds against case C(...), you know the selector expression is an instance of C.<br>
-To be an extractor you need __, but __ is optional.<br>	Extraction method (unapply)<br><br>Injenction method (apply)<br>
-What does an extractor with two or more variables return?<br>	An n-element tuple wrapped in a Some.<br>
-Why are injenctions and extractions often paired together?<br>	You can then use the object's name for both a constructor and a pattern, which simulates the convention for pattern matching with case classes.<br>
-What does an extractor with one variable return?<br>	An element wrapped in a Some, because there is no 1-tuple.<br>
-What does an extractor with no variables return?<br>	A Boolean indicating match success or failure.<br>
-Describe an extractor with a variable number of variables.<br>	It is named <tt>unapplySeq</tt> and returns <tt>Option[Seq[T]]</tt> for any type T.<br>
-What are the two main purposes of extractors?<br>	- To allow constructor pattern matching without a case class. For example, for pre-existing types like String:<br><tt>s match { case EMail(...</tt><br>- To allow the definition of new patterns that don't follow the internal representation of the scrutinee.<br>
-Describe regex extraction.<br>	If X is a regex with three capturing groups,<br><tt>valX(a, b, c) = someString</tt><br><br>a, b, c, will be bound to String matches or null for no match.<br>
-What is the consequence of breaking representational independence?<br>	Changing case class (e.g. changing its name, moving it to another package) will break client code that matches on it.<br>
+Where can you leave the parens off a tuple?	When passing a tuple to a function that takes a single argument.
+Give the two forms of the type of function that takes two Ints and returns and String.	<tt>(Int,Int) => String</tt><br>or<br><tt>Function2[Int,Int, String]</tt>
+What are the advantages of case classes over extractors for pattern matching?	- They're easier to set up and define.<br>- They're faster because the compiler can't optimize extractors, since their unapply and unapplySeq can do anything.<br>- If inheriting a sealed class, the compiler can check for pattern match exhaustiveness.
+What does representation independence allow?	Patterns to match objects of different types.
+How do case classes break representation independence?	If a match of a selector s succeeds against case C(...), you know the selector expression is an instance of C.
+To be an extractor you need __, but __ is optional.	Extraction method (unapply)<br><br>Injenction method (apply)
+What does an extractor with two or more variables return?	An n-element tuple wrapped in a Some.
+Why are injenctions and extractions often paired together?	You can then use the object's name for both a constructor and a pattern, which simulates the convention for pattern matching with case classes.
+What does an extractor with one variable return?	An element wrapped in a Some, because there is no 1-tuple.
+What does an extractor with no variables return?	A Boolean indicating match success or failure.
+Describe an extractor with a variable number of variables.	It is named <tt>unapplySeq</tt> and returns <tt>Option[Seq[T]]</tt> for any type T.
+What are the two main purposes of extractors?	- To allow constructor pattern matching without a case class. For example, for pre-existing types like String:<br><tt>s match { case EMail(...</tt><br>- To allow the definition of new patterns that don't follow the internal representation of the scrutinee.
+Describe regex extraction.	If X is a regex with three capturing groups,<br><tt>valX(a, b, c) = someString</tt><br><br>a, b, c, will be bound to String matches or null for no match.
+What is the consequence of breaking representational independence?	Changing case class (e.g. changing its name, moving it to another package) will break client code that matches on it.

@@ -1,9 +1,9 @@
-Give several techniques for running a single commad.<br>WHere do the results go?<br>	M-! (<tt>shell-command</tt>)<br>Results go in *Shell Command Output*.<br><br>M-| (<tt>shell-command-on-region</tt>)<br>Results go in minibuffer.<br><br>C-u M-!<br>Results go in current buffer.<br>
-How can you open a shell in emacs?<br>	<tt>shell</tt>, or better yet, <tt>ansi-term</tt>.<br>
-How can you use your normal terminal hotkeys in shell mode?<br>	Preface them with C-c.<br>
-Get into directory/file editing mode.<br>	C-x d (<tt>dired</tt>)<br><br><tt>emacs dir_name</tt><br><br>C-x C-f and select a directory<br>
-How do you delete files in Dired?<br>	'd' to mark from deletion, 'u' to undelete, 'x' to carry out deletion.<br>'#' marks all auto-save files for deletion, '~' all backup files.<br>'D' deletes immediately.<br>
-How do you copy files in Dired?<br>	'C', or 'NC' for some N for multiple files.<br>
-How do you rename a file in Dired?<br>Compress/uncompress?<br>	'R'<br><br>'Z'<br>
-How can emacs edit files while they are compressed?<br>	<tt>auto-compress-mode</tt><br>
-How can you diff files in Dired?<br>	Set the mark on one, move the point to the other, then type '='.<br>
+Give several techniques for running a single commad.<br><br>WHere do the results go?	M-! (<tt>shell-command</tt>)<br>Results go in *Shell Command Output*.<br><br>M-| (<tt>shell-command-on-region</tt>)<br>Results go in minibuffer.<br><br>C-u M-!<br>Results go in current buffer.
+How can you open a shell in emacs?	<tt>shell</tt>, or better yet, <tt>ansi-term</tt>.
+How can you use your normal terminal hotkeys in shell mode?	Preface them with C-c.
+Get into directory/file editing mode.	C-x d (<tt>dired</tt>)<br><br><tt>emacs dir_name</tt><br><br>C-x C-f and select a directory
+How do you delete files in Dired?	'd' to mark from deletion, 'u' to undelete, 'x' to carry out deletion.<br>'#' marks all auto-save files for deletion, '~' all backup files.<br>'D' deletes immediately.
+How do you copy files in Dired?	'C', or 'NC' for some N for multiple files.
+How do you rename a file in Dired?<br><br>Compress/uncompress?	'R'<br><br>'Z'
+How can emacs edit files while they are compressed?	<tt>auto-compress-mode</tt>
+How can you diff files in Dired?	Set the mark on one, move the point to the other, then type '='.

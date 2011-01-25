@@ -1,1 +1,1 @@
-If a subclass's <tt>equals()</tt> method is stricter, it need not...<br>	... also override <tt>hashCode()</tt>, the contract is still valid.<br>
+If a subclass's <tt>equals()</tt> method is stricter, it need not...	... also override <tt>hashCode()</tt>, the contract is still valid.

@@ -1,13 +1,13 @@
-Function objects are linked to ...<br>	... <tt>Function.prototype</tt> which in turn is linked to <tt>Object.prototype</tt>.<br>
-What is the default value of variables?<br>	<tt>undefined</tt><br>
-What's unusual about JavaScript's function invocation?<br>	If the number of arguments doesn't match the number of parameters, arguments are dropped or supplied as <tt>undefined</tt> as needed.<br>
-What is a refinement?<br>	The umbrella term for member access that includes dot and subscripts.<br>
-Write to the web page.<br>	document.writeln("hello, world");<br>
-In JavaScript's terminology, what is a method?<br>A public method?<br>	A method is a function that is a member of an object. It is public if it uses <tt>this</tt> to access its containing object's state.<br>
-How can code be invoked?<br>	- Method - expression uses refinement<br>- Function - direct call without refinement<br>- Constructor -<br>- Apply<br>
-What's the huge problem with <tt>this</tt>?<br>What's the consequence?<br>	In function invocation <tt>this</tt> refers to the global object, <strong>not</strong> any containing object.<br><br>Inner functions of methods designed as helpers lack reference to the method's containing object.<br>
-How can one work around the useless mapping of <tt>this</tt> in function invocations?<br>	By explicitly storing the value of <tt>this</tt> in a variable before the function is invoked inside a method.<br>
-How are varargs handled?<br>	No special syntax is used. Every function has access to an <tt>arguments</tt> array-like object that includes all arguments whether bound to a parameter or excess.<br>
-Access the size of an array.<br>	<pre>js> ['a', 'b'].length<br>2<br></pre>
-How are exceptions normally thrown?<br>	Using object literal syntax, typically with the <tt>name</tt> and <tt>message</tt> properties specified.<br>
-How is exception handling different than in Java?<br>	There is only one catch block that catches exceptions of every type.<br>
+Function objects are linked to ...	... <tt>Function.prototype</tt> which in turn is linked to <tt>Object.prototype</tt>.
+What is the default value of variables?	<tt>undefined</tt>
+What's unusual about JavaScript's function invocation?	If the number of arguments doesn't match the number of parameters, arguments are dropped or supplied as <tt>undefined</tt> as needed.
+What is a refinement?	The umbrella term for member access that includes dot and subscripts.
+Write to the web page.	document.writeln("hello, world");
+In JavaScript's terminology, what is a method?<br><br>A public method?	A method is a function that is a member of an object. It is public if it uses <tt>this</tt> to access its containing object's state.
+How can code be invoked?	- Method - expression uses refinement<br>- Function - direct call without refinement<br>- Constructor -<br>- Apply
+What's the huge problem with <tt>this</tt>?<br><br>What's the consequence?	In function invocation <tt>this</tt> refers to the global object, <strong>not</strong> any containing object.<br><br>Inner functions of methods designed as helpers lack reference to the method's containing object.
+How can one work around the useless mapping of <tt>this</tt> in function invocations?	By explicitly storing the value of <tt>this</tt> in a variable before the function is invoked inside a method.
+How are varargs handled?	No special syntax is used. Every function has access to an <tt>arguments</tt> array-like object that includes all arguments whether bound to a parameter or excess.
+Access the size of an array.	<pre>js> ['a', 'b'].length2</pre>
+How are exceptions normally thrown?	Using object literal syntax, typically with the <tt>name</tt> and <tt>message</tt> properties specified.
+How is exception handling different than in Java?	There is only one catch block that catches exceptions of every type.

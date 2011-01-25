@@ -1,6 +1,6 @@
-What are Coq's formal foundations?<br>	Gallina, being an extension of the Calculus of Inductive Constructions (CIC), being an extension of the Calculus of Constructions (CoC), being an extension of the typed lambda calculus.<br>
-The strong normalization property guarantees what?<br>	Every CIC program and proof term terminates.<br>
-The relative consistency property guarantees what?<br>	CIC is <em>relatively consistent</em> with ZF so CIC claims are as believable as ZF ones.<br>
-What does the annotation <tt>Set</tt> mean on an <tt>Inductive</tt> definition?<br>	It means that what's being defined is part of the object language.<br>
-What are Coq's constituent languages?<br>	- Gallina<br>- Ltac - for queries and requests of Coq<br>- The Vernacular - a DSL for writing proofs and decision procedures<br>
-Interactively test a function by applying it.<br>	<pre>Eval simpl in ...<br></pre>
+What are Coq's formal foundations?	Gallina, being an extension of the Calculus of Inductive Constructions (CIC), being an extension of the Calculus of Constructions (CoC), being an extension of the typed lambda calculus.
+The strong normalization property guarantees what?	Every CIC program and proof term terminates.
+The relative consistency property guarantees what?	CIC is <em>relatively consistent</em> with ZF so CIC claims are as believable as ZF ones.
+What does the annotation <tt>Set</tt> mean on an <tt>Inductive</tt> definition?	It means that what's being defined is part of the object language.
+What are Coq's constituent languages?	- Gallina<br>- Ltac - for queries and requests of Coq<br>- The Vernacular - a DSL for writing proofs and decision procedures
+Interactively test a function by applying it.	<pre>Eval simpl in ...</pre>

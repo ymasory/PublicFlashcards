@@ -1,4 +1,4 @@
-Why should you prefer <tt>===</tt>/<tt>!==</tt> over <tt>==</tt>/<tt>!=</tt>.<br>	<tt>==</tt>/<tt>!=</tt> will engage in non-intuitive non-transitive coercion.<br>
-What does <tt>void</tt> do?<br>	It's a pointless operator that returns <tt>undefined</tt> regardless of its operand.<br>
-Why should <tt>with</tt> be avoided?<br>	It's behavior cannot be predicted from reading the programming text.<br>
-Why should <tt>eval</tt> and similar string-evaluating functions be avoided?<br>	They are slow and reduce the effectiveness of static analysis tools.<br>
+Why should you prefer <tt>===</tt>/<tt>!==</tt> over <tt>==</tt>/<tt>!=</tt>.	<tt>==</tt>/<tt>!=</tt> will engage in non-intuitive non-transitive coercion.
+What does <tt>void</tt> do?	It's a pointless operator that returns <tt>undefined</tt> regardless of its operand.
+Why should <tt>with</tt> be avoided?	It's behavior cannot be predicted from reading the programming text.
+Why should <tt>eval</tt> and similar string-evaluating functions be avoided?	They are slow and reduce the effectiveness of static analysis tools.

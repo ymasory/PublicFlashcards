@@ -1,24 +1,24 @@
-What is Coq's logical framework called?<br>	The Calculus of Inductive Constructions.<br>
-What is Coq's specification language called?<br>	Gallina.<br>
-Formal development in Gallina consists of what?<br>	A sequence of <em>declarations</em> and <em>definitions</em>.<br>
-What is a command?<br>	An information request or service routine invocation. It is not part of formal development.<br>
-Which command terminates the current session?<br>	<tt>Quit.</tt><br>
-What does a declaration do?<br>	Associates a <em>name</em> with a <em>specification</em>.<br>
-What is a name?<br>	Roughly speaking, an identifier in a programming language. A string of letters, digits, underscores, primes, starting with a letter.<br>
-What is a specification?<br>	A formal expression which classifies the notion which is being declared.<br>
-What kinds of specifications are there?<br>	- Logical propositions (<tt>Prop</tt>)<br>- Mathematical collections (<tt>Set</tt>)<br>- Abstract types (<tt>Type</tt>)<br>
-<tt>Prop</tt>, <tt>Set</tt>, and <tt>Type</tt> are what?<br>	Atomic abstract types.<br>
-Every expression <tt>e</tt> in Gallina is associated with what?<br>	A specification, itself a valid expression, called its <em>type</em>, <em>t(E)</em>.<br>
-How can you get the type of an expression?<br>	Using the <tt>Check</tt> command:<br><pre>Coq < Check O.<br>0<br>     : nat<br></pre>
-What is the role of sections?<br>	- Modularize by limiting scope of parameters, hypotheses, and definitions.<br>- Give a convenient way to reset part of the development environment.<br>
-How do you enter a section?<br>	<tt>Coq < Section Declaration.</tt><br>
-Translate <em>let n be a natural number</em> into Coq.<br>	<pre>Coq < Variable n : nat.<br>n is assumed<br></pre>
-Translate <em>let n be a positive natural number</em> into Coq.<br>	<pre>Coq < Hypothesis Pos_n : (gt n 0).<br>Pos_n is assumed<br></pre>
-What is the type of <tt>gt</tt>?<br>	<tt>nat -> nat -> Prop</tt><br>
-<tt>nat -> nat -> Prop</tt> is an abbreviation for what?<br>	<tt>nat -> (nat -> Prop)</tt><br>
-`(gt n 0) is an abbreviation for what?<br>	<tt>((gt n) 0)</tt><br>
-Unlike in Scala, types in Coq are ...<br>	... values<br><pre>Coq < Check (nat -> Prop).<br>nat -> Prop<br>     : Type<br></pre>
-What are the types of <tt>nat</tt>, <tt>O</tt>, <tt>S</tt>, and <tt>plus</tt>?<br>	<tt>Set</tt>, <tt>nat</tt>, <tt>nat->nat</tt>, <tt>nat -> nat -> nat</tt><br>
-Create several variables in one declaration.<br>	<pre>Coq < Variables A B C : Prop.<br>A is assumed<br>B is assumed<br>C is assumed<br></pre>
-What are the meanings of <tt>-></tt>?<br>	- Type constructor, e.g. <tt>nat -> nat</tt>.<br>- The propositional connective <em>implication</em>.<br>
-How do you enter the proof engine?<br>	With the command <tt>Goal</tt> followed by the conjecture you want to verify.<br>
+What is Coq's logical framework called?	The Calculus of Inductive Constructions.
+What is Coq's specification language called?	Gallina.
+Formal development in Gallina consists of what?	A sequence of <em>declarations</em> and <em>definitions</em>.
+What is a command?	An information request or service routine invocation. It is not part of formal development.
+Which command terminates the current session?	<tt>Quit.</tt>
+What does a declaration do?	Associates a <em>name</em> with a <em>specification</em>.
+What is a name?	Roughly speaking, an identifier in a programming language. A string of letters, digits, underscores, primes, starting with a letter.
+What is a specification?	A formal expression which classifies the notion which is being declared.
+What kinds of specifications are there?	- Logical propositions (<tt>Prop</tt>)<br>- Mathematical collections (<tt>Set</tt>)<br>- Abstract types (<tt>Type</tt>)
+<tt>Prop</tt>, <tt>Set</tt>, and <tt>Type</tt> are what?	Atomic abstract types.
+Every expression <tt>e</tt> in Gallina is associated with what?	A specification, itself a valid expression, called its <em>type</em>, <em>t(E)</em>.
+How can you get the type of an expression?	Using the <tt>Check</tt> command:<br><pre>Coq < Check O.0     : nat</pre>
+What is the role of sections?	- Modularize by limiting scope of parameters, hypotheses, and definitions.<br>- Give a convenient way to reset part of the development environment.
+How do you enter a section?	<tt>Coq < Section Declaration.</tt>
+Translate <em>let n be a natural number</em> into Coq.	<pre>Coq < Variable n : nat.n is assumed</pre>
+Translate <em>let n be a positive natural number</em> into Coq.	<pre>Coq < Hypothesis Pos_n : (gt n 0).Pos_n is assumed</pre>
+What is the type of <tt>gt</tt>?	<tt>nat -> nat -> Prop</tt>
+<tt>nat -> nat -> Prop</tt> is an abbreviation for what?	<tt>nat -> (nat -> Prop)</tt>
+`(gt n 0) is an abbreviation for what?	<tt>((gt n) 0)</tt>
+Unlike in Scala, types in Coq are ...	... values<br><pre>Coq < Check (nat -> Prop).nat -> Prop     : Type</pre>
+What are the types of <tt>nat</tt>, <tt>O</tt>, <tt>S</tt>, and <tt>plus</tt>?	<tt>Set</tt>, <tt>nat</tt>, <tt>nat->nat</tt>, <tt>nat -> nat -> nat</tt>
+Create several variables in one declaration.	<pre>Coq < Variables A B C : Prop.A is assumedB is assumedC is assumed</pre>
+What are the meanings of <tt>-></tt>?	- Type constructor, e.g. <tt>nat -> nat</tt>.<br>- The propositional connective <em>implication</em>.
+How do you enter the proof engine?	With the command <tt>Goal</tt> followed by the conjecture you want to verify.

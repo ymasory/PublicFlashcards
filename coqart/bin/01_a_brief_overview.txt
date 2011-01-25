@@ -1,6 +1,6 @@
-What's the difference between declarations and typing rules?<br>	Declarations may give the type of an identifier, but typing rules establish how expressions of various types are composed.<br>
-Functions in Coq are as functions in ...<br>Define them.<br>	... computer science, not set theory.<br><br>They are algorithms mapping values of one type to values of another type.<br>
-What is computation to Coq?<br>	Reducing terms until they cannot be further reduced.<br>
-Why isn't Coq Turing-complete?<br>	The <em>strong normalization</em> property is too strong. Any system that can describe all computable functions must also admit functions that don't halt. Since the strong normalization property guarantees all Coq functions halt, the ability to compute some computable functions is necessarily left out.<br>
-In Coq types are ... hence they have ...<br>	... terms ... a type.<br>
-What is the comments syntax?<br>	As in OCaml:<br><pre>(* comment *)<br></pre>
+What's the difference between declarations and typing rules?	Declarations may give the type of an identifier, but typing rules establish how expressions of various types are composed.
+Functions in Coq are as functions in ...<br><br>Define them.	... computer science, not set theory.<br><br>They are algorithms mapping values of one type to values of another type.
+What is computation to Coq?	Reducing terms until they cannot be further reduced.
+Why isn't Coq Turing-complete?	The <em>strong normalization</em> property is too strong. Any system that can describe all computable functions must also admit functions that don't halt. Since the strong normalization property guarantees all Coq functions halt, the ability to compute some computable functions is necessarily left out.
+In Coq types are ... hence they have ...	... terms ... a type.
+What is the comments syntax?	As in OCaml:<br><pre>(* comment *)</pre>

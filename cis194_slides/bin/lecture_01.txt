@@ -1,8 +1,8 @@
-How can you load files in <tt>ghci</tt>?<br>	Use <tt>:load</tt> (<tt>:l</tt>) or <tt>:reload</tt> (<tt>:r</tt>).<br>
-What is the key restriction of <tt>ghci</tt>?<br>	It can only evaluate expressions not declarations.<br>
-How can you use a function in infix style?<br>	Surround it with back ticks.<br>
-How can you convert an integral type into a floating type?<br>And vice-versa?<br>	<pre>i :: Integer<br>i = 1<br>f :: Float<br>f = fromIntegral i<br></pre><br><tt>round</tt>, <tt>floor</tt>, <tt>ceiling</tt> can be used to convert the other way.<br>
-What's the difference between <tt>/</tt> and <tt>div</tt>?<br>	<tt>/</tt> only does floating point division. <tt>div</tt> does integer division.<br>
-What is <tt>otherwise</tt>?<br>	The value <tt>True</tt>. It's just a way of matching all cases in a more readable way.<br>
-How are lists implemented?<br>	As singly linked lists. not arrays. So don't forget random access is <em>O(n)</em>.<br>
-Why is it okay to write many small functions that transform whole data structures and then combine them?<br>	Haskell's lazy evaluation strategy allows it to interleave the code, only generating and storing elements as needed.<br>
+How can you load files in <tt>ghci</tt>?	Use <tt>:load</tt> (<tt>:l</tt>) or <tt>:reload</tt> (<tt>:r</tt>).
+What is the key restriction of <tt>ghci</tt>?	It can only evaluate expressions not declarations.
+How can you use a function in infix style?	Surround it with back ticks.
+How can you convert an integral type into a floating type?<br><br>And vice-versa?	<pre>i :: Integeri = 1f :: Floatf = fromIntegral i</pre><br><br><tt>round</tt>, <tt>floor</tt>, <tt>ceiling</tt> can be used to convert the other way.
+What's the difference between <tt>/</tt> and <tt>div</tt>?	<tt>/</tt> only does floating point division. <tt>div</tt> does integer division.
+What is <tt>otherwise</tt>?	The value <tt>True</tt>. It's just a way of matching all cases in a more readable way.
+How are lists implemented?	As singly linked lists. not arrays. So don't forget random access is <em>O(n)</em>.
+Why is it okay to write many small functions that transform whole data structures and then combine them?	Haskell's lazy evaluation strategy allows it to interleave the code, only generating and storing elements as needed.

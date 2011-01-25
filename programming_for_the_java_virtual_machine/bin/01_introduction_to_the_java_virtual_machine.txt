@@ -1,9 +1,9 @@
-What is defined in the JVM specification?<br>	- The ISA ("bytecodes")<br>- The class file format<br>- The algorithm used for verifying class files<br>
-What is the term "class file format" misleading?<br>	JVM bytecode does not to be stored in a file. It can come from other sources, like a networked host or a database.<br>
-What are the JVM's four data spaces?<br>	- Class area (code + constants)<br>- Java stack<br>- Heap<br>- Native method stacks<br>
-What goes into a class?<br>	- Superclass<br>- Interfaces<br>- Fields<br>- Methods<br>- Constants<br>
-Once a class has been loaded ...<br>	... it cannot be changed in any way.<br>
-Each field and field is associated with what?<br>	- A descriptor which indicates the kinds of values the field can hold, or the parameter and return types of a method.<br>- A list of modifiers.<br>
-What goes in the stack frame?<br>	- An operand stack.<br>- An array of local variables.<br>- A program counter pointing at some instruction in the method implementation.<br>
-When is an object protected from garbage collection?<br>	- If it is specially designated by the JVM for implementation purposes.<br>- If there is a stack reference to the object.<br>- If there is a reference to the object in a static field.<br>- If there is a reference to the object in a field of a protected object.<br>
-What happens to an object whose finalize method stores <tt>this</tt> somewhere protectedfrom the garbage collector?<br>	The object will not be garbage collected.<br><br>However, finalize will <strong>not</strong> be run again if the object again becomes eligible for garbage collection.<br>
+What is defined in the JVM specification?	- The ISA ("bytecodes")<br>- The class file format<br>- The algorithm used for verifying class files
+What is the term "class file format" misleading?	JVM bytecode does not to be stored in a file. It can come from other sources, like a networked host or a database.
+What are the JVM's four data spaces?	- Class area (code + constants)<br>- Java stack<br>- Heap<br>- Native method stacks
+What goes into a class?	- Superclass<br>- Interfaces<br>- Fields<br>- Methods<br>- Constants
+Once a class has been loaded ...	... it cannot be changed in any way.
+Each field and field is associated with what?	- A descriptor which indicates the kinds of values the field can hold, or the parameter and return types of a method.<br>- A list of modifiers.
+What goes in the stack frame?	- An operand stack.<br>- An array of local variables.<br>- A program counter pointing at some instruction in the method implementation.
+When is an object protected from garbage collection?	- If it is specially designated by the JVM for implementation purposes.<br>- If there is a stack reference to the object.<br>- If there is a reference to the object in a static field.<br>- If there is a reference to the object in a field of a protected object.
+What happens to an object whose finalize method stores <tt>this</tt> somewhere protectedfrom the garbage collector?	The object will not be garbage collected.<br><br>However, finalize will <strong>not</strong> be run again if the object again becomes eligible for garbage collection.

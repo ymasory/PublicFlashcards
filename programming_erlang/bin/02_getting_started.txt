@@ -1,14 +1,14 @@
-How do you exit the <tt>erl</tt> shell?<br>	Ctrl+G, q, Enter<br>
-How does Erlang represent hex and other non-decimal systems?<br>	<tt>base#num</tt><br><br>For example, <tt>16#b</tt> is 11.<br>
-Is there a global scope?<br>	No, variables are restricted to the scope in which they were defined, typically a clause of a function. There's no wider scope that will accept variable definitions.<br>
-What is <tt>=</tt>?<br>How is it evaluated?<br>	Pattern matching, not assignment.<br><br>The right side is evaluated first and then matched against the left side.<br>
-Why do reassignable variables make debugging more difficult?<br>	Not only do you need to find a variable with the wrong value, you also need to figure out when that unexpected value was assigned. Without reassignment the second part of that process is eliminated.<br>
-How is arithmetic different in Erlang than in C-like languages?<br>	Integers are exact and arbitrary-size values. Integer division results in floating-point results without truncation.<br>
-What are the case rules for atoms?<br>	They begin with a lower case letter, and continue with letters, underscores, or at signs.<br>Atom interpretation can also be forced on other sequences by surrounding them with single quotes.<br>
-Atoms can be compared to what in C?<br>	Global constants defined in a header using <tt>#define</tt>.<br>
-What are two key differences between C structs and Erlang tuples?<br>	- Tuples don't define a new type.<br>- The members of a tuple don't have names. That can be accomplished by nesting tuples, however.<br>
-Why aren't atoms garbage collected?<br>	They have global scope, unlike variables.<br>
-How is an unsuccessful pattern match different in Erlang and Prolog?<br>	In Erlang it's an error, while Prolog would backtrack.<br>
-What is <tt>_</tt>?<br>	An anonymous variable.<br>
-What makes Erlang's <tt>|</tt> syntax more powerful than standard cons?<br>	You can prepend/match multiple elements at once without creating a wrapper list.<br><br><pre>A = [1, 2 | [3, 4]]<br></pre><br><pre>[B, C, D, | T] = A.<br></pre>
-Name an easy way to get the ascii value of a character known at program-write time.<br>	<tt>$X</tt> where <tt>X</tt> is some character.<br><br>This is <strong>not</strong> a "conversion", just syntactic sugar for an integer.<br>
+How do you exit the <tt>erl</tt> shell?	Ctrl+G, q, Enter
+How does Erlang represent hex and other non-decimal systems?	<tt>base#num</tt><br><br>For example, <tt>16#b</tt> is 11.
+Is there a global scope?	No, variables are restricted to the scope in which they were defined, typically a clause of a function. There's no wider scope that will accept variable definitions.
+What is <tt>=</tt>?<br><br>How is it evaluated?	Pattern matching, not assignment.<br><br>The right side is evaluated first and then matched against the left side.
+Why do reassignable variables make debugging more difficult?	Not only do you need to find a variable with the wrong value, you also need to figure out when that unexpected value was assigned. Without reassignment the second part of that process is eliminated.
+How is arithmetic different in Erlang than in C-like languages?	Integers are exact and arbitrary-size values. Integer division results in floating-point results without truncation.
+What are the case rules for atoms?	They begin with a lower case letter, and continue with letters, underscores, or at signs.<br>Atom interpretation can also be forced on other sequences by surrounding them with single quotes.
+Atoms can be compared to what in C?	Global constants defined in a header using <tt>#define</tt>.
+What are two key differences between C structs and Erlang tuples?	- Tuples don't define a new type.<br>- The members of a tuple don't have names. That can be accomplished by nesting tuples, however.
+Why aren't atoms garbage collected?	They have global scope, unlike variables.
+How is an unsuccessful pattern match different in Erlang and Prolog?	In Erlang it's an error, while Prolog would backtrack.
+What is <tt>_</tt>?	An anonymous variable.
+What makes Erlang's <tt>|</tt> syntax more powerful than standard cons?	You can prepend/match multiple elements at once without creating a wrapper list.<br><br><pre>A = [1, 2 | [3, 4]]</pre><br><br><pre>[B, C, D, | T] = A.</pre>
+Name an easy way to get the ascii value of a character known at program-write time.	<tt>$X</tt> where <tt>X</tt> is some character.<br><br>This is <strong>not</strong> a "conversion", just syntactic sugar for an integer.

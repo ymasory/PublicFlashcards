@@ -1,5 +1,5 @@
-What does defining getter/setter without a field allow?<br>	You can use assignment and field access syntax even though you're running an arbitrary function.<br>
-How can you tell if an object is functional or stateful without seeing the implementation?<br>	Functional objects' methods always return the same result for the same input, independent of temporal context.<br>
-Give a <tt>var</tt> a default value.<br>	<tt> var x : Int = _</tt><br>
-What do non-private <tt>var</tt>s automatically get?<br>What happens to field?<br>	They get getters and setters with some visibility.<br><pre>for var named x<br>getter named "x"<br>setter named "x_="<br></pre>(but can assign with <tt>=</tt> normally)<br><br>The field itself is marked <tt>private[this]</tt>.<br>
-List the uses for Scala properties (overridable getters/setters).<br>	- Enforce an invariant.<br>- Send events on access or modification.<br>- Access log.<br>
+What does defining getter/setter without a field allow?	You can use assignment and field access syntax even though you're running an arbitrary function.
+How can you tell if an object is functional or stateful without seeing the implementation?	Functional objects' methods always return the same result for the same input, independent of temporal context.
+Give a <tt>var</tt> a default value.	<tt> var x : Int = _</tt>
+What do non-private <tt>var</tt>s automatically get?<br><br>What happens to field?	They get getters and setters with some visibility.<br><pre>for var named xgetter named "x"setter named "x_="</pre><br>(but can assign with <tt>=</tt> normally)<br><br>The field itself is marked <tt>private[this]</tt>.
+List the uses for Scala properties (overridable getters/setters).	- Enforce an invariant.<br>- Send events on access or modification.<br>- Access log.

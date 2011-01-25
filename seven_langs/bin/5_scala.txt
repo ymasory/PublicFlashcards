@@ -1,7 +1,7 @@
-Unlike in Ruby, Scala ranges don't infer ...<br>	... direction. The step is always positive 1.<br>
-What unexpected type provides <tt>to</tt>?<br>	<tt>Char</tt><br>
-Functional languages often use tuples in place of what?<br>	Classes. Scala idiomatically uses them to replace data-heavy classes.<br>
-How do you get the intersection between two <tt>Sets</tt>?<br>	<pre>scala> Set(1, 3) & Set(3, 4)<br>res11: scala.collection.immutable.Set[Int] = Set(3)<br></pre>
-Give the signature of <tt>List</tt>'s <tt>sortWith</tt> function.<br>	<pre>def sort(lessThan: (A, A) => Boolean): List[A]<br></pre>
-What's the difference between <tt>/:</tt> and <tt>foldLeft</tt>?<br>	The order of arguments:<br><br><pre>(1 /: list) {(product, factor) => product * factor}<br></pre><br><pre>list.foldLeft(1)((product, factor) => product * factor)<br></pre>
-How does Scala allow XML searching?<br>	- With an XPath-like language, replacing <tt>/</tt> and <tt>//</tt> with <tt>\</tt> and <tt>\\</tt>.<br>- Attributes can be searched for using an <tt>@</tt> in the search string.<br>- <tt>"_"</tt> matches every node.<br>
+Unlike in Ruby, Scala ranges don't infer ...	... direction. The step is always positive 1.
+What unexpected type provides <tt>to</tt>?	<tt>Char</tt>
+Functional languages often use tuples in place of what?	Classes. Scala idiomatically uses them to replace data-heavy classes.
+How do you get the intersection between two <tt>Sets</tt>?	<pre>scala> Set(1, 3) & Set(3, 4)res11: scala.collection.immutable.Set[Int] = Set(3)</pre>
+Give the signature of <tt>List</tt>'s <tt>sortWith</tt> function.	<pre>def sort(lessThan: (A, A) => Boolean): List[A]</pre>
+What's the difference between <tt>/:</tt> and <tt>foldLeft</tt>?	The order of arguments:<br><br><pre>(1 /: list) {(product, factor) => product * factor}</pre><br><br><pre>list.foldLeft(1)((product, factor) => product * factor)</pre>
+How does Scala allow XML searching?	- With an XPath-like language, replacing <tt>/</tt> and <tt>//</tt> with <tt>\</tt> and <tt>\\</tt>.<br>- Attributes can be searched for using an <tt>@</tt> in the search string.<br>- <tt>"_"</tt> matches every node.

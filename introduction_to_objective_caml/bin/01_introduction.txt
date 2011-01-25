@@ -1,1 +1,1 @@
-"Threading state" is a technique for doing what?<br>	Eliminating global variables used in a function by passing their values as parameters to the function.<br>
+"Threading state" is a technique for doing what?	Eliminating global variables used in a function by passing their values as parameters to the function.

@@ -1,8 +1,8 @@
-How do you import modules from the standard library?<br>	Use the <tt>Require</tt> command.<br><tt>Require Import Arith.</tt><br>
-How does the <tt>Require</tt> command work?<br>	Looks for a compiled <tt>.vo</tt> file with the same name in the libraries Coq knows about. Paths use the same directory structure as the local operating system.<br>
-How can you let Coq know about new library paths?<br>	<tt>Add LoadPath</tt>.<br>
-What is an absolute module name?<br>	A sequence of single identifiers separated by dots.<br>E.g., <tt>Arith</tt> has full name <tt>Coq.Arith.Arith</tt>.<br>
-Why is loading compiled files quick?<br>	The corresponding development is not type-checked again.<br>
-What does the <tt>Load</tt> command do?<br>	Same as <tt>Require Import</tt>, but takes an uncompiled <tt>.v</tt> file instead of a compiled <tt>.vo</tt> file.<br>
-How can dependencies-of-dependencies be automatically resolved?<br>	If you want a module M required in a module N to be automatically visible when N is required, you should use Require Export M in your module N.<br>
-How can you find the available facts concerning a predicate?<br>	- <tt>SearchAbout</tt> command looks up all known facts concerning a given predicate.<br>- <tt>Search</tt> displays only lemmas that have the searched predicate as the head position in the conclusion.<br>- <tt>SearchPattern</tt> allows searching for theorems with a conclusion matching a given pattern, where <tt>_</tt> can be used in place of an arbitrary term.<br>
+How do you import modules from the standard library?	Use the <tt>Require</tt> command.<br><tt>Require Import Arith.</tt>
+How does the <tt>Require</tt> command work?	Looks for a compiled <tt>.vo</tt> file with the same name in the libraries Coq knows about. Paths use the same directory structure as the local operating system.
+How can you let Coq know about new library paths?	<tt>Add LoadPath</tt>.
+What is an absolute module name?	A sequence of single identifiers separated by dots.<br>E.g., <tt>Arith</tt> has full name <tt>Coq.Arith.Arith</tt>.
+Why is loading compiled files quick?	The corresponding development is not type-checked again.
+What does the <tt>Load</tt> command do?	Same as <tt>Require Import</tt>, but takes an uncompiled <tt>.v</tt> file instead of a compiled <tt>.vo</tt> file.
+How can dependencies-of-dependencies be automatically resolved?	If you want a module M required in a module N to be automatically visible when N is required, you should use Require Export M in your module N.
+How can you find the available facts concerning a predicate?	- <tt>SearchAbout</tt> command looks up all known facts concerning a given predicate.<br>- <tt>Search</tt> displays only lemmas that have the searched predicate as the head position in the conclusion.<br>- <tt>SearchPattern</tt> allows searching for theorems with a conclusion matching a given pattern, where <tt>_</tt> can be used in place of an arbitrary term.

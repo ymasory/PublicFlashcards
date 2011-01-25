@@ -1,30 +1,30 @@
-What is a seq?<br>	Anything that can be viewed as a list, regardless of its actual implementation.<br>
-What makes a collection seq-able?<br>	Supporting <tt>first</tt>, <tt>rest</tt>, <tt>cons</tt>, as described in <tt>clojure.lang.ISeq</tt>.<br>
-How can you get an actual seq from a seq-able?<br>How do you move through a seq?<br>	<pre>(seq coll)<br></pre><br><pre>(next aseq) ;; aka (seq (rest aseq))<br></pre>
-Functions on collections result in ...<br>	... seqs.<br>
-Where are custom seqs defined for most seq-ables?<br>	In an inner class of the collection. This leads to mangled names like:<br><pre>clojure.lang.SomeCollection$Seq<br></pre>
-How can maps be viewed as seqs?<br>	The key/value pairs are the elements.<br>
-How can you get a reliable order of traversal for maps and sets?<br>	Use sorted sets and sorted maps.<br><pre>(sorted-set & elements)<br></pre><br><pre>(sorted-map & elements)<br></pre>
-Describe <tt>conj</tt> and <tt>into</tt>.<br>	They are like <tt>cons</tt> and <tt>concat</tt>, but they add the elements in the position most efficient for the underlying representation.<br><br><pre>(conj coll element & elements)<br>(into to-coll from-coll)<br></pre>
-All Clojure sequences are ... and most are ...<br>	... immutable ... lazy.<br>
-What's an easy way to insert commas between words?<br>	<pre>(interpose separator coll)<br>user=> (apply str (interpose ", " ["a" "b" "c"]))<br>"a, b, c"<br></pre><br><tt>clojure.contrib.str-util</tt>'s <tt>str-join</tt> wraps the common <tt>apply str</tt> pattern.<br>
-What's the difference between <tt>set</tt>/<tt>vec</tt> and <tt>hash-set</tt>/<tt>vector</tt>?<br>	<tt>vec</tt> and <tt>set</tt> take a single collection argument, <tt>hash-set</tt> and <tt>vector</tt> take variable elements.<br>
-What are the common sequence factory methods that take a variable number of elements as arguments?<br>	<tt>list</tt>, <tt>vector</tt>, <tt>hash-set</tt>, <tt>hash-map</tt>.<br>
-What are the common sequence filtering functions?<br>	<pre>(take-while pred coll)<br>(drop-while pred coll)<br>(split-at index coll)<br>(split-with pred coll)<br></pre>
-How can you create a new predicate that reverses the truth conditions of an existing one?<br>	<pre>(complement pred)<br></pre>
-What are the common sequence predicates?<br>	<pre>(every? pred coll)<br>(some pred coll)<br>(not-every? pred coll)<br>(not-any? pred coll)<br></pre>
-What are the common sequence transforming functions?<br>	<pre>(map f coll)<br>(reduce f val? coll)<br>(sort comp? coll)<br>(sort-by keyfn comp? coll) ; keyfn is for *getting* the keys<br></pre>
-Give the signature for seq comprehensions.<br>How are they implemented?<br>	<pre>(for [binding-form coll-expr filter-expr? ...] expr)<br></pre>There can be may binding-form/coll-expr pairs in a row.<br><br>Seq comprehensions are a macro.<br>
-Which filter expressions are available for seq comprehensions?<br>	- <tt>:when expr</tt> which is much like a standard filter/guard.<br><br>- <tt>:while expr</tt> which stops the comprehension as soon as the predicate fails.<br>
-Force the evaluation of a lazy sequence.<br>	<pre>(doall coll) ; stores result of traversal and returns<br>(dorun coll) ; doesn't store, returns nil<br></pre>
-What can be treated as a seq, Clojure collections aside?<br>	- Java collections, arrays, and strings<br>- Regexps<br>- File hierarchies<br>- Streams<br>- XML trees<br>- Database results<br>
-Which structure-specific functions do lists support?<br>	<pre>(peek coll)<br>(peek coll)<br></pre><br><tt>peek</tt> returns the first element, <tt>pop</tt> is like <tt>rest</tt> but throws an exception on an empty sequence.<br>
-Which structure-specific functions do vectors support?<br>	<tt>peek</tt> which returns the last element, and <tt>pop</tt> which returns the "init" of a vector.<br><br><pre>(get vector index)<br>(vector index)<br>(subvec vector start end?)<br></pre>
-What's the difference between <tt>take</tt>/<tt>drop</tt> and <tt>subvec</tt>?<br>	<tt>take</tt>/<tt>drop</tt> work on any sequence, but <tt>subvec</tt> is much faster for vectors.<br>
-Which structure-specific functions do maps support for querying contents?<br>	<pre>(keys map)<br>(vals map)<br>(get map key not-found?)<br>(a-map element) ; test for membership<br>(a-keyword map) ; test for membership<br></pre>
-What's the trouble with looking up a key in a map?<br>How can you avoid this problem?<br>	You can't know if a result of <tt>nil</tt> indicates they key was not in the map or if it was present, mapped to <tt>nil</tt>.<br><br>You can get around the problem with:<br><pre>(contains? map key)<br>(get map key not-found?)<br></pre>
-What structure-specific functions do maps support for creating new maps?<br>	<pre>(assoc map key val & more-kvs)<br>(dissoc map key & more-keys)<br>(select-keys map key-seq)<br>(merge map1 map2) ; map2 wins if both keys exist<br>(merge-with merge-fn & maps)<br></pre>
-Unlike other structure-specific functions, those for sets must be ...<br>	... imported to be used unqualified.<br><br><pre>(use 'clojure.set)<br></pre>
-Which set-theoretic operations do sets support?<br>	<tt>unions</tt>, <tt>intersection</tt>, <tt>difference</tt>.<br>
-How can database results be viewed as seq-able.<br>	There are two important correspondences between relational algebra, databases, and the clojure type system.<br><br>relation = table = set-like<br>tuple = row = map-like<br><br>So in clojure you might have a set of maps (i.e., a relation).<br>
-Which database-like functions does Clojure support?<br>	Straight sets:<br><pre>(select pred set)<br></pre><br>Relations (sets of maps):<br><pre>(rename relation rename-map)<br>(project relation keys)<br>(join rel1 rel2 keymap?)<br></pre>
+What is a seq?	Anything that can be viewed as a list, regardless of its actual implementation.
+What makes a collection seq-able?	Supporting <tt>first</tt>, <tt>rest</tt>, <tt>cons</tt>, as described in <tt>clojure.lang.ISeq</tt>.
+How can you get an actual seq from a seq-able?<br><br>How do you move through a seq?	<pre>(seq coll)</pre><br><br><pre>(next aseq) ;; aka (seq (rest aseq))</pre>
+Functions on collections result in ...	... seqs.
+Where are custom seqs defined for most seq-ables?	In an inner class of the collection. This leads to mangled names like:<br><pre>clojure.lang.SomeCollection$Seq</pre>
+How can maps be viewed as seqs?	The key/value pairs are the elements.
+How can you get a reliable order of traversal for maps and sets?	Use sorted sets and sorted maps.<br><pre>(sorted-set & elements)</pre><br><br><pre>(sorted-map & elements)</pre>
+Describe <tt>conj</tt> and <tt>into</tt>.	They are like <tt>cons</tt> and <tt>concat</tt>, but they add the elements in the position most efficient for the underlying representation.<br><br><pre>(conj coll element & elements)(into to-coll from-coll)</pre>
+All Clojure sequences are ... and most are ...	... immutable ... lazy.
+What's an easy way to insert commas between words?	<pre>(interpose separator coll)user=> (apply str (interpose ", " ["a" "b" "c"]))"a, b, c"</pre><br><br><tt>clojure.contrib.str-util</tt>'s <tt>str-join</tt> wraps the common <tt>apply str</tt> pattern.
+What's the difference between <tt>set</tt>/<tt>vec</tt> and <tt>hash-set</tt>/<tt>vector</tt>?	<tt>vec</tt> and <tt>set</tt> take a single collection argument, <tt>hash-set</tt> and <tt>vector</tt> take variable elements.
+What are the common sequence factory methods that take a variable number of elements as arguments?	<tt>list</tt>, <tt>vector</tt>, <tt>hash-set</tt>, <tt>hash-map</tt>.
+What are the common sequence filtering functions?	<pre>(take-while pred coll)(drop-while pred coll)(split-at index coll)(split-with pred coll)</pre>
+How can you create a new predicate that reverses the truth conditions of an existing one?	<pre>(complement pred)</pre>
+What are the common sequence predicates?	<pre>(every? pred coll)(some pred coll)(not-every? pred coll)(not-any? pred coll)</pre>
+What are the common sequence transforming functions?	<pre>(map f coll)(reduce f val? coll)(sort comp? coll)(sort-by keyfn comp? coll) ; keyfn is for *getting* the keys</pre>
+Give the signature for seq comprehensions.<br><br>How are they implemented?	<pre>(for [binding-form coll-expr filter-expr? ...] expr)</pre><br>There can be may binding-form/coll-expr pairs in a row.<br><br>Seq comprehensions are a macro.
+Which filter expressions are available for seq comprehensions?	- <tt>:when expr</tt> which is much like a standard filter/guard.<br><br>- <tt>:while expr</tt> which stops the comprehension as soon as the predicate fails.
+Force the evaluation of a lazy sequence.	<pre>(doall coll) ; stores result of traversal and returns(dorun coll) ; doesn't store, returns nil</pre>
+What can be treated as a seq, Clojure collections aside?	- Java collections, arrays, and strings<br>- Regexps<br>- File hierarchies<br>- Streams<br>- XML trees<br>- Database results
+Which structure-specific functions do lists support?	<pre>(peek coll)(peek coll)</pre><br><br><tt>peek</tt> returns the first element, <tt>pop</tt> is like <tt>rest</tt> but throws an exception on an empty sequence.
+Which structure-specific functions do vectors support?	<tt>peek</tt> which returns the last element, and <tt>pop</tt> which returns the "init" of a vector.<br><br><pre>(get vector index)(vector index)(subvec vector start end?)</pre>
+What's the difference between <tt>take</tt>/<tt>drop</tt> and <tt>subvec</tt>?	<tt>take</tt>/<tt>drop</tt> work on any sequence, but <tt>subvec</tt> is much faster for vectors.
+Which structure-specific functions do maps support for querying contents?	<pre>(keys map)(vals map)(get map key not-found?)(a-map element) ; test for membership(a-keyword map) ; test for membership</pre>
+What's the trouble with looking up a key in a map?<br><br>How can you avoid this problem?	You can't know if a result of <tt>nil</tt> indicates they key was not in the map or if it was present, mapped to <tt>nil</tt>.<br><br>You can get around the problem with:<br><pre>(contains? map key)(get map key not-found?)</pre>
+What structure-specific functions do maps support for creating new maps?	<pre>(assoc map key val & more-kvs)(dissoc map key & more-keys)(select-keys map key-seq)(merge map1 map2) ; map2 wins if both keys exist(merge-with merge-fn & maps)</pre>
+Unlike other structure-specific functions, those for sets must be ...	... imported to be used unqualified.<br><br><pre>(use 'clojure.set)</pre>
+Which set-theoretic operations do sets support?	<tt>unions</tt>, <tt>intersection</tt>, <tt>difference</tt>.
+How can database results be viewed as seq-able.	There are two important correspondences between relational algebra, databases, and the clojure type system.<br><br>relation = table = set-like<br>tuple = row = map-like<br><br>So in clojure you might have a set of maps (i.e., a relation).
+Which database-like functions does Clojure support?	Straight sets:<br><pre>(select pred set)</pre><br><br>Relations (sets of maps):<br><pre>(rename relation rename-map)(project relation keys)(join rel1 rel2 keymap?)</pre>
