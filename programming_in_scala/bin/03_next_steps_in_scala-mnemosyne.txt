@@ -1,5 +1,5 @@
 Explain <tt>List.drop</tt> and <tt>List.dropRight</tt>	<tt>List.drop(Int)</tt><br><br><tt>List.drop(Int)</tt> returns a list without the first n elements.<br><tt>List.dropRight(Int)</tt> returns a list without the last n elements.
-How do you print every line of a file?	<pre>val source = Source.fromFile(filename)<br>for(line <- source.getLines)<br>  println(line)<br></pre>
+How do you print every line of a file?	<pre>val source = Source.fromFile(filename)<br>for(line <- source.getLines)<br>  println(line)</pre>
 Explain how to append instead of prepend to a list.	Use <tt>ListBuffer</tt> then call <tt>toList</tt>.
 Explain <tt>List.map</tt>	<tt>List.map(func)</tt><br><br>Creates a list composed of the original elements run through a filter.
 Explain <tt>List.::</tt>	Pronounced "cons", prepends an element to the list.

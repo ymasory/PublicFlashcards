@@ -1,10 +1,10 @@
 What is a record?	An aggregate data type that consists of labels mapped to arbitrary values.
-Give the syntax of records definition.	<pre>type name =<br>    { name1 : type1;<br>      ...<br>      nameN : typeN<br>    }<br></pre>
-Instantiate a record.	<pre>let name =<br>   { name1 = val1;<br>     ...<br>     nameN = valN<br>   }<br></pre>
-How can the members of a record be accessed?	- With projection: <tt>record.label</tt><br>- With pattern matching<br><pre>let { name1 = var1; name2 = var2 } = expr<br></pre><br>Not all fields must be matched.
-Functionally "update" a record.	<pre>let name = { someRecord with field1 = val1; ... }<br></pre><br><br>The fields must be taken from <tt>someRecord</tt>.
-How can mutable records be created?<br><br>And updated?	In the declaration prefix one or more of the field names with the <tt>mutable</tt> keyword.<br><br><pre>record.mutableField <- newVal<br></pre>
+Give the syntax of records definition.	<pre>type name =<br>    { name1 : type1;<br>      ...<br>      nameN : typeN<br>    }</pre>
+Instantiate a record.	<pre>let name =<br>   { name1 = val1;<br>     ...<br>     nameN = valN<br>   }</pre>
+How can the members of a record be accessed?	- With projection: <tt>record.label</tt><br>- With pattern matching<br><pre>let { name1 = var1; name2 = var2 } = expr</pre><br>Not all fields must be matched.
+Functionally "update" a record.	<pre>let name = { someRecord with field1 = val1; ... }</pre><br><br>The fields must be taken from <tt>someRecord</tt>.
+How can mutable records be created?<br><br>And updated?	In the declaration prefix one or more of the field names with the <tt>mutable</tt> keyword.<br><br><pre>record.mutableField <- newVal</pre>
 Oddly, the namespace of field labels is ...	... shared between all toplevel records.<br><br>Values of records with fields of the same name overwrite values of fields in previous records.
-What is the syntax of arrays?	The same as lists, except for the pipe next to the brackets:<br><br><pre>[| val1 ; ... ; valN |]<br></pre>
-Access the elements of an array.<br><br>Update an array element.	- Use pattern matching.<br>- Access directly with <tt>arr.(index)</tt>.<br><br><pre>arr.(index) <- newVal<br></pre>
+What is the syntax of arrays?	The same as lists, except for the pipe next to the brackets:<br><br><pre>[| val1 ; ... ; valN |]</pre>
+Access the elements of an array.<br><br>Update an array element.	- Use pattern matching.<br>- Access directly with <tt>arr.(index)</tt>.<br><br><pre>arr.(index) <- newVal</pre>
 How can arrays be created?	- Using the literal syntax.<br>- Using <tt>Array.create len initVal</tt>

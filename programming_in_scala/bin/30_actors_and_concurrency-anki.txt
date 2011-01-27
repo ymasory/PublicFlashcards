@@ -1,4 +1,4 @@
-Give an alternative to actor blocking.	Arrange for a message to arrive designating that an action is ready to be performed. This can be done by having a helper actor block for you.<br><br><pre>actor {<br>  Thread.sleep(time)<br>  mainActor ! "WAKEUP"<br>}<br></pre>
+Give an alternative to actor blocking.	Arrange for a message to arrive designating that an action is ready to be performed. This can be done by having a helper actor block for you.<br><br><pre>actor {<br>  Thread.sleep(time)<br>  mainActor ! "WAKEUP"<br>}</pre>
 Give the four points of good actors style.	- Actors should not block.<br>- They should communicate with actors only via messages.<br>- They should prefer immutable messages.<br>- They should make messages self-contained.
 Why should messages be self-contained?	The caller may not know what state it was in when it made the original request since it did not block on the answer.
 Why is react more efficient than receive?	Threads can more easily put actors in "cold storage" since react does not return and thus preserve the current thread's call stack.
@@ -8,15 +8,15 @@ How can you preserve threads when using Actors?<br><br>How is it different?	Use 
 What are some good ways to make messages self-contained?	- If the request is immutable, return a copy of the request with the reply.<br>- More generally, wrap request and response info into case classes that include return-address in request, and request in the result.
 What's Scala's approach to threading?	Share-nothing, message passing.
 What's the key way the actors model addresses the difficulties of the shared data and locks model?	By providing a safe space - the actor's act method - where you can think sequentially.<br><br>Mutable local objects can be used inside act because each act method is effectively confined to one thread.<br><br>- so long as they aren't received or passed!
-Give a basic Actor example.	<pre>object MyActor extends scala.actors.Actor<br>  def act() = println("concurrent!")<br><br>MyActor.start()<br></pre>
+Give a basic Actor example.	<pre>object MyActor extends scala.actors.Actor<br>  def act() = println("concurrent!")<br><br>MyActor.start()</pre>
 What do you do if you need to send a mutable object to another actor?	Send a copy instead.
 What's Java's concurrency approach?	Shared data and locks.
-What's the special library support for <tt>react()</tt>?	<pre>Actor.loop<br><br>def act() {<br>  loop {<br>    react {<br>      case...<br>      case...<br>     }<br>  }<br>}<br></pre>
+What's the special library support for <tt>react()</tt>?	<pre>Actor.loop<br><br>def act() {<br>  loop {<br>    react {<br>      case...<br>      case...<br>     }<br>  }<br>}</pre>
 Why shouldn't actors block?	- The actor will not notice requests it receives when it is blocked.<br>- Deadlock can result from multiple actors blocking waiting for other blocked actors to respond.
 What's the best way to provide actors access to mutable data?	Make one actor that "owns" the data. It is the only one that accesses the data directly.<br><br>All other actors access the data by sending messages to the owner and waiting for a reply.
 What should you do if the mailbox contains no messages?	Receive blocks until it receives a message for which <tt>isDefinedAt</tt> returns true. Others are silently ignored.
 What's a quick way to make a new Actor?<br><br>How does it work?	<tt>scala.actors.Actor.actor factory method</tt><br><br>Takes a block of code (=>Unit) to be executed by the newly created actor, which is automatically started.
 Sending a message does not __.<br><br>Receiving a message is __.	block.<br><br>not interrupted.
 Use <tt>Thread.current</tt> as an Actor.	Use <tt>Actor.self</tt>.<br><br>It's best to use <tt>receiveWithin(millis)</tt> to allow timeout. Otherwise you may block the interpreter shell.
-Create an actor that echoes back the <tt>Ints</tt> it receives.	<pre>val echoActor = actor {<br>  while(true) {<br>    receive {<br>      case intMsg: Int =><br>        println("received int" + intMsg)<br>    }<br>  }<br>}<br></pre>
+Create an actor that echoes back the <tt>Ints</tt> it receives.	<pre>val echoActor = actor {<br>  while(true) {<br>    receive {<br>      case intMsg: Int =><br>        println("received int" + intMsg)<br>    }<br>  }<br>}</pre>
 What is useful about using <tt>PartialFunctions</tt> over allowing non-exhaustive <tt>FunctionNs</tt>?	<tt>PartialFunction</tt> provides <tt>isDefaultAt()</tt> to avoid runtime errors.

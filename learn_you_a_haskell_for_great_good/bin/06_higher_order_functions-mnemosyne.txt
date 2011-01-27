@@ -3,15 +3,15 @@ If a type parameter uses both arithmetic and ordering it must ...	... be a membe
 Partially apply an infix function.	Use sections:<br>Surround the infix function with parens and only supply an argument on one side but not the other.
 What's the problem-case of sections?<br><br>How can you get around it?	<tt>-</tt> means negative before it means minus.<br>Use <tt>subtract</tt> instead of <tt>-</tt>.
 What should you do if you're unsure of the type of a function you're writing?	See what Haskell infers using <tt>:t</tt>.
-Create a new function that reverses the order of the input function's first two parameters.	<pre>ghci> :t flip<br>flip :: (a -> b -> c) -> b -> a -> c<br></pre>
+Create a new function that reverses the order of the input function's first two parameters.	<pre>ghci> :t flip<br>flip :: (a -> b -> c) -> b -> a -> c</pre>
 What's annoying about <tt>length</tt>?	It returns an <tt>Int</tt> instead of a <tt>Num a</tt>.
 What happens if you don't put parens around a lambda?	The function body will extend to the end of the line.
 How is pattern matching params different in lambdas?	Only one pattern is allowed.
 What are <tt>scanl</tt>/<tt>scanr</tt>?	They are like <tt>foldl</tt>/<tt>foldr</tt>, but they report all intermediate accumulator states as a list.<br><tt>scanl</tt> places the final result last, <tt>scanr</tt> puts it first.
 What are <tt>foldl1</tt>/<tt>scanl1</tt>/etc?	They do not require explicit starting values. They assume the first (or last, depending on direction) value as the starting value.
-Define <tt>$</tt>.<br><br>What's its point?	<pre>($) :: (a -> b) -> a -> b<br>f $ x = f x<br></pre><br><br>It's function application with the lowest (as opposed to the highest) precedence. It is typically used to introduce right association to minimize the number of needed parens.
-Define <tt>.</tt>.	<pre>(.) :: (b -> c) -> (a -> b) -> a -> c<br>f . g = \x -> f (g x)<br></pre>
+Define <tt>$</tt>.<br><br>What's its point?	<pre>($) :: (a -> b) -> a -> b<br>f $ x = f x</pre><br><br>It's function application with the lowest (as opposed to the highest) precedence. It is typically used to introduce right association to minimize the number of needed parens.
+Define <tt>.</tt>.	<pre>(.) :: (b -> c) -> (a -> b) -> a -> c<br>f . g = \x -> f (g x)</pre>
 In general, the direction of association ...	... cannot be determined from the name of a function alone.
 How can composition be used with functions of several parameters?	The functions must be partially applied until each function just takes one function.
-What's a common use of composition?	Using partial application in a function whose result is the argument to another function.<br><br><pre>fn x = ceiling (negate (tan (cos (max 50 x))))<br>fn = ceiling . negate . tan . cos . max 50<br></pre>
+What's a common use of composition?	Using partial application in a function whose result is the argument to another function.<br><br><pre>fn x = ceiling (negate (tan (cos (max 50 x))))<br>fn = ceiling . negate . tan . cos . max 50</pre>
 What is a common overuse of lambdas?	Using a lambda instead of a partially applied function when passing a function to a higher-order method.<br>If the only purpose of the lambda is to introduce a parameter to a function, you probably could have left it off and used partial application instead.

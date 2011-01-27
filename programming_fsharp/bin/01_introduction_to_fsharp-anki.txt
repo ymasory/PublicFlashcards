@@ -1,9 +1,9 @@
-What is the comments syntax?	<pre>(* multiline comment *)<br><br>//inline comment<br><br></pre>
+What is the comments syntax?	<pre>(* multiline comment *)<br><br>//inline comment<br></pre>
 How are blocks and similar structures represented in F#?	Using indentation, not braces. Whitespace is significant.
 What character is allowed in identifiers that Scala and Java do not permit?	Apostrophe (').
 How can you force identifier interpretation for a token?	Surround with <strong>double</strong> back ticks.
 How are bindings created?	With the <tt>let</tt> keyword, for either values or functions.
-Give the multiple assignment syntax.	<pre>let ident1, ident2 = val1, val2<br></pre>
+Give the multiple assignment syntax.	<pre>let ident1, ident2 = val1, val2</pre>
 How are documentation comments created?	In Visual Studio, by beginning a comment (or each line thereof) with <tt>///</tt>.
 On the REPL commands are terminated with what?	<tt>;;</tt>
 How can you send code from a project to <tt>fsi</tt> in visual studio?	Select the program text and hit Alt + Enter.

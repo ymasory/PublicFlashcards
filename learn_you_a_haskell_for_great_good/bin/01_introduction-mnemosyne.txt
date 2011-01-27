@@ -1,1 +1,1 @@
-Load and reload files in interactive mode.	Start interactive mode with <tt>ghci</tt>.<br>To load:<br><pre>:l myfile.hs<br></pre><br><br>To realod you can run the <tt>:l</tt> line again, or use the shortcut <tt>:r</tt> which will reload all loaded scripts.
+Load and reload files in interactive mode.	Start interactive mode with <tt>ghci</tt>.<br>To load:<br><pre>:l myfile.hs</pre><br><br>To realod you can run the <tt>:l</tt> line again, or use the shortcut <tt>:r</tt> which will reload all loaded scripts.

@@ -1,35 +1,35 @@
 What are Haskell's case rules?	Variables begin with a lowercase letter.<br>Type names begin with an uppercase letter.
-Give the comment syntax.	<tt>--</tt> comment out the rest of the line.<br><br><pre>{- multiline comment -}<br></pre><br>(nesting is allowed)
+Give the comment syntax.	<tt>--</tt> comment out the rest of the line.<br><br><pre>{- multiline comment -}</pre><br>(nesting is allowed)
 Describe Haskell's Boolean types?	<tt>True</tt> and <tt>False</tt> are of type <tt>Bool</tt>.<br><br>The type is strict, only admitting those two literals.
 What are the Boolean operators?<br><br>Equality/Inequality?	<tt>&&</tt>, <tt>||</tt>, <tt>not</tt><br><br>'==` and `/=`
 Haskell's math operators have types that are ...	... strict, since there's no coercion. They have integer and floating point versions.
 Convert <tt>Float</tt> to <tt>Int</tt>.	<tt>truncate</tt>
-Convert a <tt>Char</tt> to an <tt>Int</tt> and back.	<pre>ord :: Char -> Int<br>chr :: Int -> Char<br></pre>
+Convert a <tt>Char</tt> to an <tt>Int</tt> and back.	<pre>ord :: Char -> Int<br>chr :: Int -> Char</pre>
 What is a string, really?	A list of <tt>Chars</tt>, that is, <tt>[Char]</tt>.
-Get string representations of objects.	<pre>show whatever<br></pre>
+Get string representations of objects.	<pre>show whatever</pre>
 Make a prefix operator infix.<br><br>Make an infix operator prefix.	Surrounding an identifier with back ticks makes it infix.<br><br>Surrounding an operator with parens makes it prefix.
-Index a list.<br><br>Test for membership.	<pre>ghci> ['a', 'b', 'c'] !! 0<br>'a'<br></pre><br><br><tt>elem</tt>, <tt>notElem</tt>
+Index a list.<br><br>Test for membership.	<pre>ghci> ['a', 'b', 'c'] !! 0<br>'a'</pre><br><br><tt>elem</tt>, <tt>notElem</tt>
 Remove duplicates in a list.<br><br>Concatenate two lists.	<tt>nub</tt><br><br><tt>concat</tt>
 Access the elements of a 2-tuple.	<tt>fst</tt>, <tt>snd</tt>
 What is the range syntax?	<tt>[a..b]</tt> is a list of all the values from <tt>a</tt> to <tt>b</tt>, inclusive.<br><br><tt>[a..]</tt> is an infinite list from <tt>a</tt> up.
-What is the syntax of list comprehensions?	<pre>[expr | generatorOrGuard1, ... ,generatorOrGuardN]<br></pre><br><br>Guards are just expressions that result in <tt>Bool</tt>. No <tt>if</tt> is used.
-How are lambdas written?	<pre>\params -> result<br></pre>
-How are new variables introduced?	<pre>expression where declarations<br></pre><br><br><pre>let declarations in expressions<br></pre><br><br>The expression can have multiple new variables in it.
-How are <tt>case</tt> expressions introduced?	<pre>case expr1 of<br>  expr2 -> ...<br>  expr3 -> ...<br></pre>
-How are function guards introduced?	<pre>func params =<br>  | boolean1 -> ...<br>  | boolean2 -> ...<br></pre>
+What is the syntax of list comprehensions?	<pre>[expr | generatorOrGuard1, ... ,generatorOrGuardN]</pre><br><br>Guards are just expressions that result in <tt>Bool</tt>. No <tt>if</tt> is used.
+How are lambdas written?	<pre>\params -> result</pre>
+How are new variables introduced?	<pre>expression where declarations</pre><br><br><pre>let declarations in expressions</pre><br><br>The expression can have multiple new variables in it.
+How are <tt>case</tt> expressions introduced?	<pre>case expr1 of<br>  expr2 -> ...<br>  expr3 -> ...</pre>
+How are function guards introduced?	<pre>func params =<br>  | boolean1 -> ...<br>  | boolean2 -> ...</pre>
 Access the elements of a tuple.	<tt>fst</tt> and <tt>snd</tt>
 What determines indentation in common expressions?<br><br>What can be used instead.	The first nonblank character following <tt>where</tt>, <tt>let</tt>, or <tt>of</tt> determines the starting column.<br><br>Curlies can be used instead, but indentation alone is generally preferred.
 Each case of a function must have ...	... exactly the same signature. There is no overloading.
-What does <tt>+</tt> do in a pattern?	Allows you to create variables with an offset from what is matched:<br><br><pre>subtractFive (n + 5) = n<br></pre>
-Define the <em>bind</em> operator.	<pre>(>>=) :: (Monad m) => m a -> (a -> m b) -> m b<br></pre><br><br>It passes the "state of the world" resulting from one function to the next function.
-Define the <em>then</em> operator.<br><br>What does it provide over <em>bind</em>?	<pre>(>>) :: (Monad m) => m a -> m b -> m b<br></pre><br><br>It is convenient to have another function that doesn't demand a function as its second argument.
-Define <tt>return</tt>.	<pre>return :: (Monad m) => a -> m a<br></pre><br><br>It creates a monad container for arbitrary values.
+What does <tt>+</tt> do in a pattern?	Allows you to create variables with an offset from what is matched:<br><br><pre>subtractFive (n + 5) = n</pre>
+Define the <em>bind</em> operator.	<pre>(>>=) :: (Monad m) => m a -> (a -> m b) -> m b</pre><br><br>It passes the "state of the world" resulting from one function to the next function.
+Define the <em>then</em> operator.<br><br>What does it provide over <em>bind</em>?	<pre>(>>) :: (Monad m) => m a -> m b -> m b</pre><br><br>It is convenient to have another function that doesn't demand a function as its second argument.
+Define <tt>return</tt>.	<pre>return :: (Monad m) => a -> m a</pre><br><br>It creates a monad container for arbitrary values.
 Do notation is really syntactic sugar for what?	One <tt>>>=</tt>/<tt>>></tt> after another. It also allows the <tt>let</tt> form.
-Give an infinite loop that allows I/O.	<pre>import Control.Monad<br><br>forever :: (Monad m) => m a -> m b<br>forever a = a >> forever a<br></pre>
-A monad consists of what?	- A type constructor <tt>M</tt>.<br>- A bind operation<br><pre>(>>=) :: (Monad m) => m a -> (a -> m b) -> m b<br></pre><br>- A return operation<br><pre>return :: (Monad m) => a -> m a<br></pre>
-What rules do monads obey?	<pre>return x >>= f  =  f x<br></pre><br><br><pre>m >>= return    =  m<br></pre><br><br><tt>>>=</tt> is associative
-What problem does <tt>when</tt> solve?<br><br>Define it.	It's often encessary to check a condition in an I/O function and in one case <tt>return IO</tt>.<br><br><pre>when :: (Monad m) => Bool -> m () -> m ()<br></pre><br>It does the <tt>return ()</tt> for you in the event the condition fails.
-In some cases <tt>do</tt> can be replaces with ...	... <tt>sequence</tt>.<br><pre>sequence :: (Monad m) => [m a] -> m [a]<br></pre><br><br>This will work only if all statements in the <tt>do</tt> return the same type.
-Read the contents of a file.	<pre>import System.IO<br><br>handle <- openFile "myFile.txt" ReadMode<br>contents <- hGetContents handle<br>hClose handle<br></pre>
-Give the signature of <tt>openFile</tt>.<br><br>How can the file automatically be closed for you?	<pre>ghci> :t openFile<br>openFile :: FilePath -> IOMode -> IO Handle<br>ghci> :t withFile<br>withFile :: FilePath -> IOMode -> (Handle -> IO r) -> IO r<br></pre>
-Give shortcuts for quickly reading/writing files.	<pre>readFile :: FilePath -> IO String<br>writeFile :: FilePath -> String -> IO ()<br>appendFile :: FilePath -> String -> IO ()<br></pre>
+Give an infinite loop that allows I/O.	<pre>import Control.Monad<br><br>forever :: (Monad m) => m a -> m b<br>forever a = a >> forever a</pre>
+A monad consists of what?	- A type constructor <tt>M</tt>.<br>- A bind operation<br><pre>(>>=) :: (Monad m) => m a -> (a -> m b) -> m b</pre><br>- A return operation<br><pre>return :: (Monad m) => a -> m a</pre>
+What rules do monads obey?	<pre>return x >>= f  =  f x</pre><br><br><pre>m >>= return    =  m</pre><br><br><tt>>>=</tt> is associative
+What problem does <tt>when</tt> solve?<br><br>Define it.	It's often encessary to check a condition in an I/O function and in one case <tt>return IO</tt>.<br><br><pre>when :: (Monad m) => Bool -> m () -> m ()</pre><br>It does the <tt>return ()</tt> for you in the event the condition fails.
+In some cases <tt>do</tt> can be replaces with ...	... <tt>sequence</tt>.<br><pre>sequence :: (Monad m) => [m a] -> m [a]</pre><br><br>This will work only if all statements in the <tt>do</tt> return the same type.
+Read the contents of a file.	<pre>import System.IO<br><br>handle <- openFile "myFile.txt" ReadMode<br>contents <- hGetContents handle<br>hClose handle</pre>
+Give the signature of <tt>openFile</tt>.<br><br>How can the file automatically be closed for you?	<pre>ghci> :t openFile<br>openFile :: FilePath -> IOMode -> IO Handle<br>ghci> :t withFile<br>withFile :: FilePath -> IOMode -> (Handle -> IO r) -> IO r</pre>
+Give shortcuts for quickly reading/writing files.	<pre>readFile :: FilePath -> IO String<br>writeFile :: FilePath -> String -> IO ()<br>appendFile :: FilePath -> String -> IO ()</pre>

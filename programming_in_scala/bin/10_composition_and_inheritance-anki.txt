@@ -7,9 +7,9 @@ Classes must be abstract if they have what?	Abstract members.
 Prevent type derivation.	As in Java, with <tt>final</tt> keyword on class or method.<br><br>You can also use <tt>sealed</tt>, which only allows derivation in the same source file.
 Give an alternative to inheritance, and when it should be used.	Composition is preferred if only code re-use is desired.
 When should parameterless methods used?	When the function is pure, i.e. has no side effects and does not depend upon mutable state.
-What do parametric field definitions allow?	A field defined as a class parameter allows visibility modifiers, <tt>val</tt> or <tt>var</tt>, and <tt>override</tt>.<br><br><pre>class ArrayElement(<br>  val contents : Array[String]<br>) extends element<br></pre>
+What do parametric field definitions allow?	A field defined as a class parameter allows visibility modifiers, <tt>val</tt> or <tt>var</tt>, and <tt>override</tt>.<br><br><pre>class ArrayElement(<br>  val contents : Array[String]<br>) extends element</pre>
 What does a subclass <em>not</em> inherit?	Private members and overriden members.
-Parameterless methods vs. empty-paren methods	<pre>def width() : Int<br>def width : Int<br></pre><br><br>If defined parameterless, it must be called that way.<br><br>This is to support the uniform access principle.
+Parameterless methods vs. empty-paren methods	<pre>def width() : Int<br>def width : Int</pre><br><br>If defined parameterless, it must be called that way.<br><br>This is to support the uniform access principle.
 What's a problem with fragile base class?<br><br>How does Scala minimize it?	It causes inadvertent breakage of subclasses by changing a superclass.<br><br>Forcing override notation helps solve it.
 Name the class namespaces in Java and Scala.	- Java: fields, methods, types, packages<br>- Scala: values (fields, methods, packages, singletons), types (class and trait names)
 What does Scala's class namespace allow?	It allows the overriding of parameterless and empty-paren methods with a val.

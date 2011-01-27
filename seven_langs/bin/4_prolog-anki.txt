@@ -2,14 +2,14 @@ Why is Prolog a departure from many common languages?	Prolog is <em>declarative<
 What are the building blocks of Prolog?	Facts, rules, and queries.
 What does the Prolog compiler do?	It compiles facts + rules (together called a <em>knowledge base</em>) to support efficient querying.
 What are the Prolog capitalization rules?	If a symbol begins with a lowercase character it's an atom - a fixed value.<br>If it begins with an uppercase character it's a variable.
-How do you load a Prolog file?	<pre>['relative/path/file.pl']<br></pre><br><em>or</em><br><pre>['/absolute/path/to/file.pl']<br></pre>
+How do you load a Prolog file?	<pre>['relative/path/file.pl']</pre><br><em>or</em><br><pre>['/absolute/path/to/file.pl']</pre>
 What do the Prolog replies <tt>yes</tt> and <tt>no</tt> mean?	<tt>yes</tt> means "yes I can prove that" or "yes I know that to be true".<br><br><tt>no</tt> means "no I can't prove that" or "no I don't know that to be true".
-How can you make a rule with two variables guaranteed to be distinct?	Use the <tt>\+</tt> predicate, <em>.e.g,</em><br><br><pre>somePred(X, Y) :- \+ (X = Y), someOtherPred(X, Y)<br></pre>
+How can you make a rule with two variables guaranteed to be distinct?	Use the <tt>\+</tt> predicate, <em>.e.g,</em><br><br><pre>somePred(X, Y) :- \+ (X = Y), someOtherPred(X, Y)</pre>
 How can you query a knowledge base?	- Type a fact and see if Prolog can prove it.<br>- Type a fact with a variable (conventionally named <tt>What</tt>) to see if Prolog can find bindings that satisfy the fact. Use semicolons (<tt>;</tt>) to ask for another binding, or <tt>a</tt> to get all of them.
 How is <tt>=</tt> different in Prolog compared to other languages?	<tt>=</tt> is <strong>not</strong> assignment, it is <em>unification</em>, the attempt to make both sides logically the same.
 How is a rule with multiple clauses satisfied?<br><br>How is a rule with multiple subgoals satisfied?	Only one of the clauses must be satisfied.<br><br>Every subgoal must be satisfied.
 How can you get tail-call optimizations in Prolog?	Make your recursive subgoal the last subgoal in a rule.
-How can you unpack a list?	<pre>?- [one, two, three, four]= [Head | Tail].<br>Head = one,<br>Tail = [two, three, four].<br></pre>
+How can you unpack a list?	<pre>?- [one, two, three, four]= [Head | Tail].<br>Head = one,<br>Tail = [two, three, four].</pre>
 What kind of problem is ideal for Prolog?	One which has constraints that are easily expressed but difficult to satisfy. Since Prolog figures out the satisfying bindings, Prolog is doing the hard part for you.
 What are some areas where Prolog is still used?	- Games<br>- Semantic web<br>- AI and NLP<br>- Scheduling
 What are Prolog's weaknesses?	- It's not a general purpose language.<br>- It may not scale due to inefficient DFS approach to unification and heavy use of recursion.

@@ -10,12 +10,12 @@ What is the <tt>Show</tt> typeclass?	Its members can be presented as strings usi
 How do you go back from <tt>show</tt>'s string representation to the object itself?<br><br>What's the catch?	The <tt>Read</tt> typeclass defines <tt>read</tt> which does just that.<br><br>However, in order to know what type is desired, the result of <tt>read</tt> must be used in an expression or given a type annotation.
 What is a type annotation?<br><br>Give its syntax.	Haskell's term for a manifest type. It's not an annotation on a type in the sense of Scala's <tt>@specialized</tt>.<br><br>Haskell type annotations use the <tt>::</tt> followed by the type.
 Members of <tt>Enum</tt> can do what?<br><br>What about <tt>Bounded</tt>?	They can be enumerated.<br><br>They have an upper and a lower bound: <tt>maxBound</tt> and <tt>minBound</tt>.
-Give two examples of polymorphic constants.	<pre>ghci> :t 0<br>0 :: (Num t) => t<br>ghci> :t maxBound<br>maxBound :: (Bounded a) => a<br></pre>
-Make integral and floating point types play nice together.<br><br>What is that function's signature?	<pre>ghci> :t fromIntegral<br>fromIntegral :: (Integral a, Num b) => a -> b<br></pre>
+Give two examples of polymorphic constants.	<pre>ghci> :t 0<br>0 :: (Num t) => t<br>ghci> :t maxBound<br>maxBound :: (Bounded a) => a</pre>
+Make integral and floating point types play nice together.<br><br>What is that function's signature?	<pre>ghci> :t fromIntegral<br>fromIntegral :: (Integral a, Num b) => a -> b</pre>
 How can repeated computations be avoided in a series of guards?	With a <tt>where</tt> clause following the guards, containing variable assignments, one per line, aligned.
 What additional kind of assignment can be made with <tt>where</tt>/<tt>let</tt>, pattern matching aside?	Named functions can be created, using the normal syntax.
 Where are helper functions typically defined, when scope-limiting is desired?	In a <tt>where</tt> clause. Sometimes this gets nested into one helper helping another, and so on.
 Other than order, what's the difference between <tt>let/in</tt> and <tt>where</tt>?	- <tt>let</tt> is an expression, while <tt>where</tt> is just a syntactic construct.<br>- <tt>where</tt> doesn't have such a tight scope, so its bindings are active across multiple guards.
 How can multiple <tt>let</tt> bindings be put on one line?	By separating the assignments with semicolons.
 In addition to guards and generators, what can go in list comprehensions?	<tt>let</tt> expressions, being far more powerful than Scala's midstream definitions.
-Pattern matching on function parameters is just syntactic sugar for ...<br><br>What is the full syntax?	... case expressions.<br><br><pre>case expr of pat1 -> res1<br>              ...<br>              patN -> resN<br></pre>
+Pattern matching on function parameters is just syntactic sugar for ...<br><br>What is the full syntax?	... case expressions.<br><br><pre>case expr of pat1 -> res1<br>              ...<br>              patN -> resN</pre>

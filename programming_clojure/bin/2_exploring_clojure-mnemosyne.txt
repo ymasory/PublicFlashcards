@@ -8,46 +8,46 @@ How are string literals different from Java's?	- They can be multiline.<br>- The
 How are strings different from Java's?	They are sequences of characters, so higher-order sequence functions work on them.
 Describe <tt>str</tt>.	It creates a string, much like <tt>toString</tt>, but is n-ary and ignores <tt>nil</tt>.
 How are escape characters created?	<tt>\backspace</tt>, <tt>\formfeed</tt>, <tt>\newline</tt>, <tt>\return</tt>, <tt>\space</tt>, <tt>\tab</tt>
-How can a string be created from a sequence of characters?	<pre>(apply str [\a \b \c])<br></pre><br><br><tt>apply</tt> is making an n-ary call to <tt>str</tt> given a sequence argument.
+How can a string be created from a sequence of characters?	<pre>(apply str [\a \b \c])</pre><br><br><tt>apply</tt> is making an n-ary call to <tt>str</tt> given a sequence argument.
 How can you test for strict booleans?	Use <tt>true?</tt> and <tt>false?</tt>.
 Give two ways to query a map.	- <tt>(map key)</tt><br>- <tt>(keyword-key map)</tt><br><br>Note the second form works only if the key is a keyword.
 What are structs used for?	To document the fact that multiple maps are similar, i.e., they share common keys.
 What special symbols are used in the documentation?	<tt>&</tt> indicates the following param is of variable arity and available as a seq.<br><tt>*</tt> indicates the previous param is of variable arity.<br><tt>+</tt> indicates the previous param is of variable, non-zero arity.<br><tt>?</tt> indicates the previous param is optional.
-Define a struct.<br><br>Instantiate a struct.	<pre>(defstruct name & keys)<br></pre><br><br><pre>(struct name & vals)<br></pre>
+Define a struct.<br><br>Instantiate a struct.	<pre>(defstruct name & keys)</pre><br><br><pre>(struct name & vals)</pre>
 What is the basis of a struct?	The keys listed in the struct's definition.
-How can one create a struct that lacks keys from the basis or has additional keys?	<pre>(struct-map name & inits)<br></pre><br><br>Any missing keys will be given the value <tt>nil</tt> in the resulting struct.
+How can one create a struct that lacks keys from the basis or has additional keys?	<pre>(struct-map name & inits)</pre><br><br>Any missing keys will be given the value <tt>nil</tt> in the resulting struct.
 How are structs different from maps?	The difference is mostly stylistic, although structs do store their values in indexed slots.
 What's the difference between a reader macro and a form?	Reader macros are applied prior to the text being broken into forms.
 What's the most common reader macro?	The comment, <tt>;</tt>.
 Why are programs barred from defining additional reader macros?	To prevent code becoming unreadable to others, and to prevent Clojure from fragmenting into non-interoperable dialects.
 How can you test for the type of a form?	Use the built in predicates <tt>keyword?</tt>, <tt>symbol?</tt>, etc.
-What is the signature of <tt>defn</tt> with a single param list?	<pre>(defn name doc-string? attr-map? [params*] body)<br></pre>
-What is the signature of <tt>defn</tt> with multiple param lists?	<pre>(defn name doc-string? attr-map?<br> ([params*] body)+ )<br></pre>
-What is <tt>defn</tt>, really?	A macro for:<br><br><pre>(def name (fn [params*] exprs*))<br></pre><br><br>The doc-string and attrs are added to the var metadata.
+What is the signature of <tt>defn</tt> with a single param list?	<pre>(defn name doc-string? attr-map? [params*] body)</pre>
+What is the signature of <tt>defn</tt> with multiple param lists?	<pre>(defn name doc-string? attr-map?<br> ([params*] body)+ )</pre>
+What is <tt>defn</tt>, really?	A macro for:<br><br><pre>(def name (fn [params*] exprs*))</pre><br><br>The doc-string and attrs are added to the var metadata.
 What is the vararg syntax?	Just as in the documentation syntax, use a <tt>&</tt> before the final parameter.
 Give non-obvious reasons for using anonymous functions.	- To capture surrounding data in a function created at run-time (i.e., a closure) without giving many different functions the same name.<br>- To avoid a top-level binding for a function used exclusively inside another one.
-What is the abbreviation for anonymous functions?<br><br>How is it implemented?	<pre>(# body)<br></pre><br>where the arguments are given the names <tt>%1</tt>, <tt>%2</tt>, etc. <tt>%</tt> is the same as <tt>%1</tt>.<br><br>It's a reader macro.
+What is the abbreviation for anonymous functions?<br><br>How is it implemented?	<pre>(# body)</pre><br>where the arguments are given the names <tt>%1</tt>, <tt>%2</tt>, etc. <tt>%</tt> is the same as <tt>%1</tt>.<br><br>It's a reader macro.
 What is a root binding?	The initial value of a var it was given in a <tt>def</tt>/<tt>defn</tt> statement.
-How can a <tt>var</tt> be accessed directly, as opposed to its value?	With the reader macro:<br><pre>#'symbol<br></pre><br><br>for <tt>(var symbol)</tt>.
+How can a <tt>var</tt> be accessed directly, as opposed to its value?	With the reader macro:<br><pre>#'symbol</pre><br><br>for <tt>(var symbol)</tt>.
 What can vars do other than store values?	- Store metadata.<br>- Be rebound differently for each thread.<br>- Be aliased for unqualified use in other namespaces.
 Which bindings are lexically scoped?	- parameters<br>- <tt>(let [bindings*] exprs*)</tt>
 Where can destructuring be used?<br><br>What are the two kinds?	Destructuring can be used in <tt>fn</tt> parameter lists, <tt>let</tt>, and macros that expand to either of those.<br><br>Vectors can be put in the binding to capture sequential collections, or maps for associative collections.
 How can you get a reference to the <strong>entire</strong> collection being destructured?	Use <tt>:as name</tt> in the destructuring. It will bind to the entire collection, not just the part being matched.
-What makes a collection sequential?	It supports <tt>nth</tt>.<br><br><pre>(coll index not-found?)<br></pre>
+What makes a collection sequential?	It supports <tt>nth</tt>.<br><br><pre>(coll index not-found?)</pre>
 Name Clojure's special forms <strong>not</strong> for Java interop.	<tt>def</tt>, <tt>if</tt>, <tt>do</tt>, <tt>let</tt>, <tt>quote</tt>, <tt>var</tt>, <tt>fn</tt>, <tt>loop</tt>, <tt>recur</tt>, <tt>throw</tt>, <tt>try</tt>, <tt>monitor-enter</tt>, <tt>monitor-exit</tt>.
 Name Clojure's special forms for Java interop.	<tt>.</tt>, <tt>new</tt>, <tt>set!</tt>
-Find the fully qualified name of a symbol.<br><br>Keep in mind ...	<pre>(resolve symbol)<br></pre><br><br>... typically the symbol must be quoted to prevent evaluation into whatever it refers to.
-How do you switch to a new namespce?<br><br>Create a new namespace?	<pre>(in-ns name)<br></pre><br>switches to the namespace <tt>name</tt>, creating it if necessary.
-What do all namespaces automatically include?<br><br>What does the <tt>user</tt> namespace bring in?	They include the package <tt>java.lang</tt>.<br><br><tt>user</tt> also brings in <tt>clojure.core</tt>. Otherwise you would run:<br><pre>(clojure.core/use 'clojure.core)<br></pre>
-Avoid using the fully qualified names of Java classes.	<pre>(import '(package Class+))<br></pre>
-Avoid using the fully qualified names of Clojure vars.	<pre>(use 'clojure.contrib.whatever)<br>(use '[clojure.contrib.whatever :only (func)])<br></pre>
+Find the fully qualified name of a symbol.<br><br>Keep in mind ...	<pre>(resolve symbol)</pre><br><br>... typically the symbol must be quoted to prevent evaluation into whatever it refers to.
+How do you switch to a new namespce?<br><br>Create a new namespace?	<pre>(in-ns name)</pre><br>switches to the namespace <tt>name</tt>, creating it if necessary.
+What do all namespaces automatically include?<br><br>What does the <tt>user</tt> namespace bring in?	They include the package <tt>java.lang</tt>.<br><br><tt>user</tt> also brings in <tt>clojure.core</tt>. Otherwise you would run:<br><pre>(clojure.core/use 'clojure.core)</pre>
+Avoid using the fully qualified names of Java classes.	<pre>(import '(package Class+))</pre>
+Avoid using the fully qualified names of Clojure vars.	<pre>(use 'clojure.contrib.whatever)<br>(use '[clojure.contrib.whatever :only (func)])</pre>
 What namespace are you currently in?	It's available as <tt>*ns*</tt>.
-Where are imports from Clojure and Java typically done?	In the namespace declaration.<br><br><pre>(ns name & references)<br></pre><br><br>Each reference can be a <tt>:use</tt> or an <tt>:import</tt>.
+Where are imports from Clojure and Java typically done?	In the namespace declaration.<br><br><pre>(ns name & references)</pre><br><br>Each reference can be a <tt>:use</tt> or an <tt>:import</tt>.
 What is the purpose of <tt>do</tt>?	It allows you to use multiple expressions where only one is allowed. The last expression is the the result of the whole expression. Previous expressions are executed for side-effects.
-Describe <tt>loop</tt>.	It's just the same as <tt>let</tt>, except it introduces a recursion point which <tt>recur</tt> can return to.<br><br><pre>(loop [bindings *] exprs*)<br>(recur exprs*)<br></pre>
-Where you can you add metadata?<br><br>How do you do it?	Metadata can be added to collections and symbols.<br><br><pre>(with-meta object metadata)<br></pre>
+Describe <tt>loop</tt>.	It's just the same as <tt>let</tt>, except it introduces a recursion point which <tt>recur</tt> can return to.<br><br><pre>(loop [bindings *] exprs*)<br>(recur exprs*)</pre>
+Where you can you add metadata?<br><br>How do you do it?	Metadata can be added to collections and symbols.<br><br><pre>(with-meta object metadata)</pre>
 What is Clojure's semantic equality test?<br><br>Reference equality?	<tt>=</tt> is like Java's <tt>equals</tt><br><tt>identical?</tt> is like Java's ==
 How is metadata usually accessed?	With the <tt>^</tt> macro.<br><br><tt>^x</tt> is like <tt>(meta x)</tt>
-Add keys to a map.	<pre>(assoc map k v & more-kvs)<br></pre>
-Add <tt>:tag</tt> documentation metadata to a <tt>defn</tt>.	<pre>(defn #^{:tag BigInt} name [#^{:tag BigInt} i] body)<br><br>(defn #^BigInt name [#^BigInt i] body)<br><br>(defn name<br>  ([i] body)<br>  {:tag BigInt})<br></pre>
+Add keys to a map.	<pre>(assoc map k v & more-kvs)</pre>
+Add <tt>:tag</tt> documentation metadata to a <tt>defn</tt>.	<pre>(defn #^{:tag BigInt} name [#^{:tag BigInt} i] body)<br><br>(defn #^BigInt name [#^BigInt i] body)<br><br>(defn name<br>  ([i] body)<br>  {:tag BigInt})</pre>
 What is the difference between <tt>with-meta</tt> and the <tt>#^</tt> macro?	The reader macro adds metadata directly to a var or parameter.<br><tt>with-meta</tt> adds it to the value.

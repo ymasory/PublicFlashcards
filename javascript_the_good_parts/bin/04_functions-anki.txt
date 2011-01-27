@@ -8,6 +8,6 @@ How can code be invoked?	- Method - expression uses refinement<br>- Function - d
 What's the huge problem with <tt>this</tt>?<br><br>What's the consequence?	In function invocation <tt>this</tt> refers to the global object, <strong>not</strong> any containing object.<br><br>Inner functions of methods designed as helpers lack reference to the method's containing object.
 How can one work around the useless mapping of <tt>this</tt> in function invocations?	By explicitly storing the value of <tt>this</tt> in a variable before the function is invoked inside a method.
 How are varargs handled?	No special syntax is used. Every function has access to an <tt>arguments</tt> array-like object that includes all arguments whether bound to a parameter or excess.
-Access the size of an array.	<pre>js> ['a', 'b'].length<br>2<br></pre>
+Access the size of an array.	<pre>js> ['a', 'b'].length<br>2</pre>
 How are exceptions normally thrown?	Using object literal syntax, typically with the <tt>name</tt> and <tt>message</tt> properties specified.
 How is exception handling different than in Java?	There is only one catch block that catches exceptions of every type.

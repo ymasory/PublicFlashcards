@@ -1,7 +1,7 @@
 What's the difference between single and double quoted strings?	Single quoted strings are interpreted literally.<br><br>Double quoted strings allows further processing on the string, like the substitution of variables into <tt>${VARIABLE}</tt>.
 How do you print to the screen?	<tt>puts some_string</tt>
 How do you get the class of an object?<br><br>How do you get the methods of an object?	<tt>obj.class</tt><br><tt>obj.methods</tt>
-What are the two forms of conditionals?	Block form:<br><pre>if condition<br>   #statements<br>end<br></pre><br><br>One-line form:<br><tt>statement if condition</tt>
+What are the two forms of conditionals?	Block form:<br><pre>if condition<br>   #statements<br>end</pre><br><br>One-line form:<br><tt>statement if condition</tt>
 What are <tt>unless</tt> and <tt>until</tt> used for?	They are more idiomatic Ruby for "if not" and "while not" constructions.
 Explain Ruby's boolean type coercion.	Every type can be interpreted as a boolean. <tt>nil</tt> and and the literal <tt>false</tt> evaluate to <tt>false</tt>. Everything else evaluates to <tt>true</tt>.
 What's the difference between <tt>&&</tt>/<tt>||</tt> and <tt>&</tt>/<tt>|</tt>?	<tt>&&</tt>/<tt>||</tt> short-circuit, as in Java. Also, <tt>&&</tt>/<tt>||</tt> have the alternatives <tt>and</tt>/<tt>or</tt>.
@@ -9,11 +9,11 @@ What makes Ruby dynamically typed?	Type checking isn't done until run-time, when
 How is Ruby's type checking fundamentally different from Java's?	Ruby is duck-typed, meaning one type can be used as another so long as it has the needed fields and methods to make an operation work. This is to be contrasted with languages like Java where one type can be used as another only if one is a subclass of the other.
 What happens if your function doesn't have a <em>return</em> statement?	The last value computed is the result of the function.<br>This is also true of other kinds of blocks, not just the bodies of functions.
 Empty parens are always ...	... optional. Whether in the definition of a function or a call.
-What is Ruby's primary collection?<br><br>What is its syntax?	<tt>Arrays</tt>.<br><br>They use square brackets for definition and indexing, two dots for slicing.<br><pre>nums = ['one', 'two', 'three']<br>nums[0]    #'one'<br>nums[-1]   #'three'<br></pre>
-How do you slice an <tt>Array</tt>?	Use <tt>Range</tt> objects like <tt>0..3</tt>.<br><pre>someArray[n1..n2]<br></pre>
+What is Ruby's primary collection?<br><br>What is its syntax?	<tt>Arrays</tt>.<br><br>They use square brackets for definition and indexing, two dots for slicing.<br><pre>nums = ['one', 'two', 'three']<br>nums[0]    #'one'<br>nums[-1]   #'three'</pre>
+How do you slice an <tt>Array</tt>?	Use <tt>Range</tt> objects like <tt>0..3</tt>.<br><pre>someArray[n1..n2]</pre>
 What happens if you go out of bounds with an array?	Ruby returns <tt>nil</tt>, unlike Java or Python.
-How do you test if an <tt>Array</tt> has a given member?	<pre>el.include?(arr)<br></pre><br><br>There is no equivalent to Python's <tt>in</tt>.
-What is the syntax of hashes?	<pre>captitals = {'France' => 'Paris', 'USA' => 'Washington D.C.'}<br>capitals['France'] #'Paris'<br></pre>
+How do you test if an <tt>Array</tt> has a given member?	<pre>el.include?(arr)</pre><br><br>There is no equivalent to Python's <tt>in</tt>.
+What is the syntax of hashes?	<pre>captitals = {'France' => 'Paris', 'USA' => 'Washington D.C.'}<br>capitals['France'] #'Paris'</pre>
 What is a symbol?	An idntifier that follows a colon. They are interned, guaranteeing that two uses of the symbol <tt>:symb</tt> actually refer to the same object in memory.
 How can you find an object's unique identifier?	<tt>obj.object_id</tt>
 What are Ruby's key strengths?	- Concise, elegant syntax.<br>- Flexible polymorphism from duck typing.<br>- Consistent object-orientation.<br>- Short time to market.
