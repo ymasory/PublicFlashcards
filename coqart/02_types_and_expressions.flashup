@@ -13,7 +13,7 @@ Require Import ModuleName
 It's a well-formed expression.
 
 ``Expressions`` are terms that can be thought of as programs.
-``Types`` are terms that determine if a type is well-formed and obeys accompanying constraints.
+``Types`` are terms that determine if a term is well-formed and obeys accompanying constraints.
 
 * Coq commands all end with what?
 A period.
