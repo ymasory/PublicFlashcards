@@ -1,11 +1,11 @@
-Define a new exception.	<pre>(exception Name of type,true)</pre>
-What is the type of an exception?<br><br>What is the type of <tt>raise</tt>?	<pre>(exn,true)</pre><br><br><pre>(exn -> 'a,true)</pre>
+Define a new exception.	<pre>exception Name of type</pre>
+What is the type of an exception?<br><br>What is the type of <tt>raise</tt>?	<pre>exn</pre><br><br><pre>exn -> 'a</pre>
 Give the <tt>try</tt> syntax.	It's exactly the same as <tt>match</tt>.
 Lookup functions that cannot find their element raise ...	... <tt>Not_found</tt>.
 Functions can reject bad arguments with ...	... <tt>Invalid_argument</tt>.
 What is <tt>Failure</tt>?<br><br>How is it different from <tt>Invalid_argument</tt>?<br><br>Which is typically handled?	An exception for bad arguments less severe than <tt>Invalid_argument</tt> or not the result of programming errors.<br><br>It takes an error string, typically the name of the function doing the raising.<br><br>It is only typical to handle <tt>Failure</tt>.
 If no pattern is matched, what happens?	A <tt>Match_failure</tt> is raised.
-Describe assertions.	<pre>(assert(cond),true)</pre><br><br>Raises an <tt>Assert_failure</tt> if the condition fails.
+Describe assertions.	<pre>assert(cond)</pre><br><br>Raises an <tt>Assert_failure</tt> if the condition fails.
 Name the errors resulting from lack of memory or stack space.	- <tt>Out_of_memory</tt><br>- <tt>Stack_overflow</tt>
 Name some non-typical uses of exceptions.	- Reduce memory usage.<br>- As a break statement.<br>- To create <em>finally</em> semantics.
 How can exceptions reduce memory usage?	Needless reconstruction of the input can be avoided on unsuccessful runs of functions that cons pattern match each element of a list.

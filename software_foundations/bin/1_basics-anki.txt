@@ -1,10 +1,10 @@
 Where does Coq define booleans and numbers?	In the standard library.
 What's a "type" in Coq?	A set of data values.
-Define the boolean type	<pre>(Inductive bool : Type :=  | true : bool  | false : bool.,true)</pre>
-Define a boolean negation function.	<pre>(Definition negb (b : bool) : bool :=  match b with  | true => false  | false => true  end.,true)</pre>
-Define a function for boolean conjunction.	<pre>(Definition andb (b1 : bool) (b2 : bool) : bool :=  match b1 with  | true => b2  | false => false  end.,true)</pre>
+Define the boolean type	<pre>Inductive bool : Type :=  | true : bool  | false : bool.</pre>
+Define a boolean negation function.	<pre>Definition negb (b : bool) : bool :=  match b with  | true => false  | false => true  end.</pre>
+Define a function for boolean conjunction.	<pre>Definition andb (b1 : bool) (b2 : bool) : bool :=  match b1 with  | true => b2  | false => false  end.</pre>
 Coq can infer which parts of a function prototype?	Argument and result types.
-Make a named assertion that ~<tt>true</tt> is <tt>false</tt>, then prove it.	<pre>(Example test_negation:  (negb true) = false.Proof. simpl. reflexivity. Qed.,true)</pre>
+Make a named assertion that ~<tt>true</tt> is <tt>false</tt>, then prove it.	<pre>Example test_negation:  (negb true) = false.Proof. simpl. reflexivity. Qed.</pre>
 Name three ways to check that a function works	- Use <tt>Eval</tt> on a test case and observe the result.<br>- Use <tt>Example</tt> to record expected result, then as Coq to verify.<br>- "extract" function <tt>Definition</tt> to OCaml, Scheme, or Haskell.
 Apply negation to the boolean <tt>true</tt>.	<tt>Eval simpl in (negb true).</tt>
 How do you delimit Coq fragments in comments for the benefit of <tt>coqdoc</tt>?	Surround the fragments with square brackets.

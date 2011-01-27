@@ -1,24 +1,24 @@
-Concatenate strings.<br><br>What else can this be used for?	<pre>(str1 ++ str2,true)</pre><br><br>Any two lists can be concatenated this way.<br>Strings are just lists of characters.
+Concatenate strings.<br><br>What else can this be used for?	<pre>str1 ++ str2</pre><br><br>Any two lists can be concatenated this way.<br>Strings are just lists of characters.
 How is negation done?	<tt>/=</tt> and unary <tt>not</tt>
-Give the conditional syntax.<br><br>What is unusual about Haskell conditionals?	<pre>(if bool then expr1 else expr2,true)</pre><br><br>The else clause is required, to ensure an interesting result for the whole <tt>if</tt> expression.
+Give the conditional syntax.<br><br>What is unusual about Haskell conditionals?	<pre>if bool then expr1 else expr2</pre><br><br>The else clause is required, to ensure an interesting result for the whole <tt>if</tt> expression.
 Like in Java, Boolean types are ...	... strict.
 Find the type of an expression<br><br>Make <tt>ghci</tt> print all types.	<tt>:t expr</tt> shows a value's type in <tt>ghci</tt>.<br><br><tt>:set +t</tt> makes it permanent for that session.
 What are the two types of a function?	The optional type declaration and the function declaration.
-Create a module <tt>MyMath</tt> with the function <tt>my_max</tt>.	<pre>(module MyMath where    my_max :: Integer -> Integer -> Integer    my_max x y = if x > y then x else y,true)</pre>
+Create a module <tt>MyMath</tt> with the function <tt>my_max</tt>.	<pre>module MyMath where    my_max :: Integer -> Integer -> Integer    my_max x y = if x > y then x else y</pre>
 How can you control flow of control to a function?	- Multiple function definitions using pattern-matching parameters.<br>- Guards.
-Give the syntax of guards.<br><br>What is often used as the last guard?	Delay the equals sign, splitting up the argument lists.<br><br><pre>(func args    | boolean1 = ...    | boolean2 = ...,true)</pre><br><br><tt>otherwise</tt> is an alias for true, often used as the last guard.
+Give the syntax of guards.<br><br>What is often used as the last guard?	Delay the equals sign, splitting up the argument lists.<br><br><pre>func args    | boolean1 = ...    | boolean2 = ...</pre><br><br><tt>otherwise</tt> is an alias for true, often used as the last guard.
 Give the syntax of tuples and lists.	Tuples use round parens, lists use brackets.
-Compose functions	You can do it explicitly with parens and parameters, or with the dot notation:<br><pre>(composedFunc arg = secondToApply (firstToApply arg)composedFunc = secondToApply . firstToApply,true)</pre>
-Access the length of a collection.	<pre>(length coll,true)</pre>
-Give the list range syntax.	<pre>([start ..]             --infinite list[start .. end]         --default increment of 1[start, second .. end] --uses second to show increment,true)</pre>
-Give the list comprehension sytax.	<pre>([expr | genOrFilter1, ..., genOrFilterN],true)</pre><br><br>Filters are boolean expressions.<br>Generator form:<br><pre>(bindingForm <- collection,true)</pre>
-Give the anonymous function syntax.	<pre>(\param1 ... paramN -> body,true)</pre>
+Compose functions	You can do it explicitly with parens and parameters, or with the dot notation:<br><pre>composedFunc arg = secondToApply (firstToApply arg)composedFunc = secondToApply . firstToApply</pre>
+Access the length of a collection.	<pre>length coll</pre>
+Give the list range syntax.	<pre>[start ..]             --infinite list[start .. end]         --default increment of 1[start, second .. end] --uses second to show increment</pre>
+Give the list comprehension sytax.	<pre>[expr | genOrFilter1, ..., genOrFilterN]</pre><br><br>Filters are boolean expressions.<br>Generator form:<br><pre>bindingForm <- collection</pre>
+Give the anonymous function syntax.	<pre>\param1 ... paramN -> body</pre>
 How can you bind variables with maximally limited scope?	You can append an indented <tt>where</tt> clause.
 How do you partially apply a function?	Just don't give a function all its arguments. No special syntax is required.
-What's the simplest way to create a new type?	<pre>(data NewType = Val1 | Val2 | ... | ValN,true)</pre>
-What are some simple type alias forms?	<pre>(type NewType = OldTypetype NewType = (Type1, ..., TypeN)type NewType = [SomeType],true)</pre>
+What's the simplest way to create a new type?	<pre>data NewType = Val1 | Val2 | ... | ValN</pre>
+What are some simple type alias forms?	<pre>type NewType = OldTypetype NewType = (Type1, ..., TypeN)type NewType = [SomeType]</pre>
 How can you make your custom type printable?	Add <tt>deriving (Show)</tt> to the end of the constructor.<br>k
 How are variables interpreted in a function's type declaration?	They are interpreted as type variables.
 What is a class in Haskell?	A collection of function signatures that any instance of the class (a <strong>type</strong> not an object) must support.
-How can you temporary variables for use in a function?	<pre>(let var1 = expr1    ...    var2 = expr2in result-expr,true)</pre>
+How can you temporary variables for use in a function?	<pre>let var1 = expr1    ...    var2 = expr2in result-expr</pre>
 Fundamentally, monads are ...<br><br>Some common uses are ...	... a way of composing functions.<br><br>... sequential execution, control structures, managing i/o, the <tt>Maybe</tt> monad.

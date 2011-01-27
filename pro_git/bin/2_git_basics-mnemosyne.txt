@@ -18,9 +18,9 @@ How do you create a bare repository?	Clone a normal one, then:<br><tt>git clone 
 Using ssh, what controls read/write access to the repo?	The OS's read/write permissions on the <tt>.git</tt> bare repo directory.
 How can you guarantee others will have permission to push to your bare repository.	Go into the <tt>.git</tt> repo on the server and run:<br><tt>git init --shared</tt>
 How can you give devs access to a repo with ssh if they don't have accounts on the machine?	Create a single "git" user and add all the devs' keys to <tt>~/.ssh/authorized_keys</tt>.
-Give a script to set up a Git repo on a server.	<pre>(cd /opt/gitmkdir project.gitcd project.gitgit --bare init,true)</pre>
-Give a script to move code to a new repo on a server.	<pre>(#on John's computercd myprojectgit initgit add .git commit -m 'initial commit'git remote add origin git@gitserver:/opt/git/myproject.gitgit push origin master,true)</pre>
-How can you restrict the git user to Git use only?	Change its shell to <tt>git-shell</tt> in <tt>etc/passwd</tt>.<br><pre>(git:x:1000:1000::/home/git:/bin/sh                          :/usr/bin/git-shell,true)</pre>
+Give a script to set up a Git repo on a server.	<pre>cd /opt/gitmkdir project.gitcd project.gitgit --bare init</pre>
+Give a script to move code to a new repo on a server.	<pre>#on John's computercd myprojectgit initgit add .git commit -m 'initial commit'git remote add origin git@gitserver:/opt/git/myproject.gitgit push origin master</pre>
+How can you restrict the git user to Git use only?	Change its shell to <tt>git-shell</tt> in <tt>etc/passwd</tt>.<br><pre>git:x:1000:1000::/home/git:/bin/sh                          :/usr/bin/git-shell</pre>
 How can you provide read-only public access to your otherwise ssh-based repo?	Create a webserver with the repo as webroot. Then add a post-update hook from the samples. People can then clone over http.
 How can you provide a web interface to your repo?	Use GitWeb, a CGI script that comes with Git.
 Name a tool for managing large numbers of entries in <tt>authorized_keys</tt>.	Gitosis.

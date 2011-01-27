@@ -4,7 +4,7 @@ What are the available prefix operators?	+, -, !, ~<br><br>You can prepend unary
 Describe Symbol literals.	- <tt>'cymbal</tt> is expanded to <tt>Symbol("cymbal")</tt>.<br>- They must be alphanumeric.<br>- Values are interned. Symbol literal twice will refer to the exact same symbol object.
 What does unary + do on numeric types?	Absolutely nothing.
 What are postfix operators?	They are just methods that take no arguments when called without a dot or parens.
-Correct the spacing of multiline triple-quoted strings.	<pre>(println("""| Some really long           | string""".stripMargin),true)</pre>
+Correct the spacing of multiline triple-quoted strings.	<pre>println("""| Some really long           | string""".stripMargin)</pre>
 What is the order of operand evaluation?	It's always left-to-right, regardless of associativity.
 What is short-circuiting accomplished with?	By-name parameters.
-Give the  method precedence table.	Method precedence is done by the first letter of the method name. Assignment operators are done by the last letter (ending in =).<br><br><pre>( * / % + - : = ! < > & ^ | (all letters) (all assignment operators),true)</pre>
+Give the  method precedence table.	Method precedence is done by the first letter of the method name. Assignment operators are done by the last letter (ending in =).<br><br><pre> * / % + - : = ! < > & ^ | (all letters) (all assignment operators)</pre>

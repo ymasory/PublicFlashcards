@@ -2,7 +2,7 @@ Explain what makes Scala purely object-oriented.	- Every value is an object.<br>
 What problems are associated with statically typed languages?	- They are verbose.<br>- They prevent programmers from expressing themselves as they wish.<br>- They prohibit certain patterns of dynamic modification of software systems.
 What are the two guiding ideas of functional programming?	- Functions are first-class values.<br>- Operations should map input values to output values rather than change data in place.
 What is the key insight of object-orientated languages?	They make data/operation containers fully general so that they are values that can be put in other containers, or passed as parameters to operators.
-How do you run Scala scripts on Unix?	<pre>(#! /bin/shexec scala "$0" "$@"!#,true)</pre>
+How do you run Scala scripts on Unix?	<pre>#! /bin/shexec scala "$0" "$@"!#</pre>
 Name two Java deviations from pure object-orientation.	- Some values are not objects.<br>- Static fields/methods are not members of any objects.
 Why are Scala type annotations after the variable?	So it can be left off for type inference. If it were before, nothing would mark the definition start and a new keyword would be needed, like C# 3's <tt>var</tt>.
 Name three advantages of static typing.	- Verifiable properties.<br>- Safe refactoring.<br>- Documentation: static types are never out of date, IDE context help.

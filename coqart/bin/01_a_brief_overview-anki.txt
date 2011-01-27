@@ -3,4 +3,4 @@ Functions in Coq are as functions in ...<br><br>Define them.	... computer scienc
 What is computation to Coq?	Reducing terms until they cannot be further reduced.
 Why isn't Coq Turing-complete?	The <em>strong normalization</em> property is too strong. Any system that can describe all computable functions must also admit functions that don't halt. Since the strong normalization property guarantees all Coq functions halt, the ability to compute some computable functions is necessarily left out.
 In Coq types are ... hence they have ...	... terms ... a type.
-What is the comments syntax?	As in OCaml:<br><pre>((* comment *),true)</pre>
+What is the comments syntax?	As in OCaml:<br><pre>(* comment *)</pre>

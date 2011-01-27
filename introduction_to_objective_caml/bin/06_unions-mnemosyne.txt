@@ -1,10 +1,10 @@
 What are some other terms for <em>disjoint union</em>?	<em>Tagged unions</em>, <em>variant records</em>, <em>algebraic data types</em>.
 What kinds of unions does OCaml support?	<em>exact unions</em> which do not admit new members after initial definition, and <em>open unions</em>, which do.
-Give the syntax for exact unions.	<pre>(type name =    name1 [of type1]  ...  | nameN [of typeN],true)</pre><br><br>Each <tt>namei</tt> is the <em>constructor</em> names and must begin with a capital letter.<br>The optional <tt>typei</tt> is its value.
+Give the syntax for exact unions.	<pre>type name =    name1 [of type1]  ...  | nameN [of typeN]</pre><br><br>Each <tt>namei</tt> is the <em>constructor</em> names and must begin with a capital letter.<br>The optional <tt>typei</tt> is its value.
 How are instances of a disjoint union created?	With the syntax of function application give the constructor name followed by an instance of its value type, if applicable.
-Give the syntax of open unions.	<pre>(type 'a name =  [> 'name1 [of type1]  ...  | 'nameN [of typeN] ] as 'a,true)</pre>
+Give the syntax of open unions.	<pre>type 'a name =  [> 'name1 [of type1]  ...  | 'nameN [of typeN] ] as 'a</pre>
 What does the type <tt>[> X of Y]</tt> mean?	It means the expression is an instance of a union type that contains the member <tt>X</tt> with value <tt>Y</tt>. More cases that are supported can be added using <tt>|</tt>.
 The value of a union instance can be accessed through ...	... pattern matching.
-Give the effective definition of <tt>list</tt>.<br><br>Why isn't this the actual definition?	<pre>(type 'a list =    []  | :: of 'a * 'a list,true)</pre><br><br><tt>[]</tt> is not a valid name and requires language support.
-Give the definition of <tt>option</tt>.	<pre>(type 'a option =    None  | Some of 'a,true)</pre>
+Give the effective definition of <tt>list</tt>.<br><br>Why isn't this the actual definition?	<pre>type 'a list =    []  | :: of 'a * 'a list</pre><br><br><tt>[]</tt> is not a valid name and requires language support.
+Give the definition of <tt>option</tt>.	<pre>type 'a option =    None  | Some of 'a</pre>
 Give another syntax for closed unions.	Same as open unions, except with <tt><</tt> instead of <tt>></tt>.

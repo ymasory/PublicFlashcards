@@ -1,19 +1,19 @@
 How does OCaml support parametric polymorphism?	Expressions can have types that include type variables, standing for an arbitrary type.
 How are type variables written?	Lowercase identifiers starting with a lowercase letter prefixed by an apostrophe.
-Add type annotations to a function declaration.	<pre>(let funcname (p1 : pt1) ... (pn : ptn) : rest = ...,true)</pre><br><br>The parens are essential.
+Add type annotations to a function declaration.	<pre>let funcname (p1 : pt1) ... (pn : ptn) : rest = ...</pre><br><br>The parens are essential.
 What is the <em>value restriction</em>?	The requirement that only immutable values can be truly polymorphic.<br><br>That means the expression is fully evaluated (including the binding of type variables) and cannot be modified through assignment.
 What is the type of an expression that is a composition of truly polymorphic parts?	If the type variables are not bound in the expression they become unknown types, written <tt>'_a</tt>. They represent a <em>single</em> still-unknown type. Hence the resulting expression is not truly polymorphic.
 Unless otherwise stated <em>values</em> are ...	immutable values.
 What is the purpose of the value restriction?	To preserve correct typing in a language that allows side-effects.
 Why can't function application result in a polymorphic type?	There is no mechanism for controlling purity of the function being applied.
-How can one circumvent the value restriction?	Use <em>eta expansion</em>, the creation of an anonymous function that wraps the desired expression.<br><br><pre>(fun p -> someExpression p,true)</pre>
+How can one circumvent the value restriction?	Use <em>eta expansion</em>, the creation of an anonymous function that wraps the desired expression.<br><br><pre>fun p -> someExpression p</pre>
 Why doesn't OCaml provide overloading?	- It complicates type inference. Some method will be needed for identifying the correct function in an expression that can uses overloaded functions ambiguously. That method may be uncomputable.<br>- Programmer confusion.
 How are tuples written?<br><br>And their types?	Comma-separated values, not necessarily surrounded by parens.<br><br>The types are written <tt>*</tt>-separated.
-What is <em>destructuring</em>?<br><br>Demonstrate on tuples.	Decomposition of an aggregate type using pattern matching.<br><br><pre>(# let a, b = 1, 2;;val a : int = 1val b : int = 2,true)</pre>
+What is <em>destructuring</em>?<br><br>Demonstrate on tuples.	Decomposition of an aggregate type using pattern matching.<br><br><pre># let a, b = 1, 2;;val a : int = 1val b : int = 2</pre>
 Access the elements of a tuple.	- Use pattern matching.<br>- For a 2-tuple use <tt>fst</tt> and <tt>snd</tt>.
 How are lists written?	<tt>;</tt>-separated values surrounded by square brackets.
 How is the <em>cons</em> operator used?	Both to prepend to a list and to pattern match the head of a list.
-How are parameterized types written?	With the type parameter preceding the main type.<br><br><pre>(string list'a list (* polymorphic *),true)</pre>
-What is an association list?<br><br>How is it queried?	A list of pairs, used as a simple associative map.<br><br><pre>(List.assoc 'a -> ('a * 'b),true)</pre><br>looks for the associated element or raises <tt>Not_found</tt>.
+How are parameterized types written?	With the type parameter preceding the main type.<br><br><pre>string list'a list (* polymorphic *)</pre>
+What is an association list?<br><br>How is it queried?	A list of pairs, used as a simple associative map.<br><br><pre>List.assoc 'a -> ('a * 'b)</pre><br>looks for the associated element or raises <tt>Not_found</tt>.
 What is <em>tail recursion</em>?<br><br>Why is it desirable?	A function is tail recursive if all recursive calls are returned by the function without any additional computation.<br><br>Tail recursive functions are preferred over general recursive functions as they can be optimized by the compiler to avoid consuming additional stack space. (They are rewritten as loops).
 List accumulator values in recursive functions are best built ...	... in reverse, to benefit from constant-time cons.<br><br>The final result will be reversed with <tt>List.rev</tt>.

@@ -8,7 +8,7 @@ Pass array to a repeated parameter.	Put <tt>: _*</tt> after name<br>  <tt>echo(a
 Describe tail-recursive stack traces.	They show only one call of the recursive function, unless you use<br>  <tt>-g:notailcalls</tt><br>to scala shell or to <tt>scalac</tt>.
 Which instance of a local variable of a method, repeatedly called, will a closure capture?	It will capture the one currently active. The closure keeps the variable alive after the method returns, automatically moving it from the stack to the heap, if necessary.
 Why the trailing underscore?	It avoids situations where the programmer forgets to provide the right parameters, giving the unexpected result of a <em>function value</em> instead of the application of a function.<br><br>Hence <tt>_</tt> can be left off <strong>only</strong> when a function is expected.
-Assign a method or local function to a variable.	Use a partially-applied function.<br><br><pre>(def sum(a:Int, b:Int, c:Int) = a*b*cval a = sum _a(1,2,3),true)</pre>
+Assign a method or local function to a variable.	Use a partially-applied function.<br><br><pre>def sum(a:Int, b:Int, c:Int) = a*b*cval a = sum _a(1,2,3)</pre>
 What do multiple underscores in a function literal do?	They represent one arg each, not multiple references to the same one.
 What are the limits of tail recursion?	It's only for methods and local functions without intermediaries.<br><br>It will not work with function values, or intermediaries such as one method tail-calling another method that calls it back.
 Function literals vs. function values	Source code vs. objects at runtime.

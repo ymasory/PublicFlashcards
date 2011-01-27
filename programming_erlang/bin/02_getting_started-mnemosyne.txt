@@ -10,5 +10,5 @@ What are two key differences between C structs and Erlang tuples?	- Tuples don't
 Why aren't atoms garbage collected?	They have global scope, unlike variables.
 How is an unsuccessful pattern match different in Erlang and Prolog?	In Erlang it's an error, while Prolog would backtrack.
 What is <tt>_</tt>?	An anonymous variable.
-What makes Erlang's <tt>|</tt> syntax more powerful than standard cons?	You can prepend/match multiple elements at once without creating a wrapper list.<br><br><pre>(A = [1, 2 | [3, 4]],true)</pre><br><br><pre>([B, C, D, | T] = A.,true)</pre>
+What makes Erlang's <tt>|</tt> syntax more powerful than standard cons?	You can prepend/match multiple elements at once without creating a wrapper list.<br><br><pre>A = [1, 2 | [3, 4]]</pre><br><br><pre>[B, C, D, | T] = A.</pre>
 Name an easy way to get the ascii value of a character known at program-write time.	<tt>$X</tt> where <tt>X</tt> is some character.<br><br>This is <strong>not</strong> a "conversion", just syntactic sugar for an integer.

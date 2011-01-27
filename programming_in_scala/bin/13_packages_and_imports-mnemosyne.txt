@@ -2,7 +2,7 @@ Achieve Java's package-private.	<tt>private[X]</tt> where X is the directly encl
 What happens if <tt>java.lang</tt> and scala have a name colliding member?	The Scala member hides the Java one.
 What's the problem with the protected members of singletons?	They make no sense because singletons have no subclasses.
 Describe object-private.	<tt>private[this]</tt><br><br>It's only accessible by this instance of a class, not others.
-What are the major differences between Scala and Java packages?	- Scala's are hierarchical like Java's, but they also properly nest.<br>- Java's package statement in Scala is just syntactic sugar for<br><pre>(package X {  //compilation unit},true)</pre>
+What are the major differences between Scala and Java packages?	- Scala's are hierarchical like Java's, but they also properly nest.<br>- Java's package statement in Scala is just syntactic sugar for<br><pre>package X {  //compilation unit}</pre>
 What's the difference between Scala and Java private?	Scala is more consistent, denying visibility to containing instances of nested classes.
 What's the difference between Scala and Java protected modifier?	Scala gives only subclass access, not package members too.
 Describe coupling.	It is the reliance of various parts of the program on one another.

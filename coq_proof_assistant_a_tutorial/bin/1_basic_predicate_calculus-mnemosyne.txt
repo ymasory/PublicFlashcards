@@ -9,16 +9,16 @@ What is a specification?	A formal expression which classifies the notion which i
 What kinds of specifications are there?	- Logical propositions (<tt>Prop</tt>)<br>- Mathematical collections (<tt>Set</tt>)<br>- Abstract types (<tt>Type</tt>)
 <tt>Prop</tt>, <tt>Set</tt>, and <tt>Type</tt> are what?	Atomic abstract types.
 Every expression <tt>e</tt> in Gallina is associated with what?	A specification, itself a valid expression, called its <em>type</em>, <em>t(E)</em>.
-How can you get the type of an expression?	Using the <tt>Check</tt> command:<br><pre>(Coq < Check O.0     : nat,true)</pre>
+How can you get the type of an expression?	Using the <tt>Check</tt> command:<br><pre>Coq < Check O.0     : nat</pre>
 What is the role of sections?	- Modularize by limiting scope of parameters, hypotheses, and definitions.<br>- Give a convenient way to reset part of the development environment.
 How do you enter a section?	<tt>Coq < Section Declaration.</tt>
-Translate <em>let n be a natural number</em> into Coq.	<pre>(Coq < Variable n : nat.n is assumed,true)</pre>
-Translate <em>let n be a positive natural number</em> into Coq.	<pre>(Coq < Hypothesis Pos_n : (gt n 0).Pos_n is assumed,true)</pre>
+Translate <em>let n be a natural number</em> into Coq.	<pre>Coq < Variable n : nat.n is assumed</pre>
+Translate <em>let n be a positive natural number</em> into Coq.	<pre>Coq < Hypothesis Pos_n : (gt n 0).Pos_n is assumed</pre>
 What is the type of <tt>gt</tt>?	<tt>nat -> nat -> Prop</tt>
 <tt>nat -> nat -> Prop</tt> is an abbreviation for what?	<tt>nat -> (nat -> Prop)</tt>
 `(gt n 0) is an abbreviation for what?	<tt>((gt n) 0)</tt>
-Unlike in Scala, types in Coq are ...	... values<br><pre>(Coq < Check (nat -> Prop).nat -> Prop     : Type,true)</pre>
+Unlike in Scala, types in Coq are ...	... values<br><pre>Coq < Check (nat -> Prop).nat -> Prop     : Type</pre>
 What are the types of <tt>nat</tt>, <tt>O</tt>, <tt>S</tt>, and <tt>plus</tt>?	<tt>Set</tt>, <tt>nat</tt>, <tt>nat->nat</tt>, <tt>nat -> nat -> nat</tt>
-Create several variables in one declaration.	<pre>(Coq < Variables A B C : Prop.A is assumedB is assumedC is assumed,true)</pre>
+Create several variables in one declaration.	<pre>Coq < Variables A B C : Prop.A is assumedB is assumedC is assumed</pre>
 What are the meanings of <tt>-></tt>?	- Type constructor, e.g. <tt>nat -> nat</tt>.<br>- The propositional connective <em>implication</em>.
 How do you enter the proof engine?	With the command <tt>Goal</tt> followed by the conjecture you want to verify.

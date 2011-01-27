@@ -1,7 +1,7 @@
-How can you compile and load a module into the <tt>erl</tt> shell?	<pre>(c(module.erl).,true)</pre><br><br>Now that module's functions can be accessed with:<br><pre>(module:func,true)</pre>
-What do Erlang programs begin with?	<pre>(-module(filename).,true)</pre><br><br>... for a program defined in filename.erl.
-How can you use methods in other modules without module qualification?	<pre>(-import(filename, [func1/arity1, ..., funcN/arityN]).,true)</pre>
-How can you make your module's functions available to other modules?	<pre>(-export(filename, [func1/arity1, ..., funcN/arityN]).,true)</pre><br><br>or<br><br><pre>(-compile(export_all).,true)</pre>
+How can you compile and load a module into the <tt>erl</tt> shell?	<pre>c(module.erl).</pre><br><br>Now that module's functions can be accessed with:<br><pre>module:func</pre>
+What do Erlang programs begin with?	<pre>-module(filename).</pre><br><br>... for a program defined in filename.erl.
+How can you use methods in other modules without module qualification?	<pre>-import(filename, [func1/arity1, ..., funcN/arityN]).</pre>
+How can you make your module's functions available to other modules?	<pre>-export(filename, [func1/arity1, ..., funcN/arityN]).</pre><br><br>or<br><br><pre>-compile(export_all).</pre>
 What are the Erlang case rules?	Similar to Prolog, and Haskell, functions and atoms begin with a lower case, variables begin with a capital letter or an underscore.
 What is an atom?<br><br>What are its lexical rules?	An atom is a word that stands for itself.<br>It begins with a lowercase letter or is enclosed in single quotes.
 What are Erlang's primitive data types?	Integers, floats, strings, atoms, lists, tuples, binaries.
@@ -10,40 +10,40 @@ What's odd about Erlang's Boolean operators?	They don't short-circuit by default
 How are "greater or equal to" and "less than or equal to" expressed?	<tt>>=</tt> and <tt>=<</tt>.<br><strong>not</strong> <tt><=</tt>.
 What are the equality operators?<br><br>How are they used?	<tt>==</tt> equal to<br><tt>/=</tt> not equal to<br><tt>=:=</tt> exactly equal to<br><tt>=/=</tt> not exactly equal to<br><br>The non-exact versions will coerce its into floats. Otherwise use exact versions to give better hints to the compiler.
 What is <tt>=</tt> in Erlang?	Pattern matching, not assignment. "Assignment" is just a simple case of pattern matching.
-What is the syntax of <tt>case</tt> expressions?	<pre>(case Expression of    Pattern1 [when Guard1] -> Expression_sequence1;    ...    PatternN [when GuardN] -> Expression_sequenceNend,true)</pre>
+What is the syntax of <tt>case</tt> expressions?	<pre>case Expression of    Pattern1 [when Guard1] -> Expression_sequence1;    ...    PatternN [when GuardN] -> Expression_sequenceNend</pre>
 What is an expression sequence?<br><br>What is its value?	A sequence of expressions separated by commas.<br><br>The value of the last expression evaluated.
-Give the syntax of <tt>if</tt> expressions.	<pre>(if    Guard1 -> Expression_sequence1;    ...    Guard2 -> Expression_sequence2end,true)</pre>
+Give the syntax of <tt>if</tt> expressions.	<pre>if    Guard1 -> Expression_sequence1;    ...    Guard2 -> Expression_sequence2end</pre>
 What happens if no guard in an <tt>if</tt> expression is true?<br><br>How can this be avoided.	An error will be returned.<br><br>One can use the <tt>true</tt> atom as the final guard, although it is usually better to use something more explicit than <tt>true</tt> when possible.
 What is the huge restriction on guards?	To enforce no-side-effects, they cannot be user-defined.<br><br>You can use type tests, many operators, and a number of built-in functions.
 How do you access the length of a list?<br><br>Of a tuple?	<tt>length(List)</tt><br><br><tt>size(Tuple)</tt>
-Give the syntax of named functions.	<pre>(name(Patterns1) -> Expression_sequence1;...name(PatternsN) -> Expression_sequenceN.,true)</pre>
-Give the syntax of anonymous functions.<br><br>What are they often used for?	<pre>(fun(Patterns1) -> Body1;    (Patterns2) -> Body2;    ...    (PatternsN) -> BodyNend,true)</pre><br><br>They are often used as parameters to other functions.
-Give the syntax of list comprehensions.	<pre>([Expression || Generator, GuardOrGenerator, ..., GuardOrGenerator],true)</pre><br><br>The expression typically makes use of variables defined by a generator.<br>Guards are simply boolean expressions.<br>Generators are of the form <tt>El <- List</tt>.
+Give the syntax of named functions.	<pre>name(Patterns1) -> Expression_sequence1;...name(PatternsN) -> Expression_sequenceN.</pre>
+Give the syntax of anonymous functions.<br><br>What are they often used for?	<pre>fun(Patterns1) -> Body1;    (Patterns2) -> Body2;    ...    (PatternsN) -> BodyNend</pre><br><br>They are often used as parameters to other functions.
+Give the syntax of list comprehensions.	<pre>[Expression || Generator, GuardOrGenerator, ..., GuardOrGenerator]</pre><br><br>The expression typically makes use of variables defined by a generator.<br>Guards are simply boolean expressions.<br>Generators are of the form <tt>El <- List</tt>.
 Give a generator that doubles the members of a list.	<tt>[X * 2 || X <- [1, 2, 3, 4]]</tt>
 Which list functions do not need to be imported or qualified?	<tt>hd</tt> (head), <tt>tl</tt> (tail), <tt>length</tt>
-Create a range of integers.	<pre>(lists:seq(From, To)lists:seq(From, To, Step),true)</pre><br><br>Note: <tt>To</tt> is inclusive, unlike in Scala/Python/etc
-Get a line from stdin.<br><br>Put a line to stdout.	<pre>(Line = io:get_line(Prompt).,true)</pre><br><br><pre>(io:format(FormatString, ListOfData).,true)</pre>
-How do you write to a file?	<pre>({ok, Stream} = file:open(FileName, write),io:format(Stream, FormatString, ListOfData),file:close(Stream).,true)</pre>
+Create a range of integers.	<pre>lists:seq(From, To)lists:seq(From, To, Step)</pre><br><br>Note: <tt>To</tt> is inclusive, unlike in Scala/Python/etc
+Get a line from stdin.<br><br>Put a line to stdout.	<pre>Line = io:get_line(Prompt).</pre><br><br><pre>io:format(FormatString, ListOfData).</pre>
+How do you write to a file?	<pre>{ok, Stream} = file:open(FileName, write),io:format(Stream, FormatString, ListOfData),file:close(Stream).</pre>
 What are the reserved sequences in format strings?	<tt>~s</tt> a string<br><tt>~w</tt> a value in its standard syntax (e.g., strings as lists of integers)<br><tt>~p</tt> a value, pretty printed (e.g., strings with quotes around them)<br><tt>~n</tt> or <tt>\n</tt> newline
 What is the comment syntax?	<tt>%</tt> causes the rest of the line to be discarded.
 <tt>filter</tt> and <tt>map</tt> take which arguments?	First the function to apply to the members of the list, and then the list.
-How can you get truncating division?	<pre>(0> 2 rem 3.2,true)</pre>
-How can you use previously defined functions as parameters to other functions?	Create an anonymous function in-line using the function's full name, <em>funcName/arity</em>.<br>E.g.,<br><br><pre>(get_red() -> filter(fun is_red/1, fruit()).,true)</pre>
+How can you get truncating division?	<pre>0> 2 rem 3.2</pre>
+How can you use previously defined functions as parameters to other functions?	Create an anonymous function in-line using the function's full name, <em>funcName/arity</em>.<br>E.g.,<br><br><pre>get_red() -> filter(fun is_red/1, fruit()).</pre>
 What are strings, really?	Lists of ASCII integer values.
 What do <tt>lists:all</tt> and <tt>lists:any</tt> do?	The same as Scala's <tt>forall</tt> and <tt>exists</tt>.
 How is Erlang's <tt>zip</tt> more restrictive than other languages'?	The two lists must be of the same length.
 Append two lists.	<tt>lists:append([1, 2], [3, 4])</tt><br>or<br><tt>[1, 2] ++ [3, 4]</tt><br>result in<br><br><tt>[1, 2, 3, 4]</tt>
 What do <tt>takewhile</tt> and <tt>dropwhile</tt> do?	<tt>takewhile</tt> scans through a list until the predicate fails for the first time, at which point it discards the failed element and everything after.<br><br><tt>dropwhile</tt> scans through the list, discarding everything until the predicate holds for the first time.
 What does <tt>partition</tt> do?	It creates a tuple of two lists. The first list holds the elements of the input list for which the predicate held, and the second holds the elements for which the predicate failed.
-How can  you run code in a new process?	<pre>(Pid = spawn(Function),true)</pre>
+How can  you run code in a new process?	<pre>Pid = spawn(Function)</pre>
 How can you generate a "return address" to send with your message?	<tt>self()</tt> results in the Pid of the executing process.
-Give the syntax of <tt>receive</tt>.	<pre>(receive    Pattern1 [when Guard1] -> Expression_sequence1;    ...    PatternN [when GuardN] -> Expression_sequenceNafter Timeout ->    TimeoutExpressionSequenceend,true)</pre>
+Give the syntax of <tt>receive</tt>.	<pre>receive    Pattern1 [when Guard1] -> Expression_sequence1;    ...    PatternN [when GuardN] -> Expression_sequenceNafter Timeout ->    TimeoutExpressionSequenceend</pre>
 How is Erlang's <tt>loop()</tt> different from Scala's?	<tt>loop</tt> in Scala is a control structure in the actors library that does the looping for you.<br>In Erlang <tt>loop</tt> is just the name of a function you're calling so you must make the recursive call at the end of each <tt>receive</tt> case.
 What's an idiomatic way to set up an Erlang remote procedure call server?	Provide a function that takes as an argument the Pid of the instance of the module to send the message to.<br>Send the message there, wait for a response, and then reply.<br><br>Ultimately a user may start several processes, but after that point will interact with the blocking rpc function.
-Describe Pid registration.	Registering a Pid makes it globally available.<br><br><tt>register(AnAtom, Pid)</tt> gives <tt>Pid</tt> a name<br><tt>unregister(AnAtom)</tt><br><pre>(registered() -> [AnAtom :: atom()],true)</pre><br>returns a list of all registered processes<br><pre>(whereis(AnAtom) -> Pid | undefined,true)</pre><br>gets Pid of a registered process, or undefined if no such process
+Describe Pid registration.	Registering a Pid makes it globally available.<br><br><tt>register(AnAtom, Pid)</tt> gives <tt>Pid</tt> a name<br><tt>unregister(AnAtom)</tt><br><pre>registered() -> [AnAtom :: atom()]</pre><br>returns a list of all registered processes<br><pre>whereis(AnAtom) -> Pid | undefined</pre><br>gets Pid of a registered process, or undefined if no such process
 What's the difference between <tt>spawn</tt> and <tt>spawn_link</tt>?	<tt>spawn</tt> creates a processes independent from the current one.<br><tt>spawn_link</tt> creates a new process linked to the current one, such that if the new process exits non-normally, so will the current one.
 How can you introduce/remove links between two running processes?	<tt>link(Pid)</tt> and <tt>unlink(Pid)</tt>
 How can you terminate the current process?<br><br>How can you send exit signals <em>without actually exiting</em>?	<tt>exit(Reason)</tt> exits and sends signals to linked processes.<br><br><tt>exit(Pid, Reason</tt> sends the exit signal to the given process, but doesn't terminate the current process.
-How can you link to a process while reserving the right to handle the partner process's exit however you like?	<pre>(process_flag(trap_exit, true)spawn_link(Function),true)</pre><br><br>Now exit signals are converted to regular <tt>{'EXIT', From, Reason}</tt> messages.<br>However, if the reason is <tt>kill</tt>, exit will still be forced.
+How can you link to a process while reserving the right to handle the partner process's exit however you like?	<pre>process_flag(trap_exit, true)spawn_link(Function)</pre><br><br>Now exit signals are converted to regular <tt>{'EXIT', From, Reason}</tt> messages.<br>However, if the reason is <tt>kill</tt>, exit will still be forced.
 Why isn't <tt>try</tt>/<tt>catch</tt> much used in Erlang?	Crashed processes are normally handled through linking, not in <tt>catch</tt> sequences.
 What is a common strategy for making functions tail recursive?	Create a helper function with an additional argument that will serve as an accumulator.

@@ -1,7 +1,7 @@
-What is the syntax of <tt>match</tt> expression?	<pre>(match expr with | pat1 [when cond1] -> expr1 ... | patN [when condN] -> exprN,true)</pre><br><br>The initial <tt>|</tt> is not required.
-What shortcut is provided for functions whose body is a pattern match on its sole parameter?	<pre>(let funcname = function | pat1 [when cond1] -> expr1 ... | patN [when condN] -> exprN,true)</pre>
+What is the syntax of <tt>match</tt> expression?	<pre>match expr with | pat1 [when cond1] -> expr1 ... | patN [when condN] -> exprN</pre><br><br>The initial <tt>|</tt> is not required.
+What shortcut is provided for functions whose body is a pattern match on its sole parameter?	<pre>let funcname = function | pat1 [when cond1] -> expr1 ... | patN [when condN] -> exprN</pre>
 How can two patterns be composed?	With <tt>|</tt>, being boolean <em>or</em>.
-Give the value matching a pattern a name.	Use <tt>as</tt>.<br><br><pre>(pat as name -> expr,true)</pre>
-Give the syntax of a pattern range.	<pre>(start .. end -> expr,true)</pre><br><br>The pattern is matched if the value is in the range.
-Do the equivalent of throwing an <tt>IllegalArgumentException</tt>.	<pre>(raise (Invalid_argument "message"),true)</pre>
+Give the value matching a pattern a name.	Use <tt>as</tt>.<br><br><pre>pat as name -> expr</pre>
+Give the syntax of a pattern range.	<pre>start .. end -> expr</pre><br><br>The pattern is matched if the value is in the range.
+Do the equivalent of throwing an <tt>IllegalArgumentException</tt>.	<pre>raise (Invalid_argument "message")</pre>
 Where is pattern matching used other than in <tt>match</tt> expressions?	- In <tt>let</tt> bindings.<br>- In <tt>fun</tt> expressions.<br>- In <tt>function</tt> constructions.

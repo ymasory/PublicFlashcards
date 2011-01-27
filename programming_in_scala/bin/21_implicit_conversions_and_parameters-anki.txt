@@ -2,14 +2,14 @@ Explain the One-at-a-Time Rule.<br><br>How can you circumvent it?	Only one impli
 Explain the Explicits-First Rule.<br><br>Give a corollary.	Whenever code type checks as it is written, no implicits are attempted.<br><br>Corollary: you can always replace implicit identifiers with explicit ones to make code longer but clearer.
 Explain the Marking Rule.	Only definitions marked implicit are available.
 Explain the Non-Ambiguity Rule.	An implicit conversion is only inserted if there is no other possible conversion to insert.<br><br>There is no "best match" rule.
-Give the most common reason for using view bounds.	Use when implicit parameter is never explicitly used in method body, but only present to introduce implicit conversion ability to body.<br><br><pre>(def maxList[T] (elements: List[T])  (implicit orderer: T => Ordered[T]):Tdef maxList[T <% Ordered[T]]  (elements: List[T]):T,true)</pre>
+Give the most common reason for using view bounds.	Use when implicit parameter is never explicitly used in method body, but only present to introduce implicit conversion ability to body.<br><br><pre>def maxList[T] (elements: List[T])  (implicit orderer: T => Ordered[T]):Tdef maxList[T <% Ordered[T]]  (elements: List[T]):T</pre>
 Why do implicit conversion methods have names?	- Explicit invocation.<br>- Selectively importing one conversion method but not another.
 What does Scope Rule help with?	Modular reasoning. You only need to consider code that is imported or explicitly referenced through a fully qualified name.
 Give the most common use of implicit parameters.	They provide information about a type mentioned explicitly in the earlier parameter list.
 What is the fundamental difference between implicit and 2.8's default parameters?<br><br>What's the consequence?	Default arguments are controlled at the point of definition.<br><br>Implicit parameters are chosen at the point of use and, as such, cannot be called in short form without the implicit being defined.
 Give some tips for debugging implicits.	- Try using conversions explicitly to get a new error message or to establish scoping problem.<br><br>- Use <tt>-Xprint:typer</tt> option to see your code after its implicits have been expanded.
 Where are implicits tried?	- Conversion to an expected type (e.g. to match a parameter).<br>- Conversions of the receiver of a selection (e.g., "abc".exists(...)`).<br>- Implicit parameters.
-Give the convention for libraries providing implicit conversions.	<pre>(Preamble object.import Preamble._,true)</pre>
+Give the convention for libraries providing implicit conversions.	<pre>Preamble object.import Preamble._</pre>
 Where can implicit keyword be used?	Any variable, function, or object definition.
 Describe the Scope Rule.	An inserted implicit conversion must be in scope as a single identifier or be associated with the source or target type of the conversion.<br><br>"Associated with" means found in the companion object of.
 Describe the style rule for implicit parameters.	Use at least one role-determining name within the type of an implicit parameter.<br>Bad:<br><tt>(implicit orderer: (T,T) => Boolean)</tt><br>Good:<br><tt>(implicit orderer: T => Ordered[T])</tt><br><br>Preferred Prompt, not String.
