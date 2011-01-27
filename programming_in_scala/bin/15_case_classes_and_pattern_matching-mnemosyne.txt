@@ -5,22 +5,22 @@ Describe variable patterns.	They match every value.<br><br>The variable can then
 What code does the case keyword get you?	- Factory method with the name of the class.<br>- All arguments of the class parameter list get val prefix.<br>- Natural implementations of <tt>toString</tt>, <tt>hashCode</tt>, and <tt>equals</tt>.
 What's the point of case classes?	They allow pattern matching on objects without huge amounts of boilerplate.
 How does Scala restrict patterns?	It restricts them to be linear, meaning a pattern variable may appear only once in a pattern.
-Combine patterns.	Use <tt>|</tt><br><br><pre>city match {  case: "Boca" | "Boca Raton" => //...}</pre>
-What will typing a wildcard match <strong>not</strong> do?	It will not restrict the matches. It will just invite a runtime type mismatch error.<br><br><pre>case _: Int => //will still match String, etc.</pre>
+Combine patterns.	Use <tt>|</tt><br><br><pre>city match {<br>  case: "Boca" | "Boca Raton" => //...<br>}<br></pre>
+What will typing a wildcard match <strong>not</strong> do?	It will not restrict the matches. It will just invite a runtime type mismatch error.<br><br><pre>case _: Int => //will still match String, etc.<br></pre>
 Describe constant patterns.	They match values that are equal to the constant with respect to <tt>==</tt>.
 What is match selector now typically called?	The scrutinee.
-How can you bind a variable to a pattern, so that the matched value has a name?<br><br>This even works if...	<em>name</em> <tt>@</tt> <em>pattern</em><br>e.g.,<br><tt>UnOp("abs", e @ UnOp("abs",_)) =></tt><br><br>This even works if it already has a name, or on wildcards.<br><pre>e @ a =>e @ _ =></pre>
+How can you bind a variable to a pattern, so that the matched value has a name?<br><br>This even works if...	<em>name</em> <tt>@</tt> <em>pattern</em><br>e.g.,<br><tt>UnOp("abs", e @ UnOp("abs",_)) =></tt><br><br>This even works if it already has a name, or on wildcards.<br><pre>e @ a =><br>e @ _ =><br></pre>
 List the available patterns.	Constant<br>Variable<br>Wildcard<br>Constructor<br>Sequence<br>Tuple<br>Typed patterns
 What values can be used in constant patterns?	Any literal, val, or singleton can be used.
 Describe pattern guards.	They come after a pattern and start with if.<br><br>An arbitrary boolean expression typically referring to variables in the pattern:<br><br><tt>case n: Int if O<n => ...</tt>
-Suppress warnings on non-exhaustive matches.	Add <tt>@unchecked</tt> to the selector expression.<br><br><pre>(e: @unchecked) match {  //non-exhaustive match}</pre>
+Suppress warnings on non-exhaustive matches.	Add <tt>@unchecked</tt> to the selector expression.<br><br><pre>(e: @unchecked) match {<br>  //non-exhaustive match<br>}<br></pre>
 Describe sequence patterns.	They match sequences like List or Array just like case classes.<br><br>They also allow <tt>_*</tt> as the last element of a pattern, which matches any number of elements, including 0.
-Write case sequence as partial functions.	<pre>val second: List[Int] => Int = {  case x::y::_ => y}</pre><br><br>Compiler will emit non-exhaustive (i.e. incomplete function) warning. If you want this, do:<br><br><pre>val second: PartialFunction[List[Int],Int] = {  case x::y::_ => y}</pre>
+Write case sequence as partial functions.	<pre>val second: List[Int] => Int = {<br>  case x::y::_ => y<br>}<br></pre><br><br>Compiler will emit non-exhaustive (i.e. incomplete function) warning. If you want this, do:<br><br><pre>val second: PartialFunction[List[Int],Int] = {<br>  case x::y::_ => y<br>}<br></pre>
 Give two ways to force constant interpretation of an identifier in a match expression.	- Prefix with an object qualifier like <tt>this.pi</tt> or <tt>obj.pi</tt>.<br>- Enclose the name with back ticks \<tt>pi\</tt>.
 What are the differences between Java switch and Scala match?	- Match is an expression (i.e. always results in a value).<br>- Match does not fall through.<br>- If no pattern matches, a <tt>MatchError</tt> is thrown.<br>- Match can be applied to Any scrutinee.
 Describe constructor patterns.	They use what appears to be a constructor. Each argument is itself a pattern, which allows nesting, variables, etc.
 Where can you use patterns outside of match expressions?	- Non-function variable definitions.<br>- Creating partial functions with case sequences.<br>- In generators of <tt>for</tt> expressions.<br>- In definitions in <tt>for</tt> expressions.
 How can you use patterns in generators?	As bound val. If there is no match, then dropped.<br><br><tt>for (Some(fruit) <- results) {...}</tt><br>where results is <tt>List[Option[String]]</tt>.
-How can you use patterns in non-function variable definitions?	Unpack tuples or case classes.<br><br><pre>val (a,b) = someTuple2val BinOp (op,left,right) = exp</pre>
-What do typed patterns replace?	<tt>isInstanceOf[T]</tt>, <tt>asInstanceOf[T]:T</tt><br><br>They replace type tests and type casts, and just give a type to a variable. You can ignore type parameters with an <tt>_</tt>.<br><br><pre>case s: String => //case m: Map[_,_] => //</pre>
+How can you use patterns in non-function variable definitions?	Unpack tuples or case classes.<br><br><pre>val (a,b) = someTuple2<br><br>val BinOp (op,left,right) = exp<br></pre>
+What do typed patterns replace?	<tt>isInstanceOf[T]</tt>, <tt>asInstanceOf[T]:T</tt><br><br>They replace type tests and type casts, and just give a type to a variable. You can ignore type parameters with an <tt>_</tt>.<br><br><pre>case s: String => //<br>case m: Map[_,_] => //<br></pre>
 How does the pattern matcher differentiate between variables and constants?	A simple name starting with a lower case letter is a variable, and all other references are constants.

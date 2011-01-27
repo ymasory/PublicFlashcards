@@ -1,10 +1,10 @@
-Achieve a multiline statement with operators <em>without</em> the semicolon inferer getting it wrong.	<pre>(x+ y)</pre><br><br>or<br><br><pre>x +y</pre>
+Achieve a multiline statement with operators <em>without</em> the semicolon inferer getting it wrong.	<pre>(x<br>+ y)<br></pre><br><br>or<br><br><pre>x +<br>y<br></pre>
 Explain the rules of semicolon inference.	The end of the line is treaded as a semicolon unless<br>- the line ends with a token that isn't a legal end of a statement, like a period or infix operator.<br>- the next line starts with a token that can't start a statement.<br>- the line ends while in <tt>(...)</tt> or <tt>[...]</tt>.
 Where do Java static methods go in Scala?	In singletons.
 What are three reasons why the <tt>Application</tt> trait is bad?	- It allows no access to command line arguments.<br>- Treading limitations make it bad for multithreaded programs.<br>- HotSpot doesn't optimize an object executed by the <tt>Application</tt> trait.
 Describe the compile daemon.	Start and compile: <tt>fsc</tt><br>Stop: <tt>fsc -shutdown</tt>
 What do companion object and class have access to?	Each other's private members.
-What is automatically imported into every Scala program?	<pre>scala._scala.Predef._java.lang._</pre>
+What is automatically imported into every Scala program?	<pre>scala._<br>scala.Predef._<br>java.lang._<br></pre>
 What can a singleton not do?	It cannot define a new Scala type, but it can still be an instance of a superclass, trait, or companion class.
 What is a singleton object without a companion class called?	It's called a standalone object.
 When does a method have a side effect?	If it mutates a state outside a method or performs i/o.

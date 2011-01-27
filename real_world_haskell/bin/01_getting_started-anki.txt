@@ -1,21 +1,21 @@
 What are the components of the Glasgow Haskell Compiler system?	- <tt>ghc</tt>, an optimized compiler for generating native code.<br>- <tt>ghci</tt>, an interactive interpreter and debugger.<br>- <tt>runghc</tt>, a program for running Haskell programs as scripts without compilation.
 How can you view the available <tt>ghci</tt> commands?	<tt>:?</tt>
-What is <tt>ghci</tt>'s default prompt?<br><br>How can you change it?	<tt>ghci</tt> starts with <tt>Prelude></tt>, being the standard pre-loaded library, and grows longer with each new loaded module or file.<br><br>The prompt can be changed with:<br><br><pre>:set prompt NEWPROMPT</pre>
+What is <tt>ghci</tt>'s default prompt?<br><br>How can you change it?	<tt>ghci</tt> starts with <tt>Prelude></tt>, being the standard pre-loaded library, and grows longer with each new loaded module or file.<br><br>The prompt can be changed with:<br><br><pre>:set prompt NEWPROMPT<br></pre>
 How do you add/remove modules in <tt>ghci</tt>?	Add: <tt>:module + NewModule</tt><br>Remove: <tt>module - NewModule</tt><br><br>The abbreviation <tt>:m</tt> also works.
-How can arithmetic operators be used in prefix form?	Use parens to get desired association:<br><br><pre>ghci> (+) 3 58ghci> (^) 3 5243</pre>
+How can arithmetic operators be used in prefix form?	Use parens to get desired association:<br><br><pre>ghci> (+) 3 5<br>8<br>ghci> (^) 3 5<br>243<br></pre>
 What's Haskell's quirk with negative numbers?	You nearly always need to surround the negative number with parens to get the desired association.
 Describe Booleans in Haskell.	- The Boolean literals are <tt>True</tt> and <tt>False</tt>. Their type is <tt>Bool</tt>.<br>- Numbers and other types are not coerced into Boolean interpretations.
 Describe negation in Haskell.	- Haskell uses <tt>/=</tt> for "not equal", instead of <tt>!=</tt>.<br>- Haskell uses <tt>not</tt> for "not", instead of <tt>!</tt>.
 How can you get information about a command in <tt>ghci</tt>?	<tt>:info funcname</tt>
-How can you create a temporary variable in <tt>ghci</tt>?	Use <tt>let</tt>.<br><br><pre>let meaningOfLife = 42</pre>
+How can you create a temporary variable in <tt>ghci</tt>?	Use <tt>let</tt>.<br><br><pre>let meaningOfLife = 42<br></pre>
 How do you raise a power?	<tt>^</tt> for integer exponents.<br><br><tt>**</tt> for floating point exponents.
 Describe lists in Haskell.	They are homogeneous and use the common bracket notation. Final commas are not allowed.
-What is enumeration notation?	<pre>ghci> [1..5][1,2,3,4,5]ghci> ['a'..'j']"abcdefghij"</pre>
+What is enumeration notation?	<pre>ghci> [1..5]<br>[1,2,3,4,5]<br>ghci> ['a'..'j']<br>"abcdefghij"<br></pre>
 How do you print to <tt>stdout</tt>?	<tt>putStr</tt> and <tt>putStrLn</tt>.
-What is a string, really?	A list of characters. <tt>[Char]</tt> and <tt>String</tt> are synonyms.<br><br><pre>ghci> let lst = ['h', 'i']ghci> lst"hi"ghci> "" == []Trueghci></pre>
-How do you concatenate and build strings?	Using list operations.<br><br><pre>ghci> 'a':"bc""abc"ghci> "foo" ++ "bar""foobar"</pre>
+What is a string, really?	A list of characters. <tt>[Char]</tt> and <tt>String</tt> are synonyms.<br><br><pre>ghci> let lst = ['h', 'i']<br>ghci> lst<br>"hi"<br>ghci> "" == []<br>True<br>ghci><br></pre>
+How do you concatenate and build strings?	Using list operations.<br><br><pre>ghci> 'a':"bc"<br>"abc"<br>ghci> "foo" ++ "bar"<br>"foobar"<br></pre>
 How can you get <tt>ghci</tt> to print the types of the expressions it evaluates?<br><br>How do you tell it to stop?	<tt>:set +t</tt><br><br><tt>:unset +t</tt>
 What is <tt>it</tt>?	A special variable where <tt>ghci</tt> stores the last expression it returned.
-How can you construct rational numbers?	Use the <tt>%</tt> operator.<br><br><pre>ghci> 11 % 2911%29it :: Ratio Integer</pre>
-How can you find the type of an expression?	<pre>:type expr:t expr</pre>
+How can you construct rational numbers?	Use the <tt>%</tt> operator.<br><br><pre>ghci> 11 % 29<br>11%29<br>it :: Ratio Integer<br></pre>
+How can you find the type of an expression?	<pre>:type expr<br>:t expr<br></pre>
 What is Haskell's comment syntax?	Lines beginning with <tt>--</tt> are comments.

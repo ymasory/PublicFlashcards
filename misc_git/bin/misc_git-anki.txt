@@ -1,9 +1,9 @@
-Create a new branch on remote repo and track locally.	<pre>git push origin origin:refs/heads/iss20git checkout --track -b iss20 origin/iss20</pre>
-Delete a remote branch.	<pre>git push origin :heads/branch_name</pre>
-Delete a remote tag.	<pre>git push origin :tag_name</pre>
-Revert last commit or two.	<pre>git revert HEAD  #last onlygit revert HEAD^ #last two</pre><br>Now commit.
-Revert a single working file to last in repo.	<pre>git checkout filename</pre>
-Create a new branch with modified files in working copy.	<pre>git checkout -b newbranchname</pre>
-Unstage files.	<pre>git reset HEAD path</pre>
-Revert the entire branch to a previous commit.	<pre>git co <hash> .</pre>
+Create a new branch on remote repo and track locally.	<pre>git push origin origin:refs/heads/iss20<br>git checkout --track -b iss20 origin/iss20<br></pre>
+Delete a remote branch.	<pre>git push origin :heads/branch_name<br></pre>
+Delete a remote tag.	<pre>git push origin :tag_name<br></pre>
+Revert last commit or two.	<pre>git revert HEAD  #last only<br>git revert HEAD^ #last two<br></pre><br>Now commit.
+Revert a single working file to last in repo.	<pre>git checkout filename<br></pre>
+Create a new branch with modified files in working copy.	<pre>git checkout -b newbranchname<br></pre>
+Unstage files.	<pre>git reset HEAD path<br></pre>
+Revert the entire branch to a previous commit.	<pre>git co <hash> .<br></pre>
 What does <tt>--</tt> do?	Forces a commit interpretation over a file path.

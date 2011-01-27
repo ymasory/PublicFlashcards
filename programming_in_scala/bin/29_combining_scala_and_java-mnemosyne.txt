@@ -1,7 +1,7 @@
-Give prettier syntax for existential types.	Use placeholders.<br><br>_ in place of a type makes an existential type just as in place of expression makes a function literal. Each _ is a new existential type.<br><pre>Iterator[_ <: Component]Iterator[T] for Some {type T <: Component}</pre>
+Give prettier syntax for existential types.	Use placeholders.<br><br>_ in place of a type makes an existential type just as in place of expression makes a function literal. Each _ is a new existential type.<br><pre>Iterator[_ <: Component]<br>Iterator[T] for Some {type T <: Component}<br></pre>
 Make new Java annotations for Java interop.	It must be done using Java notation and compiled with <tt>javac</tt>.
 How does Scala deal with Java's wildcard types?	By using existential types, a fully supported part of the language in practice used only for Java compatibility.
-Translate to Scala:<br><br><tt>Iterator <?></tt><br><br><tt>Iterator<? extends Component></tt>	<pre>Iterator[T] for Some {type T}Iterator[T] for Some {type T <: Component}</pre>
+Translate to Scala:<br><br><tt>Iterator <?></tt><br><br><tt>Iterator<? extends Component></tt>	<pre>Iterator[T] for Some {type T}<br><br>Iterator[T] for Some {type T <: Component}<br></pre>
 Why can existential types be ignored most of the time?	Scala can check program soundness even though types and values in forSome clause are unknown.<br>e.g., <tt>val contents = (new JavaClass).contents</tt> is fine even if <tt>JavaClass.contents</tt> is <tt>Collection<?></tt>.
 What are singleton objects implemented as?	A combination of static and instance methods.<br><br>They use a class called <tt>ObjectName$</tt> with one instance stored as <tt>MODULE$</tt> field.<br><br>If it's standalone, it will create <tt>ObjectName</tt> class with static forwarder methods for each singleton method.
 What does Scala do with Java annotations?	It forwards them on to Java bytecode.

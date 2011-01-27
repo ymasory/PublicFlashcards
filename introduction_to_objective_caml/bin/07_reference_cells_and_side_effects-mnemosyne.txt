@@ -1,7 +1,7 @@
-What are the three primary functions for working with ref cells?<br><br>Give their type signatures.	<tt>ref</tt> for creating a ref cell. <tt>:=</tt> for re-assigning. <tt>!</tt> for extracting the value.<br><br><pre>val ref  : 'a -> 'a refval (:=) : 'a ref -> 'a -> unitval (!)  : 'a ref -> 'a</pre>
+What are the three primary functions for working with ref cells?<br><br>Give their type signatures.	<tt>ref</tt> for creating a ref cell. <tt>:=</tt> for re-assigning. <tt>!</tt> for extracting the value.<br><br><pre>val ref  : 'a -> 'a ref<br>val (:=) : 'a ref -> 'a -> unit<br>val (!)  : 'a ref -> 'a<br></pre>
 How can sequentially evaluated expressions be composed into one expression?	Using a semicolon after every expression.
-Give the syntax of <tt>for</tt>.	<pre>for ident := expr1 to expr2 do  expr3done</pre><br><br><pre>for ident := expr1 downto expr2 do  expr3done</pre>
-Give the <tt>while</tt> syntax.	<pre>while expr1 do  expr2done</pre>
+Give the syntax of <tt>for</tt>.	<pre>for ident := expr1 to expr2 do<br>  expr3<br>done<br></pre><br><br><pre>for ident := expr1 downto expr2 do<br>  expr3<br>done<br></pre>
+Give the <tt>while</tt> syntax.	<pre>while expr1 do<br>  expr2<br>done<br></pre>
 What are the "deeper" problems with functional purity?	- It can be difficult to construct cyclic data structures.<br>The structure can be created using only values that already exist, so it itself can't be one of them.<br><br>- There may be no purely functional algorithm with equivalent performance to the best imperative algorithms for solving some problems.
 Function application and ref cells are not ...	... values, i.e., immutable values.
-Create a type alias.	<pre>type newName = existing type</pre>
+Create a type alias.	<pre>type newName = existing type<br></pre>

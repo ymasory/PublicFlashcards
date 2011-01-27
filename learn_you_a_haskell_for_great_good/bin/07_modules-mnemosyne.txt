@@ -1,8 +1,8 @@
 What is a Haskell module?<br><br>What is a Haskell program?	A module is a collection of related functions, types, and typeclasses.<br><br>A program is a collection of modules where the main module loads up the other modules and then uses their functions.
 Which module is imported by default?	<tt>Prelude</tt>
-Give two shortcuts for importing modules in <tt>ghci</tt>.	<pre>:m + Module1 Module2 ... ModuleN</pre><br><br>Or, load a script that does imports of its own. They too will be available.
-Selectively import functions from a module.<br><br>Exclude functions from a module import.	<pre>import Module (func1, func2, ...)</pre><br><br><pre>import Module hiding (func1, func2, ...)</pre>
-Mitigate name-collisions between needed functions from different modules.<br><br>How can this be made more convenient?	You can import one on a qualified basis so only the fully qualified name of one (or both) of the functions is available.<br><pre>import qualified Module</pre><br><br>To make this more convenient the module can be renamed to something shorter.<br><pre>import qualified Module as M</pre>
+Give two shortcuts for importing modules in <tt>ghci</tt>.	<pre>:m + Module1 Module2 ... ModuleN<br></pre><br><br>Or, load a script that does imports of its own. They too will be available.
+Selectively import functions from a module.<br><br>Exclude functions from a module import.	<pre>import Module (func1, func2, ...)<br></pre><br><br><pre>import Module hiding (func1, func2, ...)<br></pre>
+Mitigate name-collisions between needed functions from different modules.<br><br>How can this be made more convenient?	You can import one on a qualified basis so only the fully qualified name of one (or both) of the functions is available.<br><pre>import qualified Module<br></pre><br><br>To make this more convenient the module can be renamed to something shorter.<br><pre>import qualified Module as M<br></pre>
 What is Hoogle?	<tt>http://haskell.org/hoogle</tt><br>A Haskell-specific search engine that lets you search by name, module name, or even type signature.
 Describe <tt>foldl'</tt> and <tt>foldl1'</tt>.	They are strict versions of their lazy counterparts. They avoid stack overflow errors that result from folding on large lists.
 What is a thunk?	A value that is yet to be evaluated.
@@ -20,4 +20,4 @@ How are the sets of <tt>Data.Set</tt> represented?<br><br>Create one.	As trees, 
 Create a set/map from a single value.	Use <tt>singleton</tt>.
 Check a set's size.<br><br>Test a set for membership.<br><br>Add/remove from a set.	<tt>size</tt>, <tt>null</tt>, <tt>empty</tt><br><br><tt>member</tt><br><br><tt>insert</tt>, <tt>delete</tt>
 Compare strategies for eliminating duplicates from a list.	<tt>nub</tt> is simplest, requires only <tt>Eq</tt>, but is potentially slow.<br><br>Converting to a set with <tt>fromList</tt> and then back with <tt>toList</tt> may be faster but requires <tt>Ord</tt>.
-Define your own module.	<pre>module MyModule( funcToExport1, funcToExport2...) where...</pre>
+Define your own module.	<pre>module MyModule<br>( funcToExport1<br>, funcToExport2<br>...<br>) where<br><br>...<br></pre>

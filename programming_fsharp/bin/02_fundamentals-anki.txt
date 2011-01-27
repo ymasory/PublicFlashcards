@@ -4,37 +4,37 @@ What are the conversion functions for primitive types?	They have the same names 
 Why are conversion functions more widely used in F#?	There is no type coercion.
 For arbitrary precision integers F# features what?	Language support. Literals ending with <tt>I</tt> are <tt>System.Numerics.BigIntegers</tt>.
 What are the bitwise operators?	`&&&`, `|||, `^^^`, `<<<`, `>>>`
-Index a string.	<pre>"abcd".[0]</pre>
+Index a string.	<pre>"abcd".[0]<br></pre>
 How are multi-line strings written?	- One can end each line with a backslash while still in a string. Leading whitespace will be removed from the next line.<br>- With verbatim strings, but leading whitespace will not be removed.
 What is the verbatim string syntax?	An <tt>@</tt> before the string begins.
 What shortcut is provided for converting a string literals to arrays of bytes?	The suffice <tt>B</tt> after the close quote of a string literal.
 How is negation written?	<tt>not</tt> for unary negation.
 How is equality written?<br><br>Inequality?	<tt>=</tt> and <tt><></tt>.
-What is the syntax of function definitions?	<pre>let funcname arg1 arg2 ... argN = body</pre>
+What is the syntax of function definitions?	<pre>let funcname arg1 arg2 ... argN = body<br></pre>
 The result of a function is ...	The value of the last expression in a given path. There is no <tt>return</tt> keyword.
-How are function types written?	As in Haskell:<br><pre>type1 -> type2 -> ... -> typeN</pre>
+How are function types written?	As in Haskell:<br><pre>type1 -> type2 -> ... -> typeN<br></pre>
 Unlike in Haskell, functions using operators like <tt>+</tt> will default to ...	... <tt>int</tt> parameters instead of type parameters.
 How are type annotations written?	As usual, <tt>name : type</tt>.
 How are type parameters written?	With a leading <tt>'</tt>, e.g., <tt>'a</tt>, <tt>'b</tt>.
 Unlike in Scala, shadowing is allowed where?	In the same block. E.g., two consecutive lines can <tt>let</tt> the same identifier.
-What is the syntax of conditionals?	<pre>if   cond1 then res1elif cond2 then res2...else res</pre>
+What is the syntax of conditionals?	<pre>if   cond1 then res1<br>elif cond2 then res2<br>...<br>else res<br></pre>
 Unlike in Scala, each branch of a conditional must have what?	The same type. Upcasting will not be done.
-How are tuples written?<br><br>How are their types written?	Comma separated values surrounded by round parens.<br><br><pre>type1 * type2 * ... * typeN</pre>
-Access the elements of a tuple.	- Use <tt>fst</tt> and <tt>snd</tt>.<br>- Unpack with <tt>let</tt><br><pre>let a, b, c = (1, 2, 3)</pre>
+How are tuples written?<br><br>How are their types written?	Comma separated values surrounded by round parens.<br><br><pre>type1 * type2 * ... * typeN<br></pre>
+Access the elements of a tuple.	- Use <tt>fst</tt> and <tt>snd</tt>.<br>- Unpack with <tt>let</tt><br><pre>let a, b, c = (1, 2, 3)<br></pre>
 What is the list literal syntax?	Semi-colon separated values surrounded by square brackets.
 What is the syntax of list comprehensions?	Basically arbitrary code within square brackets. Elements are selected using the <tt>yield</tt> keyword.
 How are list comprehensions evaluated?	Eagerly, in memory.
-Loop over a range.	<pre>for var = start-expr to end-expr do    //body</pre><br><br><tt>to</tt> is inclusive, as in Scala.
-Loop over a collection.	<pre>for pattern in expr do    //body</pre>
-What shortcut <tt>for</tt> syntax is provided for list comprehensions?	<pre>for pattern in expr -> expr</pre>
+Loop over a range.	<pre>for var = start-expr to end-expr do<br>    //body<br></pre><br><br><tt>to</tt> is inclusive, as in Scala.
+Loop over a collection.	<pre>for pattern in expr do<br>    //body<br></pre>
+What shortcut <tt>for</tt> syntax is provided for list comprehensions?	<pre>for pattern in expr -> expr<br></pre>
 In the F# API, what's the difference between <tt>fold</tt> and <tt>reduce</tt>?	<tt>reduce</tt> uses the first element of the list as the initial accumulator value, <tt>fold</tt> takes the initial accumulator value explicitly.
 Run a block of code on each element of a list.	<tt>List.iter</tt> is like Scala's <tt>foreach</tt>.
 What is used in place of <tt>null</tt>?	As in Scala, <tt>Option</tt> can have values <tt>Some('a)</tt> or <tt>None</tt>.
 Why is <tt>printfn</tt> more useful than using <tt>System.Console's</tt> print methods?	The arguments to the formatting string are type checked, contributing to type inference.
 What are the <tt>printfn</tt> format specifiers?	<tt>%d, %i</tt> - integer<br><tt>%s</tt> - string<br><tt>%f</tt> - floating-point number<br><tt>%c</tt> - character<br><tt>%b</tt> - boolean<br><tt>%O</tt> - object<br><tt>%A</tt> - anything
 If no module is specified, you are actually using what?<br><br>How can it be accessed?	you are using the <tt>anonymous module</tt> which can nonetheless be accessed using the filename with the first letter capitalized.<br>For example, <tt>MyFile.someValue</tt>.
-Create a module explicitly.	<pre>module MyModule//whatever</pre>
-Create a nested module.	Equal sign and indentation are mandatory:<br><br><pre>module Outermodule Inner =    //whatever</pre>
+Create a module explicitly.	<pre>module MyModule<br><br>//whatever<br></pre>
+Create a nested module.	Equal sign and indentation are mandatory:<br><br><pre>module Outer<br><br>module Inner =<br>    //whatever<br></pre>
 How are namespaces different from modules?	- they can contain declarations but not values.<br>- they cannot be nested
 What are the ideal use-cases for modules and namespaces?	Namespaces: large object-oriented programs<br>Modules: rapid prototyping
 How does an F# program execute?	Straight down the <em>last</em> code file.

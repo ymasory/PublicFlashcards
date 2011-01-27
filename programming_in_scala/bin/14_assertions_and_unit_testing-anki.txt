@@ -2,9 +2,9 @@ What do specs and ScalaTest support?	They support behavior-driven development, e
 Enable/disable <tt>assert()</tt> and <tt>ensuring()</tt>.	JVM's -ea and -da flags.
 List the two forms of <tt>assert()</tt>.	- <tt>assert(Boolean)</tt><br><br>- <tt>assert(Boolean, String)</tt> (explanation to be included in <tt>AssertionError</tt>.)
 Describe the test directory hierarchy.	It typically mirrors the source tree's directory hierarchy.
-How can you get more informative failure reporting than <tt>assert()</tt>?	ScalaTest's<br><pre>assert(this === that)expect(this) {  that}</pre>
-Verify exception thrown, using ScalaTest.	<pre>intercept[IllegalArgumentException] {  //something that throws it}</pre>
-Give a more Scala-esque way to use ScalaTest.	extend <tt>org.scalatest.FunSuite</tt><br><br><pre>  test("my cool test") {    //use assert() or exceptions  }</pre>
-Compare specs and <tt>org.scalatest.Spec</tt>.	Specs provides matches to be used in ScalaTest or JUnit.<br><br>ScalaTest's Spec uses<br><pre>describe("some object") {  it("should do A") {    //test for A  }}</pre>
+How can you get more informative failure reporting than <tt>assert()</tt>?	ScalaTest's<br><pre>assert(this === that)<br><br>expect(this) {<br>  that<br>}<br></pre>
+Verify exception thrown, using ScalaTest.	<pre>intercept[IllegalArgumentException] {<br>  //something that throws it<br>}<br></pre>
+Give a more Scala-esque way to use ScalaTest.	extend <tt>org.scalatest.FunSuite</tt><br><br><pre>  test("my cool test") {<br>    //use assert() or exceptions<br>  }<br></pre>
+Compare specs and <tt>org.scalatest.Spec</tt>.	Specs provides matches to be used in ScalaTest or JUnit.<br><br>ScalaTest's Spec uses<br><pre>describe("some object") {<br>  it("should do A") {<br>    //test for A<br>  }<br>}<br></pre>
 What does ScalaCheck support?	Property-based testing.<br><br>You give properties with implication operator ==>, and it checks the properties on the values it generates for you.
 Concisely check the conditions of method's result.	Use <tt>ensuring(op: Any => Boolean)</tt><br><br>Raises <tt>AssertionError</tt> if predicate fails, and returns the argument correctly cast to result type of function otherwise.<br><br><tt>ensuring(_.dollars >= 0)</tt><br>Result of function will be inserted and returned if the predicate holds.
