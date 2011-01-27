@@ -21,6 +21,15 @@ The ``strong normalization`` property is too strong. Any system that can describ
 * In Coq types are ... hence they have ...
 ... terms ... a type.
 
+* What's the type of a proposition?
+* How might one make a predicate?
+`Prop`
+
+Using an arrow type ending in `Prop`, with the earlier types being the types of the variables in the proposition.
+
+* What is the relationship between propositions and programs in Coq?
+Propositions can refer to programs (e.g., the `Prop` type), and programs can refer to propositions (``dependent types``).
+
 * What is the comments syntax?
 As in OCaml:
 `
