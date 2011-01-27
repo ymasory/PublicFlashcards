@@ -10,3 +10,23 @@ The definition and application of functions.
 The addition of features definable in the lambda calculus itself.
 Some are easily defined. E.g., syntax for numbers and collections.
 Others are more challenging. E.g., mutable reference cells.
+
+* What are the three kinds of terms in lambda calculus?
+Variables, abstractions, and applications.
+
+* What's the difference between an ``internal`` and ``external`` language?
+An external language contains derived forms and can be translated to an internal language which uses only core features.
+
+* Which way does function application associate?
+To the left.
+
+The following two are equivalent:
+`
+f g u
+(f g) u
+`
+
+* The body of a lambda abstraction extends to where?
+As far to the right as possible.
+
+
