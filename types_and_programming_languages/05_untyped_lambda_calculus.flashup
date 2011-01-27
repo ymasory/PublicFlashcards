@@ -12,7 +12,9 @@ Some are easily defined. E.g., syntax for numbers and collections.
 Others are more challenging. E.g., mutable reference cells.
 
 * What are the three kinds of terms in lambda calculus?
-Variables, abstractions, and applications.
+Variable:  ````v````
+Abstraction:  ````$\lambda$ x.t````
+Applications:  ````t t````
 
 * What's the difference between an ``internal`` and ``external`` language?
 An external language contains derived forms and can be translated to an internal language which uses only core features.
@@ -29,4 +31,8 @@ f g u
 * The body of a lambda abstraction extends to where?
 As far to the right as possible.
 
+* What's the difference between a ``bound`` and ``free`` variable.
+* What's a ``closed term``?
+A variable is free if it is not bound by an enclosing abstraction.
 
+Closed terms (aka ``combinators``) have no free variables.
