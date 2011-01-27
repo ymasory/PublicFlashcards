@@ -3,7 +3,7 @@ What is a <em>term</em>?<br><br>What are its subdivisions?	It's a well-formed ex
 Coq commands all end with what?	A period.
 In Coq interpretation scopes are explicitly ...	... opened and closed, with the most recently opened scopes taking precedence.
 Open a scope.<br><br>Close a scope.	<pre>Open Scope scope.<br><br>Close Scope scope.</pre>
-Determine which interpretations are available for a notation.	<pre>Locate "something or other".</pre><br><br>Use underscores for identifiers in the string.<br>The bottom interpretation takes precedence.
+Determine which interpretations are available for a notation.	<pre>Locate "something or other".</pre><br>Use underscores for identifiers in the string.<br>The bottom interpretation takes precedence.
 What is a delimiting key?<br><br>Give its syntax.	A name associated with a scope used to explicitly provide the interpretation scope for a term.<br><br><pre>(term)%key</pre>
 Get everything Coq knows about an interpretation scope.	<pre>Print Scope scope</pre>
 What is the <tt>Check</tt> command used for?<br><br>Give its syntax.	Determining if a term is well-formed and what its type is.<br><br><pre>Check term.</pre>
@@ -15,4 +15,4 @@ In the context of Coq, "scope" can mean ...	... either interpretation scope (a c
 Give the syntax of a declaration.<br><br>Give the syntax of a definition.	<pre>(ident : SomeType)<br><br>(ident := term : someType)</pre>
 Contrast <em>global</em> and <em>local</em> scopes.	Global scopes are active for the remainder of development.<br>Local scopes are active only in the current <em>section</em>.
 Contrast <em>environment</em> and <em>context</em>.	The environment contains global bindings while the context contains the local ones.
-How can you return to the initial bindings?<br><br>This is a special case of what?	<pre>Reset Initial</pre><br>It brings you to an empty context and the initial environment.<br><br><pre>Reset identifier</pre><br>Brings you back to the state just after the given identifier was introduced.
+How can you return to the initial bindings?<br><br>This is a special case of what?	<pre>Reset Initial</pre>It brings you to an empty context and the initial environment.<br><br><pre>Reset identifier</pre>Brings you back to the state just after the given identifier was introduced.

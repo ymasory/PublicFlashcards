@@ -1,8 +1,8 @@
 What is a Haskell module?<br><br>What is a Haskell program?	A module is a collection of related functions, types, and typeclasses.<br><br>A program is a collection of modules where the main module loads up the other modules and then uses their functions.
 Which module is imported by default?	<tt>Prelude</tt>
-Give two shortcuts for importing modules in <tt>ghci</tt>.	<pre>:m + Module1 Module2 ... ModuleN</pre><br><br>Or, load a script that does imports of its own. They too will be available.
-Selectively import functions from a module.<br><br>Exclude functions from a module import.	<pre>import Module (func1, func2, ...)</pre><br><br><pre>import Module hiding (func1, func2, ...)</pre>
-Mitigate name-collisions between needed functions from different modules.<br><br>How can this be made more convenient?	You can import one on a qualified basis so only the fully qualified name of one (or both) of the functions is available.<br><pre>import qualified Module</pre><br><br>To make this more convenient the module can be renamed to something shorter.<br><pre>import qualified Module as M</pre>
+Give two shortcuts for importing modules in <tt>ghci</tt>.	<pre>:m + Module1 Module2 ... ModuleN</pre><br>Or, load a script that does imports of its own. They too will be available.
+Selectively import functions from a module.<br><br>Exclude functions from a module import.	<pre>import Module (func1, func2, ...)</pre><br><pre>import Module hiding (func1, func2, ...)</pre>
+Mitigate name-collisions between needed functions from different modules.<br><br>How can this be made more convenient?	You can import one on a qualified basis so only the fully qualified name of one (or both) of the functions is available.<br><pre>import qualified Module</pre><br>To make this more convenient the module can be renamed to something shorter.<br><pre>import qualified Module as M</pre>
 What is Hoogle?	<tt>http://haskell.org/hoogle</tt><br>A Haskell-specific search engine that lets you search by name, module name, or even type signature.
 Describe <tt>foldl'</tt> and <tt>foldl1'</tt>.	They are strict versions of their lazy counterparts. They avoid stack overflow errors that result from folding on large lists.
 What is a thunk?	A value that is yet to be evaluated.

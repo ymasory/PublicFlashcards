@@ -24,7 +24,7 @@ Access the elements of a tuple.	- Use <tt>fst</tt> and <tt>snd</tt>.<br>- Unpack
 What is the list literal syntax?	Semi-colon separated values surrounded by square brackets.
 What is the syntax of list comprehensions?	Basically arbitrary code within square brackets. Elements are selected using the <tt>yield</tt> keyword.
 How are list comprehensions evaluated?	Eagerly, in memory.
-Loop over a range.	<pre>for var = start-expr to end-expr do<br>    //body</pre><br><br><tt>to</tt> is inclusive, as in Scala.
+Loop over a range.	<pre>for var = start-expr to end-expr do<br>    //body</pre><br><tt>to</tt> is inclusive, as in Scala.
 Loop over a collection.	<pre>for pattern in expr do<br>    //body</pre>
 What shortcut <tt>for</tt> syntax is provided for list comprehensions?	<pre>for pattern in expr -> expr</pre>
 In the F# API, what's the difference between <tt>fold</tt> and <tt>reduce</tt>?	<tt>reduce</tt> uses the first element of the list as the initial accumulator value, <tt>fold</tt> takes the initial accumulator value explicitly.

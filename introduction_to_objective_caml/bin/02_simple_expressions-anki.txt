@@ -5,7 +5,7 @@ Convert a <tt>char</tt> to an <tt>int</tt>.<br><br>And back.	<tt>Char.code</tt><
 Concatenate two strings.	<pre>str1 ^ str2</pre>
 Unlike in most high-level languages, OCaml strings are ...<br><br>Demonstrate this.	... mutable.<br><br><pre># let seuss = "cat";;<br>val seuss : string = "cat"<br># seuss.[0] <- 'h';;<br>- : unit = ()<br># seuss;;<br>- : string = "hat"</pre>
 Describe the Boolean type.<br><br>How is it negated?	Type <tt>bool</tt> has values <tt>true</tt> and <tt>false</tt>.<br><br>Negation is performed with unary <tt>not</tt>.
-Give the equality operators.<br><br>Give the identity operators.	Equality:<br><pre>x = y<br>x <> y</pre><br><br>Identity:<br><pre>x == y<br>x != y</pre>
+Give the equality operators.<br><br>Give the identity operators.	Equality:<br><pre>x = y<br>x <> y</pre><br>Identity:<br><pre>x == y<br>x != y</pre>
 Describe the boolean operators.	<tt>&&</tt>, <tt>||</tt>
 Give the conditional syntax.	<pre>if cond then expr1 else expr2</pre>
 What common value does OCaml lack?	<tt>null</tt>

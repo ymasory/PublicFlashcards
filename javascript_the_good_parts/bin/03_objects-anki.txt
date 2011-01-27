@@ -1,5 +1,5 @@
 What is a JavaScript object?<br><br>What isn't it?	A map from strings to any value except <tt>undefined</tt>.<br><br>It's not derived from a class.
-Give the object literal syntax.	<pre>{<br>  key1 : val1,<br>  ...<br>}</pre><br><br>Keys are automatically strings so they don't require quotes unless they are reserved words.
+Give the object literal syntax.	<pre>{<br>  key1 : val1,<br>  ...<br>}</pre><br>Keys are automatically strings so they don't require quotes unless they are reserved words.
 How are the values in objects accessed?	<pre>obj["quoted-key"]<br>obj.key</pre>
 What are the consequences of bad object keys?	Accessing a non-existent key results in <tt>undefined</tt>.<br><br>Accessing a key of <tt>undefined</tt> results in a <tt>TypeError</tt>.
 How do you update/augment objects?	Through assignment on the keys.

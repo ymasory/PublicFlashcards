@@ -9,7 +9,7 @@ What happens if you don't put parens around a lambda?	The function body will ext
 How is pattern matching params different in lambdas?	Only one pattern is allowed.
 What are <tt>scanl</tt>/<tt>scanr</tt>?	They are like <tt>foldl</tt>/<tt>foldr</tt>, but they report all intermediate accumulator states as a list.<br><tt>scanl</tt> places the final result last, <tt>scanr</tt> puts it first.
 What are <tt>foldl1</tt>/<tt>scanl1</tt>/etc?	They do not require explicit starting values. They assume the first (or last, depending on direction) value as the starting value.
-Define <tt>$</tt>.<br><br>What's its point?	<pre>($) :: (a -> b) -> a -> b<br>f $ x = f x</pre><br><br>It's function application with the lowest (as opposed to the highest) precedence. It is typically used to introduce right association to minimize the number of needed parens.
+Define <tt>$</tt>.<br><br>What's its point?	<pre>($) :: (a -> b) -> a -> b<br>f $ x = f x</pre><br>It's function application with the lowest (as opposed to the highest) precedence. It is typically used to introduce right association to minimize the number of needed parens.
 Define <tt>.</tt>.	<pre>(.) :: (b -> c) -> (a -> b) -> a -> c<br>f . g = \x -> f (g x)</pre>
 In general, the direction of association ...	... cannot be determined from the name of a function alone.
 How can composition be used with functions of several parameters?	The functions must be partially applied until each function just takes one function.

@@ -5,4 +5,4 @@ When can you leave off curly braces around a method?	They can be left off if the
 When can you leave curlies off of <tt>if</tt>, <tt>else</tt>, and <tt>while</tt> statements?	They can be left off if the body is one statement.
 When can you leave the parameter list off of a function literal?<br><br>What is it shorthand for?	- If a function is expected and the function takes only one argument.<br>- A partially applied function.
 What does Scala call a return type in Java?	Return types are called result types.
-How would you print each member of an array?	<pre>args.foreach(arg => println(arg))<br><br>args.foreach(println)</pre><br>Since it's one statement with one arg the shorthand is possible.
+How would you print each member of an array?	<pre>args.foreach(arg => println(arg))<br><br>args.foreach(println)</pre>Since it's one statement with one arg the shorthand is possible.

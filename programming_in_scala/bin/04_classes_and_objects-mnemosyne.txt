@@ -1,4 +1,4 @@
-Achieve a multiline statement with operators <em>without</em> the semicolon inferer getting it wrong.	<pre>(x<br>+ y)</pre><br><br>or<br><br><pre>x +<br>y</pre>
+Achieve a multiline statement with operators <em>without</em> the semicolon inferer getting it wrong.	<pre>(x<br>+ y)</pre><br>or<br><br><pre>x +<br>y</pre>
 Explain the rules of semicolon inference.	The end of the line is treaded as a semicolon unless<br>- the line ends with a token that isn't a legal end of a statement, like a period or infix operator.<br>- the next line starts with a token that can't start a statement.<br>- the line ends while in <tt>(...)</tt> or <tt>[...]</tt>.
 Where do Java static methods go in Scala?	In singletons.
 What are three reasons why the <tt>Application</tt> trait is bad?	- It allows no access to command line arguments.<br>- Treading limitations make it bad for multithreaded programs.<br>- HotSpot doesn't optimize an object executed by the <tt>Application</tt> trait.
