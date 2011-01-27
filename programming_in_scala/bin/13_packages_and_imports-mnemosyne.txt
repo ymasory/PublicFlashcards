@@ -1,0 +1,14 @@
+Achieve Java's package-private.	<tt>private[X]</tt> where X is the directly enclosing package.
+What happens if <tt>java.lang</tt> and scala have a name colliding member?	The Scala member hides the Java one.
+What's the problem with the protected members of singletons?	They make no sense because singletons have no subclasses.
+Describe object-private.	<tt>private[this]</tt><br><br>It's only accessible by this instance of a class, not others.
+What are the major differences between Scala and Java packages?	- Scala's are hierarchical like Java's, but they also properly nest.<br>- Java's package statement in Scala is just syntactic sugar for<br><pre>(package X {  //compilation unit},true)</pre>
+What's the difference between Scala and Java private?	Scala is more consistent, denying visibility to containing instances of nested classes.
+What's the difference between Scala and Java protected modifier?	Scala gives only subclass access, not package members too.
+Describe coupling.	It is the reliance of various parts of the program on one another.
+Describe explicit Scala private.	<tt>private[X]</tt> where X is the containing class.
+Achieve Java private.	<tt>private[X]</tt> where X is the outermost class.
+Import selectors syntax.	In curly braces, allows<br>- Simple name.<br>- Renaming clause <tt>x => y</tt>.<br>- Hiding clause <tt>x => _</tt>.<br>- catch-all _, all members not in previous clauses, must be last.<br><br>You can leave off the curlies if only importing 4 or one of 1.
+How do you make a Scala import of non-singleton object members?<br><br>When is it useful?	<tt>import fruit._</tt>, where fruit is the param to a method.<br><br>It's useful when you use objects as modules.
+Name three ways to specify package name.	- From the normal root of the hierarchy.<br>- From __root__ package to force absolute lookup when inner scope masks.<br>- Relative to current package.
+Give the import selectors syntax.	In curly braces. allows:<br>1) Simple name.<br>2) Renaming clause <tt>x => y</tt><br>3) Hiding clause <tt>x => _</tt><br>4) Catch-all <tt>_</tt>, all members not in previous clauses, must be last.<br><br>You can leave off curlies if you're only importing #4 or one of #1.

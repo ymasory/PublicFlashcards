@@ -1,0 +1,19 @@
+What are the two kinds of modes?	Major mode, of which Emacs can only be in one at a time, and minor modes Emacs can use simultaneously. Some modes can be major or minor.
+What is the cursor called in the Emacs world?	The point.
+What's the gray bar below the buffer display called?<br><br>What's in it?	It's called the mode line.<br><br>It contains:<br>1) The encoding.<br>2) <tt>**</tt> if the buffer is modified.<br>3) The name of the buffer.<br>4) A description of what part of the buffer is displayed (<tt>All</tt>/<tt>Top</tt>/<tt>Bot</tt>/some percent).<br>5) The line number.<br>6) The current minor and major modes.
+What is the white bar below the mode line?	It's called the minibuffer. It's where the user gives input to Emacs, or Emacs gives notifications to the user.
+What should you do if you've made a mistake in the minibuffer?	Keep hitting C-g until it says <tt>Quit</tt>.
+The most common commands are bound to what?	C-...<br>M-...<br>C-x ...
+Commands provided by a mode are usually bound to what?<br><br>How can you give the full name of a command?	C-c ...<br><br>M-x <em>full-name</em>
+Open a file.	C-x C-f (<tt>find-file</tt>)
+What should you do if you enter a typo in a <tt>find-file</tt> path?	C-x C-v (<tt>find-alternate-file</tt>) pulls up the current path for you to correct.
+How can you enter the completions window, so you can select a path?	PgUp
+Insert another file into the current position.	C-x i (<tt>insert-file</tt>)
+What is the default directory in Emacs?	The directory of the file the current buffer is associated with.
+How can you write the current buffer to <em>another</em> file?<br><br>When is this handy?	C-x C-w (<tt>write-file</tt>)<br><br>When you want to edit a file you don't have write access to.
+How can you find the full name and documentation of a keystroke?<br><br>How can you find the documentation of a command name?	<tt>describe-key</tt><br><br><tt>describe-function</tt>
+Which buffer contains the documentation you view?	<tt>*Help*</tt>
+How can you go from a window split into two buffers back to a single buffer?	C-x 1 for the buffer the point is in.<br>C-x 0 for the other buffer.
+Save the current buffer to a file.	C-x C-s (<tt>save-buffer</tt>)
+Exit Emacs.	C-x C-c (<tt>save-buffers-kill-emacs</tt>)
+Find which version of Emacs you're using.	<tt>version</tt>

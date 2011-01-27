@@ -1,0 +1,19 @@
+Achieve a multiline statement with operators <em>without</em> the semicolon inferer getting it wrong.	<pre>((x+ y),true)</pre><br><br>or<br><br><pre>(x +y,true)</pre>
+Explain the rules of semicolon inference.	The end of the line is treaded as a semicolon unless<br>- the line ends with a token that isn't a legal end of a statement, like a period or infix operator.<br>- the next line starts with a token that can't start a statement.<br>- the line ends while in <tt>(...)</tt> or <tt>[...]</tt>.
+Where do Java static methods go in Scala?	In singletons.
+What are three reasons why the <tt>Application</tt> trait is bad?	- It allows no access to command line arguments.<br>- Treading limitations make it bad for multithreaded programs.<br>- HotSpot doesn't optimize an object executed by the <tt>Application</tt> trait.
+Describe the compile daemon.	Start and compile: <tt>fsc</tt><br>Stop: <tt>fsc -shutdown</tt>
+What do companion object and class have access to?	Each other's private members.
+What is automatically imported into every Scala program?	<pre>(scala._scala.Predef._java.lang._,true)</pre>
+What can a singleton not do?	It cannot define a new Scala type, but it can still be an instance of a superclass, trait, or companion class.
+What is a singleton object without a companion class called?	It's called a standalone object.
+When does a method have a side effect?	If it mutates a state outside a method or performs i/o.
+What is a companion object?	It's a singleton object with the same name as the class it shares a source file with.
+When is a file a script?	When it ends in a result expression.
+What kind of variable are parameters?	They are <tt>val</tt>s.
+Singleton objects have the initialization semantics of what in Java?	Statics.
+What in Scala is similar to Java's void return type?	<tt>Unit</tt>
+What is the default visibility level in Scala?	Public. Achieved by leaving off the visibility modifier.
+What is the program entry point?	A singleton object with <tt>main</tt> method that takes <tt>Array[String]</tt>.<br><br>The result type is irrelevant.
+Describe a good caching data structure.	<tt>scala.collection.jcl.WeakHashMap</tt>
+What happens if you leave off <tt>=</tt> before the function body?	The result type automatically becomes <tt>Unit</tt>.

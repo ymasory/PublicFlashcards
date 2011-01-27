@@ -1,0 +1,10 @@
+Define serialization.	Converting an object into a series of bytes. This is handy for writing to disk or transmitting over a network.
+Give the annotation indicating serializability.	<tt>@ serializable</tt> to classes.<br><br><tt>@ SerialVersion UID(1234)</tt>.<br><br>This uses Serializable interface and SerualVersion UID member for JVM.
+Are annotation automatic getters and setters generally needed? Why?<br><br>When are they available?	They're generally not needed because Scala blends syntax for field access and method invocation.<br><br>But some frameworks require it, so add to field:<br><tt>@scala.reflect.BeanProperty</tt><br><br>They are only available after compilation.
+Give the annotation to indicate that a class or method should <strong>not</strong> be used.	<tt>@ deprecated</tt><br><br>This passes on <tt>@Deprecated</tt> to the JVM.
+What can annotation arguments be sometimes?	Arbitrary expressions, so long as they type check.
+How do you add an annotation to an expression?	Place a colon after, then annotation.<br><pre>((e:@unchecked) match {  //non-exhaustive match},true)</pre>
+Give the annotation to indicate concurrently accessed mutable state.<br><br>What are the guarantees?	<tt>@ volatile</tt><br><br>The guarantees are platform specific, but in Java the same as the volatile keyword.
+Give the annotation syntax.	 <tt>@ annot(exp1, exp2, ...) {val name = const, ..., val namen = constn}</tt><br><br>The order of named values is irrelevant.
+Give the annotation to indicate a non-serializable field.<br><br>What does it do?	<tt>@ transient</tt><br><br>This forces non-serialization - when unserialized will get the default value for the type.<br><br>The transient keyword is used for JVM.
+Where are annotations allowed?	- On any declaration or definition, including vals, vars, defs, classes, singletons, traits, type aliases.<br>- On expressions.<br>- On types.

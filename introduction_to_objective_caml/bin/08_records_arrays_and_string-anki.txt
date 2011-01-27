@@ -1,0 +1,10 @@
+What is a record?	An aggregate data type that consists of labels mapped to arbitrary values.
+Give the syntax of records definition.	<pre>(type name =    { name1 : type1;      ...      nameN : typeN    },true)</pre>
+Instantiate a record.	<pre>(let name =   { name1 = val1;     ...     nameN = valN   },true)</pre>
+How can the members of a record be accessed?	- With projection: <tt>record.label</tt><br>- With pattern matching<br><pre>(let { name1 = var1; name2 = var2 } = expr,true)</pre><br>Not all fields must be matched.
+Functionally "update" a record.	<pre>(let name = { someRecord with field1 = val1; ... },true)</pre><br><br>The fields must be taken from <tt>someRecord</tt>.
+How can mutable records be created?<br><br>And updated?	In the declaration prefix one or more of the field names with the <tt>mutable</tt> keyword.<br><br><pre>(record.mutableField <- newVal,true)</pre>
+Oddly, the namespace of field labels is ...	... shared between all toplevel records.<br><br>Values of records with fields of the same name overwrite values of fields in previous records.
+What is the syntax of arrays?	The same as lists, except for the pipe next to the brackets:<br><br><pre>([| val1 ; ... ; valN |],true)</pre>
+Access the elements of an array.<br><br>Update an array element.	- Use pattern matching.<br>- Access directly with <tt>arr.(index)</tt>.<br><br><pre>(arr.(index) <- newVal,true)</pre>
+How can arrays be created?	- Using the literal syntax.<br>- Using <tt>Array.create len initVal</tt>

@@ -1,0 +1,12 @@
+What is a mixed identifier?	It's an alphanumeric identifier followed by underscore followed by an operator identifier.
+Where can you invoke superclass constructors?	They can only be invoked by the primary constructor in the extends statement.
+What do class parameters correspond to in Java?	They correspond to the primary constructor, along with all code not in a method or field.
+Name four advantages of immutable objects.	- They are easier to reason about, since they don't change.<br>- They can be passed around freely without defensive copies.<br>- They are inherently thread safe.<br>- They are safe hash table keys.
+What are Scala constants used for?<br><br>What is their case convention?	They are used for a subset of <tt>val</tt>s. Constants would generally not change even between program executions.<br><br>Case convention is not caps, just CamelCase.
+What are operator identifiers?<br><br>How are they implemented?	They are one or more operator characters.<br><br>They are internally mangled by Scala as <tt>$char</tt> for each character.<br><br>e.g., <tt>+</tt>, <tt><?></tt>, <tt>:-></tt>
+Describe an alphanumeric identifier.	It starts with a letter or underscore, followed by further letters, digits, or underscores. <tt>$</tt> counts as a letter but should not be used to avoid colliding with the compiler.
+How is method overloading resolved?	By finding the method with the best static type match to arguments.<br><br>If there is no unique best-matching version, will return "ambiguous reference" error.
+What are magic numbers?	They are literal values with no explanation which, in the worst case, appear multiple times.
+Enforce preconditions.	<tt>Predef.require(Boolean)</tt><br><br>This throws <tt>IllegalArgumentException</tt>.
+What is a literal identifier?<br><br>What does it do?	It is enclosed by back ticks.<br><br>It forces identifier interpretation even over keyword or other restrictions.
+Name four kinds of identifiers.	- Alphanumeric identifier.<br>- Operator identifier.<br>- Mixed identifier.<br>- Literal identifier.

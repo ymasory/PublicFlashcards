@@ -1,0 +1,24 @@
+Whitespace is ...	... not significant.
+What is the comment syntax?<br><br>What's the catch?	As in Java, in-line <tt>//</tt> and multiline <tt>/* ... */</tt>.<br><br>Unfortunately, the multiline delimiters can appear in string literals, making commenting out arbitrary blocks of codes unreliable.
+What's strange about JavaScript's numerical types?	There are no integers, or floating point of any size other than 64-bits.<br>There are no characters either.
+Create an exponential literal.	<tt>xey</tt> is the same as <tt>x * pow(10, e)</tt>.
+Describe the string syntax.<br><br>How are they encoded?	As in Python, single or double quote delimiters can be used.<br><br>16-bit fixed Unicode is used.
+Access the length of a string.<br><br>Concatenate two strings.	'string'.length<br><br>Use <tt>+</tt>.
+What does the <tt><script></tt> tag do?<br><br>How do they relate to one another?	The browser executes the compilation unit referred to in the tag right away.<br><br>They share a global namespace.
+What does <tt>var</tt> do?	It indicates variables private to a function.
+Which statements can be labeled?	<tt>switch</tt>, <tt>while</tt>, <tt>for</tt>, <tt>do</tt>
+What's different about JavaScript's blocks?	They don't define a new scope.
+Give the syntax of both kinds of conditionals.	<pre>(if (expr) then {  ...}else {  ...},true)</pre><br><br>To get a value:<br><tt>if expr ? true-expr : false-expr</tt>
+Conditionals accept what kind of values as "false"?	<tt>false</tt>, <tt>null</tt>, <tt>undefined</tt>, empty string, <tt>0</tt>, <tt>NaN</tt>
+Give the <tt>do-while</tt> syntax.	<pre>(do {  ...}while (expr);,true)</pre>
+Give the <tt>switch</tt> syntax.<br><br>What's the classic <tt>switch</tt> mistake?	Same as Java.<br><br><pre>(switch (expr) {  case expr: ...  default: ...},true)</pre><br><br>It falls through.
+Give the <tt>while</tt>/<tt>do-while</tt> syntax.	Identical to Java.
+What are <tt>for</tt>'s two forms.	The first is as in C++/Java.<br><br>The second is a for-each:<br><pre>(for (x in y) {  ...},true)</pre>
+What's the catch with for-each loops?	You can't know if the binding form was found in the iterable object's prototype chain. For that reason you often see the body of a for-each being a single condition of the form:<br><pre>(if (iterable.hasOwnProperty(bindingForm)) {  ...},true)</pre>
+What happens if no <tt>return</tt> statement is given in a function.	The function's result is <tt>undefined</tt>.
+How do you test for in/equality?	<tt>===</tt> and <tt>!==</tt>
+What unary operators are available?	<tt>delete</tt>, <tt>new</tt>, <tt>typeof</tt>, <tt>+</tt>, <tt>-</tt>, <tt>!</tt>
+What can <tt>typeof</tt> return?	<tt>'number'</tt>, <tt>'string'</tt>, <tt>'boolean'</tt>, <tt>'undefined'</tt>, <tt>'function'</tt>, <tt>'object'</tt>
+Create a named function literal.<br><br>Create an anonymous function literal.	<pre>(function name(args) {  ...},true)</pre><br><br><pre>(function(args) {  ...},true)</pre>
+Give the regex literal syntax.	<tt>/regex/</tt><br><br>It cam optionally be trailed by any of <tt>g</tt>, <tt>i</tt>, or <tt>m</tt>.
+Give the array literal syntax.	As is common, a comma-separated list inside square brackets.

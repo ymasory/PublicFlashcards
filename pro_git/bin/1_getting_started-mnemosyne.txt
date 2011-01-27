@@ -1,0 +1,14 @@
+How do you set your diff tool?	<tt>git config --global merge.tool [tool]</tt>
+How do you set your editor?	<tt>git config --global core.editor [editor]</tt>
+How do you set your email address?	<tt>git config --global user.email [address]</tt>
+How do you set your username?	<tt>git config --global user.name [username]</tt>
+What are the three locations for storing Git configuration variables?<br><br>What options do they correspond to?	In order of precedence:<br>- <tt>/etc/gitconfig</tt> corresponding to <tt>git config --system</tt><br>- <tt>~/.gitconfig</tt> corresponding to <tt>git config --global</tt><br>- <tt>.git/config</tt> (in Git directory of repository)
+Describe the basic Git workflow.	Modify files in working directory.<br>Stage files, which adds snapshots to staging area.<br>Commit files, which takes snapshots in the staging area and stores them in the Git directory.
+What is the working directory?	A single checkout of one version of the project, pulled from the compressed database in the Git directory.
+What three operations move files between their three possible locations?	- Checking out - Git directory to working directory.<br>- Staging - working directory to the staging area.<br>- Committing - staging area to Git directory.
+Where are the three places a file can be?	- Working directory<br>- Staging area<br>- Git directory (repository)
+What's unique about Git's storage system?	Git does not save deltas. It takes snapshots, making a mini file system.
+Where can you get live help with Git?	- #git and #github on FreeNode
+How do you get help with a Git command?	- <tt>git help [verb]</tt><br>- <tt>git [verb] --help</tt><br>- <tt>man git-[verb]</tt>
+How do you look up a specific Git variable?	<tt>git config [varname]</tt>
+How do you check your Git settings?	<tt>git config --list</tt>

@@ -1,0 +1,7 @@
+Define <tt>Unit</tt>.	An abstract final class that extends <tt>AnyVal</tt>.<br><br>Its only instance is <tt>()</tt>.
+What compromises did Scala make for Java interop?	- Static overloading of methods.<br>- Both traits and classes.<br>- Inclusion of null.<br>- Huge number of static types (e.g., existential types).
+Give a structural type example for parameter that defines a <tt>getName</tt> function.	<pre>(def printName(namedObj: {def.getName(): String}) {  println(namedObj.getName())},true)</pre>
+Describe <tt>Nothing</tt>.	A final trait that extends <tt>Any</tt>.<br><br>Subtype of every <tt>Any</tt>.<br><br>There are no instances of this type at all.
+Describe <tt>None</tt>.	A case object that extends <tt>Option[Nothing]</tt>.<br><br>This represents non-existent values.
+Describe <tt>Nil</tt>.	A case object extending <tt>List[Nothing]</tt>.<br><br>It can stand in as an empty <tt>List</tt> of any type.
+Describe <tt>Null</tt> and <tt>null</tt>.	Final trait that extends <tt>AnyRef</tt>.<br><br>Subtype of <tt>AnyRef</tt>.<br><br>Its only instance is the <tt>null</tt> reference.

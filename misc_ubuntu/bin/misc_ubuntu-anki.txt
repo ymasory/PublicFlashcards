@@ -1,0 +1,2 @@
+How do you build/install a package from source?	<pre>(sudo apt-get build-dep package_nameapt-get source package_namedpkg-buildpackage -rfakeroot -bdpkg -i ../package_name-*.deb,true)</pre>
+Check battery state on the command line.	<tt>acpi -V</tt><br><br>(Not installed by default.)

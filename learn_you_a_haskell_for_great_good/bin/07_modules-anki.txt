@@ -1,0 +1,23 @@
+What is a Haskell module?<br><br>What is a Haskell program?	A module is a collection of related functions, types, and typeclasses.<br><br>A program is a collection of modules where the main module loads up the other modules and then uses their functions.
+Which module is imported by default?	<tt>Prelude</tt>
+Give two shortcuts for importing modules in <tt>ghci</tt>.	<pre>(:m + Module1 Module2 ... ModuleN,true)</pre><br><br>Or, load a script that does imports of its own. They too will be available.
+Selectively import functions from a module.<br><br>Exclude functions from a module import.	<pre>(import Module (func1, func2, ...),true)</pre><br><br><pre>(import Module hiding (func1, func2, ...),true)</pre>
+Mitigate name-collisions between needed functions from different modules.<br><br>How can this be made more convenient?	You can import one on a qualified basis so only the fully qualified name of one (or both) of the functions is available.<br><pre>(import qualified Module,true)</pre><br><br>To make this more convenient the module can be renamed to something shorter.<br><pre>(import qualified Module as M,true)</pre>
+What is Hoogle?	<tt>http://haskell.org/hoogle</tt><br>A Haskell-specific search engine that lets you search by name, module name, or even type signature.
+Describe <tt>foldl'</tt> and <tt>foldl1'</tt>.	They are strict versions of their lazy counterparts. They avoid stack overflow errors that result from folding on large lists.
+What is a thunk?	A value that is yet to be evaluated.
+Flatten two lists.<br><br>Remove duplicates.<br><br>Which two functions work on lists of booleans?	<tt>concat</tt><br><br><tt>nub</tt><br><br><tt>and</tt> and <tt>or</tt>
+Describe <tt>span</tt> and <tt>break</tt>.	<tt>span</tt> is like <tt>takeWhile</tt> but returns a pair of lists, the second of which is the list of elements that would have been dropped by <tt>takeWhile</tt>.<br><br><tt>break</tt> negates <tt>takeWhile</tt>'s predicate.
+Describe <tt>group</tt>.<br><br>Name a common use.	It takes a list and groups adjacent elements into sublists if they are equal.<br><br>If you sort before grouping you can find out how many times each element appears in the list.
+What functions are provided for testing sublists?	<tt>isPrefixOf</tt>, <tt>isSuffixOf</tt>, <tt>isInfixOf</tt>
+Describe <tt>partition</tt>.	It separates a list into a pair of two lists, those satisfying a predicate and those failing it.
+Split and join strings based on newline characters.<br><br>Do the same for words.	<tt>lines</tt>, <tt>unlines</tt><br><br><tt>words</tt>, <tt>unwords</tt>
+What are the <tt>Data.List</tt> "generic" functions?<br><br>What about the "by" functions?	Functions whose names start with "generic" that correct the historical error of using <tt>Int</tt> instead of <tt>Num</tt> as the type of a parameter.<br><br>Functions whose names end with "by" test with a provided equality function instead of using <tt>==</tt>.
+What utility function helps in constructing comparison functions for "by" functions?	<tt>on</tt>, used infix between <tt>(==)</tt> and the function that gets the value you want to use for comparison.
+How are maps from <tt>Data.Map</tt> created?<br><br>How are they represented internally?	Using <tt>fromList</tt> on a list of 2-tuples where the first element is an <tt>Ord</tt>.<br><br>They are represented using trees.
+Look up a value in a map.<br><br>Check if a key is in the map.<br><br>Add/remove from a map.	<tt>lookup</tt> returns a <tt>Maybe</tt><br><br><tt>member</tt><br><br><tt>insert</tt>/<tt>delete</tt>
+How are the sets of <tt>Data.Set</tt> represented?<br><br>Create one.	As trees, so they're ordered.<br><br>Use <tt>fromList</tt>.
+Create a set/map from a single value.	Use <tt>singleton</tt>.
+Check a set's size.<br><br>Test a set for membership.<br><br>Add/remove from a set.	<tt>size</tt>, <tt>null</tt>, <tt>empty</tt><br><br><tt>member</tt><br><br><tt>insert</tt>, <tt>delete</tt>
+Compare strategies for eliminating duplicates from a list.	<tt>nub</tt> is simplest, requires only <tt>Eq</tt>, but is potentially slow.<br><br>Converting to a set with <tt>fromList</tt> and then back with <tt>toList</tt> may be faster but requires <tt>Ord</tt>.
+Define your own module.	<pre>(module MyModule( funcToExport1, funcToExport2...) where...,true)</pre>

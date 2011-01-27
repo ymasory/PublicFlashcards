@@ -1,0 +1,6 @@
+Beware that the cons pattern won't match ...	... the empty list.
+Crash the program with a message.	<pre>(error "message",true)</pre>
+Prove that the comma in list literals is just syntactic sugar for a cons chain.	In pattern matching you can use comma or cons.
+Give a name to the expression being matched by a pattern.	As in Scala:<br><pre>(name @ pattern,true)</pre>
+How are guards added to the parameter patterns?<br><br>Watch out! ...	<pre>(pattern    | condition1 = value1    ...    | conditionN = valueN,true)</pre><br><br>... there's no <tt>=</tt> before the first guard.
+The last guard is often ...	... <tt>otherwise</tt>, being defined as <tt>True</tt>.

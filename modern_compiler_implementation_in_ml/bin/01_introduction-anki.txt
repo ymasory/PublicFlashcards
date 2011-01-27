@@ -1,0 +1,5 @@
+What are the interfaces between levels of a compiler?	Data structures and abstract data types.
+What are <em>intermediate representations</em>?<br><br>How are they specified?	A data structure, typically a tree, of the program being compiled.<br><br>With grammars.
+What is a <em>straight-line program</em>?	A program without loops and conditionals.
+Grammars can be represented how in ML?	Using the <tt>datatype</tt> declaration. One declaration per type. One constructor in the declaration per rule.
+Why should structure abbreviations be preferred over <tt>open</tt> statements?	They increase modularity. You do not need to look outside the file to determine where a symbol comes from.

@@ -1,0 +1,36 @@
+What is backwards reasoning?<br><br>Why does Prolog use it?	Backwards reasoning is from (potential) conclusions to facts instead of from facts to conclusions.<br>Prolog uses it because the space of possible conclusions grows too quickly in the number of premises.
+How can you load a Prolog database for interactive use?	You can use the <tt>consult</tt> and <tt>reconsult</tt> predicates, or use bracket notation.<br>Bracket notation allows re-consultation of several files at once:<br><br><pre>(['file1.pl', file2.pl'],true)</pre>
+What is the closed world assumption?	A Prolog database knows everything it needs to know.
+What is a structure?	A name followed by zero or more arguments. Parens are omitted if there are no arguments.
+What is a base clause?	A structure terminated by a period. It represents a simple fact.
+What is a nonbase clause?	A structure followed by a turnstile and a list of structures separated by commas. It represents a rule.
+What is a predicate?	A <strong>collection</strong> of clauses with the same <em>functor</em> (name) and arity.
+What is a program?	A collection of predicates, in any order.
+How can you include special characters and spaces in an atom, or begin it with a capital letter?	Use single quotes, which does <strong>not</strong> make a string.
+What are double quotes for?	They indicate a list of ASCII values.
+How can you include escape characters in a quoted atom?	Use double quotes or an escaped single quote to use a single quote.<br>Other escapes use backslash as in other languages.
+What are the four ports of a structure?	<pre>(         -----call --> |   | --> exitfail <-- |   | <-- redo         -----,true)</pre><br><br><tt>exit</tt> ports connect to <tt>call</tt> ports.<br><tt>fail</tt> ports connect to <tt>redo</tt> ports.
+Prolog's logic is <em>non-monotonic</em>. What does that mean?	Facts can be added at any time using the <tt>assert</tt> predicate.<br><br>Facts can be removed at any time using the <tt>retract</tt> predicate.<br><br>Such rules are <em>dynamic</em>.
+Why might you need to double the parens of a structure?	To force a rule to be interpreted as a single argument, since rules contain commas.<br><br><pre>(assert((loves(chuck, X) :- female(X), rich(X))).,true)</pre>
+What are the limitations of backtracking.	- Output can't be undone.<br>- <tt>assert</tt> and <tt>retract</tt> can't be undone either.
+How do you write to stdout?	<tt>write</tt> predicate outputs its single argument to stdout.<br><tt>nl</tt> writes a newline.
+How can you view the available facts and rules?<br><br>How can you view the available structures of a predicate?	<tt>listing(predicate)</tt><br><br><tt>listing</tt>
+What does a single underscore (<tt>_</tt>) do?	It's an anonymous variable. It can unify with anything.
+What's the difference between cut (<tt>!</tt>) and <tt>fail</tt>?	<tt>fail</tt> doesn't force other the entire predicate to fail. Other clauses will be tried.<br><br>Using a cut creates a commit point, preventing backtracking past the commit point and preventing attempts on other clauses.
+What happens if you combine cut and fail?	The predicate as a whole fails.
+Why might you start a variable with an underscore?	To tell Prolog you are only going to use it once, but don't wish to use the anonymous variable.<br><br>You can still use it again if you really want.
+What is the scope of a variable?	For onymous variables, the single clause in which it appears.
+What order are clauses of a predicate tried in?	The same order in which they were defined.
+What can you use in place of <tt>if</tt>?<br><br>What can you use in place of loops?	- Predicates with multiple clauses that have "tests" in them.<br>- Recursion.
+How can you get around the lack of functions with no return values?	Use a fail loop.<br><br><pre>(my_func(X) :-    Some(),    Imperative(),    Calls(),    fail.my_func(_),true)</pre><br><br>It's generally bad style to do this.
+How can you get around the lack of functions with return values?	A parameter (conventionally the final one) of a parameter list can be used for output.<br><br><pre>(?- assert((first([Head | Tail], X) :- X = Head)).true.?- first([1,2,3], X).X = 1.,true)</pre>
+How can you work around the lack of assignable state?	You can store state in the database as facts.<br><br><pre>(bump_count :-    retract(count(X)),    Y is X + 1,    assert(count(Y)).,true)</pre><br><br>It's generally bad style to do this.
+What is the <tt>=..</tt> operator?	The "univ" operator. It converts between structures and lists.<br><br><pre>(loves(chuck, X) =.. [loves, chuck, X],true)</pre>
+What predicate describes list membership?<br><br>What predicate describes combining lists?	<pre>(?- member(1, [1, 2]).true .,true)</pre><br><br><pre>(?- append([1], [2], [1, 2]).true.,true)</pre>
+How can you force a predicate to succeed?	Make the final case a "dummy" with no body that uses anonymous variables for all the parameters.
+What should you do if you don't care if a call succeeds and don't want failure to cause backtracking?	<pre>(wrapper :-    potentially_failing_call.wrapper.,true)</pre><br><br>Now any call to wrapper will succeed.
+What are <tt>asserta</tt> and <tt>assertz</tt> for?	They are like <tt>assert</tt>, but <tt>asserta</tt> guarantees the added clause will come before any clauses with the same functor. Likewise <tt>assertz</tt> guarantees the added clause will be the last case in its predicate.
+What does <tt>abolish</tt> do?	It removes <em>all</em> clauses of the predicate with the given functor and arity.<br><br><pre>(abolish(somePred, arity).,true)</pre>
+What's the catch with arithmetic in Prolog?	<tt>+</tt>, <tt>-</tt>, <tt>*</tt>, <tt>/</tt>, and <tt>mod</tt> have their normal meanings, but <em>only when evaluated</em>.<br><br>They may not be evaluated when  you want, leading to strange outcomes like:<br><pre>(?- 2 + 2 = 4.false.,true)</pre>
+What is the difference between static and dynamic clauses in SWI Prolog?	Static clauses are the default and cannot be later modified using <tt>assert</tt>/<tt>retract</tt>.<br>Marking clauses <tt>dynamic</tt> (before they are defined) allows you to change the definition during program execution.<br><br><pre>(:- dynamic somePredArityTwo/2, somePredArityOne/1.,true)</pre><br><br>To actually force arithmetic to be performed you can use <tt>is</tt> or comparison operators like <tt>=:=</tt>, <tt>=/=</tt>, <tt>></tt>, <tt>>=</tt>, <tt><</tt>, <tt><=</tt>.
+What does <tt>var/1</tt> do?	<tt>var(X)</tt> succeeds only if <tt>X</tt> is instantiated to an atom.

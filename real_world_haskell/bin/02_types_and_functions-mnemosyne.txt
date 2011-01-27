@@ -1,0 +1,25 @@
+What's the difference between <tt>Int</tt> and <tt>Integer</tt>?	<tt>Int</tt> is fixed width, its exact size depending on the hardware. It silently overflows.<br><br><tt>Integer</tt> is arbitrary sized.
+Why is <tt>Float</tt> discouraged?	Haskell compilers writers focus their effort on making <tt>Double</tt> efficient.
+What's a type signature?	The combination of <tt>::</tt> and the type after it.
+What is Haskell's syntax for function calls?	The function name, a space, and then the arguments separated by spaces too.<br><br><pre>(compare 3 2,true)</pre>
+What's a composite data type?	A type constructed from other types, like lists and tuples.
+What is a type variable in Haskell?	A variable that ranges over types instead of values.
+What are the capitalization rules for variables in Haskell?	Type variables must start with a lowercase letter, and type names with an uppercase letter.
+Describe "unit" and 1-tuples in Haskell.	Both the type name and it's sole value are written <tt>()</tt>.<br><br>There are no 1-tuples.
+Describe <tt>take</tt> and <tt>drop</tt>.	Given a number <tt>n</tt> and a list, <tt>take</tt> returns the first <tt>n</tt> elements of the list, while <tt>drop</tt> returns all <em>but</em> the first <tt>n</tt> elements of the list.
+How do  you access the elements of a pair?	<tt>fst</tt> and <tt>snd</tt>
+Describes function association.	It is the tightest association, and runs left to right.<br><br><pre>(a b c d,true)</pre><br><br>is equivalent to<br><br><pre>((((a b) c) d),true)</pre>
+How do you split a string into a list of strings?	<pre>(ghci> lines "the quick\nbrown fox\njumps"["the quick","brown fox","jumps"],true)</pre>
+How can you tell if a function has side effects?	Type type of the function's result will begin with <tt>IO</tt>:<br><br><pre>(ghci> :type readFilereadFile :: FilePath -> IO String,true)</pre>
+How is Haskell's <tt>if</tt> different from the one in C-like languages?	- <tt>if</tt> expressions result in a value.<br>- The parens around the condition are inferred.<br>- There's a <tt>then</tt> keyword to indicate the first branch.
+How is indentation significant in Haskell?	It indicates that a line <em>continues</em> an indentation instead of starting a new one.
+What is <tt>null</tt>?	A function that indicates whether a list is empty.
+What does lazy evaluation entail?	- Delayed evaluation: evaluating an expression only when the result is required by a calling function.<br>- Short-circuit evaluation: evaluating an expression only to the extent it is required by the calling function.<br>- Applicative-order evaluation: evaluating an expression at most once.
+What's the difference between <tt>putStrLn</tt> and <tt>print</tt>?	<tt>putStrLn</tt> only takes <tt>String</tt> arguments, <tt>print</tt> takes anything instance of <tt>Show</tt>.
+Compare how short-circuiting <tt>||</tt> is accomplished in Haskell and in Scala.	In Scala short-circuiting is a result of by-name parameters, a way of achieving the standard Haskell non-strict evaluation. By-name parameters do not adhere to applicative-order evaluation. Haskell doesn't do anything special, expressions always short-circuit.
+Make a list of all natural numbers.	<tt>[1..]</tt>
+What is the type signature of <tt>last</tt>?<br><br>How is it read?	`<br>last :: [a] -> a<br>`<br><br>"takes a list, all of whose elements have some type <tt>a</tt>, and returns a value of the same type <tt>a</tt>"
+What is a polymorphic function?<br><br>What kind of polymorphism does it reflect?	One that has type variables in its signature, indicating that some of its arguments can be of any type.<br><br>This is an example of parametric polymorphism.
+What kind of polymorphism is provided by subclass mechanisms?<br><br>Does Haskell have it?	Subtype polymorphism. Haskell isn't object-oriented so it doesn't offer this polymorphism.
+What kind of polymorphism is provided by implicit conversion?<br><br>Does Haskell have it?	Coercion polymorphism. Haskell avoids it in even the simplest of cases. <em>E.g.</em>, integers are not converted to floating point numbers.
+What is the signature of <tt>take</tt>?	<pre>(ghci> :t taketake :: Int -> [a] -> [a],true)</pre><br><br><pre>(Int -> ([a] -> [a]),true)</pre>

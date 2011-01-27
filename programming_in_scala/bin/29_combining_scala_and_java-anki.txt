@@ -1,0 +1,14 @@
+Give prettier syntax for existential types.	Use placeholders.<br><br>_ in place of a type makes an existential type just as in place of expression makes a function literal. Each _ is a new existential type.<br><pre>(Iterator[_ <: Component]Iterator[T] for Some {type T <: Component},true)</pre>
+Make new Java annotations for Java interop.	It must be done using Java notation and compiled with <tt>javac</tt>.
+How does Scala deal with Java's wildcard types?	By using existential types, a fully supported part of the language in practice used only for Java compatibility.
+Translate to Scala:<br><br><tt>Iterator <?></tt><br><br><tt>Iterator<? extends Component></tt>	<pre>(Iterator[T] for Some {type T}Iterator[T] for Some {type T <: Component},true)</pre>
+Why can existential types be ignored most of the time?	Scala can check program soundness even though types and values in forSome clause are unknown.<br>e.g., <tt>val contents = (new JavaClass).contents</tt> is fine even if <tt>JavaClass.contents</tt> is <tt>Collection<?></tt>.
+What are singleton objects implemented as?	A combination of static and instance methods.<br><br>They use a class called <tt>ObjectName$</tt> with one instance stored as <tt>MODULE$</tt> field.<br><br>If it's standalone, it will create <tt>ObjectName</tt> class with static forwarder methods for each singleton method.
+What does Scala do with Java annotations?	It forwards them on to Java bytecode.
+How does Scala get away with not adding thrown exceptions to method bytecode signatures?	The Java bytecode verifier does not check the declarations, only <tt>javac</tt> does in source code.
+What does the <tt>javap</tt> output <tt>public static {}</tt> mean?	It indicates the presence of a static initializer block.
+Give two strategies for getting around the existential type no-name problem.	- When passing existential type to a method, move type parameters from forSome clause to type parameter of the method. Then in the method body it has a name.<br>- Instead of returning existential type from method, return an object that has abstract members for each part of forSome clause.
+When is scala throws declaration bytecode generated?	Only when <tt>@throws</tt> annotation is used for Java compatibility.<br><br><tt>@throws(classOf[IOException])</tt>
+Implement a trait in Java.	It's generally not practical.<br><br>If the scala trait has only abstract methods, however, it will be translated directly to a Java interface and can be implemented in Java.
+What makes existential types awkward? Provide an example.	There is no way to name the existential type.<br><br>e.g., how would one parameterize <tt>Set.empty[??]</tt> if you had taken advantage of Scala's ability to ignore most existential types from Java?
+Give the general syntax of existential types.	<tt>type forSome {declarations}</tt><br>where type is some arbitrary Scala type and declarations is a list of abstract vals and types.

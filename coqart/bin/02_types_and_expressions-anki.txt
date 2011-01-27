@@ -1,0 +1,18 @@
+Import a module.	<pre>(Require Import ModuleName,true)</pre>
+What is a <em>term</em>?<br><br>What are its subdivisions?	It's a well-formed expression.<br><br><em>Expressions</em> are terms that can be thought of as programs.<br><em>Types</em> are terms that determine if a type is well-formed and obeys accompanying constraints.
+Coq commands all end with what?	A period.
+In Coq interpretation scopes are explicitly ...	... opened and closed, with the most recently opened scopes taking precedence.
+Open a scope.<br><br>Close a scope.	<pre>(Open Scope scope.Close Scope scope.,true)</pre>
+Determine which interpretations are available for a notation.	<pre>(Locate "something or other".,true)</pre><br><br>Use underscores for identifiers in the string.<br>The bottom interpretation takes precedence.
+What is a delimiting key?<br><br>Give its syntax.	A name associated with a scope used to explicitly provide the interpretation scope for a term.<br><br><pre>((term)%key,true)</pre>
+Get everything Coq knows about an interpretation scope.	<pre>(Print Scope scope,true)</pre>
+What is the <tt>Check</tt> command used for?<br><br>Give its syntax.	Determining if a term is well-formed and what its type is.<br><br><pre>(Check term.,true)</pre>
+Where can decimal notation be used for natural numbers?	In <tt>nat_scope</tt>, whose delimiting key is <tt>nat</tt>.
+Where can decimal notation be used for all integers?	In <tt>Z_scope</tt> whose delimiting key is <tt>Z</tt>.<br>It is provided in <tt>ZArith</tt>.
+Why can't a <tt>nat</tt> be used as a <tt>Z</tt>.<br><br>How might this be simulated?	Coq has no type coercion.<br><br>There is however the possibility of defining such a conversion using implicit coercions.
+What are the two forms of simple types?	- <em>Atomic types</em>, represented by single identifiers.<br>- <em>Arrow types</em>, of the form <tt>Type1 -> Type2</tt>.
+In the context of Coq, "scope" can mean ...	... either interpretation scope (a collection of notations) or a scope in the usual sense (the textual area where a binding is active).
+Give the syntax of a declaration.<br><br>Give the syntax of a definition.	<pre>((ident : SomeType)(ident := term : someType),true)</pre>
+Contrast <em>global</em> and <em>local</em> scopes.	Global scopes are active for the remainder of development.<br>Local scopes are active only in the current <em>section</em>.
+Contrast <em>environment</em> and <em>context</em>.	The environment contains global bindings while the context contains the local ones.
+How can you return to the initial bindings?<br><br>This is a special case of what?	<pre>(Reset Initial,true)</pre><br>It brings you to an empty context and the initial environment.<br><br><pre>(Reset identifier,true)</pre><br>Brings you back to the state just after the given identifier was introduced.

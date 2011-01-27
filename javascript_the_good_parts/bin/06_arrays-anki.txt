@@ -1,0 +1,8 @@
+What's the difference between arrays and objects with number keys?	Arrays have the <tt>length</tt> property and inherit from <tt>Arrays.prototype</tt> instead of <tt>Objects.prototype</tt>.
+What does the <tt>length</tt> property of an array really represent?	The current size, not the final size. Assignment to higher indexes then <tt>length - 1</tt> will succeed and increase the <tt>length</tt> property.
+How are subscripts on arrays different than in Java?	Any object can go in the subscript. The result of calling its <tt>toString</tt> operation will determine the property name retrieved. This applied to all objects not just arrays.
+What's a quick way to delete lots of properties of an array?	Reduce it's <tt>length</tt> property.
+Append to an array.	- Use <tt>push</tt>.<br>- Assign to index <tt>arr.length</tt>.
+Delete from an array without leaving a whole.	Use <tt>splice(deleteIndex, deletionLength)</tt> which modifies the array rather than returning a new one.
+What are the limiatations of <tt>for-in</tt> on arrays?<br><br>What's the solution?	- Order of iteration is not guaranteed.<br>- Unexpected properties may be present due to prototype linkage.<br><br>Use <tt>for</tt> instead with an index variable.
+Why it difficult to distinguish between arrays and objects?	<tt>typeof myArr</tt> returns <tt>'object'</tt>
