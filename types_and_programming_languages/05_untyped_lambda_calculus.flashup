@@ -1,0 +1,9 @@
+#GRAMMAR 1
+#TOPLEFT Types and Programming Languages
+#TOPRIGHT 5
+#NUMBERS true
+
+* Church's lambda calculus reduces all of computation to what?
+The definition and application of functions.
+
+
