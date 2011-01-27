@@ -1,0 +1,2 @@
+Church's lambda calculus reduces all of computation to what?	The definition and application of functions.
+What is the bridge from lambda calculus to a language like ML or Haskell?	The addition of features definable in the lambda calculus itself.<br>Some are easily defined. E.g., syntax for numbers and collections.<br>Others are more challenging. E.g., mutable reference cells.
