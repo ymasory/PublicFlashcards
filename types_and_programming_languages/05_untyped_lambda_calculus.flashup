@@ -36,3 +36,25 @@ As far to the right as possible.
 A variable is free if it is not bound by an enclosing abstraction.
 
 Closed terms (aka ``combinators``) have no free variables.
+
+* Describe computation in the lambda calculus.
+Function application where the left-hand side is an abstraction:
+````
+$(\lambda x.t_1) t_2$
+````
+
+This becomes a new term, namely ````$t_1$```` with each instance of ````$x$```` in it replaced by ````$t2$````.
+This can be written:
+
+````
+$[x \mapsto t_2]t_1$
+````
+
+* What's a ``redex``?
+A reducible expression.
+
+````
+$(\lambda x.t_1) t_2$
+````
+
+
