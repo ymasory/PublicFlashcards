@@ -38,23 +38,48 @@ A variable is free if it is not bound by an enclosing abstraction.
 Closed terms (aka ``combinators``) have no free variables.
 
 * Describe computation in the lambda calculus.
-Function application where the left-hand side is an abstraction:
-````
-$(\lambda x.t_1) t_2$
-````
-
-This becomes a new term, namely ````$t_1$```` with each instance of ````$x$```` in it replaced by ````$t2$````.
-This can be written:
-
-````
-$[x \mapsto t_2]t_1$
-````
-
-* What's a ``redex``?
-A reducible expression.
+A ``redex`` term:
 
 ````
 $(\lambda x.t_1) t_2$
 ````
+
+Evaluation by ``beta reduction``: a new term, namely ````$t_1$```` with each instance of ````$x$```` in it replaced by ````$t2$````.
+
+* What is an evaluation strategy?
+* Do not confuse with ...
+A rule for determining which redex in a term can be evaluated when.
+
+... ``calling convention`` which is unrelated, even though some of the evaluation strategies have "call" in their name.
+
+* Name some evaluation strategies.
+* Which is the most popular?
+- Full beta-reduction
+- Normal order
+- Call-by-name
+- Call-by-value
+
+Call-by-value is the most common.
+
+* What is ``full beta-reduction``?
+An evaluation strategy which allows an redex in a term to be evaluated in the next step.
+
+* What is the ``normal order`` strategy?
+An evaluation strategy in which only the outermost redex can be evaluated in the next step.
+
+* What is the ``call-by-name`` strategy?
+An evaluation strategy that follows the normal order strategy but does not allow reductions inside the body of an abstraction.
+
+* What is a ``value``?
+A term that cannot be further reduced.
+
+* What is the ``call-by-value`` strategy?
+An evaluation strategy that follows the normal order strategy but in which redexes are reduced by first reducing its argument to a value.
+
+* What's the difference between ``strict`` and ``non-strict`` evaluation strategies?
+In strict evaluation strategies arguments to abstractions are evaluated regardless of whether they are used in the body of a function. In a non-strict (aka ``lazy``) evaluation strategy an argument may not be evaluated if it's not used in the body.
+
+* What evaluation strategy does Haskell use?
+``Call-by-need``, which is call-by-value with memoization. More specifically, after an argument is evaluated all other instances of that argument will be replaced with the value.
 
 
