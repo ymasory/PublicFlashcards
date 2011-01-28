@@ -8,8 +8,8 @@ The definition and application of functions.
 
 * What is the bridge from lambda calculus to a language like ML or Haskell?
 The addition of features definable in the lambda calculus itself.
-Some are easily defined. E.g., syntax for numbers and collections.
-Others are more challenging. E.g., mutable reference cells.
+Some are easily defined: ``e.g.``, syntax for numbers and collections.
+Others are more challenging, ``e.g.``, mutable reference cells.
 
 * What are the three kinds of terms in lambda calculus?
 Variable:  ````v````
@@ -62,7 +62,7 @@ A rule for determining which redex in a term can be evaluated when.
 Call-by-value is the most common.
 
 * What is ``full beta-reduction``?
-An evaluation strategy which allows an redex in a term to be evaluated in the next step.
+An evaluation strategy which allows any redex in a term to be evaluated in the next step.
 
 * What is the ``normal order`` strategy?
 An evaluation strategy in which only the outermost redex can be evaluated in the next step.
