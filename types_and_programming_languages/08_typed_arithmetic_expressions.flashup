@@ -16,7 +16,7 @@ The smallest binary relation between terms and types that satisfies the language
 The ``inversion`` (or ``generation``) ``lemma``, which for any typing statement in the language shows how the proof could be generated, using nothing more than the typing relation.
 
 * How might you prove that a term has a given type?
-Using a ``typing derivation`` which is a tree of applications of typing rules in which every leaf ends with a typing rule that has no premises.
+Using a ``typing derivation`` which is a tree of applications of typing rules in which every leaf ends with a typing rule that is an axiom.
 
 * How do you know when the evaluation of a term is "stuck"?
 The term is not in a ``canonical form`` (a value) but no further evaluation rules apply.
