@@ -1,0 +1,12 @@
+#GRAMMAR 1
+#TOPLEFT Types and Programming Languages
+#TOPRIGHT 8
+#NUMBERS true
+
+* What is a "stuck" term?
+A term that cannot be evaluated to an expression because there is no reduction rule for some sub-term.
+
+* What is a ``type``?
+A set of terms. A term `t` belongs to a type `T` if it can be determined statically that `t` evaluates to a value of the form `T` is trying to represent.
+
+
