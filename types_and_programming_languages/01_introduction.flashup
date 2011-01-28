@@ -3,6 +3,13 @@
 #TOPRIGHT 1
 #NUMBERS true
 
+* What is a ``formal method``?
+* What are the two kinds?
+A mathematical technique for specifying, developing and verifying software.
+
+- Maximally powerful methods like Hoare logic and modal logic.
+- ``Lightweight`` formal method, like type systems and model checkers.
+
 * Define ``type system``.
 "A type system is a tractable syntactic method for proving the absence of certain program behaviors by classifying phrases according to the kinds of values they compute."
 
