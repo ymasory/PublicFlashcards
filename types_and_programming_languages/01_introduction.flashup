@@ -6,7 +6,7 @@
 * Define ``type system``.
 "A type system is a tractable syntactic method for proving the absence of certain program behaviors by classifying phrases according to the kinds of values they compute."
 
-* Name a major difference between the type systems studied in the context of programming languages and those studied in the context pure typed lambda-calculi.
+* Name a major difference between the type systems studied in the context of programming languages and those studied in the context of pure typed lambda-calculi.
 The type systems in pure typed lambda calculi require computations to halt. Hence they are not Turing complete. Type systems in the context of programming languages lack this requirement in order to allow general recursion.
 
 * What is the relationship between ``terms``, ``types``, and ``values``.
