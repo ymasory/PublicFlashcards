@@ -1,5 +1,5 @@
 Church's lambda calculus reduces all of computation to what?	The definition and application of functions.
-What is the bridge from lambda calculus to a language like ML or Haskell?	The addition of features definable in the lambda calculus itself.<br>Some are easily defined. E.g., syntax for numbers and collections.<br>Others are more challenging. E.g., mutable reference cells.
+What is the bridge from lambda calculus to a language like ML or Haskell?	The addition of features definable in the lambda calculus itself.<br>Some are easily defined: <em>e.g.</em>, syntax for numbers and collections.<br>Others are more challenging, <em>e.g.</em>, mutable reference cells.
 What are the three kinds of terms in lambda calculus?	Variable:  [latex]v[/latex]<br>Abstraction:  [latex]$\lambda$ x.t[/latex]<br>Applications:  [latex]t t[/latex]
 What's the difference between an <em>internal</em> and <em>external</em> language?	An external language contains derived forms and can be translated to an internal language which uses only core features.
 Which way does function application associate?	To the left.<br><br>The following two are equivalent:<br><pre>f g u<br>(f g) u</pre>
@@ -8,7 +8,7 @@ What's the difference between a <em>bound</em> and <em>free</em> variable.<br><b
 Describe computation in the lambda calculus.	A <em>redex</em> term:<br><br>[latex]$(\lambda x.t_1) t_2$[/latex]<br><br>Evaluation by <em>beta reduction</em>: a new term, namely [latex]$t_1$[/latex] with each instance of [latex]$x$[/latex] in it replaced by [latex]$t2$[/latex].
 What is an evaluation strategy?<br><br>Do not confuse with ...	A rule for determining which redex in a term can be evaluated when.<br><br>... <em>calling convention</em> which is unrelated, even though some of the evaluation strategies have "call" in their name.
 Name some evaluation strategies.<br><br>Which is the most popular?	- Full beta-reduction<br>- Normal order<br>- Call-by-name<br>- Call-by-value<br><br>Call-by-value is the most common.
-What is <em>full beta-reduction</em>?	An evaluation strategy which allows an redex in a term to be evaluated in the next step.
+What is <em>full beta-reduction</em>?	An evaluation strategy which allows any redex in a term to be evaluated in the next step.
 What is the <em>normal order</em> strategy?	An evaluation strategy in which only the outermost redex can be evaluated in the next step.
 What is the <em>call-by-name</em> strategy?	An evaluation strategy that follows the normal order strategy but does not allow reductions inside the body of an abstraction.
 What is a <em>value</em>?	A term that cannot be further reduced.
