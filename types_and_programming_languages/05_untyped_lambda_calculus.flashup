@@ -82,4 +82,30 @@ In strict evaluation strategies arguments to abstractions are evaluated regardle
 * What evaluation strategy does Haskell use?
 ``Call-by-need``, which is call-by-value with memoization. More specifically, after an argument is evaluated all other instances of that argument will be replaced with the value.
 
+* How does the lambda calculus represent multiple argument functions?
+Using ``currying``, a technique for representing multiple argument functions as higher-order unary functions.
+In general:
+````
+$f = \lambda(x, y).s$
+$f = \{lambda}x.\{lambda}y.s$
+````
+
+* What is ``Church encoding``?
+Techniques for embedding data and operators into the lambda calculus. It is equivalent to ``Godel numbering``. The latter is used for natural numbers, the former for lambda abstractions.
+
+* Define the two Church booleans.
+They are binary functions. `true` simply returns its first argument, `false` its second.
+
+````
+true = $\{lambda}t.\{lambda}f.t$
+false = $\{lambda}t.\{lambda}f.f$
+````
+
+* Church encode `if`/`else` expressions.
+````
+ifelse = $\{lambda}l.\{lambda}m.\{lambda}n . l m n$
+````
+
+Now `ifelse b v w` will return `v` if `b` is `true`, and `w` if `b` is `false`.
+
 
