@@ -1,2 +1,17 @@
 Church's lambda calculus reduces all of computation to what?	The definition and application of functions.
 What is the bridge from lambda calculus to a language like ML or Haskell?	The addition of features definable in the lambda calculus itself.<br>Some are easily defined. E.g., syntax for numbers and collections.<br>Others are more challenging. E.g., mutable reference cells.
+What are the three kinds of terms in lambda calculus?	Variable:  <$$>v</$$><br>Abstraction:  <$$>$\lambda$ x.t</$$><br>Applications:  <$$>t t</$$>
+What's the difference between an <em>internal</em> and <em>external</em> language?	An external language contains derived forms and can be translated to an internal language which uses only core features.
+Which way does function application associate?	To the left.<br><br>The following two are equivalent:<br><pre>f g u<br>(f g) u</pre>
+The body of a lambda abstraction extends to where?	As far to the right as possible.
+What's the difference between a <em>bound</em> and <em>free</em> variable.<br><br>What's a <em>closed term</em>?	A variable is free if it is not bound by an enclosing abstraction.<br><br>Closed terms (aka <em>combinators</em>) have no free variables.
+Describe computation in the lambda calculus.	A <em>redex</em> term:<br><br><$>$(\lambda x.t_1) t_2$</$><br>Evaluation by <em>beta reduction</em>: a new term, namely <$$>$t_1$</$$> with each instance of <$$>$x$</$$> in it replaced by <$$>$t2$</$$>.
+What is an evaluation strategy?<br><br>Do not confuse with ...	A rule for determining which redex in a term can be evaluated when.<br><br>... <em>calling convention</em> which is unrelated, even though some of the evaluation strategies have "call" in their name.
+Name some evaluation strategies.<br><br>Which is the most popular?	- Full beta-reduction<br>- Normal order<br>- Call-by-name<br>- Call-by-value<br><br>Call-by-value is the most common.
+What is <em>full beta-reduction</em>?	An evaluation strategy which allows an redex in a term to be evaluated in the next step.
+What is the <em>normal order</em> strategy?	An evaluation strategy in which only the outermost redex can be evaluated in the next step.
+What is the <em>call-by-name</em> strategy?	An evaluation strategy that follows the normal order strategy but does not allow reductions inside the body of an abstraction.
+What is a <em>value</em>?	A term that cannot be further reduced.
+What is the <em>call-by-value</em> strategy?	An evaluation strategy that follows the normal order strategy but in which redexes are reduced by first reducing its argument to a value.
+What's the difference between <em>strict</em> and <em>non-strict</em> evaluation strategies?	In strict evaluation strategies arguments to abstractions are evaluated regardless of whether they are used in the body of a function. In a non-strict (aka <em>lazy</em>) evaluation strategy an argument may not be evaluated if it's not used in the body.
+What evaluation strategy does Haskell use?	<em>Call-by-need</em>, which is call-by-value with memoization. More specifically, after an argument is evaluated all other instances of that argument will be replaced with the value.
