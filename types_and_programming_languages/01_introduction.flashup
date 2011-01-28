@@ -32,7 +32,7 @@ To allow more programs to be typed by improving the accuracy of static type appr
 * A type system that successfully prevents all such behaviors is called ...
 ... ``run-time type errors``.
 
-... safe. As in ``type-safe`` or ``type-sound`` language.
+... ``safe`` or ``sound``.
 
 * What are the benefits of type systems?
 - Early detection of some programming errors.
@@ -43,9 +43,12 @@ To allow more programs to be typed by improving the accuracy of static type appr
 - Efficiency.
 
 * What makes a language ``safe``?
+* Don't confuse with ...
 Pierce: A safe language guarantees the integrity of its abstractions.
 Cardelli: A safe language traps its errors, meaning they halt computation immediately or raise an exception that can be handled. Unsafe languages have untrapped errors that allow computation to proceed.
 Also: A safe language lacks undefined behavior. Or in other words, it's portable between implementations.
+
+Don't confuse language safety/soundness with the safety/soundness of a type system.
 
 * Why are there virtually no unsafe dynamically checked languages?
 There is little marginal cost to checking the safety of all operations at run-time once most are.
