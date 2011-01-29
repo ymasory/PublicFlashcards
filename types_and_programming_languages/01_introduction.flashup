@@ -17,7 +17,7 @@ A mathematical technique for specifying, developing and verifying software.
 The type systems in pure typed lambda calculi require computations to halt. Hence they are not Turing complete. Type systems in the context of programming languages lack this requirement in order to allow general recursion.
 
 * What is the relationship between ``terms``, ``types``, and ``values``.
-Terms are syntactic phrases. Types apply to term expressions and describe the possible values that the term will compute when run.
+Expressions are syntactic phrases. Terms are expressions representing a computation. Types apply to term expressions and describe the possible values that the term will compute when run. Values are the outputs of evaluated term expressions. They are themselves terms, ones that cannot be further reduced.
 
 * What is problematic with the term ``dynamically typed language``.
 Those "types" are tags on the heap for identifying different kinds of values. They are not static ``approximations`` on terms of run-time values.
