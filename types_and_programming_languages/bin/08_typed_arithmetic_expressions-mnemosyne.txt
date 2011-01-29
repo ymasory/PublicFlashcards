@@ -2,7 +2,7 @@ What is a <em>type</em>?	A set of terms. A term <tt>t</tt> belongs to a type <tt
 What is a <em>typing relation</em>?	The smallest binary relation between terms and types that satisfies the language's type rules.
 A term in the typing relation is called ...	... <em>typable</em> or <em>well typed</em>.
 An algorithm for assigning types to terms follows directly from what?	The <em>inversion</em> (or <em>generation</em>) <em>lemma</em>, which for any typing statement in the language shows how the proof could be generated, using nothing more than the typing relation.
-How might you prove that a term has a given type?	Using a <em>typing derivation</em> which is a tree of applications of typing rules in which every leaf ends with a typing rule that has no premises.
+How might you prove that a term has a given type?	Using a <em>typing derivation</em> which is a tree of applications of typing rules in which every leaf ends with a typing rule that is an axiom.
 How do you know when the evaluation of a term is "stuck"?	The term is not in a <em>canonical form</em> (a value) but no further evaluation rules apply.
 How can we formalize the notion of a type system's soundness?	If the type system is sound a well-typed term when evaluated will not reach a "stuck state".
 Given the "no stuck states" formalization of type soundness, how can type soundness be proved.	By proving <em>progress</em> and <em>preservation</em> properties.<br>Progress: well-typed terms are not stuck (<em>i.e.</em>, they can make progress).<br>Preservation: an evaluation step of a well-typed term results in another well-typed term.

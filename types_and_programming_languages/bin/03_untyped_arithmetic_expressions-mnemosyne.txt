@@ -1,9 +1,12 @@
 What is a <em>metavariable</em>?	A variable that ranges over the <em>metalanguage</em> (the notation of a description), not the <em>object language</em> (the language being defined).
 What is a <em>metatheory</em>?	"The collection of true statements that we can make about some particular logical system (or programming language)--and, by extension, the study of such statements."
+What's the difference between a <em>term</em> and an <em>expression</em>.	Expressions are a superset of terms. Terms are for syntactic phrases representing computations, while expressions in general may refer to other syntactic phrases too.
 Why can the definitions of language's syntax get away with not mentioning parentheses?	The definitions actually describe trees. Parens are simply a way of resolving ambiguities when a term is represented a string.
 Name four ways to define the syntax of a language.	- Using a grammar, in BNF form for example.<br>- By defining terms inductively.<br>- Using inference rules.<br>- By defining a procedure for generating all possible phrases.
 Inference rules with no premises are called ...	... <em>axioms</em>.
 Why are inference rules actually <em>rule schemas</em>?	They may reference metavariables. Hence each may be instantiated to any of an infinite set of <em>concrete rules</em> containing phrases in place of metavariables.
+What are the three methods of inducting on terms?	- Inducting on the depth of terms.<br>- Inducting on the size of terms.<br>- Inducting on the structures of terms (on all possible immediate subterms).
+What is a language's <em>semantics</em>?	The precise rules of how terms are evaluated.
 What are the three primary approaches to formalizing a language's semantics?	- Operational semantics.<br>- Denotational semantics.<br>- Axiomatic semantics.
 Define <em>operational semantics</em>.	An approach to formalizing semantics that specifies the behavior of a programming language by defining a simple abstract machine to it. The abstract machine uses the terms of the language itself (or higher level structures) as states and defines a transition function between states. The meaning of a term is the final state reached when starting with that term as the initial state.
 In the framework of operational semantics, proofs on the behavior of a program amount to what?	Proofs of the correctness of the implementation of the language.
