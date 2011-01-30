@@ -92,6 +92,7 @@ $f = \lambda x.\lambda y.s$
 ````
 
 * What is ``Church encoding``?
+* It is analogous to what?
 Techniques for embedding data and operators into the lambda calculus. It is equivalent to ``Godel numbering``. The latter is used for natural numbers, the former for lambda abstractions.
 
 * Define the two Church booleans.
