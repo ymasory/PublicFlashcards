@@ -86,7 +86,7 @@ In strict evaluation strategies arguments to abstractions are evaluated regardle
 Using ``currying``, a technique for representing multiple argument functions as higher-order unary functions.
 In general:
 ````
-$f = \lambda(x, y).s$
+$f = \{lambda}(x, y).s$
 $f = \{lambda}x.\{lambda}y.s$
 ````
 
