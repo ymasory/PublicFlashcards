@@ -9,7 +9,7 @@ The definition and application of functions.
 * What is the bridge from lambda calculus to a language like ML or Haskell?
 The addition of features definable in the lambda calculus itself.
 Some are easily defined: ``e.g.``, syntax for numbers and collections.
-Others are more challenging, ``e.g.``, mutable reference cells.
+Others are more challenging: ``e.g.``, mutable reference cells.
 
 * What are the three kinds of terms in lambda calculus?
 Variable:  ````v````
