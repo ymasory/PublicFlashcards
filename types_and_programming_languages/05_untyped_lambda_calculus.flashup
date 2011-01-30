@@ -97,13 +97,13 @@ Techniques for embedding data and operators into the lambda calculus. It is equi
 They are binary functions. `true` simply returns its first argument, `false` its second.
 
 ````
-true = $\{lambda}t.\{lambda}f.t$
-false = $\{lambda}t.\{lambda}f.f$
+true = $\lambda t.\lambda f.t$
+false = $\lambda t.\lambda f.f$
 ````
 
 * Church encode `if`/`else` expressions.
 ````
-ifelse = $\{lambda}l.\{lambda}m.\{lambda}n . l m n$
+ifelse = $\lambda l.\lambda m.\lambda n . l m n$
 ````
 
 Now `ifelse b v w` will return `v` if `b` is `true`, and `w` if `b` is `false`.
