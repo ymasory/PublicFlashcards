@@ -14,7 +14,7 @@ Others are more challenging: ``e.g.``, mutable reference cells.
 * What are the three kinds of terms in lambda calculus?
 Variable:  ````v````
 Abstraction:  ````$\lambda$ x.t````
-Applications:  ````t t````
+Application:  ````t t````
 
 * What's the difference between an ``internal`` and ``external`` language?
 An external language contains derived forms and can be translated to an internal language which uses only core features.
