@@ -12,7 +12,7 @@ A variable that ranges over the ``metalanguage`` (the notation of a description)
 * What's the difference between a ``term`` and an ``expression``.
 Expressions are a superset of terms. Terms are for syntactic phrases representing computations, while expressions in general may refer to other syntactic phrases too.
 
-* Why can the definitions of language's syntax get away with not mentioning parentheses?
+* Why can the definition of a language's syntax get away with not mentioning parentheses?
 The definitions actually describe trees. Parens are simply a way of resolving ambiguities when a term is represented a string.
 
 * Name four ways to define the syntax of a language.
