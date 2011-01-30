@@ -1,0 +1,16 @@
+#GRAMMAR 1
+#TOPLEFT Modern Compiler Implementation in ML
+#TOPRIGHT 2
+#NUMBERS true
+
+* In one word, the front-end of a compiler does what?
+* The back-end?
+Analysis.
+
+Sythesis.
+
+* The front-end's analysis can be broken into what three stages?
+- Lexical analysis
+- Syntactic analysis
+- Semantic analysis
+
