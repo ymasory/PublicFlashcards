@@ -85,6 +85,7 @@ In strict evaluation strategies arguments to abstractions are evaluated regardle
 * How does the lambda calculus represent multiple argument functions?
 Using ``currying``, a technique for representing multiple argument functions as higher-order unary functions.
 In general:
+
 ````
 $f = \lambda (x, y).s$
 $f = \lambda x.\lambda y.s$
