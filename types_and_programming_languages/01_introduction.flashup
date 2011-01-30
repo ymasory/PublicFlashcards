@@ -57,7 +57,7 @@ There is little marginal cost to checking the safety of all operations at run-ti
 Certain violations of abstractions (e.g., array indexes that are out of bounds) are beyond any currently widely used type system.
 
 * Contrast ``run-time type error`` with the more general notion of unsafe behaviors.
-Run-time type errors are only those the language is aiming to prevent. For example, a language can be type-safe despite allowing out-of-bounds array accesses because array bounds checking is not one of the properties the type system is aiming to guarantee (i.e., not a run-time type error). In that case it is simply an unsafe behavior that the language might (1) allow, or (2) prevent through dynamic checks.
+Run-time type errors are only those the type system is aiming to prevent. For example, a language can be type-safe despite allowing out-of-bounds array accesses because array bounds checking is not one of the properties the type system is aiming to guarantee (``i.e.``, not a run-time type error). In that case it is simply an unsafe language would allow and a safe language would prevent through dynamic checks.
 
 * What was the goal of the first type systems for programming languages?
 To distinguish between integers and floating-point numbers, for the sake of efficiency.
