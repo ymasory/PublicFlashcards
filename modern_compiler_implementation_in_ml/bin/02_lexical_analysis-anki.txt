@@ -1,0 +1,2 @@
+In one word, the front-end of a compiler does what?<br><br>The back-end?	Analysis.<br><br>Sythesis.
+The front-end's analysis can be broken into what three stages?	- Lexical analysis<br>- Syntactic analysis<br>- Semantic analysis
