@@ -1,6 +1,6 @@
 Church's lambda calculus reduces all of computation to what?	The definition and application of functions.
-What is the bridge from lambda calculus to a language like ML or Haskell?	The addition of features definable in the lambda calculus itself.<br>Some are easily defined: <em>e.g.</em>, syntax for numbers and collections.<br>Others are more challenging, <em>e.g.</em>, mutable reference cells.
-What are the three kinds of terms in lambda calculus?	Variable:  [latex]v[/latex]<br>Abstraction:  [latex]$\lambda$ x.t[/latex]<br>Applications:  [latex]t t[/latex]
+What is the bridge from lambda calculus to a language like ML or Haskell?	The addition of features definable in the lambda calculus itself.<br>Some are easily defined: <em>e.g.</em>, syntax for numbers and collections.<br>Others are more challenging: <em>e.g.</em>, mutable reference cells.
+What are the three kinds of terms in lambda calculus?	Variable:  [latex]v[/latex]<br>Abstraction:  [latex]$\lambda$ x.t[/latex]<br>Application:  [latex]t t[/latex]
 What's the difference between an <em>internal</em> and <em>external</em> language?	An external language contains derived forms and can be translated to an internal language which uses only core features.
 Which way does function application associate?	To the left.<br><br>The following two are equivalent:<br><pre>f g u<br>(f g) u</pre>
 The body of a lambda abstraction extends to where?	As far to the right as possible.
@@ -15,7 +15,7 @@ What is a <em>value</em>?	A term that cannot be further reduced.
 What is the <em>call-by-value</em> strategy?	An evaluation strategy that follows the normal order strategy but in which redexes are reduced by first reducing its argument to a value.
 What's the difference between <em>strict</em> and <em>non-strict</em> evaluation strategies?	In strict evaluation strategies arguments to abstractions are evaluated regardless of whether they are used in the body of a function. In a non-strict (aka <em>lazy</em>) evaluation strategy an argument may not be evaluated if it's not used in the body.
 What evaluation strategy does Haskell use?	<em>Call-by-need</em>, which is call-by-value with memoization. More specifically, after an argument is evaluated all other instances of that argument will be replaced with the value.
-How does the lambda calculus represent multiple argument functions?	Using <em>currying</em>, a technique for representing multiple argument functions as higher-order unary functions.<br>In general:<br>[latex]$f = \lambda(x, y).s$$f = \{lambda}x.\{lambda}y.s$[/latex]<br>
+How does the lambda calculus represent multiple argument functions?	Using <em>currying</em>, a technique for representing multiple argument functions as higher-order unary functions.<br>In general:<br>[latex]$f = \{lambda}(x, y).s$$f = \{lambda}x.\{lambda}y.s$[/latex]<br>
 What is <em>Church encoding</em>?	Techniques for embedding data and operators into the lambda calculus. It is equivalent to <em>Godel numbering</em>. The latter is used for natural numbers, the former for lambda abstractions.
 Define the two Church booleans.	They are binary functions. <tt>true</tt> simply returns its first argument, <tt>false</tt> its second.<br><br>[latex]true = $\{lambda}t.\{lambda}f.t$false = $\{lambda}t.\{lambda}f.f$[/latex]<br>
 Church encode <tt>if</tt>/<tt>else</tt> expressions.	[latex]ifelse = $\{lambda}l.\{lambda}m.\{lambda}n . l m n$[/latex]<br><br>Now <tt>ifelse b v w</tt> will return <tt>v</tt> if <tt>b</tt> is <tt>true</tt>, and <tt>w</tt> if <tt>b</tt> is <tt>false</tt>.
