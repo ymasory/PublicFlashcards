@@ -87,7 +87,7 @@ Using ``currying``, a technique for representing multiple argument functions as 
 In general:
 ````
 $f = \lambda (x, y).s$
-$f = \lambda x.\{lambda}y.s$
+$f = \lambda x.\lambda y.s$
 ````
 
 * What is ``Church encoding``?
