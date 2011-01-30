@@ -9,7 +9,7 @@ A set of terms. A term `t` belongs to a type `T` if it can be determined statica
 * What is a ``typing relation``?
 The smallest binary relation between terms and types that satisfies the language's type rules.
 
-* A term in the typing relation is called ...
+* A term in the domain of the typing relation is called ...
 ... ``typable`` or ``well typed``.
 
 * An algorithm for assigning types to terms follows directly from what?
