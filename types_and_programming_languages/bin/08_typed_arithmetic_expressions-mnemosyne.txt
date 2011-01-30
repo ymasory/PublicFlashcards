@@ -1,6 +1,6 @@
-What is a <em>type</em>?	A set of terms. A term <tt>t</tt> belongs to a type <tt>T</tt> if it can be determined statically that <tt>t</tt> evaluates to a value of the form <tt>T</tt> is trying to represent.
+What is a <em>type</em>?	A set of terms. A term <tt>t</tt> belongs to a type <tt>T</tt> if it can be determined statically that <tt>t</tt> evaluates to a value of a form that <tt>T</tt> is trying to represent.
 What is a <em>typing relation</em>?	The smallest binary relation between terms and types that satisfies the language's type rules.
-A term in the typing relation is called ...	... <em>typable</em> or <em>well typed</em>.
+A term in the domain of the typing relation is called ...	... <em>typable</em> or <em>well typed</em>.
 An algorithm for assigning types to terms follows directly from what?	The <em>inversion</em> (or <em>generation</em>) <em>lemma</em>, which for any typing statement in the language shows how the proof could be generated, using nothing more than the typing relation.
 How might you prove that a term has a given type?	Using a <em>typing derivation</em> which is a tree of applications of typing rules in which every leaf ends with a typing rule that is an axiom.
 How do you know when the evaluation of a term is "stuck"?	The term is not in a <em>canonical form</em> (a value) but no further evaluation rules apply.
