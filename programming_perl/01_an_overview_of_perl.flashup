@@ -1,0 +1,34 @@
+#GRAMMAR 1
+#TOPLEFT Programming Perl
+#TOPRIGHT 1
+#NUMBERS true
+
+* `print` in perl doesn't include what?
+A newline character.
+
+
+
+* List the variable type syntax.
+`$` scalar
+`@` array
+`%` hash
+`&` subroutine
+`*` typeglob
+
+* What's the difference between double, single quotes, and back ticks?
+Double quotes perform variable interpolation and backslash interpretation. Single quotes do not.
+Back ticks capture the output from executing a command.
+
+* What are the default values?
+`""` or `0`, as appropriate.
+
+* How are scalar values interpreted?
+As the expected type, depending on context.
+
+* What context do double quotes provide?
+* Assignment to arrays/hashes?
+``interpolative`` context
+
+``list`` context
+
+
