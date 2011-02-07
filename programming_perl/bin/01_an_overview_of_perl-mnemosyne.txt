@@ -1,0 +1,19 @@
+<tt>print</tt> in perl doesn't include what?	A newline character.
+List the variable type syntax.	<tt>$</tt> scalar<br><tt>@</tt> array<br><tt>%</tt> hash<br><tt>&</tt> subroutine<br><tt>*</tt> typeglob
+What's the difference between double, single quotes, and back ticks?	Double quotes perform variable interpolation and backslash interpretation. Single quotes do not.<br>Back ticks capture the output from executing a command.
+What are the default values?	<tt>""</tt> or <tt>0</tt>, as appropriate.
+How are scalar values interpreted?	As the expected type, depending on context.
+What context do double quotes provide?<br><br>Assignment to arrays/hashes?	<em>interpolative</em> context<br><br><em>list</em> context
+Create a list using literal syntax.<br><br>Unpack that list.	<pre>@threeprimes = (2, 3, 5);<br><br>($a, $b, $c) = @threeprimes;</pre>
+Index an array.<br><br>Update an array.	Either involves a scalar so use <tt>$</tt> not <tt>@</tt>.<br><br><pre>$lst[n] = new_el<br><br>print $lst[n]</pre>
+Create a hash using literal syntax.	<pre>@birthmonths = (<br>    "John" => "February",<br>    "Mary" => "March",<br>);</pre><br>Arrows are just a nicer way of writing more arrows.
+Look up an element in a hash.<br><br>Update a hash.	<pre>$hash{"key"}<br><br>$hash{"key"} = val</pre><br>As with arrays, notice the use of <tt>$</tt> when dealing with individual elements.
+Describe the Perl noun/verb analogy.	Nouns can be singular (scalars) or plural (arrays and hashes).<br>Verbs  can be procedures or functions.
+Run some perl straight from the terminal.<br><br>Run some perl stored in a file.<br><br>Get interpreter warnings.	<pre>perl -e 'some perl'<br><br>perl file.pl</pre><br>The <tt>-w</tt> option prints warnings.
+What is a filehandle?<br><br>Which are built in?	A data type that can represent files, devices, sockets, and pipes.<br><br><tt>STDOUT</tt> and <tt>STDERR</tt> are provided by default.
+Get a filehandle.	Use <tt>open</tt>, whose simplest form is:<br><pre>open(HANDLENAME, "filename");</pre>
+What read/write options are available when requesting a new filehandle?	Readonly (default): <tt>"<filename"</tt><br>Write (clobber): <tt>">filename"</tt><br>Write (append): <tt>">>filename"</tt>
+Read a line from a file.<br><br>Read a line from the terminal.	<pre>$str = <FILEHANDLE><br>$str = <STDIN></pre>
+Write to a file.<br><br>Write to the terminal.	<pre>print FILEHANDLE 'str'</pre><br>These two are the same:<br><pre>print STDOUT 'str'<br>print 'str'</pre>
+What's the difference between <tt>chop</tt> and <tt>chomp</tt>?	<tt>chop</tt> removes the last character of the string passed to it, and returns it.<br><tt>chomp</tt> removes endl from the string passed to it, and returns the <em>number</em> of characters removed.
+What is Perl's string concatenation operator?<br><br>Why does Perl have separate operators for string concatenation and arithmetic addition?	Use a period (<tt>.</tt>) for string concatenation.<br><br>Because of weak typing addition of scalars created as strings, but that can be interpreted as numbers, would result in a sum.

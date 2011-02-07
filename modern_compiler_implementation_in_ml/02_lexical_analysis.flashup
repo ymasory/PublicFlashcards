@@ -14,3 +14,5 @@ Sythesis.
 - Syntactic analysis
 - Semantic analysis
 
+* How are lexers typically defined and implemented?
+Each element of the set of tokens is described with a regular expression, and the lexer itself is implemented as a DFA.
