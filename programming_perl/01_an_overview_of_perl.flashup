@@ -102,6 +102,13 @@ Readonly (default): `"<filename"`
 Write (clobber): `">filename"`
 Write (append): `">>filename"`
 
+* What is a common idiom for handling failure when opening a file?
+`
+open(FILEHANDLE, "file") or die "Error opening file: $!\n";
+`
+
+`$!` is the OS's error mesage.
+
 * Read a line from a file.
 * Read a line from the terminal.
 `
@@ -139,6 +146,9 @@ Use the repat operator (`x`).
 - Using interpolation (like idiomatic bash using `$`)
 - Using list literal syntax
 
+* What is the exponentiation operator?
+`**`
+
 * Operators ending with `=` are treated ...
 ... specially.
 
@@ -151,4 +161,44 @@ lval = lval op expr
 * What is the result of assignment?
 The value assigned.
 
+* The autoincrementing/decrementing operators are just as in ...
+Java
+
+* What are the two sets of boolean operators?
+* What's the difference?
+`&&` - `and`
+`||` - `or`
+`!` - `not`
+
+The English ones bind less tightly.
+
+* What are the standard comparison operators?
+* What non-standard one is provided?
+There are numeric and string versions.
+`==` - `eq`
+`!=` - `ne`
+`<` - `lt`
+`>` - `gt`
+`<=` - `le`
+The standard "greater or equal" is absent.
+
+Nonstandard, but handy:
+`<=>` - `cmp`
+ 
+* Name the common file test operators.
+`-e` (exists)
+`-r` (readable)
+`-w` (writable)
+`-d` (directory)
+`-f` (regular file
+`-T` (text file)
+
+* What values are truthy?
+Any string except `""` and `"0"`.
+Any number except 0.
+
+* Why are references truthy and undefined values falsy?
+References evaluate to non-0 addresses.
+
+Undefined values evaluate to 0 or `""`.
 
