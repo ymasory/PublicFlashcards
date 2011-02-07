@@ -1,2 +1,3 @@
 In one word, the front-end of a compiler does what?<br><br>The back-end?	Analysis.<br><br>Sythesis.
 The front-end's analysis can be broken into what three stages?	- Lexical analysis<br>- Syntactic analysis<br>- Semantic analysis
+How are lexers typically defined and implemented?	Each element of the set of tokens is described with a regular expression, and the lexer itself is implemented as a DFA.
