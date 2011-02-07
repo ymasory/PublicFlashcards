@@ -264,3 +264,5 @@ foreach $el (@arr) {
 * `next`/`last` can optionally specify what?
 Block labels, identifying which enclosing looping construction is being referred to.
 
+* If an operator can produce either a list or a scalar, which will be returned?
+It depends on context. List context can be provided various ways, including by assigning to a list or by an operator that provides the `LIST` context to its arguments.
