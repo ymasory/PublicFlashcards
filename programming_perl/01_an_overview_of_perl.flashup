@@ -72,7 +72,7 @@ As with arrays, notice the use of `$` when dealing with individual elements.
 
 * Describe the Perl noun/verb analogy.
 Nouns can be singular (scalars) or plural (arrays and hashes).
-Verbs  can be procuedures or functions.
+Verbs  can be procedures or functions.
 
 * Run some perl straight from the terminal.
 * Run some perl stored in a file.
@@ -87,7 +87,7 @@ The `-w` option prints warnings.
 
 * What is a filehandle?
 * Which are built in?
-A datatype that can represent files, devices, sockets, and pipes.
+A data type that can represent files, devices, sockets, and pipes.
 
 `STDOUT` and `STDERR` are provided by default.
 
@@ -124,3 +124,12 @@ print 'str'
 * What's the difference between `chop` and `chomp`?
 `chop` removes the last character of the string passed to it, and returns it.
 `chomp` removes endl from the string passed to it, and returns the ``number`` of characters removed.
+
+* What is Perl's string concatenation operator?
+* Why does Perl have separate operators for string concatenation and arithmetic addition?
+Use a period (`.`) for string concatenation.
+
+Because of weak typing addition of scalars created as strings, but that can be interpreted as numbers, would result in a sum.
+
+
+
