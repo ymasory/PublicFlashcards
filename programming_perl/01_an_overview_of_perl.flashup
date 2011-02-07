@@ -107,7 +107,7 @@ Write (append): `">>filename"`
 open(FILEHANDLE, "file") or die "Error opening file: $!\n";
 `
 
-`$!` is the OS's error mesage.
+`$!` is the OS's error message.
 
 * Read a line from a file.
 * Read a line from the terminal.
@@ -139,7 +139,7 @@ Use a period (`.`) for string concatenation.
 Because of weak typing addition of scalars created as strings, but that can be interpreted as numbers, would result in a sum.
 
 * How can you achieve Python's "string multiplication"?
-Use the repat operator (`x`).
+Use the repeat operator (`x`).
 
 * Name three ways to print a formatted string.
 - Using the dot operator (like idiomatic Java using `+`)
@@ -161,7 +161,7 @@ lval = lval op expr
 * What is the result of assignment?
 The value assigned.
 
-* The autoincrementing/decrementing operators are just as in ...
+* The auto-incrementing/decrementing operators are just as in ...
 Java
 
 * What are the two sets of boolean operators?
