@@ -13,7 +13,29 @@ Run some perl straight from the terminal.<br><br>Run some perl stored in a file.
 What is a filehandle?<br><br>Which are built in?	A data type that can represent files, devices, sockets, and pipes.<br><br><tt>STDOUT</tt> and <tt>STDERR</tt> are provided by default.
 Get a filehandle.	Use <tt>open</tt>, whose simplest form is:<br><pre>open(HANDLENAME, "filename");</pre>
 What read/write options are available when requesting a new filehandle?	Readonly (default): <tt>"<filename"</tt><br>Write (clobber): <tt>">filename"</tt><br>Write (append): <tt>">>filename"</tt>
+What is a common idiom for handling failure when opening a file?	<pre>open(FILEHANDLE, "file") or die "Error opening file: $!\n";</pre><br><tt>$!</tt> is the OS's error mesage.
 Read a line from a file.<br><br>Read a line from the terminal.	<pre>$str = <FILEHANDLE><br>$str = <STDIN></pre>
 Write to a file.<br><br>Write to the terminal.	<pre>print FILEHANDLE 'str'</pre><br>These two are the same:<br><pre>print STDOUT 'str'<br>print 'str'</pre>
 What's the difference between <tt>chop</tt> and <tt>chomp</tt>?	<tt>chop</tt> removes the last character of the string passed to it, and returns it.<br><tt>chomp</tt> removes endl from the string passed to it, and returns the <em>number</em> of characters removed.
 What is Perl's string concatenation operator?<br><br>Why does Perl have separate operators for string concatenation and arithmetic addition?	Use a period (<tt>.</tt>) for string concatenation.<br><br>Because of weak typing addition of scalars created as strings, but that can be interpreted as numbers, would result in a sum.
+How can you achieve Python's "string multiplication"?	Use the repat operator (<tt>x</tt>).
+Name three ways to print a formatted string.	- Using the dot operator (like idiomatic Java using <tt>+</tt>)<br>- Using interpolation (like idiomatic bash using <tt>$</tt>)<br>- Using list literal syntax
+What is the exponentiation operator?	<tt>**</tt>
+Operators ending with <tt>=</tt> are treated ...	... specially.<br><br>In general, the following two are equivalent:<br><pre>lval op= expr<br>lval = lval op expr</pre>
+What is the result of assignment?	The value assigned.
+The autoincrementing/decrementing operators are just as in ...	Java
+What are the two sets of boolean operators?<br><br>What's the difference?	<tt>&&</tt> - <tt>and</tt><br><tt>||</tt> - <tt>or</tt><br><tt>!</tt> - <tt>not</tt><br><br>The English ones bind less tightly.
+What are the standard comparison operators?<br><br>What non-standard one is provided?	There are numeric and string versions.<br><tt>==</tt> - <tt>eq</tt><br><tt>!=</tt> - <tt>ne</tt><br><tt><</tt> - <tt>lt</tt><br><tt>></tt> - <tt>gt</tt><br><tt><=</tt> - <tt>le</tt><br>The standard "greater or equal" is absent.<br><br>Nonstandard, but handy:<br><tt><=></tt> - <tt>cmp</tt>
+Name the common file test operators.	<tt>-e</tt> (exists)<br><tt>-r</tt> (readable)<br><tt>-w</tt> (writable)<br><tt>-d</tt> (directory)<br><tt>-f</tt> (regular file<br><tt>-T</tt> (text file)
+What values are truthy?	Any string except <tt>""</tt> and <tt>"0"</tt>.<br>Any number except 0.
+Why are references truthy and undefined values falsy?	References evaluate to non-0 addresses.<br><br>Undefined values evaluate to 0 or <tt>""</tt>.
+In idiomatic Perl, simple conditionals are achieved with ...	... booleans operators.
+Give the syntax of conditionals.	<pre>if (cond1) {<br>   #block1<br>}<br>elsif (cond2) {<br>  #block2<br>}<br>...<br>else {<br>  #blocknN<br>}</pre><br>Braces are <em>always</em> required.
+What's the idiomatic way to accomplish the "if not" control flow?	<pre>unless (cond) {<br>  #block<br>}</pre>
+What are the four looping constructions?	- <tt>while</tt><br>- <tt>until</tt><br>- <tt>for</tt><br>- <tt>foreach</tt>
+<tt>while</tt>'s cousin is ...	... <tt>unless</tt> which executes the block as long as the condition is falsy.
+Give the canonical <tt>for</tt>-loop iteration construction in Perl.	<pre>for ($i = 0; $i < num; $i++) {<br>    #body<br>}</pre>
+Describe the <tt>foreach</tt> construction.<br><br>What's the huge surprise?	<pre>foreach $el (@arr) {<br>    #body<br>}</pre><br><tt>$el</tt> is by reference, not value, so you can in fact mutate <tt>@arr</tt> by re-assigning <tt>$el</tt>.
+Perl doesn't have <tt>break</tt>/<tt>continue</tt>, but has what?	<tt>next</tt>, <tt>last</tt>, and <tt>redo</tt>.<br><br><tt>next</tt> is just like <tt>continue</tt>.<br><tt>last</tt> is just like <tt>break</tt>.<br><tt>redo</tt> executes the same iteration again.
+<tt>next</tt>/<tt>last</tt> can optionally specify what?	Block labels, identifying which enclosing looping construction is being referred to.
+If an operator can produce either a list or a scalar, which will be returned?	It depends on context. List context can be provided various ways, including by assigning to a list or by an operator that provides the <tt>LIST</tt> context to its arguments.
