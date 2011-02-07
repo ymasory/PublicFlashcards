@@ -31,4 +31,42 @@ As the expected type, depending on context.
 
 ``list`` context
 
+* Create a list using literal syntax.
+* Unpack that list.
+`
+@threeprimes = (2, 3, 5);
+
+($a, $b, $c) = @threeprimes;
+`
+
+* Index an array.
+* Update an array.
+Either involves a scalar so use `$` not `@`.
+
+`
+$lst[n] = new_el
+
+print $lst[n]
+`
+
+* Create a hash using literal syntax.
+`
+@birthmonths = (
+    "John" => "February",
+    "Mary" => "March",             
+);
+`
+
+Arrows are just a nicer way of writing more arrows.
+
+* Look up an element in a hash.
+* Update a hash.
+`
+$hash{"key"}
+
+$hash{"key"} = val
+`
+
+As with arrays, notice the use of `$` when dealing with individual elements.
+
 
