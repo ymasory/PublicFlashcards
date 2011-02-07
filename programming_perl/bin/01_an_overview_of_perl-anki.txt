@@ -13,17 +13,17 @@ Run some perl straight from the terminal.<br><br>Run some perl stored in a file.
 What is a filehandle?<br><br>Which are built in?	A data type that can represent files, devices, sockets, and pipes.<br><br><tt>STDOUT</tt> and <tt>STDERR</tt> are provided by default.
 Get a filehandle.	Use <tt>open</tt>, whose simplest form is:<br><pre>open(HANDLENAME, "filename");</pre>
 What read/write options are available when requesting a new filehandle?	Readonly (default): <tt>"<filename"</tt><br>Write (clobber): <tt>">filename"</tt><br>Write (append): <tt>">>filename"</tt>
-What is a common idiom for handling failure when opening a file?	<pre>open(FILEHANDLE, "file") or die "Error opening file: $!\n";</pre><br><tt>$!</tt> is the OS's error mesage.
+What is a common idiom for handling failure when opening a file?	<pre>open(FILEHANDLE, "file") or die "Error opening file: $!\n";</pre><br><tt>$!</tt> is the OS's error message.
 Read a line from a file.<br><br>Read a line from the terminal.	<pre>$str = <FILEHANDLE><br>$str = <STDIN></pre>
 Write to a file.<br><br>Write to the terminal.	<pre>print FILEHANDLE 'str'</pre><br>These two are the same:<br><pre>print STDOUT 'str'<br>print 'str'</pre>
 What's the difference between <tt>chop</tt> and <tt>chomp</tt>?	<tt>chop</tt> removes the last character of the string passed to it, and returns it.<br><tt>chomp</tt> removes endl from the string passed to it, and returns the <em>number</em> of characters removed.
 What is Perl's string concatenation operator?<br><br>Why does Perl have separate operators for string concatenation and arithmetic addition?	Use a period (<tt>.</tt>) for string concatenation.<br><br>Because of weak typing addition of scalars created as strings, but that can be interpreted as numbers, would result in a sum.
-How can you achieve Python's "string multiplication"?	Use the repat operator (<tt>x</tt>).
+How can you achieve Python's "string multiplication"?	Use the repeat operator (<tt>x</tt>).
 Name three ways to print a formatted string.	- Using the dot operator (like idiomatic Java using <tt>+</tt>)<br>- Using interpolation (like idiomatic bash using <tt>$</tt>)<br>- Using list literal syntax
 What is the exponentiation operator?	<tt>**</tt>
 Operators ending with <tt>=</tt> are treated ...	... specially.<br><br>In general, the following two are equivalent:<br><pre>lval op= expr<br>lval = lval op expr</pre>
 What is the result of assignment?	The value assigned.
-The autoincrementing/decrementing operators are just as in ...	Java
+The auto-incrementing/decrementing operators are just as in ...	Java
 What are the two sets of boolean operators?<br><br>What's the difference?	<tt>&&</tt> - <tt>and</tt><br><tt>||</tt> - <tt>or</tt><br><tt>!</tt> - <tt>not</tt><br><br>The English ones bind less tightly.
 What are the standard comparison operators?<br><br>What non-standard one is provided?	There are numeric and string versions.<br><tt>==</tt> - <tt>eq</tt><br><tt>!=</tt> - <tt>ne</tt><br><tt><</tt> - <tt>lt</tt><br><tt>></tt> - <tt>gt</tt><br><tt><=</tt> - <tt>le</tt><br>The standard "greater or equal" is absent.<br><br>Nonstandard, but handy:<br><tt><=></tt> - <tt>cmp</tt>
 Name the common file test operators.	<tt>-e</tt> (exists)<br><tt>-r</tt> (readable)<br><tt>-w</tt> (writable)<br><tt>-d</tt> (directory)<br><tt>-f</tt> (regular file<br><tt>-T</tt> (text file)
