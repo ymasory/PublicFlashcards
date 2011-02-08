@@ -25,7 +25,7 @@ Operators ending with <tt>=</tt> are treated ...	... specially.<br><br>In genera
 What is the result of assignment?	The value assigned.
 The auto-incrementing/decrementing operators are just as in ...	Java
 What are the two sets of boolean operators?<br><br>What's the difference?	<tt>&&</tt> - <tt>and</tt><br><tt>||</tt> - <tt>or</tt><br><tt>!</tt> - <tt>not</tt><br><br>The English ones bind less tightly.
-What are the standard comparison operators?<br><br>What non-standard one is provided?	There are numeric and string versions.<br><tt>==</tt> - <tt>eq</tt><br><tt>!=</tt> - <tt>ne</tt><br><tt><</tt> - <tt>lt</tt><br><tt>></tt> - <tt>gt</tt><br><tt><=</tt> - <tt>le</tt><br>The standard "greater or equal" is absent.<br><br>Nonstandard, but handy:<br><tt><=></tt> - <tt>cmp</tt>
+What are the standard comparison operators?<br><br>What non-standard one is provided?	There are numeric and string versions.<br><tt>==</tt> - <tt>eq</tt><br><tt>!=</tt> - <tt>ne</tt><br><tt><</tt> - <tt>lt</tt><br><tt>></tt> - <tt>gt</tt><br><tt><=</tt> - <tt>le</tt><br><tt>>=</tt> - <tt>ge</tt><br><br>Nonstandard, but handy:<br><tt><=></tt> - <tt>cmp</tt>
 Name the common file test operators.	<tt>-e</tt> (exists)<br><tt>-r</tt> (readable)<br><tt>-w</tt> (writable)<br><tt>-d</tt> (directory)<br><tt>-f</tt> (regular file<br><tt>-T</tt> (text file)
 What values are truthy?	Any string except <tt>""</tt> and <tt>"0"</tt>.<br>Any number except 0.
 Why are references truthy and undefined values falsy?	References evaluate to non-0 addresses.<br><br>Undefined values evaluate to 0 or <tt>""</tt>.
