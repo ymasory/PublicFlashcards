@@ -1,0 +1,13 @@
+#GRAMMAR 1
+#TOPRIGHT 1
+#TOPLEFT Learning Perl
+#NUMBERS true
+
+* Guarantee your script will be run with Perl 5.10.
+Put this at the top of the script:
+
+`
+use 5.010;
+`
+
+* 
