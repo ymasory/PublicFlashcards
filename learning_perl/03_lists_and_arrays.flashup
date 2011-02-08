@@ -1,0 +1,41 @@
+#GRAMMAR 1
+#TOPRIGHT 3
+#TOPLEFT Learning Perl
+#NUMBERS true
+
+* Arrays are always made up of what?
+Scalars.
+
+* Since scalars and arrays can always be distinguished syntactically ...
+... their identifiers are in separate namespaces. There can be an array with the same name as a scalar.
+
+* What happens if an array index isn't exactly an integer?
+It is truncated.
+
+* Give two examples of Perl's "no unnecessary limits" philosophy.
+Strings and arrays can be any size. Contrast with Java arrays which are of limited size.
+
+* What happens if you exceed the bounds of an array?
+The array is automatically expended. Any "empty slots" that need to be created are filled with `undef`.
+
+* Find the last index of an array.
+`$#ident`
+
+* What do negative array indexes do?
+As in Python, they index the set starting from the end.
+
+* What shortcut is provided for creating ranges?
+The range operator (`..`) placed between two numbers. The numbers are truncated.
+
+* Give a shortcut for creating lists of strings.
+`
+qw( no quotes necessary whitespace delimited )
+`
+Any punctuation can be used in place of the parens.
+
+* What are the limitations of quotes lists?
+- You can't put comments inside.
+- If you want to use the delimiter as an element of the list you must backslash escape.
+
+
+

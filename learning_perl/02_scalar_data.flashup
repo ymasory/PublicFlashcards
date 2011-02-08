@@ -35,6 +35,9 @@ It ignores trailing characters that it can't interpret as numbers. If ``everythi
 - `use diagnostics;`
 - Or equivalently, use `-Mdiagnostics` argument on `perl`.
 
+* How can you force yourself to use only declared variables.
+`use strict;`
+
 * What is a ``sigil``?
 The symbol `$&`?
 
