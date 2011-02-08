@@ -1,0 +1,8 @@
+In Perl, all numbers are what?<br><br>How large are they?	Floating-point.<br><br>They size of a C <tt>double</tt> is on your system.
+When are underscore readability separators allowed in numbers literals?	When the number literal is non-decimal.
+Using <tt>**</tt> for exponentiation comes from what language?	FORTRAN.
+Describe single-quoted string syntax..	- All characters are literal except for the backslash-singlequote and double-backslash combinations.<br>- They can be multi-line.
+Describe double-quoted string syntax.	- Backslash escape sequences are supported.<br>- Variables are interpolated.<br>- They can be multi-line.
+What does perl do with strings that don't look like numbers, when in a number context?	It ignores trailing characters that it can't interpret as numbers. If <em>everything</em> is discarded, you're left with the empty string which is interpreted as <tt>0</tt>.
+What's the best way to enable warnings?	- In the shebang line. It will work on non-Unix systems too.<br>- Post-5.6 with the pragma <tt>use warnings;</tt>.
+How can you get more descriptive error warnings?	- <tt>use diagnostics;</tt><br>- Or equivalently, use <tt>-Mdiagnostics</tt> argument on <tt>perl</tt>.
