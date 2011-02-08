@@ -83,11 +83,43 @@ It returns a new array with the argument reversed. The original argument is not 
 * Describe `sort`.
 Returns a sorted array, using ascii order. Does not mutate the argument.
 
+* What are the two most important contexts?
+List and scalar.
+
+* What happens if you use an expression in a context for which it's not defined.
+`undef` will result.
+
+* What is the `$` before a scalar identifier or the `@` before a list identifier called?
+A qualifier.
+
 * Expressions evaluate differently depending on what?
 * Give an example.
 Context, the location in the program text where the expression occurs.
 
-List variables evaluate to lists only in list context. They evaluate to the size of the list in scalar context.
+Bare list variables evaluate to lists only in list context. They evaluate to the size of the list in scalar context.
 
+* What does ``list-producing expression`` even mean in a language whose evaluation is determined by context?
+An expression that would be more surprising if it were used in scalar context than if it was used in list context.
 
+* What is context is provided by assigning to `($ident)`?
+List context. That's a list of length one, not a scalar with extraneous parens.
 
+* What context does `print` provide?
+List.
+
+* What happens if you use a scalar in list context?
+The scalar will be wrapped into a singleton list.
+
+* How can you force the scalar context?
+Use the `scalar` operator.
+
+* What does the expression `<STDIN>` evaluate to?
+In scalar context, the next line of input. In list context, all remaining lines.
+
+* What does `chomp` do in list context?
+It chomps each element, in place.
+
+* Give the idiomatic way of reading all the lines of a file.
+`
+chomp(@lines = <FILEHANDLE>)
+`
