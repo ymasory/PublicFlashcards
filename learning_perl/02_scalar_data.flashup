@@ -26,3 +26,13 @@ FORTRAN.
 
 * What does perl do with strings that don't look like numbers, when in a number context?
 It ignores trailing characters that it can't interpret as numbers. If ``everything`` is discarded, you're left with the empty string which is interpreted as `0`.
+
+* What's the best way to enable warnings?
+- In the shebang line. It will work on non-Unix systems too.
+- Post-5.6 with the pragma `use warnings;`.
+
+* How can you get more descriptive error warnings?
+- `use diagnostics;`
+- Or equivalently, use `-Mdiagnostics` argument on `perl`.
+
+
