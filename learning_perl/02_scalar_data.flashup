@@ -1,0 +1,12 @@
+#GRAMMAR 1
+#TOPRIGHT 2
+#TOPLEFT Learning Perl
+#NUMBERS true
+
+* In Perl, all numbers are what?
+* How large are they?
+Floating-point.
+
+They size of a C `double` is on your system.
+
+* 
