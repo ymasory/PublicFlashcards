@@ -10,4 +10,16 @@ Put this at the top of the script:
 use 5.010;
 `
 
-* 
+* Newer Perl versions allow what in place of `print`?
+`say`
+
+* Is whitespace significant in Perl?
+No.
+
+* Statements end with ...
+... a semicolon.
+
+* Run an external program and capture its output.
+Write the program name surrounded with back ticks.
+
+
