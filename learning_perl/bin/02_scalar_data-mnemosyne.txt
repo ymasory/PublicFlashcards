@@ -6,6 +6,7 @@ Describe double-quoted string syntax.	- Backslash escape sequences are supported
 What does perl do with strings that don't look like numbers, when in a number context?	It ignores trailing characters that it can't interpret as numbers. If <em>everything</em> is discarded, you're left with the empty string which is interpreted as <tt>0</tt>.
 What's the best way to enable warnings?	- In the shebang line. It will work on non-Unix systems too.<br>- Post-5.6 with the pragma <tt>use warnings;</tt>.
 How can you get more descriptive error warnings?	- <tt>use diagnostics;</tt><br>- Or equivalently, use <tt>-Mdiagnostics</tt> argument on <tt>perl</tt>.
+How can you force yourself to use only declared variables.	<tt>use strict;</tt><br><br>It will require many other things, be warned.
 What is a <em>sigil</em>?	The symbol <tt>$&</tt>?
 What happens if you interpolate an unknown scalar value?	<tt>undef</tt> will be assigned to the scalar, which is interpreted as an empty string.
 How variable names identified for interpolation?	As in bash, if you just use <tt>$ident</tt> the identifier will be interpreted as the longest legal string following the <tt>$</tt>. If you want something shorter you can use <tt>${ident}</tt>.

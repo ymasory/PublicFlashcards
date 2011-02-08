@@ -1,0 +1,33 @@
+Arrays are always made up of what?	Scalars.
+Since scalars and arrays can always be distinguished syntactically ...	... their identifiers are in separate namespaces. There can be an array with the same name as a scalar.
+What happens if an array index isn't exactly an integer?	It is truncated.
+Give two examples of Perl's "no unnecessary limits" philosophy.	Strings and arrays can be any size. Contrast with Java arrays which are of limited size.
+What happens if you exceed the bounds of an array?	If you exceed at the end by assignment, the array is automatically expended. Any "empty slots" that need to be created are filled with <tt>undef</tt>.<br>If you exceed at the beginning, or at the end by lookup, <tt>undef</tt> is returned.
+Find the last index of an array.	<tt>$#ident</tt>
+What do negative array indexes do?	As in Python, they index the set starting from the end.
+What shortcut is provided for creating ranges?	The range operator (<tt>..</tt>) placed between two numbers. The numbers are truncated.
+Give a shortcut for creating lists of strings.	<pre>qw( no quotes necessary whitespace delimited )</pre>Any punctuation can be used in place of the parens.
+What are the limitations of quotes lists?	- You can't put comments inside.<br>- If you want to use the delimiter as an element of the list you must backslash escape.
+Describe multiple scalar assignment.<br><br>What are its boundary cases?	<pre>($id1, ..., $idN) = (val1, ..., valN)</pre>The RHS need not be a list <em>literal</em>.<br><br>If there are too many values they will be ignored. If there are too many variables the extra variables will get their default values.
+What happens if you create a list literal some of whose elements are lists?	The resulting list will be flattened, containing the elements of any "nested list" along with any scalar values in the literal.
+What does assigning one list variable to another do?	Copies the whole array.
+Why should array indexing be avoided?<br><br>What is preferred in its place?	It's slow.<br><br><tt>pop</tt> which mutates the array and returns the last element (or <tt>undef</tt>)<br><tt>push</tt> which takes an array and a scalar or two arrays, mutating the first
+What are <tt>shift</tt> and <tt>unshift</tt>?	<tt>shift</tt> is like popping from the beginning.<br><tt>unshift</tt> is like pushing to the beginning (<em>cons</em>).
+What happens to arrays in string interpolation?	They are printed with the elements with spaces interposed.
+After a <tt>foreach</tt> loop is done, what's the value of the control variable?	The same as it was before the loop (<em>i.e.</em>, quite possibly undefined).
+What shortcut is provided for <tt>foreach</tt> loops?	You can leave off the control variable. The default <tt>$_</tt> will be used.
+Many operators do what when not provided a needed argument?	They use <tt>$_</tt> instead.
+Describe <tt>reverse</tt>.	It returns a new array with the argument reversed. The original argument is not mutated.
+Describe <tt>sort</tt>.	Returns a sorted array, using ascii order. Does not mutate the argument.
+What are the two most important contexts?	List and scalar.
+What happens if you use an expression in a context for which it's not defined.	<tt>undef</tt> will result.
+What is the <tt>$</tt> before a scalar identifier or the <tt>@</tt> before a list identifier called?	A qualifier.
+Expressions evaluate differently depending on what?<br><br>Give an example.	Context, the location in the program text where the expression occurs.<br><br>Bare list variables evaluate to lists only in list context. They evaluate to the size of the list in scalar context.
+What does <em>list-producing expression</em> even mean in a language whose evaluation is determined by context?	An expression that would be more surprising if it were used in scalar context than if it was used in list context.
+What is context is provided by assigning to <tt>($ident)</tt>?	List context. That's a list of length one, not a scalar with extraneous parens.
+What context does <tt>print</tt> provide?	List.
+What happens if you use a scalar in list context?	The scalar will be wrapped into a singleton list.
+How can you force the scalar context?	Use the <tt>scalar</tt> operator.
+What does the expression <tt><STDIN></tt> evaluate to?	In scalar context, the next line of input. In list context, all remaining lines.
+What does <tt>chomp</tt> do in list context?	It chomps each element, in place.
+Give the idiomatic way of reading all the lines of a file.	<pre>chomp(@lines = <FILEHANDLE>)</pre>
