@@ -180,7 +180,7 @@ There are numeric and string versions.
 `<` - `lt`
 `>` - `gt`
 `<=` - `le`
-The standard "greater or equal" is absent.
+`>=` - `ge`
 
 Nonstandard, but handy:
 `<=>` - `cmp`

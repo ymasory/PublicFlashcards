@@ -35,4 +35,11 @@ It ignores trailing characters that it can't interpret as numbers. If ``everythi
 - `use diagnostics;`
 - Or equivalently, use `-Mdiagnostics` argument on `perl`.
 
+* What is a ``sigil``?
+The symbol `$&`?
 
+* What happens if you interpolate an unknown scalar value?
+`undef` will be assigned to the scalar, which is interpreted as an empty string.
+
+* How variable names identified for interpolation?
+As in bash, if you just use `$ident` the identifier will be interpreted as the longest legal string following the `$`. If you want something shorter you can use `${ident}`.
