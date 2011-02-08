@@ -61,11 +61,33 @@ It's slow.
 `push` which takes an array and a scalar or two arrays, mutating the first
 
 
-* What are `shift` and `unshirt`?
+* What are `shift` and `unshift`?
 `shift` is like popping from the beginning.
 `unshift` is like pushing to the beginning (``cons``).
 
 * What happens to arrays in string interpolation?
 They are printed with the elements with spaces interposed.
+
+* After a `foreach` loop is done, what's the value of the control variable?
+The same as it was before the loop (``i.e.``, quite possibly undefined).
+
+* What shortcut is provided for `foreach` loops?
+You can leave off the control variable. The default `$_` will be used.
+
+* Many operators do what when not provided a needed argument?
+They use `$_` instead.
+
+* Describe `reverse`.
+It returns a new array with the argument reversed. The original argument is not mutated.
+
+* Describe `sort`.
+Returns a sorted array, using ascii order. Does not mutate the argument.
+
+* Expressions evaluate differently depending on what?
+* Give an example.
+Context, the location in the program text where the expression occurs.
+
+List variables evaluate to lists only in list context. They evaluate to the size of the list in scalar context.
+
 
 
