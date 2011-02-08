@@ -6,3 +6,16 @@ Describe double-quoted string syntax.	- Backslash escape sequences are supported
 What does perl do with strings that don't look like numbers, when in a number context?	It ignores trailing characters that it can't interpret as numbers. If <em>everything</em> is discarded, you're left with the empty string which is interpreted as <tt>0</tt>.
 What's the best way to enable warnings?	- In the shebang line. It will work on non-Unix systems too.<br>- Post-5.6 with the pragma <tt>use warnings;</tt>.
 How can you get more descriptive error warnings?	- <tt>use diagnostics;</tt><br>- Or equivalently, use <tt>-Mdiagnostics</tt> argument on <tt>perl</tt>.
+What is a <em>sigil</em>?	The symbol <tt>$&</tt>?
+What happens if you interpolate an unknown scalar value?	<tt>undef</tt> will be assigned to the scalar, which is interpreted as an empty string.
+How variable names identified for interpolation?	As in bash, if you just use <tt>$ident</tt> the identifier will be interpreted as the longest legal string following the <tt>$</tt>. If you want something shorter you can use <tt>${ident}</tt>.
+Give the idiomatic way of reading a line of text from the terminal.	<pre>chomp($text = <STDIN>);</pre>
+In Perl parens are ...	... optional. They need only be used when leaving their absence adds a new interpretation.
+What does <tt>chomp</tt> do?	It removed the last input separator from a string, returning the number of characters removed.
+What is the default value for scalar variables?<br><br>Describe it.	<tt>undef</tt><br><br>It acts as numeric zero or as the empty string.
+Name some <em>numeric</em> equivalences with numeric <tt>0</tt>.	<tt>undef</tt> and the strings <tt>""</tt> and <tt>"0"</tt>.
+What is <tt>$/</tt>.	A special variable storing the input separator. Typically it's <tt>"\n"</tt>.
+<tt>undef</tt>'s string/numeric behavior allows which idioms?	Using binary assignment operators on incrementers whose variables are not first initialized.
+How is the EOF condition represented?	With <tt>undef</tt>.
+Test for <tt>undef</tt>.	Use the <tt>defined</tt> function.
+In program text, what is "undef"?	An operator which returns the value <tt>undef</tt>.
