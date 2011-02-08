@@ -38,6 +38,8 @@ It ignores trailing characters that it can't interpret as numbers. If ``everythi
 * How can you force yourself to use only declared variables.
 `use strict;`
 
+It will require many other things, be warned.
+
 * What is a ``sigil``?
 The symbol `$&`?
 

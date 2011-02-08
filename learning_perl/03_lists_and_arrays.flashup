@@ -16,7 +16,8 @@ It is truncated.
 Strings and arrays can be any size. Contrast with Java arrays which are of limited size.
 
 * What happens if you exceed the bounds of an array?
-The array is automatically expended. Any "empty slots" that need to be created are filled with `undef`.
+If you exceed at the end by assignment, the array is automatically expended. Any "empty slots" that need to be created are filled with `undef`.
+If you exceed at the beginning, or at the end by lookup, `undef` is returned.
 
 * Find the last index of an array.
 `$#ident`
@@ -37,5 +38,34 @@ Any punctuation can be used in place of the parens.
 - You can't put comments inside.
 - If you want to use the delimiter as an element of the list you must backslash escape.
 
+* Describe multiple scalar assignment.
+* What are its boundary cases?
+`
+($id1, ..., $idN) = (val1, ..., valN)
+`
+The RHS need not be a list ``literal``.
+
+If there are too many values they will be ignored. If there are too many variables the extra variables will get their default values.
+
+* What happens if you create a list literal some of whose elements are lists?
+The resulting list will be flattened, containing the elements of any "nested list" along with any scalar values in the literal.
+
+* What does assigning one list variable to another do?
+Copies the whole array.
+
+* Why should array indexing be avoided?
+* What is preferred in its place?
+It's slow.
+
+`pop` which mutates the array and returns the last element (or `undef`)
+`push` which takes an array and a scalar or two arrays, mutating the first
+
+
+* What are `shift` and `unshirt`?
+`shift` is like popping from the beginning.
+`unshift` is like pushing to the beginning (``cons``).
+
+* What happens to arrays in string interpolation?
+They are printed with the elements with spaces interposed.
 
 
