@@ -43,3 +43,40 @@ The symbol `$&`?
 
 * How variable names identified for interpolation?
 As in bash, if you just use `$ident` the identifier will be interpreted as the longest legal string following the `$`. If you want something shorter you can use `${ident}`.
+
+* Give the idiomatic way of reading a line of text from the terminal.
+`
+chomp($text = <STDIN>);
+`
+
+* In Perl parens are ...
+... optional. They need only be used when leaving their absence adds a new interpretation.
+
+* What does `chomp` do?
+It removed the last input separator from a string, returning the number of characters removed. 
+
+* What is the default value for scalar variables?
+* Describe it.
+`undef`
+
+It acts as numeric zero or as the empty string.
+
+* Name some ``numeric`` equivalences with numeric `0`.
+`undef` and the strings `""` and `"0"`.
+
+* What is `$/`.
+A special variable storing the input separator. Typically it's `"\n"`.
+
+* `undef`'s string/numeric behavior allows which idioms?
+Using binary assignment operators on incrementers whose variables are not first initialized.
+
+* How is the EOF condition represented?
+With `undef`.
+
+* Test for `undef`.
+Use the `defined` function.
+
+* In program text, what is "undef"?
+An operator which returns the value `undef`.
+
+
