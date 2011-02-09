@@ -9,8 +9,8 @@ Floating-point.
 
 They size of a C `double` is on your system.
 
-* When are underscore readability separators allowed in numbers literals?
-When the number literal is non-decimal.
+* What readability feature is provided for long number literals?
+Underscore separators.
 
 * Using `**` for exponentiation comes from what language?
 FORTRAN.
