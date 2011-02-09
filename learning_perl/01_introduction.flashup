@@ -4,14 +4,17 @@
 #NUMBERS true
 
 * Guarantee your script will be run with Perl 5.10.
-Put this at the top of the script:
-
 `
 use 5.010;
 `
 
 * Newer Perl versions allow what in place of `print`?
-`say`
+* How do you activate it?
+`say` (adds a `\n`)
+
+`
+use feature qw(say);
+`
 
 * Is whitespace significant in Perl?
 No.
