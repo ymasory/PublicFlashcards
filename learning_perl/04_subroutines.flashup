@@ -45,3 +45,25 @@ The arguments are available inside the subroutine as the `@_` array.
 
 * What happens if a function is called with the wrong number of arguments.
 Extra arguments are ignored. Missing arguments are `undef`.
+
+* What is the default scope of variables?
+* How can this behavior be changed?
+Global.
+
+The `my` keyword creates lexical scopes.
+
+* Declare multiple lexically scoped variables.
+`
+my($ident1, ..., $identN)
+`
+
+* What's a common idiom for creating lexically scoped arguments to subroutines with meaningful names?
+`
+sub funcname {
+    my($ident1, ..., $identN);
+    ($ident1, ..., $identN) = @_
+    #more code
+}
+`
+
+
