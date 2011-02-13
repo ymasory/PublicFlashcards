@@ -1,0 +1,13 @@
+In general, what's the distinction between a <em>function</em> and a <em>procedure</em>?<br><br>In Perl?	In general, functions return values and procedures do not.<br>In Perl this distinction is not usually made.
+In Perl-speak, what's the difference between a <em>function</em> and a <em>subroutine</em>?	<em>Subroutine</em> always indicates a user-defined functions, while <em>function</em> is more general, possibly indicating a built-in function.
+Create a new subroutine.	<pre>sub funcname {<br>    #body<br>}</pre>
+Are forward declarations required?	Not usually. Subroutine definitions can be placed in any order.
+Call a subroutine.	<pre>&funcname;</pre>
+What is the result of a subroutine?	The last value computed.
+What's the <em>void context</em>?	The context in which the result is not being used or stored.
+What's the result of <tt>print</tt>?	The boolean success of the operation.
+Call a subroutine with arguments.<br><br>Access arguments in a subroutine.	<pre>@funcname(arg1, ..., argN);</pre><br>The arguments are available inside the subroutine as the <tt>@_</tt> array.
+What happens if a function is called with the wrong number of arguments.	Extra arguments are ignored. Missing arguments are <tt>undef</tt>.
+What is the default scope of variables?<br><br>How can this behavior be changed?	Global.<br><br>The <tt>my</tt> keyword creates lexical scopes.
+Declare multiple lexically scoped variables.	<pre>my($ident1, ..., $identN)</pre>
+What's a common idiom for creating lexically scoped arguments to subroutines with meaningful names?	<pre>sub funcname {<br>    my($ident1, ..., $identN);<br>    ($ident1, ..., $identN) = @_<br>    #more code<br>}</pre>

@@ -1,5 +1,5 @@
 In Perl, all numbers are what?<br><br>How large are they?	Floating-point.<br><br>They size of a C <tt>double</tt> is on your system.
-When are underscore readability separators allowed in numbers literals?	When the number literal is non-decimal.
+What readability feature is provided for long number literals?	Underscore separators.
 Using <tt>**</tt> for exponentiation comes from what language?	FORTRAN.
 Describe single-quoted string syntax..	- All characters are literal except for the backslash-singlequote and double-backslash combinations.<br>- They can be multi-line.
 Describe double-quoted string syntax.	- Backslash escape sequences are supported.<br>- Variables are interpolated.<br>- They can be multi-line.

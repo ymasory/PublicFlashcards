@@ -1,14 +1,25 @@
 Where does Coq define booleans and numbers?	In the standard library.
 What's a "type" in Coq?	A set of data values.
-Define the boolean type	<pre>Inductive bool : Type :=<br>  | true : bool<br>  | false : bool.</pre>
+As an example of an enumerated type, define the boolean type.	<pre>Inductive bool : Type :=<br>  | true : bool<br>  | false : bool.</pre>
 Define a boolean negation function.	<pre>Definition negb (b : bool) : bool :=<br>  match b with<br>  | true => false<br>  | false => true<br>  end.</pre>
-Define a function for boolean conjunction.	<pre>Definition andb (b1 : bool) (b2 : bool) : bool :=<br>  match b1 with<br>  | true => b2<br>  | false => false<br>  end.</pre>
-Coq can infer which parts of a function prototype?	Argument and result types.
+Define a function for boolean conjunction.	<pre>Definition andb (b1:bool) (b2:bool) : bool :=<br>  match b1 with<br>  | true => b2<br>  | false => false<br>  end.</pre>
 Make a named assertion that ~<tt>true</tt> is <tt>false</tt>, then prove it.	<pre>Example test_negation:<br>  (negb true) = false.<br>Proof. simpl. reflexivity. Qed.</pre>
-Name three ways to check that a function works	- Use <tt>Eval</tt> on a test case and observe the result.<br>- Use <tt>Example</tt> to record expected result, then as Coq to verify.<br>- "extract" function <tt>Definition</tt> to OCaml, Scheme, or Haskell.
+Name three ways to check that a function works.	- Use <tt>Eval</tt> on a test case and observe the result.<br>- Use <tt>Example</tt>/<tt>Theorem</tt>/whatever to record expected result, then as Coq to verify.<br>- "extract" function <tt>Definition</tt> to OCaml, Scheme, or Haskell.
 Apply negation to the boolean <tt>true</tt>.	<tt>Eval simpl in (negb true).</tt>
-How do you delimit Coq fragments in comments for the benefit of <tt>coqdoc</tt>?	Surround the fragments with square brackets.
-Define and explain the purpose of the <tt>admit</tt> value.	<tt>Definition admit {T : Type} : T. Admitted.</tt><br><br>It fills in the hole in an incomplete Definitions.
-How do you fill in a hole in a <tt>Definition</tt>? In an <tt>Example</tt>?	<tt>admit</tt> fills in holes in <tt>Definitions</tt>.<br><tt>Admitted</tt> fills in holes in <tt>Examples</tt>.
+What are Coq's names for boolean and/or/not?	- <tt>andb</tt><br>- <tt>orb</tt><br>- <tt>negb</tt>
+How do you fill in a hole in a <tt>Definition</tt>? In an <tt>Example</tt>?	<tt>admit</tt> fills in holes in <tt>Definitions</tt>.<br><tt>Admitted</tt> fills in holes in proofs.
 How does Coq write the type of a boolean conjunction function?	<tt>bool->bool->bool</tt>
 What does the <tt>Check</tt> command do?	It causes Coq to print the type of an expression.
+How will we use the module system?	If you put declarations between <tt>Module X</tt> and <tt>End X</tt> then after <tt>End</tt> the definitions are referred to as <tt>X.foo</tt>.
+As an example of a type with a sum constructor, define <tt>nat</tt>.	<pre>Inductive nat : Type :=<br>  | O : nat<br>  | S : nat -> nat.</pre>
+When we use <tt>Inductive</tt> to define a type, we should see it as what?	A set of <em>expressions</em>, inductively defined. The definition tells us exactly how members of the type can be constructed, and excludes all other expressions.
+What is the fundamental difference between a data constructor and and functions?	Functions come with <em>computation rules</em>. Data constructors have no behavior attached.
+Name some keywords that can introduce a function.	- <tt>Definition</tt><br>- <tt>Fixpoint</tt> in case of recursion
+What kind of recursion does Coq allow?	<em>Structural</em> (or <em>primitive</em>) recursion. That means recursive calls must be on strictly smaller values, guaranteeing termination.
+What notational convenience does Coq provide for multiple parameters of the same type?	The following are equivalent:<br><br><pre>(n m : nat)<br>(n: nat) (m: nat)</pre>
+How does one match on <em>multiple</em> expressions?	A comma is placed between then in the scrutinee and between the two sides of each matching pattern.
+How is "language support" introduced for some definitions?<br><br>Name two kinds of language support available.	With <tt>Notation</tt> constructions which also define associativity and precedence.<br><br>- Numerals<br>- Operators<br>- Collections syntax
+How can one choose between multiple notation interpretations for an expression.	<pre>expression%notation_scope</pre>
+Which tactic is like <tt>simpl</tt> "on steroids"?	<tt>compute</tt>
+The <tt>reflexivity</tt> tactic implicitly does what?<br><br>What's the difference between the simplification of <tt>simpl</tt> and that of <tt>reflexivity</tt>?	Simplifies both sides before testing (including by using <tt>simpl</tt>).<br><br>Among other things, <tt>reflexivity</tt> may expand definitions. <tt>simpl</tt> never will.
+What does the <tt>intros</tt> tactic do?	For a conditional it introduces the antecedent as an assumption. For a universally quantified statement it introduces an arbitrary element of the domain and discharges the quantifier.
