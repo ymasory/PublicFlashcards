@@ -9,7 +9,7 @@ In the standard library.
 * What's a "type" in Coq?
 A set of data values.
 
-* As an expample of an enumerated type, define the boolean type.
+* As an example of an enumerated type, define the boolean type.
 `
 Inductive bool : Type :=
   | true : bool
@@ -66,5 +66,22 @@ It causes Coq to print the type of an expression.
 
 * How will we use the module system?
 If you put declarations between `Module X` and `End X` then after `End` the definitions are referred to as `X.foo`.
+
+* As an example of a type with a sum constructor, define `nat`.
+`
+Inductive nat : Type :=
+  | O : nat
+  | S : nat -> nat.
+`
+
+* When we use `Inductive` to define a type, we should see it as what?
+A set of ``expressions``, inductively defined. The definition tells us exactly how members of the type can be constructed, and excludes all other expressions.
+
+* What is the fundamental difference between a data constructor and and functions?
+Functions come with ``computation rules``. Data constructors have no behavior attached.
+
+* Name some keywords that can introduce a function.
+- `Definition`
+- `Fixpoint` in case of recursion
 
 
