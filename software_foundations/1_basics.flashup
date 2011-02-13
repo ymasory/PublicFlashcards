@@ -9,7 +9,7 @@ In the standard library.
 * What's a "type" in Coq?
 A set of data values.
 
-* Define the boolean type
+* As an expample of an enumerated type, define the boolean type.
 `
 Inductive bool : Type :=
   | true : bool
@@ -27,15 +27,12 @@ Definition negb (b : bool) : bool :=
 
 * Define a function for boolean conjunction.
 `
-Definition andb (b1 : bool) (b2 : bool) : bool :=
+Definition andb (b1:bool) (b2:bool) : bool :=
   match b1 with
   | true => b2
   | false => false
   end.
 `
-
-* Coq can infer which parts of a function prototype?
-Argument and result types.
 
 * Make a named assertion that ~`true` is `false`, then prove it.
 `
@@ -44,28 +41,30 @@ Example test_negation:
 Proof. simpl. reflexivity. Qed.
 `
 
-* Name three ways to check that a function works
+* Name three ways to check that a function works.
 - Use `Eval` on a test case and observe the result.
-- Use `Example` to record expected result, then as Coq to verify.
+- Use `Example`/`Theorem`/whatever to record expected result, then as Coq to verify.
 - "extract" function `Definition` to OCaml, Scheme, or Haskell.
 
 * Apply negation to the boolean `true`.
 `Eval simpl in (negb true).`
 
-* How do you delimit Coq fragments in comments for the benefit of `coqdoc`?
-Surround the fragments with square brackets.
-
-* Define and explain the purpose of the `admit` value.
-`Definition admit {T : Type} : T. Admitted.`
-
-It fills in the hole in an incomplete Definitions.
+* What are Coq's names for boolean and/or/not?
+- `andb`
+- `orb`
+- `negb`
 
 * How do you fill in a hole in a `Definition`? In an `Example`?
 `admit` fills in holes in `Definitions`.
-`Admitted` fills in holes in `Examples`.
+`Admitted` fills in holes in proofs.
 
 * How does Coq write the type of a boolean conjunction function?
 `bool->bool->bool`
 
 * What does the `Check` command do?
 It causes Coq to print the type of an expression.
+
+* How will we use the module system?
+If you put declarations between `Module X` and `End X` then after `End` the definitions are referred to as `X.foo`.
+
+
