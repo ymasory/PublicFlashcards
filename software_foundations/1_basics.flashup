@@ -137,5 +137,8 @@ rewrite -> H
 
 Left-to-write means rewriting the terms in the subgoal that match the left-hand-side of the rule being used.
 
-
+* How are are propositions with multiple hypothesis written?
+`
+Hyp1 -> ... -> HypN -> Conclusion
+`
 
