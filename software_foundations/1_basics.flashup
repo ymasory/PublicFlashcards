@@ -84,4 +84,25 @@ Functions come with ``computation rules``. Data constructors have no behavior at
 - `Definition`
 - `Fixpoint` in case of recursion
 
+* What kind of recursion does Coq allow?
+``Structural`` (or ``primitive``) recursion. That means recursive calls must be on strictly smaller values, guaranteeing termination.
 
+* What notational convenience does Coq provide for multiple parameters of the same type?
+The following are equivalent:
+
+`
+(n m : nat)
+(n: nat) (m: nat)
+`
+
+* How does one match on ``multiple`` expressions?
+A comma is placed between then in the scrutinee and between the two sides of each matching pattern.
+
+* How is "language support" introduced for some definitions?
+* Name two kinds of language support available.
+With `Notation` constructions which also define associativity and precedence.
+
+- Operators
+- Collections syntax
+
+* 
