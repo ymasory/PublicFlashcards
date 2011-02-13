@@ -126,3 +126,16 @@ For a conditional it introduces the antecedent as an assumption. For a universal
 * What is the syntax of `intros`?
 The keyword `intros` followed by a space-delimited list of names for the assumptions. These may be names of variables already in context, or they may be ones you're ``introducing``. The names are interpreted in the order the relevant expressions appear in the current context.
 
+* Describe the `rewrite` tactic.
+* What does rewriting ``left-to-write`` mean?
+It rewrites the current goal using the provided rule and in the provided direction.
+
+For example:
+`
+rewrite -> H
+`
+
+Left-to-write means rewriting the terms in the subgoal that match the left-hand-side of the rule being used.
+
+
+
