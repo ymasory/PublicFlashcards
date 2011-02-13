@@ -102,7 +102,24 @@ A comma is placed between then in the scrutinee and between the two sides of eac
 * Name two kinds of language support available.
 With `Notation` constructions which also define associativity and precedence.
 
+- Numerals
 - Operators
 - Collections syntax
 
-* 
+* How can one choose between multiple notation interpretations for an expression.
+`
+expression%notation_scope
+`
+
+* Which tactic is like `simpl` "on steroids"?
+`compute`
+
+* The `reflexivity` tactic implicitly does what?
+* What's the difference between the simplification of `simpl` and that of `reflexivity`?
+Simplifies both sides before testing (including by using `simpl`).
+
+Among other things, `reflexivity` may expand definitions. `simpl` never will.
+
+* What does the `intros` tactic do?
+For a conditional it introduces the antecedent as an assumption. For a universally quantified statement it introduces an arbitrary element of the domain and discharges the quantifier.
+
