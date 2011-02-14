@@ -142,3 +142,45 @@ Left-to-write means rewriting the terms in the subgoal that match the left-hand-
 Hyp1 -> ... -> HypN -> Conclusion
 `
 
+* Why doesn't simplification be used to prove all theorems?
+Unknown values may appear as arguments to functions, preventing simplification.
+
+* Give the syntax of the `destruct` tactic.
+`
+destruct var as [pattern].
+`
+
+`as [pattern]` is optional.
+
+The pattern consists of names for the data of the possible data constructors of `var` separated by `|`.
+For a nullary constructor just put the pipe.
+
+* Why don't we say `destruct b as [true | false].`?
+Remember, the `as` pattern in a `destruct`/`induction` is for the ```data``` associated with a constructor. Nullary constructors (``values``) have none.
+So you would write either of these two:
+`
+destruct b as [|].
+destruct b.
+`
+
+* `destruct` proves a theorem about an enumerated type for each possible ...
+... constructor used to create that type.
+
+* Don't confused `case` with ...
+... our hack `Case` and `SCase`.
+
+* What is the syntax of the `induction` tactic?
+Just the same as the `destruct` tactic.
+
+* How can you create sub-theorems without creating a new top-level name?
+Use the `assert` tactic.
+
+`
+assert (H: whatever).
+  Case "Proof of assertion". whatever.
+`
+
+* What is a common non-stylistic reason for using `assert`?
+Coq is choosing the wrong instance of a pattern to rewrite when you use the `rewrite` tactic.
+In this case you can prove as a sub-theorem exactly the rewrite you want, and then use `rewrite` in terms of this sub-theorem.
+
