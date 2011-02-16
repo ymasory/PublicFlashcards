@@ -1,0 +1,11 @@
+What mathematical notation do we introduce for pairs?	The following two are equivalent:<br><br><pre>pair x y<br>(x, y)</pre>
+Destruct a pair.	<pre>destruct p as (n, m).</pre><br>For whatever reason there are no brackets around the pattern.
+What notation do we introduce for lists?	List literals:<br><pre>[]<br>[1, ..., n]</pre><br>Cons:<br><pre>el :: lst</pre>
+What notation do we introduce for appending two lists?	<tt>++</tt>
+What does <tt>hd []</tt> result in?	<tt>default</tt>
+What's an alternative to <tt>if</tt>/<tt>then</tt>/<tt>else</tt> expressions.	<pre>if X then Y else Z.</pre><br><pre>match X with<br>| true  => Y<br>| false => Z<br>end.</pre>
+What's another use for <tt>Definition</tt>, apart from creating functions?	Creating type aliases:<br><pre>Definition bag := natlist.</pre>
+Unlike in a Scala <tt>def</tt>, the RHS of a Coq <tt>Definition</tt> can simply be what?	The name of another <tt>Definition</tt>.<br><br><pre>Definition sum : bag => bag -> bag := app.</pre>
+Demonstrate induction on lists.	<pre>induction l as [| n l']<br>Case "l = nil".<br>  ...<br>Case "l = cons n l'".<br>  ...</pre>
+What is the <tt>SearchAbout</tt> command?	<pre>SearchAbout foo</pre><br>Prints all the theorems Coq knows that involve <tt>foo</tt>.
+Describe the <tt>apply</tt> tactic.	It allows you match the current goal to the conclusion of a conditional hypothesis of the current context. Like modus ponens in reverse. Keep in mind a non-conditional statement can be viewed in this case as a degenerate conditional, allowing you to match the current subgoal to a hypothesis and end the proof.
