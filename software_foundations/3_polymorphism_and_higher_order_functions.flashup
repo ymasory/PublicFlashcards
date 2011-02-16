@@ -140,5 +140,8 @@ destruct (beq_nat n 3).
   Case "beq_nat n 3 = false". ...
 `
 
+* Explain the `remember` tactic.
+?
+
 * Explain the `apply ... with ...` tactic.
 ?
