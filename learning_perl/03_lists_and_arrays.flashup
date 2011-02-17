@@ -16,8 +16,9 @@ It is truncated.
 Strings and arrays can be any size. Contrast with Java arrays which are of limited size.
 
 * What happens if you exceed the bounds of an array?
-If you exceed at the end by assignment, the array is automatically expended. Any "empty slots" that need to be created are filled with `undef`.
-If you exceed at the beginning, or at the end by lookup, `undef` is returned.
+If you exceed by assignment, the array is automatically expended. Any "empty slots" that need to be created are filled with `undef`.
+
+If you exceed at the by lookup, `undef` is returned.
 
 * Find the last index of an array.
 `$#ident`
