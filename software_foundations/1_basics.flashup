@@ -44,7 +44,7 @@ Proof. simpl. reflexivity. Qed.
 * Name three ways to check that a function works.
 - Use `Eval` on a test case and observe the result.
 - Use `Example`/`Theorem`/whatever to record expected result, then as Coq to verify.
-- "extract" function `Definition` to OCaml, Scheme, or Haskell.
+- "extract" function definition to OCaml, Scheme, or Haskell.
 
 * Apply negation to the boolean `true`.
 `Eval simpl in (negb true).`
