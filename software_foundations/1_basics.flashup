@@ -54,8 +54,8 @@ Proof. simpl. reflexivity. Qed.
 - `orb`
 - `negb`
 
-* How do you fill in a hole in a `Definition`? In an `Example`?
-`admit` fills in holes in `Definitions`.
+* How do you fill in a hole in a `Definition`/`Fixpoint'? In an `Example`?
+`admit` fills in holes in a `Definitions`/`Fixpoint'.
 `Admitted` fills in holes in proofs.
 
 * How does Coq write the type of a boolean conjunction function?
