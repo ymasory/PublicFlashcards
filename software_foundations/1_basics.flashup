@@ -96,7 +96,7 @@ The following are equivalent:
 `
 
 * How does one match on ``multiple`` expressions?
-A comma is placed between then in the scrutinee and between the two sides of each matching pattern.
+A comma is placed between them in the scrutinee and between the two sides of each matching pattern.
 
 * How is "language support" introduced for some definitions?
 * Name two kinds of language support available.
