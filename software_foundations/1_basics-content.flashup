@@ -1,0 +1,32 @@
+#GRAMMAR 1
+#TOPRIGHT Software Foundations
+#TOPLEFT 1 content
+#NUMBERS true
+
+* Create an enumerated type for the days of the week.
+`
+Inductive day : Type :=
+  | monday : day
+  | tuesday : day
+  | wednesday : day
+  | thursday : day
+  | friday : day
+  | saturday : day
+  | sunday : day.
+`
+
+* Write a function `next_weekday`.
+`
+Definition next_weekday (d:day) : day :=
+  match d with
+  | monday => tuesday
+  | tuesday => wednesday
+  | wednesday => thursday
+  | thursday => friday
+  | friday => monday
+  | saturday => monday
+  | sunday => monday
+  end.
+`
+
+
