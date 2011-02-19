@@ -58,7 +58,7 @@ Definition andb (b1:bool) (b2:bool) : bool :=
   | true => b2
   | false => false
   end.
-`
+`n
 
 * Define a function for boolean disjunction.
 `
@@ -69,6 +69,11 @@ Definition orb (b1:bool) (b2:bool) : bool :=
   end.
 `
 
+* Define a polymorphic expression that can inhabit any type.
+`
+Definition admit {T: Type} : T. Admitted.
+`
+
 * Define a function for boolean nand.
 `
 Definition nandb (b1:bool) (b2:bool) : bool :=
@@ -77,3 +82,30 @@ Definition nandb (b1:bool) (b2:bool) : bool :=
   | true  => negb b2
   end.
 `
+
+* Create a type for natural numbers.
+`
+Inductive nat : Type :=
+  | O : nat
+  | S : nat -> nat.
+`
+
+* Define a function for integer predecessor.
+`
+Definition pred (n:nat) : nat :=
+  match n with
+  | O    => O
+  | S n' => n'
+  end.
+`
+
+* Define a "minus two" function.
+`
+Definition minustwo (n:nat) : nat :=
+  match n with
+  | O        => O
+  | S O      => O
+  | S (S n') => n'
+`
+
+
