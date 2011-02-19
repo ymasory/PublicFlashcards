@@ -29,4 +29,51 @@ Definition next_weekday (d:day) : day :=
   end.
 `
 
+* Prove that tuesday is two days after saturday.
+`
+Example test_next_weekday:
+  (next_weekday (next_weekday saturday)) = tuesday.
+`
 
+* Create an enumerated type for booleans.
+`
+Inductive bool : Type :=
+  | true : bool
+  | false : bool.
+`
+
+* Define a boolean negation function.
+`
+Definition negb (b:bool) : bool :=
+  match b with
+  | true => false
+  | false => true
+  end.
+`
+
+* Define a function for boolean conjunction.
+`
+Definition andb (b1:bool) (b2:bool) : bool :=
+  match b1 with
+  | true => b2
+  | false => false
+  end.
+`
+
+* Define a function for boolean disjunction.
+`
+Definition orb (b1:bool) (b2:bool) : bool := 
+  match b1 with 
+  | true => true
+  | false => b2
+  end.
+`
+
+* Define a function for boolean nand.
+`
+Definition nandb (b1:bool) (b2:bool) : bool :=
+  match b1 with
+  | false => true
+  | true  => negb b2
+  end.
+`

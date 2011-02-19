@@ -9,31 +9,6 @@ In the standard library.
 * What's a "type" in Coq?
 A set of data values.
 
-* As an example of an enumerated type, define the boolean type.
-`
-Inductive bool : Type :=
-  | true : bool
-  | false : bool.
-`
-
-* Define a boolean negation function.
-`
-Definition negb (b : bool) : bool :=
-  match b with
-  | true => false
-  | false => true
-  end.
-`
-
-* Define a function for boolean conjunction.
-`
-Definition andb (b1:bool) (b2:bool) : bool :=
-  match b1 with
-  | true => b2
-  | false => false
-  end.
-`
-
 * Make a named assertion that ~`true` is `false`, then prove it.
 `
 Example test_negation:
@@ -42,17 +17,15 @@ Proof. simpl. reflexivity. Qed.
 `
 
 * Name three ways to check that a function works.
-- Use `Eval` on a test case and observe the result.
-- Use `Example`/`Theorem`/whatever to record expected result, then as Coq to verify.
-- "extract" function definition to OCaml, Scheme, or Haskell.
+- Use `Eval simpl in (expr)` on a test case and observe the result.
+- Use `Example`/`Theorem`/whatever to record expected result, and then prove it. Coq will only accept your proof if it's correct.
+- "extract" the function definition to OCaml, Scheme, or Haskell.
+
+* How might you create "unit tests"?
+Create `Example`s that are nothing but an equation with the expected value on one side and a term built from function applications on the other.
 
 * Apply negation to the boolean `true`.
 `Eval simpl in (negb true).`
-
-* What are Coq's names for boolean and/or/not?
-- `andb`
-- `orb`
-- `negb`
 
 * How do you fill in a hole in a `Definition`/`Fixpoint'? In an `Example`?
 `admit` fills in holes in a `Definitions`/`Fixpoint'.
