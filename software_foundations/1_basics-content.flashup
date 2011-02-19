@@ -76,11 +76,7 @@ Definition admit {T: Type} : T. Admitted.
 
 * Define a function for boolean nand.
 `
-Definition nandb (b1:bool) (b2:bool) : bool :=
-  match b1 with
-  | false => true
-  | true  => negb b2
-  end.
+Definition nandb (b1:bool) (b2:bool) : bool := negb (andb b1 b2).
 `
 
 * Create a type for natural numbers.

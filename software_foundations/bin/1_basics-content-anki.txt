@@ -1,12 +1,12 @@
 Create an enumerated type for the days of the week.	<pre>Inductive day : Type :=<br>  | monday : day<br>  | tuesday : day<br>  | wednesday : day<br>  | thursday : day<br>  | friday : day<br>  | saturday : day<br>  | sunday : day.</pre>
 Write a function <tt>next_weekday</tt>.	<pre>Definition next_weekday (d:day) : day :=<br>  match d with<br>  | monday => tuesday<br>  | tuesday => wednesday<br>  | wednesday => thursday<br>  | thursday => friday<br>  | friday => monday<br>  | saturday => monday<br>  | sunday => monday<br>  end.</pre>
-Prove that tuesday is two days after saturday.	<pre>Example test_next_weekday:<br>  (next_weekday (next_weekday saturday)) = tuesday.</pre>
+Prove that tuesday is two weekdays after saturday.	<pre>Example test_next_weekday:<br>  (next_weekday (next_weekday saturday)) = tuesday.</pre>
 Create an enumerated type for booleans.	<pre>Inductive bool : Type :=<br>  | true : bool<br>  | false : bool.</pre>
 Define a boolean negation function.	<pre>Definition negb (b:bool) : bool :=<br>  match b with<br>  | true => false<br>  | false => true<br>  end.</pre>
-Define a function for boolean conjunction.	`<br>Definition andb (b1:bool) (b2:bool) : bool :=<br>  match b1 with<br>  | true => b2<br>  | false => false<br>  end.<br>`n
+Define a function for boolean conjunction.	<pre>Definition andb (b1:bool) (b2:bool) : bool :=<br>  match b1 with<br>  | true => b2<br>  | false => false<br>  end.</pre>
 Define a function for boolean disjunction.	<pre>Definition orb (b1:bool) (b2:bool) : bool :=<br>  match b1 with<br>  | true => true<br>  | false => b2<br>  end.</pre>
 Define a polymorphic expression that can inhabit any type.	<pre>Definition admit {T: Type} : T. Admitted.</pre>
-Define a function for boolean nand.	<pre>Definition nandb (b1:bool) (b2:bool) : bool :=<br>  match b1 with<br>  | false => true<br>  | true  => negb b2<br>  end.</pre>
+Define a function for boolean nand.	<pre>Definition nandb (b1:bool) (b2:bool) : bool := negb (andb b1 b2).</pre>
 Create a type for natural numbers.	<pre>Inductive nat : Type :=<br>  | O : nat<br>  | S : nat -> nat.</pre>
 Define a function for integer predecessor.	<pre>Definition pred (n:nat) : nat :=<br>  match n with<br>  | O    => O<br>  | S n' => n'<br>  end.</pre>
 Define a "minus two" function.	<pre>Definition minustwo (n:nat) : nat :=<br>  match n with<br>  | O        => O<br>  | S O      => O<br>  | S (S n') => n'<br>  end.</pre>
