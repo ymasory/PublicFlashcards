@@ -46,8 +46,12 @@ It's a type (a set of data values) whose members are fully enumerated in in the 
 * When we use `Inductive` to define a type, we should see it as what?
 A set of ``expressions``, inductively defined. The definition tells us exactly how members of the type can be constructed, and excludes all other expressions.
 
+* What "magic" does Coq provide for natural numbers?
+The ability to use numerals instead of tediously constructing numbers with the `O` and `S` constructors.
+
 * What is the fundamental difference between a data constructor and functions?
-Functions come with ``computation rules``. Data constructors have no behavior attached.
+Book: Functions come with ``computation rules``. Data constructors have no behavior attached.
+Me: The application of constructors are values ```as written```. The application of functions are ```never``` values as written, they are terms which must be evaluated.
 
 * Name some keywords that can introduce a function.
 - `Definition`
@@ -66,6 +70,9 @@ The following are equivalent:
 
 * How does one match on ``multiple`` expressions?
 A comma is placed between them in the scrutinee and between the two sides of each matching pattern.
+
+* What is an underscore in the context of `match` expressions?
+It is a ``wildcard pattern``, matching any expression without giving that expression a name.
 
 * How is "language support" introduced for some definitions?
 * Name two kinds of language support available.

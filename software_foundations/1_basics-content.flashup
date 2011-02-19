@@ -106,6 +106,57 @@ Definition minustwo (n:nat) : nat :=
   | O        => O
   | S O      => O
   | S (S n') => n'
+  end.
 `
 
+* Define a function for testing whether a natural number is even.
+`
+Fixpoint evenb (n:nat) : bool :=
+  match n with
+  | O        => true
+  | S O      => false
+  | S (S n') => evenb n'
+  end.
+`
 
+* Define a function for testing whether a natural number is odd.
+`
+Definition oddb (n:nat) : bool := negb (evenb n).
+`
+
+* Define a function for adding natural numbers.
+`
+Fixpoint plus (n:nat) (m:nat) : nat :=
+  match n with
+  | O    => m
+  | S n' => S (plus n' m)
+  end.
+`
+
+* Define a function for multiplying natural numbers.
+`
+Fixpoint mult (n m:nat) : nat :=
+  match n with
+    | O    => O
+    | S n' => plus m (mult n' m)
+  end.
+`
+
+* Define a function for subtracting natural numbers.
+`
+Fixpoint minus (n m:nat) : nat :=
+  match n, m with
+  | O , _      => O
+  | S _ , O    => n
+  | S n', S m' => minus n' m'
+  end.
+`
+
+* Define a function for exponentiating natural numbers.
+`
+Fixpoint exp (base power:nat) : nat :=
+  match power with
+    | O   => S O
+    | S p => mult base (exp base p)
+  end.
+`
