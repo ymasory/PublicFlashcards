@@ -1,6 +1,6 @@
 Create an enumerated type for the days of the week.	<pre>Inductive day : Type :=<br>  | monday : day<br>  | tuesday : day<br>  | wednesday : day<br>  | thursday : day<br>  | friday : day<br>  | saturday : day<br>  | sunday : day.</pre>
 Write a function <tt>next_weekday</tt>.	<pre>Definition next_weekday (d:day) : day :=<br>  match d with<br>  | monday => tuesday<br>  | tuesday => wednesday<br>  | wednesday => thursday<br>  | thursday => friday<br>  | friday => monday<br>  | saturday => monday<br>  | sunday => monday<br>  end.</pre>
-Prove that tuesday is two weekdays after saturday.	<pre>Example test_next_weekday:<br>  (next_weekday (next_weekday saturday)) = tuesday.</pre>
+Prove that tuesday is two weekdays after saturday.	<pre>Example test_next_weekday:<br>  (next_weekday (next_weekday saturday)) = tuesday.<br>Proof. simpl. reflexivity. Qed.</pre>
 Create an enumerated type for booleans.	<pre>Inductive bool : Type :=<br>  | true : bool<br>  | false : bool.</pre>
 Define a boolean negation function.	<pre>Definition negb (b:bool) : bool :=<br>  match b with<br>  | true => false<br>  | false => true<br>  end.</pre>
 Define a function for boolean conjunction.	<pre>Definition andb (b1:bool) (b2:bool) : bool :=<br>  match b1 with<br>  | true => b2<br>  | false => false<br>  end.</pre>
@@ -13,6 +13,6 @@ Define a "minus two" function.	<pre>Definition minustwo (n:nat) : nat :=<br>  ma
 Define a function for testing whether a natural number is even.	<pre>Fixpoint evenb (n:nat) : bool :=<br>  match n with<br>  | O        => true<br>  | S O      => false<br>  | S (S n') => evenb n'<br>  end.</pre>
 Define a function for testing whether a natural number is odd.	<pre>Definition oddb (n:nat) : bool := negb (evenb n).</pre>
 Define a function for adding natural numbers.	<pre>Fixpoint plus (n:nat) (m:nat) : nat :=<br>  match n with<br>  | O    => m<br>  | S n' => S (plus n' m)<br>  end.</pre>
-Define a function for multiplying natural numbers.	<pre>Fixpoint mult (n m:nat) : nat :=<br>  match n with<br>    | O    => O<br>    | S n' => plus m (mult n' m)<br>  end.</pre>
+Define a function for multiplying natural numbers.	<pre>Fixpoint mult (n m:nat) : nat :=<br>  match n with<br>  | O    => O<br>  | S n' => plus m (mult n' m)<br>  end.</pre>
 Define a function for subtracting natural numbers.	<pre>Fixpoint minus (n m:nat) : nat :=<br>  match n, m with<br>  | O , _      => O<br>  | S _ , O    => n<br>  | S n', S m' => minus n' m'<br>  end.</pre>
 Define a function for exponentiating natural numbers.	<pre>Fixpoint exp (base power:nat) : nat :=<br>  match power with<br>    | O   => S O<br>    | S p => mult base (exp base p)<br>  end.</pre>
