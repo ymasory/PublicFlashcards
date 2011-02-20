@@ -158,3 +158,12 @@ Fixpoint exp (base power:nat) : nat :=
     | S p => mult base (exp base p)
   end.
 `
+
+* Define a factorial function.
+`
+Fixpoint factorial (n:nat) : nat :=
+  match n with
+  | O    => S O
+  | S n' => mult n (factorial n')
+  end.
+`
