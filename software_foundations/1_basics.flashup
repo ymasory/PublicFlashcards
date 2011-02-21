@@ -178,6 +178,11 @@ Just the same as the `destruct` tactic.
 * What do context items like `IHn'` stand for?
 Inductive Hypothesis for `n'`
 
+* What fundamental fact concerning our definition of `plus` comes up over and over?
+`
+S n' + m = S (n' + m)
+`
+
 * How can you create sub-theorems without creating a new top-level name?
 Use the `assert` tactic.
 
