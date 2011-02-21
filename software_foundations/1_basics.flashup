@@ -111,8 +111,12 @@ Among other things, `reflexivity` may unfold definitions. `simpl` never will.
 - `Fact`
 - `Remark` 
 
+* What is the "context"?
+The list of current assumptions that can be used in proving the goal.
+
 * What does the `intros` tactic do?
-For a conditional it introduces the antecedent as an assumption. For a universally quantified statement it introduces an arbitrary element of the domain and discharges the quantifier.
+- For a conditional it introduces the antecedent as an assumption into context.
+- For a universally quantified statement it introduces an arbitrary element of the domain into context and discharges the quantifier.
 
 * What is the syntax of `intros`?
 The keyword `intros` followed by a space-delimited list of names for the assumptions. These may be names of variables already in context, or they may be ones you're ``introducing``. The names are interpreted in the order the relevant expressions appear in the current context.
