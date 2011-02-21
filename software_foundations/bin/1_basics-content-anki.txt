@@ -16,3 +16,9 @@ Define a function for adding natural numbers.	<pre>Fixpoint plus (n:nat) (m:nat)
 Define a function for multiplying natural numbers.	<pre>Fixpoint mult (n m:nat) : nat :=<br>  match n with<br>  | O    => O<br>  | S n' => plus m (mult n' m)<br>  end.</pre>
 Define a function for subtracting natural numbers.	<pre>Fixpoint minus (n m:nat) : nat :=<br>  match n, m with<br>  | O , _      => O<br>  | S _ , O    => n<br>  | S n', S m' => minus n' m'<br>  end.</pre>
 Define a function for exponentiating natural numbers.	<pre>Fixpoint exp (base power:nat) : nat :=<br>  match power with<br>    | O   => S O<br>    | S p => mult base (exp base p)<br>  end.</pre>
+Define a factorial function.	<pre>Fixpoint factorial (n:nat) : nat :=<br>  match n with<br>  | O    => S O<br>  | S n' => mult n (factorial n')<br>  end.</pre>
+Define an equality function for natural numbers.	<pre>Fixpoint beq_nat (n m:nat) : bool :=<br>  match n with<br>  | O    => match m with<br>           | O    => true<br>           | S m' => false<br>           end<br>  | S n' => match m with<br>            | O    => false<br>            | S m' => beq_nat n' m'<br>            end<br>  end.</pre>
+Define a less-than-or-equal-to function for natural numbers.	<pre>Fixpoint ble_nat (n m : nat) : bool :=<br>  (ble_nat (S n) m).</pre>
+State that <tt>0</tt> is the additive identity.	<pre>Theorem plus_0_r :<br>  forall n:nat, n + 0 = n.<br><br>Theorem plus_0_l :<br>  forall n:nat, 0 + n = n.</pre>
+State that addition preserves equality.	<pre>Theorem foo : forall n m:nat,<br>  n = m -><br>  n + n = m + m.</pre>
+What does it mean to say boolean negation is involutive?<br><br>How can you state it?	- It means it is its own inverse.<br><br><pre>Theorem negb_involutive : forall b:bool,<br>  negb (negb b) = b.</pre>
