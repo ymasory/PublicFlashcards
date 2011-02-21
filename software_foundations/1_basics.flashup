@@ -121,26 +121,31 @@ The list of current assumptions that can be used in proving the goal.
 * What is the syntax of `intros`?
 The keyword `intros` followed by a space-delimited list of names for the assumptions. These may be names of variables already in context, or they may be ones you're ``introducing``. The names are interpreted in the order the relevant expressions appear in the current context.
 
+* Some of the simple `intros` examples don't actually require `intros`. Give two reasons you might actually need it in a proof.
+- There may be conditions to the proposition being proved. Without first using `intros` to discharge the quantifiers you can't use `intros` to introduce the hypotheses into context.
+- Without eliminating quantifiers you cannot use (by `rewrite`) theorems of the universal quantification form, since they operate on free variables.
+
 * Describe the `rewrite` tactic.
 * What does rewriting ``left-to-write`` mean?
-It rewrites the current goal using the provided rule and in the provided direction.
+It rewrites the current goal using the provided rule (in context or previously defined) and in the provided direction.
 
 For example:
 `
 rewrite -> H
 `
 
-Left-to-write means rewriting the terms in the subgoal that match the left-hand-side of the rule being used.
+Left-to-write means rewriting the terms in the goal that matches the left-hand-side of the rule being used.
 
 * How are are propositions with multiple hypothesis written?
 `
 Hyp1 -> ... -> HypN -> Conclusion
 `
 
-* Why doesn't simplification be used to prove all theorems?
+* Why can't simple calculation prove every theorem?
 Unknown values may appear as arguments to functions, preventing simplification.
+For example, given an arbitrary `n:nat` we can't simplify since we don't know which constructor applies.
 
-* Give the syntax of the `destruct` tactic.
+* Describe the `destruct` tactic.
 `
 destruct var as [pattern].
 `
@@ -158,14 +163,20 @@ destruct b as [|].
 destruct b.
 `
 
-* `destruct` proves a theorem about an enumerated type for each possible ...
+* `destruct` is used to prove a theorem about an enumerated type for each possible ...
 ... constructor used to create that type.
 
-* Don't confused `case` with ...
-... our hack `Case` and `SCase`.
+* What do `Case`/`SCase`/etc do?
+* Don't confuse `Case` with ...
+They add a string to the context of the current subgoal and is discharged when the current subgoal is proved.
+
+... `case`.
 
 * What is the syntax of the `induction` tactic?
 Just the same as the `destruct` tactic.
+
+* What do context items like `IHn'` stand for?
+Inductive Hypothesis for `n'`
 
 * How can you create sub-theorems without creating a new top-level name?
 Use the `assert` tactic.

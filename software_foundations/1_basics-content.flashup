@@ -188,3 +188,28 @@ Fixpoint beq_nat (n m:nat) : bool :=
 Fixpoint ble_nat (n m : nat) : bool :=
   (ble_nat (S n) m).
 `
+
+* State that `0` is the additive identity.
+`
+Theorem plus_0_r :
+  forall n:nat, n + 0 = n.
+
+Theorem plus_0_l :
+  forall n:nat, 0 + n = n.
+`
+
+* State that addition preserves equality.
+`
+Theorem foo : forall n m:nat,
+  n = m ->
+  n + n = m + m.
+`
+
+* What does it mean to say boolean negation is involutive?
+* How can you state it?
+- It means it is its own inverse.
+
+`
+Theorem negb_involutive : forall b:bool,
+  negb (negb b) = b.
+`
