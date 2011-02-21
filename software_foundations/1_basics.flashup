@@ -178,9 +178,10 @@ Just the same as the `destruct` tactic.
 * What do context items like `IHn'` stand for?
 Inductive Hypothesis for `n'`
 
-* What fundamental fact concerning our definition of `plus` comes up over and over?
+* Name some fundamental facts concerning our definition of `plus` comes up over and over?
 `
-S n' + m = S (n' + m)
+- S n' + m = S (n' + m)
+- S (n + m) = n + (S m)
 `
 
 * How can you create sub-theorems without creating a new top-level name?
@@ -191,7 +192,9 @@ assert (H: whatever).
   Case "Proof of assertion". whatever.
 `
 
+After the proof is done `H` will be added to context.
+
 * What is a common non-stylistic reason for using `assert`?
-Coq is choosing the wrong instance of a pattern to rewrite when you use the `rewrite` tactic.
+You want to use the `rewrite` tactic on an instance of the pattern that is not outermost.
 In this case you can prove as a sub-theorem exactly the rewrite you want, and then use `rewrite` in terms of this sub-theorem.
 
