@@ -24,7 +24,7 @@ Proof. simpl. reflexivity. Qed.
 * How might you create "unit tests"?
 Create `Example`s that are nothing but an equation with the expected value on one side and a term built from function applications on the other.
 
-* Apply negation to the boolean `true`.
+* Apply negation to the boolean `true` and evaluate.
 `Eval simpl in (negb true).`
 
 * How do you fill in a hole in a `Definition`/`Fixpoint'? In an `Example`?
@@ -75,7 +75,7 @@ A comma is placed between them in the scrutinee and between the two sides of eac
 It is a ``wildcard pattern``, matching any expression without giving that expression a name.
 
 * How is "language support" introduced for some definitions?
-* Name two kinds of language support available.
+* Name three kinds of language support available.
 With `Notation` constructions which also define associativity and precedence.
 
 - Numerals
@@ -87,14 +87,29 @@ With `Notation` constructions which also define associativity and precedence.
 expression%notation_scope
 `
 
-* Which tactic is like `simpl` "on steroids"?
-`compute`
+* Name a few notation scopes.
+- `nat`
+- `Z`
+- `type_scope`
+
+* What two tactics simplify the goal by performing computation?
+- `simpl`
+- `compute` - results in possibly larger terms
 
 * The `reflexivity` tactic implicitly does what?
 * What's the difference between the simplification of `simpl` and that of `reflexivity`?
 Simplifies both sides before testing (including by using `simpl`).
 
-Among other things, `reflexivity` may expand definitions. `simpl` never will.
+Among other things, `reflexivity` may unfold definitions. `simpl` never will.
+
+* Why doesn't `reflexivity`'s implicit simplification unfold definitions?
+`reflexivity` ends the current goal so it doesn't matter if the resulting term is horribly large and unwieldly.
+
+* What keywords behave identically to `Theorem`?
+- `Example`
+- `Lemma`
+- `Fact`
+- `Remark` 
 
 * What does the `intros` tactic do?
 For a conditional it introduces the antecedent as an assumption. For a universally quantified statement it introduces an arbitrary element of the domain and discharges the quantifier.
