@@ -184,3 +184,12 @@ assert (H: whatever).
 Coq is choosing the wrong instance of a pattern to rewrite when you use the `rewrite` tactic.
 In this case you can prove as a sub-theorem exactly the rewrite you want, and then use `rewrite` in terms of this sub-theorem.
 
+
+* Describe the `replace` tactic.
+* When is it often used?
+`
+replace (t) with (u)
+`
+replaces (all copies of) expression `t` in the goal with expression `u` and generates `t=u` as an additional subgoal.
+
+It's often used when `rewrite` acts on the wrong part of the goal.
