@@ -9,17 +9,10 @@ In the standard library.
 * What's a "type" in Coq?
 A set of data values.
 
-* Make a named assertion that ~`true` is `false`, then prove it.
-`
-Example test_negation:
-  (negb true) = false.
-Proof. simpl. reflexivity. Qed.
-`
-
 * Name three ways to check that a function works.
 - Use `Eval simpl in (expr)` on a test case and observe the result.
 - Use `Example`/`Theorem`/whatever to record expected result, and then prove it. Coq will only accept your proof if it's correct.
-- "extract" the function definition to OCaml, Scheme, or Haskell.
+- "Extract" the function definition to OCaml, Scheme, or Haskell.
 
 * How might you create "unit tests"?
 Create `Example`s that are nothing but an equation with the expected value on one side and a term built from function applications on the other.
@@ -27,8 +20,10 @@ Create `Example`s that are nothing but an equation with the expected value on on
 * Apply negation to the boolean `true` and evaluate.
 `Eval simpl in (negb true).`
 
-* How do you fill in a hole in a `Definition`/`Fixpoint'? In an `Example`?
-`admit` fills in holes in a `Definitions`/`Fixpoint'.
+* How do you fill in a hole in a `Definition`/`Fixpoint`?
+* In the proof of a `Theorem`?
+`admit` fills in holes in a `Definition`/`Fixpoint`.
+
 `Admitted` fills in holes in proofs.
 
 * How does Coq write the type of a boolean conjunction function?
@@ -102,7 +97,7 @@ Simplifies both sides before testing (including by using `simpl`).
 
 Among other things, `reflexivity` may unfold definitions. `simpl` never will.
 
-* Why doesn't `reflexivity`'s implicit simplification unfold definitions?
+* Why doesn't `simpl`'s implicit simplification unfold definitions?
 `reflexivity` ends the current goal so it doesn't matter if the resulting term is horribly large and unwieldly.
 
 * What keywords behave identically to `Theorem`?
@@ -180,7 +175,7 @@ Inductive Hypothesis for `n'`
 
 * Name some fundamental facts concerning our definition of `plus` comes up over and over?
 `
-- S n' + m = S (n' + m)
+- S (n + m) = (S n) + m
 - S (n + m) = n + (S m)
 `
 

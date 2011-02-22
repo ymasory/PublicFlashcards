@@ -13,10 +13,9 @@ pair x y
 
 * Destruct a pair.
 `
-destruct p as (n, m).
+destruct p as (n, m). (* using introduced notation *)
+destruct p as [n m].  (* sugarless syntax *)
 `
-
-For whatever reason there are no brackets around the pattern.
 
 * What notation do we introduce for lists?
 List literals:
@@ -33,9 +32,6 @@ el :: lst
 * What notation do we introduce for appending two lists?
 `++`
 
-* What does `hd []` result in?
-`default`
-
 * What's an alternative to `if`/`then`/`else` expressions.
 `
 if X then Y else Z.
@@ -47,6 +43,9 @@ match X with
 | false => Z
 end.
 `
+
+* What is a `bag`?
+A multiset, an orderless collection in which elements may appear more than once.
 
 * What's another use for `Definition`, apart from creating functions?
 Creating type aliases:
