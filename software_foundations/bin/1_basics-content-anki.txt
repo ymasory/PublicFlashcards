@@ -1,0 +1,24 @@
+Create an enumerated type for the days of the week.	<pre>Inductive day : Type :=<br>  | monday : day<br>  | tuesday : day<br>  | wednesday : day<br>  | thursday : day<br>  | friday : day<br>  | saturday : day<br>  | sunday : day.</pre>
+Write a function <tt>next_weekday</tt>.	<pre>Definition next_weekday (d:day) : day :=<br>  match d with<br>  | monday => tuesday<br>  | tuesday => wednesday<br>  | wednesday => thursday<br>  | thursday => friday<br>  | friday => monday<br>  | saturday => monday<br>  | sunday => monday<br>  end.</pre>
+Prove that tuesday is two weekdays after saturday.	<pre>Example test_next_weekday:<br>  (next_weekday (next_weekday saturday)) = tuesday.<br>Proof. simpl. reflexivity. Qed.</pre>
+Create an enumerated type for booleans.	<pre>Inductive bool : Type :=<br>  | true : bool<br>  | false : bool.</pre>
+Define a boolean negation function.	<pre>Definition negb (b:bool) : bool :=<br>  match b with<br>  | true => false<br>  | false => true<br>  end.</pre>
+Define a function for boolean conjunction.	<pre>Definition andb (b1:bool) (b2:bool) : bool :=<br>  match b1 with<br>  | true => b2<br>  | false => false<br>  end.</pre>
+Define a function for boolean disjunction.	<pre>Definition orb (b1:bool) (b2:bool) : bool :=<br>  match b1 with<br>  | true => true<br>  | false => b2<br>  end.</pre>
+Define a polymorphic expression that can inhabit any type.	<pre>Definition admit {T: Type} : T. Admitted.</pre>
+Define a function for boolean nand.	<pre>Definition nandb (b1:bool) (b2:bool) : bool := negb (andb b1 b2).</pre>
+Create a type for natural numbers.	<pre>Inductive nat : Type :=<br>  | O : nat<br>  | S : nat -> nat.</pre>
+Define a function for integer predecessor.	<pre>Definition pred (n:nat) : nat :=<br>  match n with<br>  | O    => O<br>  | S n' => n'<br>  end.</pre>
+Define a "minus two" function.	<pre>Definition minustwo (n:nat) : nat :=<br>  match n with<br>  | O        => O<br>  | S O      => O<br>  | S (S n') => n'<br>  end.</pre>
+Define a function for testing whether a natural number is even.	<pre>Fixpoint evenb (n:nat) : bool :=<br>  match n with<br>  | O        => true<br>  | S O      => false<br>  | S (S n') => evenb n'<br>  end.</pre>
+Define a function for testing whether a natural number is odd.	<pre>Definition oddb (n:nat) : bool := negb (evenb n).</pre>
+Define a function for adding natural numbers.	<pre>Fixpoint plus (n:nat) (m:nat) : nat :=<br>  match n with<br>  | O    => m<br>  | S n' => S (plus n' m)<br>  end.</pre>
+Define a function for multiplying natural numbers.	<pre>Fixpoint mult (n m:nat) : nat :=<br>  match n with<br>  | O    => O<br>  | S n' => plus m (mult n' m)<br>  end.</pre>
+Define a function for subtracting natural numbers.	<pre>Fixpoint minus (n m:nat) : nat :=<br>  match n, m with<br>  | O , _      => O<br>  | S _ , O    => n<br>  | S n', S m' => minus n' m'<br>  end.</pre>
+Define a function for exponentiating natural numbers.	<pre>Fixpoint exp (base power:nat) : nat :=<br>  match power with<br>    | O   => S O<br>    | S p => mult base (exp base p)<br>  end.</pre>
+Define a factorial function.	<pre>Fixpoint factorial (n:nat) : nat :=<br>  match n with<br>  | O    => S O<br>  | S n' => mult n (factorial n')<br>  end.</pre>
+Define an equality function for natural numbers.	<pre>Fixpoint beq_nat (n m:nat) : bool :=<br>  match n with<br>  | O    => match m with<br>           | O    => true<br>           | S m' => false<br>           end<br>  | S n' => match m with<br>            | O    => false<br>            | S m' => beq_nat n' m'<br>            end<br>  end.</pre>
+Define a less-than-or-equal-to function for natural numbers.	<pre>Fixpoint ble_nat (n m : nat) : bool :=<br>  (ble_nat (S n) m).</pre>
+State that <tt>0</tt> is the additive identity.	<pre>Theorem plus_0_r :<br>  forall n:nat, n + 0 = n.<br><br>Theorem plus_0_l :<br>  forall n:nat, 0 + n = n.</pre>
+State that addition preserves equality.	<pre>Theorem foo : forall n m:nat,<br>  n = m -><br>  n + n = m + m.</pre>
+What does it mean to say boolean negation is involutive?<br><br>How can you state it?	- It means it is its own inverse.<br><br><pre>Theorem negb_involutive : forall b:bool,<br>  negb (negb b) = b.</pre>
