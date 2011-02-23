@@ -30,7 +30,7 @@ el :: lst
 `
 
 * What notation do we introduce for appending two lists?
-`++`
+`++` in place of `app`.
 
 * What's an alternative to `if`/`then`/`else` expressions.
 `
