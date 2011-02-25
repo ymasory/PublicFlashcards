@@ -1,0 +1,21 @@
+Create a type for pairs of numbers.	<pre>Inductive natprod : Type :=<br>  pair : nat -> nat -> natprod.</pre>
+Define functions to extract members of pairs of numbers.	<pre>Definition fst (p : natprod) : nat :=<br>  match p with<br>  | (x,y) => x<br>  end.<br><br>Definition snd (p : natprod) : nat :=<br>  match p with<br>  | (x,y) => y<br>  end.</pre>
+State that the <tt>pair</tt> constructor is surjective.	<pre>Theorem surjective_pairing : forall (n m : nat),<br>  (n,m) = (fst (n,m), snd (n,m)).</pre>
+Create a type for a list of numbers.	<pre>Inductive natlist : Type :=<br>  | nil : natlist<br>  | cons : nat -> natlist -> natlist.</pre>
+Define the length of a nat list.	<pre>Fixpoint length (l:natlist) : nat :=<br>  match l with<br>  | nil => O<br>  | h :: t => S (length t)<br>  end.</pre>
+Define an append function for nat lists.	<pre>Fixpoint app (l1 l2 : natlist) : natlist :=<br>  match l1 with<br>  | nil    => l2<br>  | h :: t => h :: (app t l2)<br>  end.</pre>
+Define a subset function for bags.	<pre>Fixpoint subset (s1:bag) (s2:bag) : bool :=<br>  match s1 with<br>  | nil    => true<br>  | h :: t => match member h s2 with<br>              | false => false<br>              | true  => subset t (remove_one h s2)<br>              end<br>  end.</pre>
+State the associativity of nat lists.	<pre>Theorem app_ass : forall l1 l2 l3 : natlist,<br>  (l1 ++ l2) ++ l3 = l1 ++ (l2 ++ l3).</pre>
+Define a snoc function for nat lists.	<pre>Fixpoint snoc (l:natlist) (v:nat) : natlist :=<br>  match l with<br>  | nil    => [v]<br>  | h :: t => h :: (snoc t v)<br>  end.</pre>
+Define a reverse function for nat lists.	<pre>Fixpoint rev (l:natlist) : natlist :=<br>  match l with<br>  | nil    => nil<br>  | h :: t => snoc (rev t) h<br>  end.</pre>
+State that the empty nat list is the right identity with respect to append.	<pre>Theorem app_nil_end : forall l : natlist,<br>  l ++ [] = l.</pre>
+State a fundamental relationship between <tt>rev</tt> and <tt>snoc</tt>.	<pre>Theorem rev_snoc : forall (l:natlist) (n:nat),<br>  rev(snoc l n) = n :: rev l.</pre>
+State that reversing a nat list is involutive.	<pre>Theorem rev_involutive : forall l : natlist,<br>  rev (rev l) = l.</pre>
+Create an option time for nat lists.	<pre>Inductive natoption : Type :=<br>  | Some : nat -> natoption<br>  | None : natoption.</pre>
+Define an index function for nat lists.	<pre>Fixpoint index (n:nat) (l:natlist) : natoption :=<br>  match l with<br>  | nil => None<br>  | a :: l' => match beq_nat n O with<br>               | true => Some a<br>               | false => index (pred n) l'<br>               end<br>  end.</pre>
+State that equality of nats is symmetric.	<pre>Theorem beq_nat_sym : forall (n m : nat),<br>  beq_nat n m = beq_nat m n.</pre>
+Create a dictionary type for nats.	<pre>Inductive dictionary : Type :=<br>  | empty  : dictionary<br>  | record : nat -> nat -> dictionary -> dictionary.</pre>
+Define key/value insertion for nat dictionaries.	<pre>Definition insert (key value : nat) (d : dictionary) : dictionary :=<br>  (record key value d).</pre>
+Define a lookup function for nat dictionaries.	<pre>Fixpoint find (key : nat) (d : dictionary) : option nat :=<br>  match d with<br>  | empty         => None<br>  | record k v d' => if (beq_nat key k) then (Some v) else (find key d')<br>  end.</pre>
+State the first important dictionary invariant.	<pre>Theorem dictionary_invariant1 : forall (d : dictionary) (k v: nat),<br>  (find k (insert k v d)) = Some v.</pre>
+State the second important dictionary invariant.	<pre>Theorem dictionary_invariant2 : forall (d : dictionary) (m n o: nat),<br>  (beq_nat m n) = false -> (find m d) = (find m (insert n o d)).</pre>

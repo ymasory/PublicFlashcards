@@ -1,11 +1,18 @@
 What mathematical notation do we introduce for pairs?	The following two are equivalent:<br><br><pre>pair x y<br>(x, y)</pre>
-Destruct a pair.	<pre>destruct p as (n, m).</pre><br>For whatever reason there are no brackets around the pattern.
+Destruct a pair.	<pre>destruct p as (n, m). (* using introduced notation *)<br>destruct p as [n m].  (* sugarless syntax *)</pre>
 What notation do we introduce for lists?	List literals:<br><pre>[]<br>[1, ..., n]</pre><br>Cons:<br><pre>el :: lst</pre>
-What notation do we introduce for appending two lists?	<tt>++</tt>
-What does <tt>hd []</tt> result in?	<tt>default</tt>
+What notation do we introduce for appending two lists?	<tt>++</tt> in place of <tt>app</tt>.
+What does it mean to say that the <tt>pair</tt> constructor is surjective?	??
 What's an alternative to <tt>if</tt>/<tt>then</tt>/<tt>else</tt> expressions.	<pre>if X then Y else Z.</pre><br><pre>match X with<br>| true  => Y<br>| false => Z<br>end.</pre>
+What is a <tt>bag</tt>?	A multiset, an orderless collection in which elements may appear more than once.
 What's another use for <tt>Definition</tt>, apart from creating functions?	Creating type aliases:<br><pre>Definition bag := natlist.</pre>
 Unlike in a Scala <tt>def</tt>, the RHS of a Coq <tt>Definition</tt> can simply be what?	The name of another <tt>Definition</tt>.<br><br><pre>Definition sum : bag => bag -> bag := app.</pre>
+Induction can actually be done on any ...	... inductively defined datatype.
 Demonstrate induction on lists.	<pre>induction l as [| n l']<br>Case "l = nil".<br>  ...<br>Case "l = cons n l'".<br>  ...</pre>
 What is the <tt>SearchAbout</tt> command?	<pre>SearchAbout foo</pre><br>Prints all the theorems Coq knows that involve <tt>foo</tt>.
-Describe the <tt>apply</tt> tactic.	It allows you match the current goal to the conclusion of a conditional hypothesis of the current context. Like modus ponens in reverse. Keep in mind a non-conditional statement can be viewed in this case as a degenerate conditional, allowing you to match the current subgoal to a hypothesis and end the proof.
+Describe conditionals in Coq.	They are values as in other functinal languages, but they are more general. Instead of requiring booleans they require any datatype with two constructors with the first being truthy and the second falsy.
+Why might one not use <tt>intros</tt> to the fullest extent possible?	Overusing intros may lead to a weaker induction hypothesis when the <tt>inductive</tt> tactic is later used. The hypothesis will be on specific variables chosen by <tt>intros</tt>, instead of a hypothesis over universally quantified variables. You can always finish using <tt>intros</tt> after you have the more general hypothesis to work with.
+Describe the <tt>apply</tt> tactic.	- It allows you match the current goal to the conclusion of a conditional hypothesis of the current context. Like modus ponens in reverse.<br>- New subgoals will be generated for every premise in the conditional.<br>- Keep in mind a non-conditional statement can be viewed in this case as a degenerate conditional, allowing you to match the current subgoal to a hypothesis and end the proof.
+What happens when the <tt>apply</tt> statement is universally quantified?	Coq will attempt to bind the variables in the new premises-derived subgoals with the correct concrete terms. The conclusion of the theorem must match the goal <em>exactly</em>, but only after this binding is done.
+What is the <tt>symmetry</tt> tactic?	It swaps the sides of the goal, assuming it's an equation.
+Like <tt>reflexivity</tt>, <tt>apply</tt> does what first?	<tt>simpl</tt>, although keep in mind <tt>reflexivity</tt>'s simplification is more complicated than just <tt>simpl</tt>.

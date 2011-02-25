@@ -1,17 +1,16 @@
 Where does Coq define booleans and numbers?	In the standard library.
 What's a "type" in Coq?	A set of data values.
-Make a named assertion that ~<tt>true</tt> is <tt>false</tt>, then prove it.	<pre>Example test_negation:<br>  (negb true) = false.<br>Proof. simpl. reflexivity. Qed.</pre>
-Name three ways to check that a function works.	- Use <tt>Eval simpl in (expr)</tt> on a test case and observe the result.<br>- Use <tt>Example</tt>/<tt>Theorem</tt>/whatever to record expected result, and then prove it. Coq will only accept your proof if it's correct.<br>- "extract" the function definition to OCaml, Scheme, or Haskell.
+Name three ways to check that a function works.	- Use <tt>Eval simpl in (expr)</tt> on a test case and observe the result.<br>- Use <tt>Example</tt>/<tt>Theorem</tt>/whatever to record expected result, and then prove it. Coq will only accept your proof if it's correct.<br>- "Extract" the function definition to OCaml, Scheme, or Haskell.
 How might you create "unit tests"?	Create <tt>Example</tt>s that are nothing but an equation with the expected value on one side and a term built from function applications on the other.
 Apply negation to the boolean <tt>true</tt> and evaluate.	<tt>Eval simpl in (negb true).</tt>
-How do you fill in a hole in a `Definition`/`Fixpoint'? In an `Example`?	`admit` fills in holes in a `Definitions`/`Fixpoint'.<br><tt>Admitted</tt> fills in holes in proofs.
+How do you fill in a hole in a <tt>Definition</tt>/<tt>Fixpoint</tt>?<br><br>In the proof of a <tt>Theorem</tt>?	<tt>admit</tt> fills in holes in a <tt>Definition</tt>/<tt>Fixpoint</tt>.<br><br><tt>Admitted</tt> fills in holes in proofs.
 How does Coq write the type of a boolean conjunction function?	<tt>bool->bool->bool</tt>
 What does the <tt>Check</tt> command do?	It causes Coq to print the type of an expression.
 How will we use the module system?	If you put declarations between <tt>Module X</tt> and <tt>End X</tt> then after <tt>End</tt> the definitions are referred to as <tt>X.foo</tt>.
 What is an enumerated type?	It's a type (a set of data values) whose members are fully enumerated in in the type's definition.
 When we use <tt>Inductive</tt> to define a type, we should see it as what?	A set of <em>expressions</em>, inductively defined. The definition tells us exactly how members of the type can be constructed, and excludes all other expressions.
 What "magic" does Coq provide for natural numbers?	The ability to use numerals instead of tediously constructing numbers with the <tt>O</tt> and <tt>S</tt> constructors.
-What is the fundamental difference between a data constructor and functions?	Book: Functions come with <em>computation rules</em>. Data constructors have no behavior attached.<br>Me: The application of constructors are values <strong>as written</strong>. The application of functions are <strong>never</strong> values as written, they are terms which must be evaluated.
+What is the fundamental difference between a data constructor and functions?	Book: Functions come with <em>computation rules</em>. Data constructors have no behavior attached.<br>Me: The application of constructors to values are values <strong>as written</strong>. The application of functions are <strong>never</strong> values as written, they are terms which must be evaluated.
 Name some keywords that can introduce a function.	- <tt>Definition</tt><br>- <tt>Fixpoint</tt> in case of recursion
 What kind of recursion does Coq allow?	<em>Structural</em> (or <em>primitive</em>) recursion. That means recursive calls must be on strictly smaller values, guaranteeing termination.
 What notational convenience does Coq provide for multiple parameters of the same type?	The following are equivalent:<br><br><pre>(n m : nat)<br>(n: nat) (m: nat)</pre>
@@ -22,7 +21,7 @@ How can one choose between multiple notation interpretations for an expression.	
 Name a few notation scopes.	- <tt>nat</tt><br>- <tt>Z</tt><br>- <tt>type_scope</tt>
 What two tactics simplify the goal by performing computation?	- <tt>simpl</tt><br>- <tt>compute</tt> - results in possibly larger terms
 The <tt>reflexivity</tt> tactic implicitly does what?<br><br>What's the difference between the simplification of <tt>simpl</tt> and that of <tt>reflexivity</tt>?	Simplifies both sides before testing (including by using <tt>simpl</tt>).<br><br>Among other things, <tt>reflexivity</tt> may unfold definitions. <tt>simpl</tt> never will.
-Why doesn't <tt>reflexivity</tt>'s implicit simplification unfold definitions?	<tt>reflexivity</tt> ends the current goal so it doesn't matter if the resulting term is horribly large and unwieldly.
+Why doesn't <tt>simpl</tt>'s implicit simplification unfold definitions?	<tt>reflexivity</tt> ends the current goal so it doesn't matter if the resulting term is horribly large and unwieldly.
 What keywords behave identically to <tt>Theorem</tt>?	- <tt>Example</tt><br>- <tt>Lemma</tt><br>- <tt>Fact</tt><br>- <tt>Remark</tt>
 What is the "context"?	The list of current assumptions that can be used in proving the goal.
 What does the <tt>intros</tt> tactic do?	- For a conditional it introduces the antecedent as an assumption into context.<br>- For a universally quantified statement it introduces an arbitrary element of the domain into context and discharges the quantifier.
@@ -37,7 +36,7 @@ Why don't we say <tt>destruct b as [true | false].</tt>?	Remember, the <tt>as</t
 What do <tt>Case</tt>/<tt>SCase</tt>/etc do?<br><br>Don't confuse <tt>Case</tt> with ...	They add a string to the context of the current subgoal and is discharged when the current subgoal is proved.<br><br>... <tt>case</tt>.
 What is the syntax of the <tt>induction</tt> tactic?	Just the same as the <tt>destruct</tt> tactic.
 What do context items like <tt>IHn'</tt> stand for?	Inductive Hypothesis for <tt>n'</tt>
-Name some fundamental facts concerning our definition of <tt>plus</tt> comes up over and over?	<pre>- S n' + m = S (n' + m)<br>- S (n + m) = n + (S m)</pre>
+Name some fundamental facts concerning our definition of <tt>plus</tt> comes up over and over?	<pre>- S (n + m) = (S n) + m<br>- S (n + m) = n + (S m)</pre>
 How can you create sub-theorems without creating a new top-level name?	Use the <tt>assert</tt> tactic.<br><br><pre>assert (H: whatever).<br>  Case "Proof of assertion". whatever.</pre><br>After the proof is done <tt>H</tt> will be added to context.
 What is a common non-stylistic reason for using <tt>assert</tt>?	You want to use the <tt>rewrite</tt> tactic on an instance of the pattern that is not outermost.<br>In this case you can prove as a sub-theorem exactly the rewrite you want, and then use <tt>rewrite</tt> in terms of this sub-theorem.
 Describe the <tt>replace</tt> tactic.<br><br>When is it often used?	<pre>replace (t) with (u)</pre>replaces (all copies of) expression <tt>t</tt> in the goal with expression <tt>u</tt> and generates <tt>t=u</tt> as an additional subgoal.<br><br>It's often used when <tt>rewrite</tt> acts on the wrong part of the goal.
