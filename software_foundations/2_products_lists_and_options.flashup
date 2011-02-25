@@ -63,6 +63,9 @@ The name of another `Definition`.
 Definition sum : bag => bag -> bag := app.
 `
 
+* Induction can actually be done on any ...
+... inductively defined datatype.
+
 * Demonstrate induction on lists.
 `
 induction l as [| n l']
@@ -80,6 +83,15 @@ SearchAbout foo
 Prints all the theorems Coq knows that involve `foo`.
 
 * Describe the `apply` tactic.
-It allows you match the current goal to the conclusion of a conditional hypothesis of the current context. Like modus ponens in reverse. Keep in mind a non-conditional statement can be viewed in this case as a degenerate conditional, allowing you to match the current subgoal to a hypothesis and end the proof.
+- It allows you match the current goal to the conclusion of a conditional hypothesis of the current context. Like modus ponens in reverse. 
+- New subgoals will be generated for every premise in the conditional.
+- Keep in mind a non-conditional statement can be viewed in this case as a degenerate conditional, allowing you to match the current subgoal to a hypothesis and end the proof.
 
+* What happens when the `apply` statement is universally quantified?
+Coq will attempt to bind the variables in the new premises-derived subgoals with the correct concrete terms. The conclusion of the theorem must match the goal ``exactly``, but only after this binding is done.
 
+* What is the `symmetry` tactic?
+It swaps the sides of the goal, assuming it's an equation.
+
+* Like `reflexivity`, `apply` does what first?
+`simpl`, although keep in mind `reflexivity`'s simplification is more complicated than just `simpl`.
