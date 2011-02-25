@@ -46,7 +46,7 @@ The ability to use numerals instead of tediously constructing numbers with the `
 
 * What is the fundamental difference between a data constructor and functions?
 Book: Functions come with ``computation rules``. Data constructors have no behavior attached.
-Me: The application of constructors are values ```as written```. The application of functions are ```never``` values as written, they are terms which must be evaluated.
+Me: The application of constructors to values are values ```as written```. The application of functions are ```never``` values as written, they are terms which must be evaluated.
 
 * Name some keywords that can introduce a function.
 - `Definition`

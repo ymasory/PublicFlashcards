@@ -153,3 +153,15 @@ Fixpoint find (key : nat) (d : dictionary) : option nat :=
   | record k v d' => if (beq_nat key k) then (Some v) else (find key d')
   end.
 `
+
+* State the first important dictionary invariant.
+`
+Theorem dictionary_invariant1 : forall (d : dictionary) (k v: nat),
+  (find k (insert k v d)) = Some v.
+`
+
+* State the second important dictionary invariant.
+`
+Theorem dictionary_invariant2 : forall (d : dictionary) (m n o: nat),
+  (beq_nat m n) = false -> (find m d) = (find m (insert n o d)).
+`

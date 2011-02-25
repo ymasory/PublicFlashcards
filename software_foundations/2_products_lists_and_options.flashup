@@ -82,6 +82,12 @@ SearchAbout foo
 
 Prints all the theorems Coq knows that involve `foo`.
 
+* Describe conditionals in Coq.
+They are values as in other functinal languages, but they are more general. Instead of requiring booleans they require any datatype with two constructors with the first being truthy and the second falsy.
+
+* Why might one not use `intros` to the fullest extent possible?
+Overusing intros may lead to a weaker induction hypothesis when the `inductive` tactic is later used. The hypothesis will be on specific variables chosen by `intros`, instead of a hypothesis over universally quantified variables. You can always finish using `intros` after you have the more general hypothesis to work with.
+
 * Describe the `apply` tactic.
 - It allows you match the current goal to the conclusion of a conditional hypothesis of the current context. Like modus ponens in reverse. 
 - New subgoals will be generated for every premise in the conditional.
