@@ -20,7 +20,13 @@ The `forall` portion should be read as an additional argument to the constructor
 * What won't Coq automatically infer?
 Coq will automatically attempt to infer the types of arguments, even when those types are polymorphic.
 
-However, Coq won't automatically attempt to infer ``arguments``, for example the `Type` argument to a polymorphic constructor.
+However, Coq won't automatically attempt to infer ``arguments``, for example to the type parameters of a polymorphic constructor.
+
+* When no inference has been requested, where do you write type arguments?
+* Where do you ``not`` write them?
+You write them when invoking a polymorphic constructor.
+
+You cannot write them in polymorphic constructors in a match on a polymorphic datatype. This is because the polymorphic parameter belongs to the datatype as a whole, not to its constructors.
 
 * How can we avoid writing type arguments in an invocation?
 * Throughout a module?
