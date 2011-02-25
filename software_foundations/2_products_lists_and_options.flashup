@@ -32,6 +32,9 @@ el :: lst
 * What notation do we introduce for appending two lists?
 `++` in place of `app`.
 
+* What does it mean to say that the `pair` constructor is surjective?
+??
+
 * What's an alternative to `if`/`then`/`else` expressions.
 `
 if X then Y else Z.
