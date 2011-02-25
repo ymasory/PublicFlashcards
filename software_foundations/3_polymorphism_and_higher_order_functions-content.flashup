@@ -1,0 +1,44 @@
+#GRAMMAR 1
+#TOPLEFT Software Foundations
+#TOPRIGHT 3 content
+#NUMBERS true
+
+
+Inductive list (X:Type) : Type :=
+  | nil : list X
+  | cons : X -> list X -> list X.
+
+Fixpoint length (X:Type) (l:list X) : nat := 
+  match l with
+  | nil      => 0
+  | cons h t => S (length X t)
+  end.
+
+Fixpoint length' {X:Type} (l:list X) : nat := 
+  match l with
+  | nil      => 0
+  | cons h t => S (length'' t)
+  end.
+
+
+Fixpoint app (X : Type) (l1 l2 : list X) 
+                : (list X) := 
+  match l1 with
+  | nil      => l2
+  | cons h t => cons X h (app X t l2)
+  end.
+
+Fixpoint snoc (X:Type) (l:list X) (v:X) : (list X) := 
+  match l with
+  | nil      => cons X v (nil X)
+  | cons h t => cons X h (snoc X t v)
+  end.
+
+Fixpoint rev (X:Type) (l:list X) : list X := 
+  match l with
+  | nil      => nil X
+  | cons h t => snoc X (rev X t) h
+  end.
+
+Inductive prod (X Y : Type) : Type :=
+  pair : X -> Y -> prod X Y.
