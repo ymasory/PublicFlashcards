@@ -1,0 +1,15 @@
+#GRAMMAR 1
+#TOPLEFT Software Foundations
+#TOPRIGHT 4
+#NUMBERS true
+
+* Explain the `generalize dependent` tactic.
+?
+
+* All propositions in Coq are of what type?
+`Prop`
+
+* The definition `even` has the type `nat->Prop`. Give three ways to pronounce this.
+- `even` is a ``function`` from numbers to propositions.
+- `even` is a ``family`` of propositions, indexed by a number `n`.
+- `even` is a ``property`` of numbers.
