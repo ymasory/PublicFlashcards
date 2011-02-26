@@ -3,8 +3,14 @@
 #TOPLEFT 3
 #NUMBERS true
 
-* Polymorphic inductive definitions can be thought of as what?
-Functions from `Type`s to `Inductive` definitions. Or, since we always use `Inductive` definitions to create types, then a function from `Types` to `Types`.
+* Polymorphic `list` can be thought of as what?
+- A function from `Type`s to `Inductive` definitions.
+- A function from `Types` to `Types`.
+
+* How are polymorphic types written?
+With the type parameters following the bare name of the datatype.
+E.g., `list nat` or `list X`.
+
 
 * What are the types of the ``polymorphic constructors`` `nil` and `cons`?
 `
@@ -14,24 +20,27 @@ Check cons.
 ===> cons : forall X : Type, X -> list X -> list X
 `
 
-The `forall` portion should be read as an additional argument to the constructor.
+* How should `forall X` be read in the type of a polymorphic constructor?
+As an additional argument to the constructor that determines the expected types of the arguments that follow.
 
 * With respect to polymorphic inductive types, Coq will automatically infer what?
 * What won't Coq automatically infer?
-Coq will automatically attempt to infer the types of arguments, even when those types are polymorphic.
+Coq will automatically attempt to infer the type of an arguments, even if that type is `Type`.
 
 However, Coq won't automatically attempt to infer ``arguments``, for example to the type parameters of a polymorphic constructor.
 
-* When no inference has been requested, where do you write type arguments?
-* Where do you ``not`` write them?
-You write them when invoking a polymorphic constructor.
+* When no inference has been requested, where do you write type argument in a constructor invocation?
+* How about in a constructor that is a case of a match on a polymorphic datatype?
+You provide the type argument when invoking a polymorphic constructor.
 
-You cannot write them in polymorphic constructors in a match on a polymorphic datatype. This is because the polymorphic parameter belongs to the datatype as a whole, not to its constructors.
+You do not provide the type argument to a polymorphic constructors in a match on a polymorphic datatype. This is because the polymorphic parameter belongs to the datatype as a whole, not to its constructors.
 
-* How can we avoid writing type arguments in an invocation?
-* Throughout a module?
-* At declaration site?
-At constructor/function invocation:
+* Underscores can replace what kinds of type information?
+- They can replace type annotations. Of course, you could also simply omit the annotation altogether.
+- They can replace type arguments demanded by polymorphic constructors.
+
+* How can type argument inference be requested by a user?
+At constructor/function invocation use ``argument synthesis``:
 `
 length bool someBoolList
 length _ someBoolList
@@ -42,13 +51,18 @@ For the remainder of the module, works on functions or inductive definitions:
 Implicit Arguments length [[X]].
 `
 
+* How can type argument inference be requested at definition site?
+* This does not work on ...
 On function declaration site use curlies, which avoids even the need for underscores on use-site:
 `
 Fixpoint length {X:Type} (l:list X) : nat :=
   ...  
 `
 
-* How can you use explicit type arguments after having requested inference?Use `@`.
+... inductive definitions.
+
+* How can you use explicit type arguments after having requested inference?
+Use `@`.
 
 `
 (* This fails if inference has been requested.*)
