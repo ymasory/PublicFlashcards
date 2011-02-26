@@ -61,14 +61,15 @@ Fixpoint length {X:Type} (l:list X) : nat :=
 
 ... inductive definitions.
 
-* How can you use explicit type arguments after having requested inference?
-Use `@`.
+* What is the limit of implicit arguments?
+Even after an `Implicit Argument` statement there will be cases Coq cannot figure out the right argument. In those cases you can use `@` and provide the type argument explicitly or intentionally omit it without Coq attempting to fill it in.
 
 `
 (* This fails if inference has been requested.*)
-(* Definition mynil := nil nat *)
+(* Check nil. *)
 
-Definition mynil := @nil nat
+Check @nil.
+Check @nil nat.
 `
 
 * What's the difference between `(x,y)` and `(X*Y)`?
@@ -76,6 +77,12 @@ Definition mynil := @nil nat
 `(X*Y)` is its ``type``, also using special notation.
 
 It just so happens that `x:X` and `y:Y`.
+
+* What is `type_scope`?
+The scope used when Coq is parsing symbols. Notations for types, like `X*Y` will be declared in `type_scope`.
+
+* Matching on multiple arguments is actually what?
+Matching on a single product argument, with the parens ommitted.
 
 * Which way does the type arrow associate?
 Right.
@@ -86,36 +93,32 @@ nat -> nat ->
 nat -> (nat -> nat)
 `
 
-* What are the type signatures of currying and uncurrying a function?
+* What is the partial application syntax?
+Simply omit arguments in an invocation.
+
+* What are the types of the currying and uncurrying a function?
 Currying:
 `
-(A * B) -> C
-A -> B -> C
+forall X Y Z : Type, (X * Y -> Z) -> X -> Y -> Z
 `
 
 Uncurrying:
 `
-A -> B -> C
-(A * B) -> C
+forall X Y Z : Type, (X -> Y -> Z) -> X * Y -> Z
 `
+
 * Give the syntax of anonymous functions.
 `
 fun arg1 ... argN => expr
 `
 
-* Define a function that overrides other functions whose domain is `nat`s.
-* Give its type.
+* What is the type of the `override` function?
 `
-Definition override {X:Type} (f: nat =>X) (k:nat) (x:X) : nat->X :=
-  fun(k':nat) => if beq_nat k k' then x else f k'.
-`
-
-`
-===> override : forall X : Type, (nat -> X) -> nat -> X -> nat -> X
+forall X : Type, (nat -> X) -> nat -> X -> nat -> X
 `
 
 * Describe the `unfold` and `fold` tactics.
-`unfold` replaces a term with its definitions, "expanding" functions.
+`unfold` replaces a term with its definition, "expanding" functions.
 
 `fold` takes the expanded term and packs it back up into a definition. It is much less used.
 
@@ -126,7 +129,7 @@ Values built from distinct constructors are never equal.
 The only way for two values produced by a constructor to be equal is for them to have been constructed with the same values as functions.
 
 * Describe the `inversion` tactic.
-Given a hypothesis `H` in context:
+Given a hypothesis `H` in context or previously proven:
 `
 c a1 ... an = d b1 ... bn
 `
