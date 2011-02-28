@@ -1,0 +1,3 @@
+Explain the <tt>generalize dependent</tt> tactic.	?
+All propositions in Coq are of what type?	<tt>Prop</tt>
+The definition <tt>even</tt> has the type <tt>nat->Prop</tt>. Give three ways to pronounce this.	- <tt>even</tt> is a <em>function</em> from numbers to propositions.<br>- <tt>even</tt> is a <em>family</em> of propositions, indexed by a number <tt>n</tt>.<br>- <tt>even</tt> is a <em>property</em> of numbers.
