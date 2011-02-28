@@ -6,8 +6,11 @@
 * Explain the `generalize dependent` tactic.
 ?
 
-* All propositions in Coq are of what type?
-`Prop`
+* What is a proposition?
+* What is a `Prop`?
+A proposition is a mathematical statement. It may or may not be provable.
+
+A `Prop` is the type of expressions that represent propositions.
 
 * Name a few uses of `Prop`.
 - In a `Theorem` construction which is then proved.
