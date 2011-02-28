@@ -184,6 +184,7 @@ Use the `assert` tactic.
 
 `
 assert (H: whatever).
+(* or: assert (whatever) as H *)
   Case "Proof of assertion". whatever.
 `
 
