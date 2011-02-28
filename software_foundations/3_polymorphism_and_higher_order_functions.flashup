@@ -39,14 +39,17 @@ You do not provide the type argument to a polymorphic constructors in a match on
 - They can replace type annotations. Of course, you could also simply omit the annotation altogether.
 - They can replace type arguments demanded by polymorphic constructors.
 
+* How does Coq determine what to fill in for the implicit argument?
+Coq attempts to ``unify`` all locally available information -- the type of the function being applied, the types of the other arguments, and the type expected by the context in which the application appears -- to determine what concrete type should replace the underscore.
+
 * How can type argument inference be requested by a user?
-At constructor/function invocation use ``argument synthesis``:
+At constructor/function invocation provide the ``implicit argument``:
 `
 length bool someBoolList
 length _ someBoolList
 `
 
-For the remainder of the module, works on functions or inductive definitions:
+For the remainder of the module, works on functions or inductive constructors:
 `
 Implicit Arguments length [[X]].
 `
@@ -79,7 +82,7 @@ Check @nil nat.
 It just so happens that `x:X` and `y:Y`.
 
 * What is `type_scope`?
-The scope used when Coq is parsing symbols. Notations for types, like `X*Y` will be declared in `type_scope`.
+The scope used when Coq is parsing symbols. Notations for types, like `X*Y` will be declared in `type_scope`, in this case to avoid clash with multiplication.
 
 * Matching on multiple arguments is actually what?
 Matching on a single product argument, with the parens ommitted.
@@ -116,7 +119,6 @@ fun arg1 ... argN => expr
 `
 forall X : Type, (nat -> X) -> nat -> X -> nat -> X
 `
-
 * Describe the `unfold` and `fold` tactics.
 `unfold` replaces a term with its definition, "expanding" functions.
 
@@ -139,6 +141,9 @@ c a1 ... an = d b1 ... bn
 
 - If `c` and `d` are different then by disjointness property we have reached contradiction so the current goal is proved, since ``any`` goal is now provable.
 
+* `inversion` can act on what?
+Equations involving simple constructor values or even complex terms like lists.
+
 * How can tactics be applied to hypothesis instead of the goal?
 Use the `in` keyword.
 
@@ -148,14 +153,19 @@ simpl in H
 apply L in H
 `
 
+* Describe the difference between `apply` and `apply...in`.
+`apply L in H` uses forward reasoning, matching `H` against the premise of `L`, replacing `H` with the conclusion of `L`.
+
+`apply L` however matches the current goal against the ``conclusion`` of `L`, ending the current goal and creating new goals for each premise of `L`.
+
 * Explain the difference between ``forward`` and ``backward`` reasoning.
 Forward reasoning is just modus ponens:
 Given `L1` and `L1->L2` conclude `L2`.
 Backward reasoning starts with the goal and reasons about what would imply the goal until a premise or previous theorem is reached.
-Given `L1->L2` and the ``goal`` `L2`, consider it proved if `L1` is already known.
+Given `L1->L2` and the ``goal`` `L2`, consider it we can establish `L1`.
 
 * What happens if you `destruct` on an expression instead of a value?
-The cases will be equations with the expression and its possible values.
+The cases will be equations with the expression and its possible values, one per constructor.
 
 `
 destruct (beq_nat n 3).
@@ -164,7 +174,20 @@ destruct (beq_nat n 3).
 `
 
 * Explain the `remember` tactic.
-?
+`
+remember (expr) as name.
+`
+
+`name` will be added to context along with a new assumption `name=expr`. Further, instances of `expr` will be replaced with `name`.
+
+* What is a common use-case for `remember`?
+The substitution done by `destruct` (i.e., substituting instances of the destructed expression with the current possible value) eradicates information needed for the proof.
 
 * Explain the `apply ... with ...` tactic.
-?
+Sometimes when you do `apply H` Coq is not able to bind every variable in `H` to the goal, perhaps because some variables don't apply in the conclusion of `H`, only in the premises.
+This tactic provides a way to explicitly give Coq bindings between `H` and the goal.
+
+`
+apply trans_eq with (m:=[c,d]).
+`
+That binds the variable `m` to the list `[c,d]`.
