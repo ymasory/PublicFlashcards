@@ -9,6 +9,12 @@
 * All propositions in Coq are of what type?
 `Prop`
 
+* Name a few uses of `Prop`.
+- In a `Theorem` construction which is then proved.
+- As the type of a simple term created by a definition.
+- As the type of a family of terms created by parameterizing a definition.
+
+
 * The definition `even` has the type `nat->Prop`. Give three ways to pronounce this.
 - `even` is a ``function`` from numbers to propositions.
 - `even` is a ``family`` of propositions, indexed by a number `n`.
