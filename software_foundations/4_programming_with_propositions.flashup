@@ -8,15 +8,13 @@
 
 * What is a proposition?
 * What is a `Prop`?
-A proposition is a mathematical statement. It may or may not be provable.
+A proposition is a mathematical statement expressing a factual claim. It may or may not be provable.
 
 A `Prop` is the type of expressions that represent propositions.
 
-* Name a few uses of `Prop`.
-- In a `Theorem` construction which is then proved.
-- As the type of a simple term created by a definition.
-- As the type of a family of terms created by parameterizing a definition.
-
+* Name the two simplest ways to create propositions expression.
+- Assert that one expression is equal to another.
+- Given propositions expressions `P` and `Q`, assert `P->Q`.
 
 * The definition `even` has the type `nat->Prop`. Give three ways to pronounce this.
 - `even` is a ``function`` from numbers to propositions.
