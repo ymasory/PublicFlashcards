@@ -1,3 +1,4 @@
 Explain the <tt>generalize dependent</tt> tactic.	?
-All propositions in Coq are of what type?	<tt>Prop</tt>
+What is a proposition?<br><br>What is a <tt>Prop</tt>?	A proposition is a mathematical statement expressing a factual claim. It may or may not be provable.<br><br>A <tt>Prop</tt> is the type of expressions that represent propositions.
+Name the two simplest ways to create propositions expression.	- Assert that one expression is equal to another.<br>- Given propositions expressions <tt>P</tt> and <tt>Q</tt>, assert <tt>P->Q</tt>.
 The definition <tt>even</tt> has the type <tt>nat->Prop</tt>. Give three ways to pronounce this.	- <tt>even</tt> is a <em>function</em> from numbers to propositions.<br>- <tt>even</tt> is a <em>family</em> of propositions, indexed by a number <tt>n</tt>.<br>- <tt>even</tt> is a <em>property</em> of numbers.
