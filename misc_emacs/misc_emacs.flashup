@@ -1,0 +1,61 @@
+#GRAMMAR 1
+#TOPLEFT Misc Emacs
+
+* Search the buffer after the point, using a regexp.
+M-C-s
+`isearch-forward-regexp`
+
+* Search the before before the point, using a regexp.
+M-C-r
+`isearch-backward-regexp`
+
+* Search and replace interactively using a regexp.
+M-C-%
+`query-replace`
+
+* Run a shell command.
+M-!
+`shell-command`
+
+* Kill a rectangle.
+C-x r k
+`kill-rectangle`
+
+* Paste a rectangle.
+C-x r y
+`yank-rectangle`
+
+* Switch to another buffer, choosing interactively.
+C-x b
+`switch-to-buffer`
+
+* List the open buffers.
+C-x C-b
+`list buffers`
+
+* Search the last thing you searched for, again.
+C-s C-s
+
+* Uppercase a word.
+M-u
+`upcase-word'
+
+* Lowercase a word. 
+M-l
+`downcase-word`
+
+* Uppercase a word.
+M-c
+`capitalize-word`
+
+* Insert the contents of a file into the current location.
+`insert-file`
+C-x i
+
+* Lookup a function based on keystroke.
+C-h k
+`describe-key`
+
+* Get documentation in a function, including its shortcut.
+C-h f
+`describe-function`
