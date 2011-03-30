@@ -59,3 +59,7 @@ C-h k
 * Get documentation in a function, including its shortcut.
 C-h f
 `describe-function`
+
+* Expand a word, partially typed.
+M-/
+`dabbrev-expand`
