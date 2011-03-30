@@ -1,0 +1,15 @@
+Search the buffer after the point, using a regexp.	M-C-s<br><tt>isearch-forward-regexp</tt>
+Search the before before the point, using a regexp.	M-C-r<br><tt>isearch-backward-regexp</tt>
+Search and replace interactively using a regexp.	M-C-%<br><tt>query-replace</tt>
+Run a shell command.	M-!<br><tt>shell-command</tt>
+Kill a rectangle.	C-x r k<br><tt>kill-rectangle</tt>
+Paste a rectangle.	C-x r y<br><tt>yank-rectangle</tt>
+Switch to another buffer, choosing interactively.	C-x b<br><tt>switch-to-buffer</tt>
+List the open buffers.	C-x C-b<br><tt>list buffers</tt>
+Search the last thing you searched for, again.	C-s C-s
+Uppercase a word.	M-u<br>`upcase-word'
+Lowercase a word.	M-l<br><tt>downcase-word</tt>
+Uppercase a word.	M-c<br><tt>capitalize-word</tt>
+Insert the contents of a file into the current location.	<tt>insert-file</tt><br>C-x i
+Lookup a function based on keystroke.	C-h k<br><tt>describe-key</tt>
+Get documentation in a function, including its shortcut.	C-h f<br><tt>describe-function</tt>
