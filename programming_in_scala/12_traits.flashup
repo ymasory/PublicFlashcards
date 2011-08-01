@@ -19,7 +19,7 @@ or
 `class X extends Trait 1 with Trait 2`
 
 * What is the shortest class definition?
-`classX`
+`class X`
 
 * What's the main thing you need to know about linearization sequence?
 A class is always linearized before ``all`` of its superclasses and mixed in traits.
