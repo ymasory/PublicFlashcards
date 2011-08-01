@@ -13,3 +13,4 @@ Uppercase a word.	M-c<br><tt>capitalize-word</tt>
 Insert the contents of a file into the current location.	<tt>insert-file</tt><br>C-x i
 Lookup a function based on keystroke.	C-h k<br><tt>describe-key</tt>
 Get documentation in a function, including its shortcut.	C-h f<br><tt>describe-function</tt>
+Expand a word, partially typed.	M-/<br><tt>dabbrev-expand</tt>
